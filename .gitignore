@@ -1,0 +1,39 @@
+# Conversion output (created at runtime)
+Converted/
+
+# Customer / site relay settings — do not commit G30 sources or converted outputs
+*.xml
+!G60 Base.xml
+!azure/function_app/G60 Base.xml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+.python_packages/
+
+# Azure Function local secrets
+azure/function_app/local.settings.json
+
+# Azure deploy artifacts
+azure/*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor (optional local overrides)
+*.swp
+*~
+
+# Docs
+/docs/
+docs/
+
+#IDE
+/.vscode/
+.vscode/
