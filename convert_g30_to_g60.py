@@ -249,6 +249,9 @@ def maybe_adjust_legacy_number_value(g60_el: ET.Element, g30_value: str) -> tupl
 
 _NUM_PATTERN = re.compile(r"^(-?\d+\.?\d*(?:[eE][+-]?\d+)?)\s*(.*)", re.DOTALL)
 _FLEX_OPERAND_TABLE_INDEXES = ("10012", "10013")
+_SIGNAL_OPERAND_TABLE_INDEX = "10013"
+_USER_DISPLAY_ITEMS_LABEL = "UR_DATA_USER_DISPLAY_X_DISPLAYED_ITEMS"
+_G60_USER_DISPLAY_CODE_OFFSET = 262144  # G60 user-display item codes = signal enum code + 0x40000
 _G30_TO_G60_FLEX_OFFSET = 391680  # Shifts G30 VO/contact read codes to G60 (e.g. 1537 -> 393217)
 _G30_ASSIGN_VO_BASE = 12800
 _G60_ASSIGN_VO_BASE = 3276800  # 12800 * 256; G60 assign-VO codes are 0x320000 + VO number
@@ -308,6 +311,77 @@ def _parse_flex_operand_items(items: str, operand_map: dict[str, str]) -> None:
         name = name.strip()
         if name not in operand_map:
             operand_map[name] = code
+
+
+def build_signal_operand_tables(root: ET.Element) -> tuple[dict[str, str], dict[str, str]]:
+    """Return (code_to_name, name_to_code) maps from the measurement/signal operand table (10013).
+
+    G30 user-display Item values store these enum codes directly. G60 stores the same
+    signal at enum_code + _G60_USER_DISPLAY_CODE_OFFSET.
+    """
+    code_to_name: dict[str, str] = {}
+    name_to_code: dict[str, str] = {}
+
+    def ingest(items: str) -> None:
+        for entry in items.split(";"):
+            entry = entry.strip()
+            if not entry:
+                continue
+            code, sep, name = entry.partition(" ")
+            if not sep or not code.isdigit() or not name:
+                continue
+            name = name.strip()
+            code_to_name[code] = name
+            if name not in name_to_code:
+                name_to_code[name] = code
+
+    for el in root.iter("EnumType"):
+        if el.get("FormatIndex") == _SIGNAL_OPERAND_TABLE_INDEX:
+            items = el.get("Items", "")
+            if items:
+                ingest(items)
+                return code_to_name, name_to_code
+
+    for el in root.iter("EnumType"):
+        items = el.get("Items", "")
+        if _is_signal_operand_table(items):
+            ingest(items)
+            break
+
+    return code_to_name, name_to_code
+
+
+def remap_user_display_item(
+    g30_value: str,
+    g30_code_to_name: dict[str, str],
+    g60_name_to_code: dict[str, str],
+) -> tuple[Optional[str], Optional[str]]:
+    """Translate a G30 user-display Item code to its G60 equivalent.
+
+    Returns (g60_value, adjustment_note). When the first element is None the caller
+    should keep the G60 template default.
+    """
+    g30_value = (g30_value or "").strip()
+    if not g30_value or g30_value == "0":
+        return "0", None
+
+    if not g30_code_to_name or not g60_name_to_code:
+        return None, "User display signal table unavailable; kept G60 template default"
+
+    signal_name = g30_code_to_name.get(g30_value)
+    if not signal_name:
+        return None, f"Unknown G30 user display signal code {g30_value}; kept G60 template default"
+
+    g60_code = g60_name_to_code.get(signal_name)
+    if not g60_code:
+        return None, (
+            f"Signal unavailable on G60 ({signal_name.strip()}); kept G60 template default"
+        )
+
+    g60_display = str(int(g60_code) + _G60_USER_DISPLAY_CODE_OFFSET)
+    return g60_display, (
+        f"User display item: {signal_name.strip()} ({g30_value} -> {g60_display})"
+    )
 
 
 def _is_logic_operand_table(items: str) -> bool:
@@ -487,6 +561,8 @@ def transfer_value(
     g30_el: ET.Element,
     g60_flex_fv_map: Optional[dict] = None,
     g60_operand_map: Optional[dict[str, str]] = None,
+    g30_signal_code_to_name: Optional[dict[str, str]] = None,
+    g60_signal_name_to_code: Optional[dict[str, str]] = None,
 ) -> Optional[str]:
     stype = g60_el.get("SettingType", "")
     raw_g30_value = g30_el.get("value", g60_el.get("value", ""))
@@ -494,6 +570,21 @@ def transfer_value(
     g60_template_fv = g60_el.get("FlexValue", "")
 
     adjustment_note = None
+    if (
+        stype == "Number"
+        and g60_el.get("labelID") == _USER_DISPLAY_ITEMS_LABEL
+        and g30_signal_code_to_name is not None
+        and g60_signal_name_to_code is not None
+    ):
+        remapped, adjustment_note = remap_user_display_item(
+            raw_g30_value,
+            g30_signal_code_to_name,
+            g60_signal_name_to_code,
+        )
+        if remapped is not None:
+            g60_el.set("value", clean_value(remapped))
+        return adjustment_note
+
     if stype == "Number":
         adjusted_value, adjustment_note = maybe_adjust_legacy_number_value(g60_el, raw_g30_value)
         if adjusted_value is not None:
@@ -610,6 +701,19 @@ def convert(
         print("  Warning: Flex operand table not found in G60 template; LED/Flex remapping may fail",
               file=sys.stderr)
 
+    g30_signal_code_to_name, _ = build_signal_operand_tables(g30_root)
+    _, g60_signal_name_to_code = build_signal_operand_tables(g60_root)
+    if g30_signal_code_to_name and g60_signal_name_to_code:
+        print(
+            f"  User display table : {len(g30_signal_code_to_name):,} G30 signals, "
+            f"{len(g60_signal_name_to_code):,} G60 signals"
+        )
+    else:
+        print(
+            "  Warning: Signal operand table (10013) not found; user display Item remapping may fail",
+            file=sys.stderr,
+        )
+
     transferred_records: list[TransferredRecord] = []
     g60_only_records: list[G60OnlyRecord] = []
 
@@ -641,7 +745,12 @@ def convert(
                 g60_template_value=g60_template_value,
             )
             rec.adjustment_note = transfer_value(
-                setting, g30_match, g60_flex_fv_map, g60_operand_map
+                setting,
+                g30_match,
+                g60_flex_fv_map,
+                g60_operand_map,
+                g30_signal_code_to_name,
+                g60_signal_name_to_code,
             )
             rec.g30_value = setting.get("value", "")
             if setting.get("SettingType") == "Number":
