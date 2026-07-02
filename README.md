@@ -1,6 +1,6 @@
 # G30 to G60 Relay Settings Converter
 
-**Technical reference:** [Conversion Process — step-by-step guide](CONVERSION_PROCESS.md)
+**Technical reference:** [Conversion Process — step-by-step guide](CONVERSION_PROCESS.md) · [Firmware enum tables — G30 vs G60](FIRMWARE_TABLES.md)
 
 Converts GE Multilin UR series **G30** relay settings XML files to **G60** format, producing a ready-to-import G60 XML and a detailed HTML conversion report.
 
