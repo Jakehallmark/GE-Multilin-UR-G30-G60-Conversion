@@ -1,10 +1,31 @@
-# Conversion output (created at runtime)
+﻿# Runtime conversion output
 Converted/
 
-# Customer / site relay settings — do not commit G30 sources or converted outputs
+# Customer / site relay settings — never commit G30 sources or converted outputs
 *.xml
-!G60 Base.xml
-!azure/function_app/G60 Base.xml
+!bases/G60 Base*.xml
+
+# Azure function_app copies are synced at deploy time (not stored in git)
+azure/function_app/G60 Base*.xml
+azure/function_app/bases/
+
+# Conversion reports and other HTML output
+*.html
+
+# Local test fixtures and dev scripts
+test_*.py
+**/validate_bases.py
+HCHPublix*.xml
+Leesburg*.xml
+Publix*.xml
+
+# PyInstaller / packaging output
+build/
+packaging/out/
+dist/
+aio/build/
+aio/dist/
+aio/*.spec
 
 # Python
 __pycache__/
@@ -14,27 +35,20 @@ __pycache__/
 .venv/
 venv/
 .python_packages/
-test_flexlogic_syntax.py
 
-# Azure Function local secrets
+# Azure Function local secrets and deploy zips
 azure/function_app/local.settings.json
-
-# Azure deploy artifacts
 azure/*.zip
 
-# OS
+# OS / editor
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Editor (optional local overrides)
 *.swp
 *~
-
-# Docs
-/docs/
-docs/
-
-#IDE
 /.vscode/
 .vscode/
+
+# Optional local docs assets (PDF briefs, etc.)
+/docs/
+docs/

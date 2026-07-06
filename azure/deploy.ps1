@@ -1,4 +1,4 @@
-# Build a deployment zip and publish to Azure Function App.
+﻿# Build a deployment zip and publish to Azure Function App.
 # Requires: Azure CLI (az) logged in.
 param(
     [Parameter(Mandatory = $true)]
@@ -17,6 +17,13 @@ if (-not (Get-Command az -ErrorAction SilentlyContinue)) {
 Write-Host "Syncing files from repo root..."
 & (Join-Path $PSScriptRoot "sync-from-root.ps1")
 
+$BasesDir = Join-Path $AppDir "bases"
+$baseTemplates = Get-ChildItem -LiteralPath $BasesDir -Filter "G60 Base*.xml" -ErrorAction SilentlyContinue
+if (-not $baseTemplates) {
+    throw "Missing G60 base templates: expected bases/G60 Base*.xml in $AppDir (run sync-from-root.ps1)"
+}
+Write-Host "Base templates: $($baseTemplates.Name -join ', ')"
+
 $required = @(
     "function_app.py",
     "convert_g30_to_g60.py",
@@ -34,11 +41,16 @@ foreach ($name in $required) {
 if (Test-Path $ZipPath) { Remove-Item $ZipPath -Force }
 
 Write-Host "Creating deployment zip..."
-$archiveItems = @(Get-ChildItem -Path $AppDir -File | ForEach-Object { $_.FullName })
-if ($archiveItems.Count -eq 0) {
-    throw "No files found in $AppDir"
+$staging = Join-Path $env:TEMP "g30g60-deploy-$([Guid]::NewGuid().ToString('n'))"
+New-Item -ItemType Directory -Force -Path $staging | Out-Null
+try {
+    Copy-Item -Path (Join-Path $AppDir '*') -Destination $staging -Recurse -Force
+    if (Test-Path $ZipPath) { Remove-Item $ZipPath -Force }
+    Compress-Archive -Path (Join-Path $staging '*') -DestinationPath $ZipPath -Force
 }
-Compress-Archive -LiteralPath $archiveItems -DestinationPath $ZipPath -Force
+finally {
+    Remove-Item -Path $staging -Recurse -Force -ErrorAction SilentlyContinue
+}
 
 $zipSize = (Get-Item $ZipPath).Length
 Write-Host "Zip size: $([math]::Round($zipSize / 1MB, 2)) MB (XML compresses heavily; ~0.2 MB is normal)"

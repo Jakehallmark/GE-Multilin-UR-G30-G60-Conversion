@@ -46,7 +46,7 @@ The converter does **not** invent a G60 structure from scratch. It starts from a
 | Input | Purpose |
 |-------|---------|
 | G30 source XML | Site-specific configuration to convert |
-| `G60 Base.xml` | Blank G60 template from target firmware (must sit beside the script) |
+| `bases/G60 Base.xml` | Blank G60 template from target firmware (default for CLI / Azure) |
 
 | Output | Purpose |
 |--------|---------|
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
 **Why:** The G60 template path is fixed relative to the script so drag-and-drop usage (via `Convert G30 to G60.bat`) never requires the operator to specify it. Default output goes to `Converted/` to avoid overwriting inputs.
 
-`select_base_template()` simply resolves `G60 Base.xml` in the script directory and raises if missing — there is no auto-detection because the template must match the target relay firmware exactly.
+`select_base_template()` resolves `bases/G60 Base.xml` under the script directory and raises if missing — there is no auto-detection because the template must match the target relay firmware exactly.
 
 ---
 
@@ -707,7 +707,7 @@ These attributes always come from the G60 template:
 | User-display signal unknown or unavailable | Template default (`0`) kept; note in report |
 | Number value out of G60 range | Value written; **range warning** in report |
 | Output path would overwrite input | Script exits with error |
-| G60 Base.xml missing | Script exits with error |
+| `bases/G60 Base.xml` missing | Script exits with error |
 | Signal operand table (10013) missing | User-display remapping skipped; warning printed |
 
 **Target after import:** Zero **Invalid Settings** in UR Setup. Invalid entries indicate a value/format/code problem requiring investigation. **Differences** in Device Comparison are expected for intentional configuration changes, name differences, and G60-only features.
@@ -764,7 +764,7 @@ class G60OnlyRecord: ...     # G60 setting with no G30 source
 | File | Role |
 |------|------|
 | `convert_g30_to_g60.py` | Main converter (source of truth) |
-| `G60 Base.xml` | G60 template — must match target firmware |
+| `bases/G60 Base*.xml` | G60 templates — must match target firmware |
 | `Convert G30 to G60.bat` | Windows drag-and-drop launcher |
 | `azure/function_app/convert_g30_to_g60.py` | Copy deployed to Azure Function (sync via `azure/sync-from-root.ps1`) |
 | `README.md` | Operator quick-start guide |

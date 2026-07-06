@@ -1,0 +1,89 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (e.g. 1.0.1 — without v prefix)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build-and-publish:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve version
+        id: version
+        shell: pwsh
+        run: |
+          if ("${{ github.event_name }}" -eq "workflow_dispatch") {
+            $ver = "${{ inputs.version }}".Trim()
+          } else {
+            $ver = "${{ github.ref_name }}".TrimStart("v")
+          }
+          if ($ver -notmatch '^\d+\.\d+\.\d+') {
+            throw "Version must be semver (e.g. 1.0.0), got: $ver"
+          }
+          "version=$ver" >> $env:GITHUB_OUTPUT
+          "tag=v$ver" >> $env:GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: Build GUI exe
+        shell: pwsh
+        run: ./aio/build.ps1
+
+      - name: Verify exe
+        shell: pwsh
+        run: |
+          $exe = "release/G30-to-G60-Converter.exe"
+          if (-not (Test-Path $exe)) { throw "Missing $exe" }
+          Write-Host "Built $exe ($((Get-Item $exe).Length) bytes)"
+
+      - name: Install NuGet
+        uses: nuget/setup-nuget@v2
+
+      - name: Pack NuGet package (GitHub Packages)
+        shell: pwsh
+        run: |
+          nuget pack packaging/G30-to-G60-Converter.nuspec `
+            -BasePath . `
+            -Version "${{ steps.version.outputs.version }}" `
+            -OutputDirectory packaging/out
+
+      - name: Publish NuGet package
+        shell: pwsh
+        run: |
+          nuget push packaging/out/*.nupkg `
+            -Source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" `
+            -ApiKey "${{ secrets.GITHUB_TOKEN }}" `
+            -SkipDuplicate
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          generate_release_notes: true
+          files: release/G30-to-G60-Converter.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

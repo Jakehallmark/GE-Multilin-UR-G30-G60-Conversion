@@ -1,4 +1,4 @@
-"""
+﻿"""
 G30 to G60 relay settings converter for GE Multilin UR series.
 
 Produces:
@@ -8,7 +8,7 @@ Produces:
 Matching key: (labelID, group, module, item, bit)
 
 Base Template:
-  Uses "G60 Base.xml" in the same folder as this script.
+  Uses bases/G60 Base.xml (default) under the same folder as this script.
 
 Output naming:
   - Reads deviceName and version from the G30 source file.
@@ -34,7 +34,7 @@ from pathlib import Path
 from typing import Optional
 
 
-# ── Data structures ────────────────────────────────────────────────────────────
+# ΓöÇΓöÇ Data structures ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 @dataclass
 class TransferredRecord:
@@ -84,19 +84,30 @@ class G60OnlyRecord:
     default_value: str
 
 
-# ── XML helpers ────────────────────────────────────────────────────────────────
+# ΓöÇΓöÇ XML helpers ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def get_device_name(xml_root: ET.Element) -> str:
     """Extract the deviceName attribute from the XML root element."""
     return xml_root.get("deviceName", "").lower()
 
 
+def base_templates_dir(app_dir: Path) -> Path:
+    """Return the directory containing G60 Base*.xml templates."""
+    nested = app_dir / "bases"
+    if nested.is_dir() and any(nested.glob("G60 Base*.xml")):
+        return nested
+    return app_dir
+
+
 def select_base_template(_g30_path: Path, base_dir: Path) -> Path:
-    """Return the G60 base template path (G60 Base.xml in base_dir)."""
-    base_standard = base_dir / "G60 Base.xml"
+    """Return the default G60 base template (bases/G60 Base.xml)."""
+    template_dir = base_templates_dir(base_dir)
+    base_standard = template_dir / "G60 Base.xml"
     if base_standard.exists():
         return base_standard
-    raise FileNotFoundError(f"G60 base template not found: {base_standard}")
+    raise FileNotFoundError(
+        f"G60 base template not found: {base_standard}"
+    )
 
 
 def parse_xml(path: Path) -> ET.Element:
@@ -187,6 +198,14 @@ def derive_output_device_name(g30_device_name: str, g60_order_code: str) -> str:
     return f"{first_word} {g60_model}{suffix}"
 
 
+def derive_output_file_stem(device_name: str, firmware_version: str) -> str:
+    """Build the output file base name, including firmware to avoid cross-version overwrites."""
+    fw = firmware_version.strip()
+    if fw:
+        return f"{device_name} FW{fw}"
+    return device_name
+
+
 def build_path_map(root: ET.Element) -> dict:
     """Return {id(element): breadcrumb_path} for every element in the tree."""
     paths = {}
@@ -266,8 +285,8 @@ def build_flex_operand_map(root: ET.Element) -> dict[str, str]:
     """Map flex operand display names to G60 FlexValue codes from firmware operand tables.
 
     UR Setup stores operand dictionaries in large EnumType Items attributes:
-      10012 — logic, contacts, virtual outputs, protection element outputs
-      10013 — measurement/signal sources (SRC1 Ia RMS, SRC1 P, etc.)
+      10012 ΓÇö logic, contacts, virtual outputs, protection element outputs
+      10013 ΓÇö measurement/signal sources (SRC1 Ia RMS, SRC1 P, etc.)
 
     The blank G60 template rarely references configured operands in its Setting
     elements, so LED assignments, oscillography sources, and similar Flex picks must
@@ -636,7 +655,7 @@ def transfer_value(
     return adjustment_note
 
 
-# ── Core conversion ────────────────────────────────────────────────────────────
+# ΓöÇΓöÇ Core conversion ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def convert(
     g30_path: Path,
@@ -648,19 +667,22 @@ def convert(
     print(f"Reading G60      : {g60_template_path}")
     g60_root = parse_xml(g60_template_path)
 
-    # ── Derive output device name and file names ───────────────────────────────
+    # ΓöÇΓöÇ Derive output device name and file names ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     g30_device_name_raw = g30_root.get("deviceName", "")
     g60_device_name_raw = g60_root.get("deviceName", "")
 
     # Combine: take the G30 project identity, swap in the G60 model from orderCode
     g60_order_code = g60_root.get("orderCode", "")
+    g60_version = g60_root.get("version", "")
     output_device_name_raw = derive_output_device_name(g30_device_name_raw, g60_order_code)
     output_device_name = ur_title_case(output_device_name_raw)
+    output_file_stem = derive_output_file_stem(output_device_name, g60_version)
 
-    output_xml_path  = output_dir / f"{output_device_name}.xml"
-    output_html_path = output_dir / f"{output_device_name}_OR.html"
+    output_xml_path  = output_dir / f"{output_file_stem}.xml"
+    output_html_path = output_dir / f"{output_file_stem}_OR.html"
 
     print(f"Output device    : {output_device_name}")
+    print(f"Output firmware  : {g60_version or '(unknown)'}")
     print(f"Output XML       : {output_xml_path.name}")
     print(f"Output report    : {output_html_path.name}")
     print()
@@ -802,7 +824,7 @@ def convert(
     auto_adjusted = [r for r in transferred_records if r.adjustment_note]
     unchanged = [r for r in transferred_records if not r.value_changed]
 
-    # ── Console summary ────────────────────────────────────────────────────────
+    # ΓöÇΓöÇ Console summary ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     SEP = "-" * 60
     print(f"\n{SEP}")
     print(f"  Total G30 settings              : {len(g30_lookup)}")
@@ -820,7 +842,7 @@ def convert(
     # Clean the tree of control characters
     clean_tree(g60_root)
 
-    # ── Safety: refuse to overwrite input files ────────────────────────────────
+    # ΓöÇΓöÇ Safety: refuse to overwrite input files ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     input_paths = {g30_path.resolve(), g60_template_path.resolve()}
     for out in (output_xml_path, output_html_path):
         if out.resolve() in input_paths:
@@ -828,7 +850,7 @@ def convert(
             print("       Pass a different output directory as the third argument.", file=sys.stderr)
             sys.exit(1)
 
-    # ── Write output XML ───────────────────────────────────────────────────────
+    # ΓöÇΓöÇ Write output XML ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     output_dir.mkdir(parents=True, exist_ok=True)
     ET.indent(g60_root, space="\t")
     xml_body = ET.tostring(g60_root, encoding="unicode")
@@ -837,7 +859,7 @@ def convert(
         f.write(xml_out.encode("utf-16-le"))
     print(f"XML  written : {output_xml_path.name}  ({output_xml_path.stat().st_size:,} bytes)")
 
-    # ── Write HTML report ──────────────────────────────────────────────────────
+    # ΓöÇΓöÇ Write HTML report ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     html = build_html_report(
         g30_path=g30_path,
         g60_template_path=g60_template_path,
@@ -858,7 +880,7 @@ def convert(
     print(f"HTML written : {output_html_path.name}  ({output_html_path.stat().st_size:,} bytes)")
 
 
-# ── HTML report builder ────────────────────────────────────────────────────────
+# ΓöÇΓöÇ HTML report builder ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def e(text: str) -> str:
     """HTML-escape a string."""
@@ -936,7 +958,7 @@ def build_html_report(
 </table>
 </div>"""
 
-    # ── Section: Value changes ─────────────────────────────────────────────────
+    # ΓöÇΓöÇ Section: Value changes ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     vc_rows = []
     for r in sorted(value_changes, key=lambda x: (x.path, x.g60_name)):
         warn = f' <span class="warn-icon" title="{e(r.range_warning)}">&#9888;</span>' if r.range_warning else ""
@@ -960,7 +982,7 @@ def build_html_report(
         vc_rows, "tbl-vc"
     )
 
-    # ── Section: Name differences ──────────────────────────────────────────────
+    # ΓöÇΓöÇ Section: Name differences ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     nd_rows = []
     for r in sorted(name_diffs, key=lambda x: (x.path, x.g60_name)):
         vc_note = (f' <span class="badge badge-changed">value also changed</span>'
@@ -997,7 +1019,7 @@ def build_html_report(
         aa_rows, "tbl-aa"
     )
 
-    # ── Section: Range warnings ────────────────────────────────────────────────
+    # ΓöÇΓöÇ Section: Range warnings ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     rw_rows = []
     for r in range_warnings:
         rw_rows.append(
@@ -1014,7 +1036,7 @@ def build_html_report(
         rw_rows, "tbl-rw"
     )
 
-    # ── Section: G60-only ──────────────────────────────────────────────────────
+    # ΓöÇΓöÇ Section: G60-only ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     go_rows = []
     for r in sorted(g60_only, key=lambda x: (x.path, x.name)):
         go_rows.append(
@@ -1032,7 +1054,7 @@ def build_html_report(
         go_rows, "tbl-go"
     )
 
-    # ── Section: Dropped ──────────────────────────────────────────────────────
+    # ΓöÇΓöÇ Section: Dropped ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     dr_rows = []
     for r in dropped:
         dr_rows.append(
@@ -1050,7 +1072,7 @@ def build_html_report(
         dr_rows, "tbl-dr"
     )
 
-    # ── Section: Unchanged transfers ──────────────────────────────────────────
+    # ΓöÇΓöÇ Section: Unchanged transfers ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     uc_rows = []
     for r in sorted(unchanged, key=lambda x: (x.path, x.g60_name)):
         uc_rows.append(
@@ -1067,33 +1089,33 @@ def build_html_report(
         uc_rows, "tbl-uc"
     )
 
-    # ── Assemble body sections ─────────────────────────────────────────────────
+    # ΓöÇΓöÇ Assemble body sections ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     range_section = ""
     if range_warnings:
         range_section = section(
-            "Range Warnings — Values Outside G60 Valid Range",
+            "Range Warnings ΓÇö Values Outside G60 Valid Range",
             len(range_warnings), "&#9888;", "color-warn", rw_content, "sec-rw"
         )
 
     auto_adjusted_section = ""
     if auto_adjusted:
         auto_adjusted_section = section(
-            "Automatic Adjustments — Legacy G30 values scaled for G60",
+            "Automatic Adjustments ΓÇö Legacy G30 values scaled for G60",
             len(auto_adjusted), "&#9888;", "color-warn", aa_content, "sec-aa"
         )
 
     sections_html = (
         range_section +
-        section("Value Changes — G30 Value Differs from G60 Template Default",
+        section("Value Changes ΓÇö G30 Value Differs from G60 Template Default",
                 len(value_changes), "&#8644;", "color-changed", vc_content, "sec-vc") +
         auto_adjusted_section +
-        section("Setting Name Differences — Same Register, Different Display Name",
+        section("Setting Name Differences ΓÇö Same Register, Different Display Name",
                 len(name_diffs), "&#8756;", "color-name", nd_content, "sec-nd") +
-        section("G60-Only Settings — New in G60, Kept at Template Defaults",
+        section("G60-Only Settings ΓÇö New in G60, Kept at Template Defaults",
                 len(g60_only), "&#8853;", "color-g60only", go_content, "sec-go") +
-        section("Dropped G30 Settings — No Equivalent in G60",
+        section("Dropped G30 Settings ΓÇö No Equivalent in G60",
                 len(dropped), "&#10007;", "color-dropped", dr_content, "sec-dr") +
-        section("Transferred Unchanged — Same Value in Both Files",
+        section("Transferred Unchanged ΓÇö Same Value in Both Files",
                 len(unchanged), "&#10003;", "color-ok", uc_content, "sec-uc", collapsed=True)
     )
 
@@ -1124,7 +1146,7 @@ def build_html_report(
           color: var(--text); font-size: 14px; line-height: 1.5; }}
   a {{ color: var(--changed); }}
 
-  /* ── Header ── */
+  /* ΓöÇΓöÇ Header ΓöÇΓöÇ */
   .page-header {{ background: #1a2744; color: #fff; padding: 28px 40px 22px; }}
   .page-header h1 {{ font-size: 22px; font-weight: 600; margin-bottom: 4px; }}
   .page-header .sub {{ color: #9aa8c0; font-size: 13px; }}
@@ -1138,7 +1160,7 @@ def build_html_report(
   .meta-box td {{ padding: 2px 0; color: #c8d8f0; font-size: 13px; }}
   .meta-box td:first-child {{ color: #7d9cc0; width: 130px; font-size: 12px; }}
 
-  /* ── Summary bar ── */
+  /* ΓöÇΓöÇ Summary bar ΓöÇΓöÇ */
   .summary-bar {{ display: flex; gap: 12px; flex-wrap: wrap;
                   padding: 20px 40px; border-bottom: 1px solid var(--border); }}
   .stat-card {{ background: var(--card); border: 1px solid var(--border);
@@ -1153,7 +1175,7 @@ def build_html_report(
   .c-g60only {{ color: var(--g60only); }}
   .c-name    {{ color: var(--name); }}
 
-  /* ── Sections / cards ── */
+  /* ΓöÇΓöÇ Sections / cards ΓöÇΓöÇ */
   .content {{ padding: 24px 40px 48px; max-width: 1600px; }}
   .card {{ background: var(--card); border: 1px solid var(--border);
            border-radius: var(--radius); margin-bottom: 16px;
@@ -1177,13 +1199,13 @@ def build_html_report(
   .card-body {{ padding: 16px 20px; overflow-x: auto; }}
   .empty {{ color: var(--dim); font-style: italic; padding: 8px 0; }}
 
-  /* ── Search ── */
+  /* ΓöÇΓöÇ Search ΓöÇΓöÇ */
   .search-box {{ width: 100%; max-width: 400px; padding: 7px 12px; margin-bottom: 12px;
                  border: 1px solid var(--border); border-radius: 6px;
                  font-size: 13px; color: var(--text); background: var(--bg); }}
   .search-box:focus {{ outline: none; border-color: var(--changed); }}
 
-  /* ── Tables ── */
+  /* ΓöÇΓöÇ Tables ΓöÇΓöÇ */
   .table-wrap {{ overflow-x: auto; }}
   table {{ width: 100%; border-collapse: collapse; font-size: 13px; }}
   th {{ background: #f0f3f8; font-weight: 600; font-size: 12px;
@@ -1195,7 +1217,7 @@ def build_html_report(
   tr:hover td {{ background: #f8faff; }}
   tr.hidden {{ display: none; }}
 
-  /* ── Cell types ── */
+  /* ΓöÇΓöÇ Cell types ΓöÇΓöÇ */
   .path {{ font-size: 12px; color: var(--dim); white-space: nowrap; }}
   .path .sep {{ color: #bbb; margin: 0 2px; }}
   .mono {{ font-family: var(--mono); font-size: 12px; }}
@@ -1206,7 +1228,7 @@ def build_html_report(
   .warn-val {{ color: var(--warn); font-family: var(--mono); font-size: 12px; font-weight: 600; }}
   .warn-icon {{ color: var(--warn); cursor: help; }}
 
-  /* ── Badges ── */
+  /* ΓöÇΓöÇ Badges ΓöÇΓöÇ */
   .badge {{ display: inline-block; font-size: 10px; font-weight: 700;
             padding: 2px 6px; border-radius: 4px; text-transform: uppercase;
             letter-spacing: .04em; }}
@@ -1301,7 +1323,7 @@ function filterTable(input) {{
 </html>"""
 
 
-# ── Entry point ────────────────────────────────────────────────────────────────
+# ΓöÇΓöÇ Entry point ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 if __name__ == "__main__":
     here = Path(__file__).parent
@@ -1313,7 +1335,7 @@ if __name__ == "__main__":
     # passes its path as sys.argv[1]; the output directory is resolved automatically.
     if len(sys.argv) < 2:
         print("Usage:  python convert_g30_to_g60.py  <g30_source.xml>  [output_dir]")
-        print(f"  G60 template : G60 Base.xml (same folder as script)")
+        print(f"  G60 template : bases/G60 Base.xml (under script folder)")
         print(f"  Output dir   : {here / 'Converted'}  (default)")
         sys.exit(0)
 
