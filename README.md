@@ -102,33 +102,48 @@ Export each blank template from UR Setup on the matching relay firmware. The con
 
 ---
 
-## GitHub releases and Packages
+## GitHub Releases
 
-Pushing a version tag triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which:
-
-1. Builds `release/G30-to-G60-Converter.exe` from source (PyInstaller + `bases/`)
-2. Publishes a **NuGet package** (`Jakehallmark.GE-Multilin-G30-G60-Converter`) to **GitHub Packages**
-3. Creates a **GitHub Release** with auto-generated release notes and the exe attached for direct download
+Pushing a version tag runs [`.github/workflows/release.yml`](.github/workflows/release.yml), which builds the GUI exe and attaches it to a **GitHub Release** with auto-generated release notes.
 
 ### Publish a new version
 
 ```powershell
-# After your changes are committed on main:
-git tag v1.0.1
+git add .
+git commit -m "Your changes"
 git push origin main
-git push origin v1.0.1
+
+git tag v1.0.3
+git push origin v1.0.3
 ```
 
-Or run the workflow manually: **Actions → Release → Run workflow** and enter a semver (e.g. `1.0.1`).
+When the Action finishes (green checkmark), open **Releases** — you should see `G30-to-G60-Converter.exe` as a downloadable asset (not just source zip/tar.gz).
+
+### Fix a tag that has no exe
+
+If a tag exists but the Action failed (red X), the tag page only shows source archives. After fixing the workflow:
+
+```powershell
+git tag -d v1.0.2
+git push origin :refs/tags/v1.0.2
+git tag v1.0.2
+git push origin v1.0.2
+```
+
+Or push a new patch tag (`v1.0.3`).
 
 ### Download for end users
 
-| Location | Best for |
-|----------|----------|
-| **[Releases](https://github.com/Jakehallmark/GE-Multilin-UR-G30-G60-Conversion/releases)** | Direct `.exe` download (recommended) |
-| **[Packages](https://github.com/Jakehallmark/GE-Multilin-UR-G30-G60-Conversion/packages)** | Versioned NuGet package (contains the same exe under `tools/`) |
+**[Releases](https://github.com/Jakehallmark/GE-Multilin-UR-G30-G60-Conversion/releases)** → pick a version → download **`G30-to-G60-Converter.exe`**.
 
-You can rebuild locally with `.\aio\build.ps1` and commit `release/G30-to-G60-Converter.exe` if you want a copy in git, but the **tag push builds a fresh exe in CI** — that is the source of truth for published releases.
+### Rebuild locally (optional)
+
+```powershell
+pip install pyinstaller
+.\aio\build.ps1
+```
+
+Writes `release/G30-to-G60-Converter.exe`. CI builds a fresh copy on each tag push — that is what gets attached to the Release.
 
 ---
 
