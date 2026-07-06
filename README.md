@@ -107,7 +107,7 @@ Export each blank template from UR Setup on the matching relay firmware. The con
 Pushing a version tag triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which:
 
 1. Builds `release/G30-to-G60-Converter.exe` from source (PyInstaller + `bases/`)
-2. Publishes a **NuGet package** to **GitHub Packages** (shows under the repo **Packages** tab)
+2. Publishes a **NuGet package** (`Jakehallmark.GE-Multilin-G30-G60-Converter`) to **GitHub Packages**
 3. Creates a **GitHub Release** with auto-generated release notes and the exe attached for direct download
 
 ### Publish a new version

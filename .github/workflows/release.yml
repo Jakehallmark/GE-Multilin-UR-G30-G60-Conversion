@@ -59,7 +59,10 @@ jobs:
           if (-not (Test-Path $exe)) { throw "Missing $exe" }
           Write-Host "Built $exe ($((Get-Item $exe).Length) bytes)"
 
-      - name: Install NuGet
+      - name: Set up .NET (for NuGet push)
+        uses: actions/setup-dotnet@v4
+
+      - name: Install NuGet CLI
         uses: nuget/setup-nuget@v2
 
       - name: Pack NuGet package (GitHub Packages)
@@ -72,11 +75,19 @@ jobs:
 
       - name: Publish NuGet package
         shell: pwsh
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          nuget push packaging/out/*.nupkg `
-            -Source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" `
-            -ApiKey "${{ secrets.GITHUB_TOKEN }}" `
-            -SkipDuplicate
+          $source = "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+          dotnet nuget add source $source `
+            --name github `
+            --username "${{ github.actor }}" `
+            --password $env:NUGET_AUTH_TOKEN `
+            --store-password-in-clear-text
+          dotnet nuget push packaging/out/*.nupkg `
+            --source github `
+            --api-key $env:NUGET_AUTH_TOKEN `
+            --skip-duplicate
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
