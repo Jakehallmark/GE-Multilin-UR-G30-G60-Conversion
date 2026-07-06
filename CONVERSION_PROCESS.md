@@ -512,12 +512,37 @@ def resolve_g60_flex_operand(operand, operand_map):
 
 #### FlexLogic syntax tokens (`AND(3)`, `TIMER 2`, `NOT`, etc.)
 
+FlexLogic gate/timer operands (`AND(n)`, `OR(n)`, `NAND(n)`, `NOR(n)`, `TIMER n`, `NOT`, `XOR`, `END`) store a firmware-internal `FlexValue` that encodes both an **opcode** and an **input count** (or timer index). G60 expects the wide form: `(opcode << 16) | count`.
+
+G30 source files arrive in one of two encodings:
+
+| Style | Typical source | `AND(2)` FlexValue | Opcode layout |
+|-------|----------------|-------------------|---------------|
+| **Legacy packed** | Older G30 exports (e.g. Leesburg) | `10754` (`0x2A02`) | `(opcode << 8) \| count` — fits in 16 bits |
+| **Wide** | Newer G30 exports and native G60 (e.g. HCHPublix, Publix 1367) | `2752514` (`0x2A0002`) | `(opcode << 16) \| count` — already G60-compatible |
+
 ```python
 def _flexlogic_syntax_code(g30_fv: int) -> int:
+    # Wide values are already G60-compatible; shifting again corrupts the code.
+    if g30_fv > 0xFFFF:
+        return g30_fv
     return ((g30_fv >> 8) << 16) | (g30_fv & 0xFF)
 ```
 
-**Why:** FlexLogic gate/timer tokens encode `(opcode << 8) | count` on G30 but `(opcode << 16) | count` on G60. A naive multiply-by-256 corrupts the input-count byte and causes UR Setup to reject the equation.
+**Examples:**
+
+| Token | Legacy packed (G30) | After conversion | Wide (G30) | After conversion |
+|-------|--------------------:|-----------------:|-----------:|-----------------:|
+| `AND(2)` | `10754` | `2752514` | `2752514` | `2752514` (unchanged) |
+| `NOT` | `8704` | `2228224` | `2228224` | `2228224` (unchanged) |
+| `OR(2)` | `10242` | `2621442` | `2621442` | `2621442` (unchanged) |
+| `END` | `8192` | `2097152` | `2097152` | `2097152` (unchanged) |
+
+**Why two formats exist:** UR Setup began exporting FlexLogic syntax codes in the wide G60 form in newer G30 firmware exports. Legacy files still use the 16-bit packed form. The `> 0xFFFF` guard distinguishes them without needing firmware version metadata.
+
+**Failure mode (fixed 2026-07-06):** Applying the shift unconditionally to wide-format G30 files double-encoded the opcode (e.g. `AND(2)` `2752514` → `704643074`). UR Setup rejected those `UR_DATA_FLEXLOGIC_ENTRY` rows ("Error reading value… FLEXLOGIC ENTRY"), reset them to `Off`, and downstream operands then reported "Output of the token … is not connected" — even when the contact operand itself (`Gen Aux On(H8a)`) was correct.
+
+**Note:** `END` is often resolved earlier via the G60 operand table (same numeric code on both devices) and never reaches `_flexlogic_syntax_code()`. Gate and timer tokens typically do.
 
 #### Unresolvable operands
 
@@ -678,6 +703,7 @@ These attributes always come from the G60 template:
 | G30 setting has no G60 register | Recorded as **dropped**; value not written |
 | G60 setting has no G30 source | **G60-only**; template default kept |
 | Flex operand unresolvable on G60 | Template default kept; not written |
+| FlexLogic syntax code double-shifted on wide-format G30 export | UR Setup rejects `UR_DATA_FLEXLOGIC_ENTRY` rows; cascading "token … is not connected" errors. Fixed by `_flexlogic_syntax_code()` pass-through for values `> 0xFFFF` |
 | User-display signal unknown or unavailable | Template default (`0`) kept; note in report |
 | Number value out of G60 range | Value written; **range warning** in report |
 | Output path would overwrite input | Script exits with error |
@@ -729,7 +755,7 @@ class G60OnlyRecord: ...     # G60 setting with no G30 source
 | **Text** | `value` | — | Direct copy |
 | **Number** | numeric quantity | `MinValue`, `MaxValue`, `Unit` | Decimal reformat; IEC threshold preserved; user-display Items remapped via signal table |
 | **Enum** | `value`, `EnumValue` | `EnumFormatIndex` | Display text + index copied; enum table stays G60 |
-| **Flex** | remapped `value` + `FlexValue` | default when unresolvable | Operand table lookup; VO assign base shift; FlexLogic opcode remap; hardware-address matching |
+| **Flex** | remapped `value` + `FlexValue` | default when unresolvable | Operand table lookup; VO assign base shift; FlexLogic opcode remap (packed → wide, wide pass-through); hardware-address matching |
 
 ---
 
@@ -745,4 +771,4 @@ class G60OnlyRecord: ...     # G60 setting with no G30 source
 
 ---
 
-*Generated from `convert_g30_to_g60.py` as of the user-display Item remapping enhancement.*
+*Generated from `convert_g30_to_g60.py` as of the FlexLogic dual-format syntax-code fix (2026-07-06).*

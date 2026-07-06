@@ -104,6 +104,15 @@ This uniquely identifies each register across both devices, regardless of firmwa
 
 **Hardware-unavailable operands:** If a G30 Flex setting references a measurement signal that doesn't exist in the G60 hardware configuration (for example, `SRC4 Ia RMS` on a G60 that has no Source 4), the setting reverts to the G60 template's default (`OFF`) rather than writing an invalid code.
 
+**FlexLogic syntax tokens (`AND(2)`, `OR(3)`, `TIMER 1`, `NOT`, etc.):** G30 exports use one of two encodings for gate/timer FlexValue codes:
+
+| Export style | Example `AND(2)` code | Converter action |
+|---|---|---|
+| **Legacy packed** (older G30 files) | `10754` — opcode in bits 8–15, count in bits 0–7 | Shift to G60 wide form → `2752514` |
+| **Wide** (newer G30 / native G60) | `2752514` — opcode in bits 16–23, count in bits 0–7 | Pass through unchanged |
+
+The converter detects the format automatically: values above `65535` are already wide and are not shifted again. Double-shifting wide codes (e.g. `2752514` → `704643074`) produces invalid FlexLogic entries and causes UR Setup "FLEXLOGIC ENTRY" memory-map errors, often followed by cascading "token … is not connected" messages in the equation editor.
+
 ### 4. Unmatched Settings
 
 | Case | Result |
@@ -185,7 +194,8 @@ When comparing the converted file against an expert-configured G60 reference in 
 
 ## Recent Changes
 
-- **2026-06-17**: Fixed FlexLogic **gate/timer** code translation. Parameterized tokens (`AND(n)`, `OR(n)`, `NAND(n)`, `TIMER n`) are encoded as `(opcode << 16) | count`, not a flat `× 256` shift. The old shift corrupted the input-count byte, so UR Setup rejected those entries ("Error reading value… FLEXLOGIC ENTRY") and reset them to `Off`, which then broke the surrounding equation ("Output of the token … is not connected"). `NOT`, `XOR`, `END`, and assign-VO codes were already correct and are unchanged.
+- **2026-07-06**: Fixed FlexLogic **gate/timer** double-shift for newer G30 exports. Some G30 files (including recent UR Setup exports) already store syntax-token codes in the wide G60 form (`AND(2)` = 2752514). The converter now shifts only packed 16-bit codes (e.g. 10754 → 2752514) and passes wide values through unchanged. Double-shifting produced invalid codes (e.g. 704643074) that caused UR Setup "FLEXLOGIC ENTRY" memory-map errors and cascading "token … is not connected" failures.
+- **2026-06-17**: Fixed FlexLogic **gate/timer** code translation for legacy packed G30 exports. Parameterized tokens (`AND(n)`, `OR(n)`, `NAND(n)`, `TIMER n`) encode as `(opcode << 16) | count` on G60, not a flat `× 256` shift.
 - **2026-06-17**: Flex operand remapping writes canonical G60 names when resolving contacts/VOs by hardware address (UR Setup recomputes the display name from the contact label, so this is cosmetic but keeps the XML self-consistent).
 - **2026-04-23**: Updated XML parsing to auto-detect encoding (UTF-8 first, then UTF-16 LE fallback). Added control character sanitization to handle G30 files with invalid characters in setting values or attributes.
 - **2026-04-23**: Improved numeric range detection to parse lower-firmware G30 number values consistently, reducing missed out-of-range warnings.
@@ -200,5 +210,5 @@ When comparing the converted file against an expert-configured G60 reference in 
 | `ERROR: File not found` | Wrong path or filename typo | Check the path passed to the script |
 | `ERROR: Output path would overwrite an input file` | Output directory is the same folder as the template | Use the default `Converted\` folder or pass a different output path |
 | Script opens and immediately closes | Python not on system PATH | Run from a terminal with `py convert_g30_to_g60.py ...` |
-| UR Setup "FLEXLOGIC ENTRY" memory-map error or "token … is not connected" | Operand display name does not match its FlexValue code, or G60 base template firmware differs from target relay | Re-run conversion with this script version; export a fresh `G60 Base.xml` from the **same firmware** as the target relay (e.g. 8.8x) and use that as the template |
+| UR Setup "FLEXLOGIC ENTRY" memory-map error or "token … is not connected" | Bad FlexLogic gate/timer FlexValue (often from double-shifting a wide-format G30 export), operand name/code mismatch, or G60 base template firmware differs from target relay | Re-run with the current script (detects packed vs wide syntax codes automatically); export a fresh `G60 Base.xml` from the **same firmware** as the target relay; check the HTML report for FlexLogic value changes |
 | Output filename looks wrong | G30 `deviceName` doesn't follow the expected `prefix_specs` pattern | The raw and derived device names are printed to the console; verify the G30 source file's `deviceName` attribute on line 2 |

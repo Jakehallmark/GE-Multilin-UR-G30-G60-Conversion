@@ -14,6 +14,7 @@ __pycache__/
 .venv/
 venv/
 .python_packages/
+test_flexlogic_syntax.py
 
 # Azure Function local secrets
 azure/function_app/local.settings.json

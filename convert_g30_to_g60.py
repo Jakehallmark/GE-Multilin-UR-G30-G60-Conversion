@@ -514,7 +514,14 @@ def remap_g30_flex_operand(
 
 
 def _flexlogic_syntax_code(g30_fv: int) -> int:
-    """Translate a G30 FlexLogic syntax-token code to its G60 equivalent."""
+    """Translate a G30 FlexLogic syntax-token code to its G60 equivalent.
+
+    Older G30 exports pack opcode and count into 16 bits: (opcode << 8) | count.
+    Newer G30 exports and G60 already store the wide form: (opcode << 16) | count.
+    Shifting an already-wide value corrupts the code and breaks FlexLogic import.
+    """
+    if g30_fv > 0xFFFF:
+        return g30_fv
     return ((g30_fv >> 8) << 16) | (g30_fv & 0xFF)
 
 
