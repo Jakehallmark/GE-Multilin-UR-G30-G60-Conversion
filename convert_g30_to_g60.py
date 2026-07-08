@@ -280,6 +280,29 @@ _ON_WORD = re.compile(r"\bOn\b")
 _OFF_WORD = re.compile(r"\bOff\b")
 _FLEXLOGIC_PRIMITIVE = re.compile(r"^(END|NOT|XOR|AND|OR|NAND|NOR|TIMER)\b", re.IGNORECASE)
 
+# IPv4 settings are stored as Number with MaxValue ~2^32-1. XML uses width-3
+# space-padded dotted-quads ('127.  0.  0.  1'); URS uses packed uint32.
+# Feeding them through reformat_number_value treats the first octet as a float
+# and grafts the rest of the template as a "unit", corrupting the address.
+_IPV4_LABEL_MARKERS = (
+    "IPV4",
+    "_IP_ADDRESS",
+    "IP_SUBNET",
+    "SUBNET_MASK",
+    "NETMASK",
+    "_GATEWAY",
+    "RT_X_DESTINATION",
+    "RT_X_NETMASK",
+    "RT_X_GATEWAY",
+    "DNP_CLIENT_ADDRESS",
+    "IEC_CLIENT_ADDRESS",
+)
+_IPV4_LABEL_EXCLUSIONS = ("_PORT", "UDP_PORT", "TCP_PORT", "HTTP_PORT")
+_DOTTED_IPV4_RE = re.compile(
+    r"^\s*(\d{1,3})\s*\.\s*(\d{1,3})\s*\.\s*(\d{1,3})\s*\.\s*(\d{1,3})\s*$"
+)
+_PACKED_IPV4_RE = re.compile(r"^\s*(\d{1,10})\s*$")
+
 
 def build_flex_operand_map(root: ET.Element) -> dict[str, str]:
     """Map flex operand display names to G60 FlexValue codes from firmware operand tables.
@@ -401,6 +424,134 @@ def remap_user_display_item(
     return g60_display, (
         f"User display item: {signal_name.strip()} ({g30_value} -> {g60_display})"
     )
+
+
+_ANALOGOPERAND_IEC_MAG_RE = re.compile(r"\.instMag\.f$|\.mag\.f$|\.f$")
+_CODED_URS_VALUE_RE = re.compile(r"^(\d+)\s+\((.+)\)\s*$", re.DOTALL)
+
+
+def normalize_iec_operand_stem(iec_path: str) -> str:
+    """Collapse IEC61850 FlexAnalog paths to a join key (drop .instMag.f / .mag.f)."""
+    stem = (iec_path or "").strip().replace(" ", "")
+    return _ANALOGOPERAND_IEC_MAG_RE.sub("", stem)
+
+
+def parse_analogoperand_to_61850_csv(path: Path) -> dict[str, str]:
+    """Parse AnalogoperandTo61850_*.csv → {decimal_code: iec_path}.
+
+    GE ships these under URPC Devices/ as ``HEX,Display Name,IEC.Path``.
+    Row 0 / FFFFFFFE sentinels and blank lines are skipped. Duplicate hex codes
+    keep the last non-empty path.
+    """
+    code_to_path: dict[str, str] = {}
+    text = path.read_text(encoding="utf-8", errors="replace")
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split(",", 2)
+        if len(parts) < 3:
+            continue
+        hex_code, _name, iec_path = parts[0].strip(), parts[1].strip(), parts[2].strip()
+        if not hex_code or not iec_path:
+            continue
+        if hex_code.upper() == "FFFFFFFE":
+            continue
+        try:
+            code = str(int(hex_code, 16))
+        except ValueError:
+            continue
+        code_to_path[code] = iec_path
+    return code_to_path
+
+
+def build_g30_to_g60_signal_names_via_analogoperands(
+    g30_csv: Path,
+    g60_csv: Path,
+    g60_code_to_name: dict[str, str],
+) -> dict[str, str]:
+    """Map G30 user-display signal codes → G60 EnumType-10013 display names.
+
+    Joins GE ``AnalogoperandTo61850`` CSVs on normalized IEC61850 path stems,
+    then resolves the G60 decimal code through the G60 Base signal table. Codes
+    that join to a G60 operand absent from table 10013 are omitted (those are
+    not valid user-display items on the target relay).
+    """
+    g30_code_to_path = parse_analogoperand_to_61850_csv(g30_csv)
+    g60_code_to_path = parse_analogoperand_to_61850_csv(g60_csv)
+
+    stem_to_g60_code: dict[str, str] = {}
+    for code, iec_path in g60_code_to_path.items():
+        stem = normalize_iec_operand_stem(iec_path)
+        if not stem:
+            continue
+        # First code wins for a stem (UR lists are stable; avoid thrashing).
+        stem_to_g60_code.setdefault(stem, code)
+
+    result: dict[str, str] = {}
+    for g30_code, iec_path in g30_code_to_path.items():
+        stem = normalize_iec_operand_stem(iec_path)
+        g60_code = stem_to_g60_code.get(stem)
+        if not g60_code:
+            continue
+        g60_name = g60_code_to_name.get(g60_code)
+        if not g60_name:
+            continue
+        result[g30_code] = g60_name
+    return result
+
+
+def build_signal_code_map_from_urs_annotations(
+    coded_values: list[tuple[str, str]],
+    g60_name_to_code: dict[str, str],
+) -> dict[str, str]:
+    """Build code→name from URS ``N (Name)`` annotations that match G60 signal names.
+
+    Used as a sparse supplement when a G30 code appears on DCMA / oscillography
+    (etc.) with a display name but is missing from the Analogoperand join.
+    """
+    result: dict[str, str] = {}
+    for code, name in coded_values:
+        name = (name or "").strip()
+        if not code or not name:
+            continue
+        if name in g60_name_to_code:
+            result.setdefault(code, name)
+    return result
+
+
+def parse_coded_urs_display(urs_value: str) -> tuple[str, str]:
+    """Split ``123 (Display)`` into (code, display); otherwise ("", value)."""
+    match = _CODED_URS_VALUE_RE.match((urs_value or "").strip())
+    if match:
+        return match.group(1), match.group(2)
+    return "", urs_value or ""
+
+
+def resolve_analogoperand_csv(firmware_side_dir: Path, preferred_fw: str = "") -> Optional[Path]:
+    """Pick AnalogoperandTo61850_*.csv under firmware/g30 or firmware/g60."""
+    if not firmware_side_dir.is_dir():
+        return None
+    candidates = sorted(firmware_side_dir.glob("AnalogoperandTo61850_*.csv"))
+    if not candidates:
+        return None
+    if preferred_fw:
+        digits = "".join(ch for ch in preferred_fw if ch.isdigit())
+        for path in candidates:
+            stem_digits = "".join(ch for ch in path.stem if ch.isdigit())
+            if digits and stem_digits.endswith(digits[-3:] if len(digits) >= 3 else digits):
+                return path
+            if digits and digits in stem_digits:
+                return path
+    # Prefer higher revision number when no explicit match.
+    def rev_key(path: Path) -> tuple:
+        digits = "".join(ch for ch in path.stem if ch.isdigit()) or "0"
+        try:
+            return (0, int(digits))
+        except ValueError:
+            return (1, path.name.lower())
+
+    return sorted(candidates, key=rev_key)[-1]
 
 
 def _is_logic_operand_table(items: str) -> bool:
@@ -544,13 +695,79 @@ def _flexlogic_syntax_code(g30_fv: int) -> int:
     return ((g30_fv >> 8) << 16) | (g30_fv & 0xFF)
 
 
+def is_ipv4_setting(label_id: str, template_value: str = "", raw_value: str = "") -> bool:
+    """Return True for IPv4 address/mask/route Number settings."""
+    label = label_id or ""
+    if any(ex in label for ex in _IPV4_LABEL_EXCLUSIONS):
+        return False
+    if any(marker in label for marker in _IPV4_LABEL_MARKERS):
+        return True
+    if _DOTTED_IPV4_RE.match(template_value or "") or _DOTTED_IPV4_RE.match(raw_value or ""):
+        return True
+    return False
+
+
+def parse_ipv4_octets(raw_value: str) -> Optional[tuple[int, int, int, int]]:
+    """Parse dotted-quad or packed-uint32 IP into four octets."""
+    raw = (raw_value or "").strip()
+    if not raw:
+        return None
+
+    dotted = _DOTTED_IPV4_RE.match(raw)
+    if dotted:
+        octets = tuple(int(g) for g in dotted.groups())
+        if all(0 <= o <= 255 for o in octets):
+            return octets  # type: ignore[return-value]
+        return None
+
+    packed = _PACKED_IPV4_RE.match(raw)
+    if packed:
+        try:
+            value = int(packed.group(1))
+        except ValueError:
+            return None
+        if 0 <= value <= 0xFFFFFFFF:
+            return (
+                (value >> 24) & 0xFF,
+                (value >> 16) & 0xFF,
+                (value >> 8) & 0xFF,
+                value & 0xFF,
+            )
+    return None
+
+
+def format_ipv4_xml_value(raw_value: str) -> Optional[str]:
+    """Format an IP as G60 XML Number value: width-3 space-padded dotted-quad."""
+    octets = parse_ipv4_octets(raw_value)
+    if octets is None:
+        return None
+    return ".".join(f"{octet:3d}" for octet in octets)
+
+
+def format_ipv4_urs_value(raw_value: str) -> Optional[str]:
+    """Format an IP as G60 URS DATA value: packed big-endian uint32 decimal."""
+    octets = parse_ipv4_octets(raw_value)
+    if octets is None:
+        return None
+    packed = (octets[0] << 24) | (octets[1] << 16) | (octets[2] << 8) | octets[3]
+    return str(packed)
+
+
 def reformat_number_value(g30_value: str, g60_template_value: str) -> str:
     """Reformat a G30 Number value to match the decimal precision of the G60 template value.
 
     UR Setup rejects values whose decimal precision doesn't match the register's
     expected format (e.g. '1.00 Hz' when the G60 register stores '1.000 Hz').
     We keep the G30 numeric quantity but emit it with the G60's decimal places.
+
+    IPv4 Number registers must not pass through this path — use
+    ``format_ipv4_xml_value`` / ``format_ipv4_urs_value`` instead.
     """
+    if is_ipv4_setting("", g60_template_value, g30_value):
+        formatted = format_ipv4_xml_value(g30_value)
+        if formatted is not None:
+            return formatted
+
     g30m = _NUM_PATTERN.match(g30_value.strip())
     g60m = _NUM_PATTERN.match(g60_template_value.strip())
     if not g30m or not g60m:
@@ -612,6 +829,17 @@ def transfer_value(
         return adjustment_note
 
     if stype == "Number":
+        label_id = g60_el.get("labelID", "")
+        if is_ipv4_setting(label_id, g60_template_value, raw_g30_value):
+            formatted_ip = format_ipv4_xml_value(raw_g30_value)
+            if formatted_ip is not None:
+                g60_el.set("value", clean_value(formatted_ip))
+                return adjustment_note
+            # Unparseable IP: keep template (safe default) rather than mangling.
+            return (
+                f"Unparseable IPv4 value {raw_g30_value!r}; kept G60 template default"
+            )
+
         adjusted_value, adjustment_note = maybe_adjust_legacy_number_value(g60_el, raw_g30_value)
         if adjusted_value is not None:
             raw_g30_value = adjusted_value

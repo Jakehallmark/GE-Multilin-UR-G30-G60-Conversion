@@ -50,6 +50,28 @@ jobs:
         shell: pwsh
         run: ./aio/build.ps1
 
+      # Optional: sign the release exe (requires secrets — see aio/CODE_SIGNING.md).
+      # - name: Azure login
+      #   if: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT != '' }}
+      #   uses: azure/login@v2
+      #   with:
+      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
+      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      #
+      # - name: Install signing tool
+      #   if: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT != '' }}
+      #   run: dotnet tool install -g --prerelease sign
+      #
+      # - name: Build and sign GUI exe
+      #   if: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT != '' }}
+      #   shell: pwsh
+      #   env:
+      #     ARTIFACT_SIGNING_ENDPOINT: ${{ secrets.ARTIFACT_SIGNING_ENDPOINT }}
+      #     ARTIFACT_SIGNING_ACCOUNT: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT }}
+      #     ARTIFACT_SIGNING_PROFILE: ${{ secrets.ARTIFACT_SIGNING_PROFILE }}
+      #   run: ./aio/build.ps1 -Sign
+
       - name: Verify exe
         shell: pwsh
         run: |
