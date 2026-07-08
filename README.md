@@ -70,7 +70,7 @@ python convert_g30_to_g60.py "source.xml" "C:\Work\Converted"
 ## Requirements
 
 - **CLI:** Python 3.10+ — standard library only
-- **GUI:** none (use `release/G30-to-G60-Converter.exe`)
+- **GUI:** Flet (`aio/requirements.txt`) — or use `release/G30-to-G60-Converter.exe`
 - **`bases/G60 Base*.xml`** must be present — one template per supported target firmware
 - G30 and G60 XML can be **UTF-8 or UTF-16 LE** (auto-detected)
 
@@ -81,11 +81,18 @@ python convert_g30_to_g60.py "source.xml" "C:\Work\Converted"
 ## Rebuilding the release exe
 
 ```powershell
-pip install pyinstaller
+pip install pyinstaller -r aio/requirements.txt
 .\aio\build.ps1
 ```
 
 Writes `release/G30-to-G60-Converter.exe` with all templates from `bases/` bundled inside.
+
+Run the GUI locally without building:
+
+```powershell
+pip install -r aio/requirements.txt
+python aio/app.py
+```
 
 ---
 
@@ -139,7 +146,7 @@ Or push a new patch tag (`v1.0.3`).
 ### Rebuild locally (optional)
 
 ```powershell
-pip install pyinstaller
+pip install pyinstaller -r aio/requirements.txt
 .\aio\build.ps1
 ```
 

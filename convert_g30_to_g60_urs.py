@@ -37,6 +37,7 @@ from convert_g30_to_g60 import (
     build_lookup,
     build_signal_code_map_from_urs_annotations,
     build_signal_operand_tables,
+    derive_g30_identity_from_urs_stem,
     derive_output_device_name,
     derive_output_file_stem,
     format_ipv4_urs_value,
@@ -46,6 +47,7 @@ from convert_g30_to_g60 import (
     parse_xml,
     reformat_number_value,
     resolve_analogoperand_csv,
+    resolve_analogoperand_csv_detailed,
     transfer_value,
     ur_title_case,
 )
@@ -109,6 +111,7 @@ def load_g30_signal_code_to_name(
     app_dir: Path,
     *,
     companion_xml: Optional[Path] = None,
+    g30_version: str = "",
     g60_version: str = "",
 ) -> tuple[dict[str, str], str]:
     """Resolve G30 user-display code→name without requiring a per-site companion XML.
@@ -129,8 +132,12 @@ def load_g30_signal_code_to_name(
             return code_to_name, f"companion XML ({companion_xml.name})"
 
     fw = firmware_dir(app_dir)
-    g30_csv = resolve_analogoperand_csv(fw / "g30")
-    g60_csv = resolve_analogoperand_csv(fw / "g60", preferred_fw=g60_version)
+    g30_csv, g30_expected_rev, g30_exact = resolve_analogoperand_csv_detailed(
+        fw / "g30", preferred_fw=g30_version
+    )
+    g60_csv, g60_expected_rev, g60_exact = resolve_analogoperand_csv_detailed(
+        fw / "g60", preferred_fw=g60_version
+    )
     code_to_name: dict[str, str] = {}
     source = "unavailable"
 
@@ -140,6 +147,14 @@ def load_g30_signal_code_to_name(
         )
         if code_to_name:
             source = f"Analogoperand CSVs ({g30_csv.name} + {g60_csv.name})"
+            if g30_version and not g30_exact:
+                source += (
+                    f" [fallback: expected AnalogoperandTo61850_{g30_expected_rev}.csv]"
+                )
+            if g60_version and not g60_exact:
+                source += (
+                    f" [fallback: expected AnalogoperandTo61850_{g60_expected_rev}.csv]"
+                )
 
     # Supplement with any annotated URS values whose display name exists on G60.
     annotated: list[tuple[str, str]] = []
@@ -303,12 +318,16 @@ def convert_urs(
     companion = g30_xml_path or find_companion_xml(g30_urs_path)
     g60_order_code = g60_work.get("orderCode", g60_urs_tpl.order_code)
     g60_version = g60_work.get("version", g60_urs_tpl.firmware_version)
+    g30_version = g30_urs.firmware_version
+    if companion and companion.exists():
+        g30_version = parse_xml(companion).get("version", g30_version) or g30_version
 
     g30_signal_code_to_name, signal_source = load_g30_signal_code_to_name(
         g30_urs,
         g60_work,
         root_dir,
         companion_xml=companion if companion and companion.exists() else None,
+        g30_version=g30_version or "",
         g60_version=g60_version or "",
     )
     g60_signal_code_to_name, g60_signal_name_to_code = build_signal_operand_tables(g60_work)
@@ -318,6 +337,8 @@ def convert_urs(
             f"  User display map : {len(g30_signal_code_to_name):,} G30 codes "
             f"via {signal_source}"
         )
+        if g30_version:
+            print(f"  G30 firmware     : {g30_version}")
     else:
         print(
             "  Warning: G30 user-display signal map unavailable; "
@@ -325,11 +346,31 @@ def convert_urs(
             file=sys.stderr,
         )
 
+    fw_dir = firmware_dir(root_dir)
+    _g30_csv, g30_expected, g30_exact = resolve_analogoperand_csv_detailed(
+        fw_dir / "g30", preferred_fw=g30_version or ""
+    )
+    _g60_csv, g60_expected, g60_exact = resolve_analogoperand_csv_detailed(
+        fw_dir / "g60", preferred_fw=g60_version or ""
+    )
+    if g30_version and not g30_exact:
+        print(
+            f"  Warning: missing firmware/g30/AnalogoperandTo61850_{g30_expected}.csv "
+            f"for G30 FW {g30_version}; using {_g30_csv.name if _g30_csv else 'none'}",
+            file=sys.stderr,
+        )
+    if g60_version and not g60_exact:
+        print(
+            f"  Warning: missing firmware/g60/AnalogoperandTo61850_{g60_expected}.csv "
+            f"for G60 FW {g60_version}; using {_g60_csv.name if _g60_csv else 'none'}",
+            file=sys.stderr,
+        )
+
     if companion and companion.exists():
         g30_device_raw = parse_xml(companion).get("deviceName", g30_urs.order_code)
     else:
-        # Without a companion XML, derive identity from the .urs filename stem.
-        g30_device_raw = g30_urs_path.stem.lower()
+        # Without a companion XML, derive identity from the .urs filename.
+        g30_device_raw = derive_g30_identity_from_urs_stem(g30_urs_path.stem)
 
     output_device_name = ur_title_case(
         derive_output_device_name(g30_device_raw, g60_order_code)

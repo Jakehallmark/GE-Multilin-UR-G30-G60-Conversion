@@ -1,5 +1,5 @@
 # Build the standalone GUI exe and copy it to release/ for GitHub tagging.
-# Requires: pip install pyinstaller
+# Requires: pip install -r aio/requirements.txt pyinstaller
 #
 #   C:\path\to\repo\aio\build.ps1
 #   C:\path\to\repo\aio\build.ps1 -Sign          # also Authenticode-sign (see CODE_SIGNING.md)
@@ -43,9 +43,9 @@ if (-not (Get-ChildItem -LiteralPath $BasesDir -Filter "G60 Base*.xml" -ErrorAct
 
 $ursCount = (Get-ChildItem -LiteralPath $BasesDir -Filter "G60 Base*.urs" -ErrorAction SilentlyContinue).Count
 if ($ursCount -eq 0) {
-    Write-Warning "No G60 Base*.urs files in $BasesDir — URS tab will be disabled until paired .urs bases are added."
+    Write-Warning "No G60 Base*.urs files in $BasesDir - URS conversion will be disabled until paired .urs bases are added."
 } else {
-    Write-Host "Bundling $ursCount URS base template(s) for the URS converter tab."
+    Write-Host "Bundling $ursCount URS base template(s) for URS conversion."
 }
 
 $running = Get-Process -Name $ExeName -ErrorAction SilentlyContinue
@@ -75,29 +75,49 @@ if (Test-Path -LiteralPath $StageDir) {
     Remove-Item -LiteralPath $StageDir -Recurse -Force
 }
 
+$fletExe = Get-Command flet -ErrorAction SilentlyContinue
+if (-not $fletExe) {
+    $fallbackFlet = Join-Path $env:LOCALAPPDATA "Python\pythoncore-3.14-64\Scripts\flet.exe"
+    if (Test-Path -LiteralPath $fallbackFlet) {
+        $fletExe = Get-Command $fallbackFlet
+    } else {
+        throw "flet CLI not found. Run: pip install -r aio/requirements.txt"
+    }
+}
+
 Push-Location $AioDir
 try {
-    python -m PyInstaller `
-        --noconfirm `
-        --clean `
-        --onefile `
-        --windowed `
-        --noupx `
-        --name $ExeName `
+    # Repo-root modules (convert_g30_to_g60, urs_io, etc.) live outside aio/.
+    # PyInstaller only searches aio/ by default; PYTHONPATH makes them discoverable.
+    $prevPythonPath = $env:PYTHONPATH
+    $env:PYTHONPATH = if ($prevPythonPath) { "$RepoRoot;$prevPythonPath" } else { $RepoRoot }
+
+    & $fletExe.Source pack app.py `
+        -y `
+        -n $ExeName `
         --distpath $StageDir `
-        --workpath (Join-Path $AioDir "build") `
-        --specpath $AioDir `
         --add-data "$BasesDir;bases" `
         --add-data "$FirmwareDir;firmware" `
-        --paths $RepoRoot `
-        app.py
+        --file-description "GE Multilin UR G30 to G60 settings converter" `
+        --product-name "G30 to G60 Converter" `
+        --hidden-import convert_g30_to_g60 `
+        --hidden-import convert_g30_to_g60_urs `
+        --hidden-import urs_io `
+        --hidden-import base_templates `
+        --hidden-import aio.base_templates
+
+    if ($null -ne $prevPythonPath) {
+        $env:PYTHONPATH = $prevPythonPath
+    } else {
+        Remove-Item Env:PYTHONPATH -ErrorAction SilentlyContinue
+    }
 
     if ($LASTEXITCODE -ne 0) {
-        throw "PyInstaller failed with exit code $LASTEXITCODE"
+        throw "flet pack failed with exit code $LASTEXITCODE"
     }
 
     if (-not (Test-Path -LiteralPath $StageExe)) {
-        throw "PyInstaller finished but staged exe was not created: $StageExe"
+        throw "flet pack finished but staged exe was not created: $StageExe"
     }
 
     Copy-Item -LiteralPath $StageExe -Destination $ReleaseExe -Force

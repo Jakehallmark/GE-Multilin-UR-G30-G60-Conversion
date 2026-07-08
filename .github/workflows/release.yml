@@ -43,8 +43,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade pip pyinstaller
+      - name: Install build dependencies
+        run: python -m pip install --upgrade pip pyinstaller -r aio/requirements.txt
 
       - name: Build GUI exe
         shell: pwsh

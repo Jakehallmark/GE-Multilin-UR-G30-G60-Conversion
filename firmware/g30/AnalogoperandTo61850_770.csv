@@ -1,0 +1,2374 @@
+0,Off,LLN0.Zero.mag.f
+FFFFFFFE,Not Implemented Yet,LLN0.TBD.mag.f
+
+B210,IEC61850 GOOSE Analog Input 1 ,GGIO3.AnIn01.mag.f
+B212,IEC61850 GOOSE Analog Input 2 ,GGIO3.AnIn02.mag.f
+B214,IEC61850 GOOSE Analog Input 3 ,GGIO3.AnIn03.mag.f
+B216,IEC61850 GOOSE Analog Input 4 ,GGIO3.AnIn04.mag.f
+B218,IEC61850 GOOSE Analog Input 5 ,GGIO3.AnIn05.mag.f
+B21A,IEC61850 GOOSE Analog Input 6 ,GGIO3.AnIn06.mag.f
+B21C,IEC61850 GOOSE Analog Input 7 ,GGIO3.AnIn07.mag.f
+B21E,IEC61850 GOOSE Analog Input 8 ,GGIO3.AnIn08.mag.f
+B220,IEC61850 GOOSE Analog Input 9 ,GGIO3.AnIn09.mag.f
+B222,IEC61850 GOOSE Analog Input 10 ,GGIO3.AnIn10.mag.f
+B224,IEC61850 GOOSE Analog Input 11 ,GGIO3.AnIn11.mag.f
+B226,IEC61850 GOOSE Analog Input 12 ,GGIO3.AnIn12.mag.f
+B228,IEC61850 GOOSE Analog Input 13 ,GGIO3.AnIn13.mag.f
+B22A,IEC61850 GOOSE Analog Input 14 ,GGIO3.AnIn14.mag.f
+B22C,IEC61850 GOOSE Analog Input 15 ,GGIO3.AnIn15.mag.f
+B22E,IEC61850 GOOSE Analog Input 16 ,GGIO3.AnIn16.mag.f
+B230,IEC61850 GOOSE Analog Input 17 ,GGIO3.AnIn17.mag.f
+B232,IEC61850 GOOSE Analog Input 18 ,GGIO3.AnIn18.mag.f
+B234,IEC61850 GOOSE Analog Input 19 ,GGIO3.AnIn19.mag.f
+B236,IEC61850 GOOSE Analog Input 20 ,GGIO3.AnIn20.mag.f
+B238,IEC61850 GOOSE Analog Input 21 ,GGIO3.AnIn21.mag.f
+B23A,IEC61850 GOOSE Analog Input 22 ,GGIO3.AnIn22.mag.f
+B23C,IEC61850 GOOSE Analog Input 23 ,GGIO3.AnIn23.mag.f
+B23E,IEC61850 GOOSE Analog Input 24 ,GGIO3.AnIn24.mag.f
+B240,IEC61850 GOOSE Analog Input 25 ,GGIO3.AnIn25.mag.f
+B242,IEC61850 GOOSE Analog Input 26 ,GGIO3.AnIn26.mag.f
+B244,IEC61850 GOOSE Analog Input 27 ,GGIO3.AnIn27.mag.f
+B246,IEC61850 GOOSE Analog Input 28 ,GGIO3.AnIn28.mag.f
+B248,IEC61850 GOOSE Analog Input 29 ,GGIO3.AnIn29.mag.f
+B24A,IEC61850 GOOSE Analog Input 30 ,GGIO3.AnIn30.mag.f
+B24C,IEC61850 GOOSE Analog Input 31 ,GGIO3.AnIn31.mag.f
+B24E,IEC61850 GOOSE Analog Input 32 ,GGIO3.AnIn32.mag.f
+B360,Watt Ground Fault 1 Operating Power,WattPSDE1.Watt.instMag.f
+B362,Watt Ground Fault 2 Operating Power,WattPSDE2.Watt.instMag.f
+B364,Watt Ground Fault 3 Operating Power,WattPSDE3.Watt.instMag.f
+B366,Watt Ground Fault 4 Operating Power,WattPSDE4.Watt.instMag.f
+B368,Watt Ground Fault 5 Operating Power,WattPSDE5.Watt.instMag.f
+B303,Wattmetric Gnd Flt 1 OV PKP,WattPSDE1.VolMin.setMag.i
+B304,Wattmetric Gnd Flt 2 OV PKP,WattPSDE2.VolMin.setMag.i
+B305,Wattmetric Gnd Flt 1 OC PKP,WattPSDE2.AmpMin.setMag.i
+16A0,RGF 1 Differential Ground Current Magnitude,RgDifPDIF1.DifAClc.net.instCVal.mag.f
+16A2,RGF 1 Restricted Ground Current Magnitude,RgDifPDIF1.RstA.net.instCVal.mag.f
+16A4,RGF 2 Differential Ground Current Magnitude,RgDifPDIF2.DifAClc.net.instCVal.mag.f
+16A6,RGF 2 Restricted Ground Current Magnitude,RgDifPDIF2.RstA.net.instCVal.mag.f
+16A8,RGF 3 Differential Ground Current Magnitude,RgDifPDIF3.DifAClc.net.instCVal.mag.f
+16AA,RGF 3 Restricted Ground Current Magnitude,RgDifPDIF3.RstA.net.instCVal.mag.f
+16AC,RGF 4 Differential Ground Current Magnitude,RgDifPDIF4.DifAClc.net.instCVal.mag.f
+16AE,RGF 4 Restricted Ground Current Magnitude,RgDifPDIF4.RstA.net.instCVal.mag.f
+16B0,RGF 5 Differential Ground Current Magnitude,RgDifPDIF5.DifAClc.net.instCVal.mag.f
+16B2,RGF 5 Restricted Ground Current Magnitude,RgDifPDIF5.RstA.net.instCVal.mag.f
+16B4,RGF 6 Differential Ground Current Magnitude,RgDifPDIF6.DifAClc.net.instCVal.mag.f
+16B6,RGF 6 Restricted Ground Current Magnitude,RgDifPDIF6.RstA.net.instCVal.mag.f
+1680,Sens Dir Power 1 Actual,SenPDOP1.TotW.instMag.f
+1682,Sens Dir Power 2 Actual,SenPDOP2.TotW.instMag.f
+16E0,Rate of Change 1 Actual,RteHzPFRC1.HzChgRte.instMag.f
+16E4,Rate of Change 2 Actual,RteHzPFRC2.HzChgRte.instMag.f
+16E8,Rate of Change 3 Actual,RteHzPFRC3.HzChgRte.instMag.f
+16EC,Rate of Change 4 Actual,RteHzPFRC4.HzChgRte.instMag.f
+2492,Differential Current IA Magnitude,LinDfPDIF1.DifAClc.phsA.instCVal.mag.f
+2494,Differential Current IB Magnitude,LinDfPDIF1.DifAClc.phsB.instCVal.mag.f
+2496,Differential Current IC Magnitude,LinDfPDIF1.DifAClc.phsC.instCVal.mag.f
+24B6,Differential Current IG Magnitude,LinDfPDIF1.DifAClc.neut.instCVal.mag.f
+24B0,Restraint Current IA,LinDfPDIF1.RstA.phsA.instCVal.mag.f
+24B2,Restraint Current IB,LinDfPDIF1.RstA.phsB.instCVal.mag.f
+24B4,Restraint Current IC,LinDfPDIF1.RstA.phsC.instCVal.mag.f
+24B9,Restraint Current IG,LinDfPDIF1.RstA.neut.instCVal.mag.f
+2480,Local IA Magnitude,LinDf0MMXU1.A.phsA.instCVal.mag.f
+2482,Local IB Magnitude,LinDf0MMXU1.A.phsB.instCVal.mag.f
+2484,Local IC Magnitude,LinDf0MMXU1.A.phsC.instCVal.mag.f
+2486,Remote1 IA Magnitude,LinDf1MMXU1.A.phsA.instCVal.mag.f
+2488,Remote1 IB Magnitude,LinDf1MMXU1.A.phsB.instCVal.mag.f
+248A,Remote1 IC Magnitude,LinDf1MMXU1.A.phsC.instCVal.mag.f
+248C,Remote2 IA Magnitude,LinDf2MMXU1.A.phsA.instCVal.mag.f
+248E,Remote2 IB Magnitude,LinDf2MMXU1.A.phsB.instCVal.mag.f
+2490,Remote2 IC Magnitude,LinDf2MMXU1.A.phsC.instCVal.mag.f
+
+1D80,SRC 1 Frequency,HThdMHAI1.Hz.instMag.f
+1D82,SRC 2 Frequency,HThdMHAI2.Hz.instMag.f
+1D84,SRC 3 Frequency,HThdMHAI3.Hz.instMag.f
+1D86,SRC 4 Frequency,HThdMHAI4.Hz.instMag.f
+1D88,SRC 5 Frequency,HThdMHAI5.Hz.instMag.f
+1D8A,SRC 6 Frequency,HThdMHAI6.Hz.instMag.f
+
+2500,Bus Diff IA Magnitude,BusDifPDIF1.DifAClc.phsA.instCVal.mag.f
+2502,Bus Diff IA Angle,BusDifPDIF1.DifAClc.phsA.instCVal.ang.f
+2503,Bus Diff IB Magnitude,BusDifPDIF1.DifAClc.phsB.instCVal.mag.f
+2505,Bus Diff IB Angle,BusDifPDIF1.DifAClc.phsB.instCVal.ang.f
+2506,Bus Diff IC Magnitude,BusDifPDIF1.DifAClc.phsC.instCVal.mag.f
+2508,Bus Diff IC Angle,BusDifPDIF1.DifAClc.phsC.instCVal.ang.f
+2509,Bus Rest IA Magnitude,BusDifPDIF1.RstA.phsA.instCVal.mag.f
+250B,Bus Rest IA Angle,BusDifPDIF1.RstA.phsA.instCVal.ang.f
+250C,Bus Rest IB Magnitude,BusDifPDIF1.RstA.phsB.instCVal.mag.f
+250E,Bus Rest IB Angle,BusDifPDIF1.RstA.phsB.instCVal.ang.f
+250F,Bus Rest IC Magnitude,BusDifPDIF1.RstA.phsC.instCVal.mag.f
+2511,Bus Rest IC Angle,BusDifPDIF1.RstA.phsC.instCVal.ang.f
+2520,Bus Diff IA Magnitude,BusDifPDIF2.DifAClc.phsA.instCVal.mag.f
+2522,Bus Diff IA Angle,BusDifPDIF2.DifAClc.phsA.instCVal.ang.f
+2523,Bus Diff IB Magnitude,BusDifPDIF2.DifAClc.phsB.instCVal.mag.f
+2525,Bus Diff IB Angle,BusDifPDIF2.DifAClc.phsB.instCVal.ang.f
+2526,Bus Diff IC Magnitude,BusDifPDIF2.DifAClc.phsC.instCVal.mag.f
+2528,Bus Diff IC Angle,BusDifPDIF2.DifAClc.phsC.instCVal.ang.f
+2529,Bus Rest IA Magnitude,BusDifPDIF2.RstA.phsA.instCVal.mag.f
+252B,Bus Rest IA Angle,BusDifPDIF2.RstA.phsA.instCVal.ang.f
+252C,Bus Rest IB Magnitude,BusDifPDIF2.RstA.phsB.instCVal.mag.f
+252E,Bus Rest IB Angle,BusDifPDIF2.RstA.phsB.instCVal.ang.f
+252F,Bus Rest IC Magnitude,BusDifPDIF2.RstA.phsC.instCVal.mag.f
+2531,Bus Rest IC Angle,BusDifPDIF2.RstA.phsC.instCVal.ang.f
+1C00,SRC 1 Three Phase Real Power,ACsrcMMXU1.TotW.instMag.f
+1C08,SRC 1 Three Phase Reactive Power,ACsrcMMXU1.TotVAr.instMag.f
+1C10,SRC 1 Three Phase Apparent Power,ACsrcMMXU1.TotVA.instMag.f
+1C18,SRC 1 Three Phase Power Factor,ACsrcMMXU1.TotPF.instMag.f
+1D80,SRC 1 Frequency,ACsrcMMXU1.Hz.instMag.f
+1A15,SRC 1 Phase AB Voltage Magnitude,ACsrcMMXU1.PPV.phsAB.instCVal.mag.f
+1A17,SRC 1 Phase AB Voltage Angle,ACsrcMMXU1.PPV.phsAB.instCVal.ang.f
+1A18,SRC 1 Phase BC Voltage Magnitude,ACsrcMMXU1.PPV.phsBC.instCVal.mag.f
+1A1A,SRC 1 Phase BC Voltage Angle,ACsrcMMXU1.PPV.phsBC.instCVal.ang.f
+1A1B,SRC 1 Phase CA Voltage Magnitude,ACsrcMMXU1.PPV.phsCA.instCVal.mag.f
+1A1D,SRC 1 Phase CA Voltage Angle,ACsrcMMXU1.PPV.phsCA.instCVal.ang.f
+1A0F,SRC 1 Phase AB Voltage RMS,ACsrcMMXU1.VabRMS.instMag.f
+1A11,SRC 1 Phase BC Voltage RMS,ACsrcMMXU1.VbcRMS.instMag.f
+1A13,SRC 1 Phase CA Voltage RMS,ACsrcMMXU1.VcaRMS.instMag.f
+1A06,SRC 1 Phase AG Voltage Magnitude,ACsrcMMXU1.PhV.phsA.instCVal.mag.f
+1A08,SRC 1 Phase AG Voltage Angle,ACsrcMMXU1.PhV.phsA.instCVal.ang.f
+1A09,SRC 1 Phase BG Voltage Magnitude,ACsrcMMXU1.PhV.phsB.instCVal.mag.f
+1A0B,SRC 1 Phase BG Voltage Angle,ACsrcMMXU1.PhV.phsB.instCVal.ang.f
+1A0C,SRC 1 Phase CG Voltage Magnitude,ACsrcMMXU1.PhV.phsC.instCVal.mag.f
+1A0E,SRC 1 Phase CG Voltage Angle,ACsrcMMXU1.PhV.phsC.instCVal.ang.f
+1A00,SRC 1 Phase AG Voltage RMS,ACsrcMMXU1.VaRMS.instMag.f
+1A02,SRC 1 Phase BG Voltage RMS,ACsrcMMXU1.VbRMS.instMag.f
+1A04,SRC 1 Phase CG Voltage RMS,ACsrcMMXU1.VcRMS.instMag.f
+1808,SRC 1 Phase A Current Magnitude,ACsrcMMXU1.A.phsA.instCVal.mag.f
+180A,SRC 1 Phase A Current Angle,ACsrcMMXU1.A.phsA.instCVal.ang.f
+180B,SRC 1 Phase B Current Magnitude,ACsrcMMXU1.A.phsB.instCVal.mag.f
+180D,SRC 1 Phase B Current Angle,ACsrcMMXU1.A.phsB.instCVal.ang.f
+180E,SRC 1 Phase C Current Magnitude,ACsrcMMXU1.A.phsC.instCVal.mag.f
+1810,SRC 1 Phase C Current Angle,ACsrcMMXU1.A.phsC.instCVal.ang.f
+1811,SRC 1 Neutral Current Magnitude,ACsrcMMXU1.A.res.instCVal.mag.f
+1813,SRC 1 Neutral Current Angle,ACsrcMMXU1.A.res.instCVal.ang.f
+1800,SRC 1 Phase A Current RMS,ACsrcMMXU1.AaRMS.instMag.f
+1802,SRC 1 Phase B Current RMS,ACsrcMMXU1.AbRMS.instMag.f
+1804,SRC 1 Phase C Current RMS,ACsrcMMXU1.AcRMS.instMag.f
+1806,SRC 1 Neutral Current RMS,ACsrcMMXU1.AresRMS.instMag.f
+1822,SRC 1 Differential Ground Current Magnitude,ACsrcMMXU1.Adif.instCVal.mag.f
+1824,SRC 1 Differential Ground Current Angle,ACsrcMMXU1.Adif.instCVal.ang.f
+1C02,SRC 1 Phase A Real Power,ACsrcMMXU1.W.phsA.instCVal.mag.f
+1C04,SRC 1 Phase B Real Power,ACsrcMMXU1.W.phsB.instCVal.mag.f
+1C06,SRC 1 Phase C Real Power,ACsrcMMXU1.W.phsC.instCVal.mag.f
+1C0A,SRC 1 Phase A Reactive Power,ACsrcMMXU1.VAr.phsA.instCVal.mag.f
+1C0C,SRC 1 Phase B Reactive Power,ACsrcMMXU1.VAr.phsB.instCVal.mag.f
+1C0E,SRC 1 Phase C Reactive Power,ACsrcMMXU1.VAr.phsC.instCVal.mag.f
+1C12,SRC 1 Phase A Apparent Power,ACsrcMMXU1.VA.phsA.instCVal.mag.f
+1C14,SRC 1 Phase B Apparent Power,ACsrcMMXU1.VA.phsB.instCVal.mag.f
+1C16,SRC 1 Phase C Apparent Power,ACsrcMMXU1.VA.phsC.instCVal.mag.f
+1C19,SRC 1 Phase A Power Factor,ACsrcMMXU1.PF.phsA.instCVal.mag.f
+1C1A,SRC 1 Phase B Power Factor,ACsrcMMXU1.PF.phsB.instCVal.mag.f
+1C1B,SRC 1 Phase C Power Factor,ACsrcMMXU1.PF.phsC.instCVal.mag.f
+1C20,SRC 2 Three Phase Real Power,ACsrcMMXU2.TotW.instMag.f
+1C28,SRC 2 Three Phase Reactive Power,ACsrcMMXU2.TotVAr.instMag.f
+1C30,SRC 2 Three Phase Apparent Power,ACsrcMMXU2.TotVA.instMag.f
+1C38,SRC 2 Three Phase Power Factor,ACsrcMMXU2.TotPF.instMag.f
+1D82,SRC 2 Frequency,ACsrcMMXU2.Hz.instMag.f
+1A55,SRC 2 Phase AB Voltage Magnitude,ACsrcMMXU2.PPV.phsAB.instCVal.mag.f
+1A57,SRC 2 Phase AB Voltage Angle,ACsrcMMXU2.PPV.phsAB.instCVal.ang.f
+1A58,SRC 2 Phase BC Voltage Magnitude,ACsrcMMXU2.PPV.phsBC.instCVal.mag.f
+1A5A,SRC 2 Phase BC Voltage Angle,ACsrcMMXU2.PPV.phsBC.instCVal.ang.f
+1A5B,SRC 2 Phase CA Voltage Magnitude,ACsrcMMXU2.PPV.phsCA.instCVal.mag.f
+1A5D,SRC 2 Phase CA Voltage Angle,ACsrcMMXU2.PPV.phsCA.instCVal.ang.f
+1A4F,SRC 2 Phase AB Voltage RMS,ACsrcMMXU2.VabRMS.instMag.f
+1A51,SRC 2 Phase BC Voltage RMS,ACsrcMMXU2.VbcRMS.instMag.f
+1A53,SRC 2 Phase CA Voltage RMS,ACsrcMMXU2.VcaRMS.instMag.f
+1A46,SRC 2 Phase AG Voltage Magnitude,ACsrcMMXU2.PhV.phsA.instCVal.mag.f
+1A48,SRC 2 Phase AG Voltage Angle,ACsrcMMXU2.PhV.phsA.instCVal.ang.f
+1A49,SRC 2 Phase BG Voltage Magnitude,ACsrcMMXU2.PhV.phsB.instCVal.mag.f
+1A4B,SRC 2 Phase BG Voltage Angle,ACsrcMMXU2.PhV.phsB.instCVal.ang.f
+1A4C,SRC 2 Phase CG Voltage Magnitude,ACsrcMMXU2.PhV.phsC.instCVal.mag.f
+1A4E,SRC 2 Phase CG Voltage Angle,ACsrcMMXU2.PhV.phsC.instCVal.ang.f
+1A40,SRC 2 Phase AG Voltage RMS,ACsrcMMXU2.VaRMS.instMag.f
+1A42,SRC 2 Phase BG Voltage RMS,ACsrcMMXU2.VbRMS.instMag.f
+1A44,SRC 2 Phase CG Voltage RMS,ACsrcMMXU2.VcRMS.instMag.f
+1848,SRC 2 Phase A Current Magnitude,ACsrcMMXU2.A.phsA.instCVal.mag.f
+184A,SRC 2 Phase A Current Angle,ACsrcMMXU2.A.phsA.instCVal.ang.f
+184B,SRC 2 Phase B Current Magnitude,ACsrcMMXU2.A.phsB.instCVal.mag.f
+184D,SRC 2 Phase B Current Angle,ACsrcMMXU2.A.phsB.instCVal.ang.f
+184E,SRC 2 Phase C Current Magnitude,ACsrcMMXU2.A.phsC.instCVal.mag.f
+1850,SRC 2 Phase C Current Angle,ACsrcMMXU2.A.phsC.instCVal.ang.f
+1851,SRC 2 Neutral Current Magnitude,ACsrcMMXU2.A.res.instCVal.mag.f
+1853,SRC 2 Neutral Current Angle,ACsrcMMXU2.A.res.instCVal.ang.f
+1840,SRC 2 Phase A Current RMS,ACsrcMMXU2.AaRMS.instMag.f
+1842,SRC 2 Phase B Current RMS,ACsrcMMXU2.AbRMS.instMag.f
+1844,SRC 2 Phase C Current RMS,ACsrcMMXU2.AcRMS.instMag.f
+1846,SRC 2 Neutral Current RMS,ACsrcMMXU2.AresRMS.instMag.f
+1862,SRC 2 Differential Ground Current Magnitude,ACsrcMMXU2.Adif.instCVal.mag.f
+1864,SRC 2 Differential Ground Current Angle,ACsrcMMXU2.Adif.instCVal.ang.f
+1C22,SRC 2 Phase A Real Power,ACsrcMMXU2.W.phsA.instCVal.mag.f
+1C24,SRC 2 Phase B Real Power,ACsrcMMXU2.W.phsB.instCVal.mag.f
+1C26,SRC 2 Phase C Real Power,ACsrcMMXU2.W.phsC.instCVal.mag.f
+1C2A,SRC 2 Phase A Reactive Power,ACsrcMMXU2.VAr.phsA.instCVal.mag.f
+1C2C,SRC 2 Phase B Reactive Power,ACsrcMMXU2.VAr.phsB.instCVal.mag.f
+1C2E,SRC 2 Phase C Reactive Power,ACsrcMMXU2.VAr.phsC.instCVal.mag.f
+1C32,SRC 2 Phase A Apparent Power,ACsrcMMXU2.VA.phsA.instCVal.mag.f
+1C34,SRC 2 Phase B Apparent Power,ACsrcMMXU2.VA.phsB.instCVal.mag.f
+1C36,SRC 2 Phase C Apparent Power,ACsrcMMXU2.VA.phsC.instCVal.mag.f
+1C39,SRC 2 Phase A Power Factor,ACsrcMMXU2.PF.phsA.instCVal.mag.f
+1C3A,SRC 2 Phase B Power Factor,ACsrcMMXU2.PF.phsB.instCVal.mag.f
+1C3B,SRC 2 Phase C Power Factor,ACsrcMMXU2.PF.phsC.instCVal.mag.f
+1C40,SRC 3 Three Phase Real Power,ACsrcMMXU3.TotW.instMag.f
+1C48,SRC 3 Three Phase Reactive Power,ACsrcMMXU3.TotVAr.instMag.f
+1C50,SRC 3 Three Phase Apparent Power,ACsrcMMXU3.TotVA.instMag.f
+1C58,SRC 3 Three Phase Power Factor,ACsrcMMXU3.TotPF.instMag.f
+1D84,SRC 3 Frequency,ACsrcMMXU3.Hz.instMag.f
+1A95,SRC 3 Phase AB Voltage Magnitude,ACsrcMMXU3.PPV.phsAB.instCVal.mag.f
+1A97,SRC 3 Phase AB Voltage Angle,ACsrcMMXU3.PPV.phsAB.instCVal.ang.f
+1A98,SRC 3 Phase BC Voltage Magnitude,ACsrcMMXU3.PPV.phsBC.instCVal.mag.f
+1A9A,SRC 3 Phase BC Voltage Angle,ACsrcMMXU3.PPV.phsBC.instCVal.ang.f
+1A9B,SRC 3 Phase CA Voltage Magnitude,ACsrcMMXU3.PPV.phsCA.instCVal.mag.f
+1A9D,SRC 3 Phase CA Voltage Angle,ACsrcMMXU3.PPV.phsCA.instCVal.ang.f
+1A8F,SRC 3 Phase AB Voltage RMS,ACsrcMMXU3.VabRMS.instMag.f
+1A91,SRC 3 Phase BC Voltage RMS,ACsrcMMXU3.VbcRMS.instMag.f
+1A93,SRC 3 Phase CA Voltage RMS,ACsrcMMXU3.VcaRMS.instMag.f
+1A86,SRC 3 Phase AG Voltage Magnitude,ACsrcMMXU3.PhV.phsA.instCVal.mag.f
+1A88,SRC 3 Phase AG Voltage Angle,ACsrcMMXU3.PhV.phsA.instCVal.ang.f
+1A89,SRC 3 Phase BG Voltage Magnitude,ACsrcMMXU3.PhV.phsB.instCVal.mag.f
+1A8B,SRC 3 Phase BG Voltage Angle,ACsrcMMXU3.PhV.phsB.instCVal.ang.f
+1A8C,SRC 3 Phase CG Voltage Magnitude,ACsrcMMXU3.PhV.phsC.instCVal.mag.f
+1A8E,SRC 3 Phase CG Voltage Angle,ACsrcMMXU3.PhV.phsC.instCVal.ang.f
+1A80,SRC 3 Phase AG Voltage RMS,ACsrcMMXU3.VaRMS.instMag.f
+1A82,SRC 3 Phase BG Voltage RMS,ACsrcMMXU3.VbRMS.instMag.f
+1A84,SRC 3 Phase CG Voltage RMS,ACsrcMMXU3.VcRMS.instMag.f
+1888,SRC 3 Phase A Current Magnitude,ACsrcMMXU3.A.phsA.instCVal.mag.f
+188A,SRC 3 Phase A Current Angle,ACsrcMMXU3.A.phsA.instCVal.ang.f
+188B,SRC 3 Phase B Current Magnitude,ACsrcMMXU3.A.phsB.instCVal.mag.f
+188D,SRC 3 Phase B Current Angle,ACsrcMMXU3.A.phsB.instCVal.ang.f
+188E,SRC 3 Phase C Current Magnitude,ACsrcMMXU3.A.phsC.instCVal.mag.f
+1890,SRC 3 Phase C Current Angle,ACsrcMMXU3.A.phsC.instCVal.ang.f
+1891,SRC 3 Neutral Current Magnitude,ACsrcMMXU3.A.res.instCVal.mag.f
+1893,SRC 3 Neutral Current Angle,ACsrcMMXU3.A.res.instCVal.ang.f
+1880,SRC 3 Phase A Current RMS,ACsrcMMXU3.AaRMS.instMag.f
+1882,SRC 3 Phase B Current RMS,ACsrcMMXU3.AbRMS.instMag.f
+1884,SRC 3 Phase C Current RMS,ACsrcMMXU3.AcRMS.instMag.f
+1886,SRC 3 Neutral Current RMS,ACsrcMMXU3.AresRMS.instMag.f
+18A2,SRC 3 Differential Ground Current Magnitude,ACsrcMMXU3.Adif.instCVal.mag.f
+18A4,SRC 3 Differential Ground Current Angle,ACsrcMMXU3.Adif.instCVal.ang.f
+1C42,SRC 3 Phase A Real Power,ACsrcMMXU3.W.phsA.instCVal.mag.f
+1C44,SRC 3 Phase B Real Power,ACsrcMMXU3.W.phsB.instCVal.mag.f
+1C46,SRC 3 Phase C Real Power,ACsrcMMXU3.W.phsC.instCVal.mag.f
+1C4A,SRC 3 Phase A Reactive Power,ACsrcMMXU3.VAr.phsA.instCVal.mag.f
+1C4C,SRC 3 Phase B Reactive Power,ACsrcMMXU3.VAr.phsB.instCVal.mag.f
+1C4E,SRC 3 Phase C Reactive Power,ACsrcMMXU3.VAr.phsC.instCVal.mag.f
+1C52,SRC 3 Phase A Apparent Power,ACsrcMMXU3.VA.phsA.instCVal.mag.f
+1C54,SRC 3 Phase B Apparent Power,ACsrcMMXU3.VA.phsB.instCVal.mag.f
+1C56,SRC 3 Phase C Apparent Power,ACsrcMMXU3.VA.phsC.instCVal.mag.f
+1C59,SRC 3 Phase A Power Factor,ACsrcMMXU3.PF.phsA.instCVal.mag.f
+1C5A,SRC 3 Phase B Power Factor,ACsrcMMXU3.PF.phsB.instCVal.mag.f
+1C5B,SRC 3 Phase C Power Factor,ACsrcMMXU3.PF.phsC.instCVal.mag.f
+1C60,SRC 4 Three Phase Real Power,ACsrcMMXU4.TotW.instMag.f
+1C68,SRC 4 Three Phase Reactive Power,ACsrcMMXU4.TotVAr.instMag.f
+1C70,SRC 4 Three Phase Apparent Power,ACsrcMMXU4.TotVA.instMag.f
+1C78,SRC 4 Three Phase Power Factor,ACsrcMMXU4.TotPF.instMag.f
+1D86,SRC 4 Frequency,ACsrcMMXU4.Hz.instMag.f
+1AD5,SRC 4 Phase AB Voltage Magnitude,ACsrcMMXU4.PPV.phsAB.instCVal.mag.f
+1AD7,SRC 4 Phase AB Voltage Angle,ACsrcMMXU4.PPV.phsAB.instCVal.ang.f
+1AD8,SRC 4 Phase BC Voltage Magnitude,ACsrcMMXU4.PPV.phsBC.instCVal.mag.f
+1ADA,SRC 4 Phase BC Voltage Angle,ACsrcMMXU4.PPV.phsBC.instCVal.ang.f
+1ADB,SRC 4 Phase CA Voltage Magnitude,ACsrcMMXU4.PPV.phsCA.instCVal.mag.f
+1ADD,SRC 4 Phase CA Voltage Angle,ACsrcMMXU4.PPV.phsCA.instCVal.ang.f
+1ACF,SRC 4 Phase AB Voltage RMS,ACsrcMMXU4.VabRMS.instMag.f
+1AD1,SRC 4 Phase BC Voltage RMS,ACsrcMMXU4.VbcRMS.instMag.f
+1AD3,SRC 4 Phase CA Voltage RMS,ACsrcMMXU4.VcaRMS.instMag.f
+1AC6,SRC 4 Phase AG Voltage Magnitude,ACsrcMMXU4.PhV.phsA.instCVal.mag.f
+1AC8,SRC 4 Phase AG Voltage Angle,ACsrcMMXU4.PhV.phsA.instCVal.ang.f
+1AC9,SRC 4 Phase BG Voltage Magnitude,ACsrcMMXU4.PhV.phsB.instCVal.mag.f
+1ACB,SRC 4 Phase BG Voltage Angle,ACsrcMMXU4.PhV.phsB.instCVal.ang.f
+1ACC,SRC 4 Phase CG Voltage Magnitude,ACsrcMMXU4.PhV.phsC.instCVal.mag.f
+1ACE,SRC 4 Phase CG Voltage Angle,ACsrcMMXU4.PhV.phsC.instCVal.ang.f
+1AC0,SRC 4 Phase AG Voltage RMS,ACsrcMMXU4.VaRMS.instMag.f
+1AC2,SRC 4 Phase BG Voltage RMS,ACsrcMMXU4.VbRMS.instMag.f
+1AC4,SRC 4 Phase CG Voltage RMS,ACsrcMMXU4.VcRMS.instMag.f
+18C8,SRC 4 Phase A Current Magnitude,ACsrcMMXU4.A.phsA.instCVal.mag.f
+18CA,SRC 4 Phase A Current Angle,ACsrcMMXU4.A.phsA.instCVal.ang.f
+18CB,SRC 4 Phase B Current Magnitude,ACsrcMMXU4.A.phsB.instCVal.mag.f
+18CD,SRC 4 Phase B Current Angle,ACsrcMMXU4.A.phsB.instCVal.ang.f
+18CE,SRC 4 Phase C Current Magnitude,ACsrcMMXU4.A.phsC.instCVal.mag.f
+18D0,SRC 4 Phase C Current Angle,ACsrcMMXU4.A.phsC.instCVal.ang.f
+18D1,SRC 4 Neutral Current Magnitude,ACsrcMMXU4.A.res.instCVal.mag.f
+18D3,SRC 4 Neutral Current Angle,ACsrcMMXU4.A.res.instCVal.ang.f
+18C0,SRC 4 Phase A Current RMS,ACsrcMMXU4.AaRMS.instMag.f
+18C2,SRC 4 Phase B Current RMS,ACsrcMMXU4.AbRMS.instMag.f
+18C4,SRC 4 Phase C Current RMS,ACsrcMMXU4.AcRMS.instMag.f
+18C6,SRC 4 Neutral Current RMS,ACsrcMMXU4.AresRMS.instMag.f
+18E2,SRC 4 Differential Ground Current Magnitude,ACsrcMMXU4.Adif.instCVal.mag.f
+18E4,SRC 4 Differential Ground Current Angle,ACsrcMMXU4.Adif.instCVal.ang.f
+1C62,SRC 4 Phase A Real Power,ACsrcMMXU4.W.phsA.instCVal.mag.f
+1C64,SRC 4 Phase B Real Power,ACsrcMMXU4.W.phsB.instCVal.mag.f
+1C66,SRC 4 Phase C Real Power,ACsrcMMXU4.W.phsC.instCVal.mag.f
+1C6A,SRC 4 Phase A Reactive Power,ACsrcMMXU4.VAr.phsA.instCVal.mag.f
+1C6C,SRC 4 Phase B Reactive Power,ACsrcMMXU4.VAr.phsB.instCVal.mag.f
+1C6E,SRC 4 Phase C Reactive Power,ACsrcMMXU4.VAr.phsC.instCVal.mag.f
+1C72,SRC 4 Phase A Apparent Power,ACsrcMMXU4.VA.phsA.instCVal.mag.f
+1C74,SRC 4 Phase B Apparent Power,ACsrcMMXU4.VA.phsB.instCVal.mag.f
+1C76,SRC 4 Phase C Apparent Power,ACsrcMMXU4.VA.phsC.instCVal.mag.f
+1C79,SRC 4 Phase A Power Factor,ACsrcMMXU4.PF.phsA.instCVal.mag.f
+1C7A,SRC 4 Phase B Power Factor,ACsrcMMXU4.PF.phsB.instCVal.mag.f
+1C7B,SRC 4 Phase C Power Factor,ACsrcMMXU4.PF.phsC.instCVal.mag.f
+1C80,SRC 5 Three Phase Real Power,ACsrcMMXU5.TotW.instMag.f
+1C88,SRC 5 Three Phase Reactive Power,ACsrcMMXU5.TotVAr.instMag.f
+1C90,SRC 5 Three Phase Apparent Power,ACsrcMMXU5.TotVA.instMag.f
+1C98,SRC 5 Three Phase Power Factor,ACsrcMMXU5.TotPF.instMag.f
+1D88,SRC 5 Frequency,ACsrcMMXU5.Hz.instMag.f
+1B15,SRC 5 Phase AB Voltage Magnitude,ACsrcMMXU5.PPV.phsAB.instCVal.mag.f
+1B17,SRC 5 Phase AB Voltage Angle,ACsrcMMXU5.PPV.phsAB.instCVal.ang.f
+1B18,SRC 5 Phase BC Voltage Magnitude,ACsrcMMXU5.PPV.phsBC.instCVal.mag.f
+1B1A,SRC 5 Phase BC Voltage Angle,ACsrcMMXU5.PPV.phsBC.instCVal.ang.f
+1B1B,SRC 5 Phase CA Voltage Magnitude,ACsrcMMXU5.PPV.phsCA.instCVal.mag.f
+1B1D,SRC 5 Phase CA Voltage Angle,ACsrcMMXU5.PPV.phsCA.instCVal.ang.f
+1B0F,SRC 5 Phase AB Voltage RMS,ACsrcMMXU5.VabRMS.instMag.f
+1B11,SRC 5 Phase BC Voltage RMS,ACsrcMMXU5.VbcRMS.instMag.f
+1B13,SRC 5 Phase CA Voltage RMS,ACsrcMMXU5.VcaRMS.instMag.f
+1B06,SRC 5 Phase AG Voltage Magnitude,ACsrcMMXU5.PhV.phsA.instCVal.mag.f
+1B08,SRC 5 Phase AG Voltage Angle,ACsrcMMXU5.PhV.phsA.instCVal.ang.f
+1B09,SRC 5 Phase BG Voltage Magnitude,ACsrcMMXU5.PhV.phsB.instCVal.mag.f
+1B0B,SRC 5 Phase BG Voltage Angle,ACsrcMMXU5.PhV.phsB.instCVal.ang.f
+1B0C,SRC 5 Phase CG Voltage Magnitude,ACsrcMMXU5.PhV.phsC.instCVal.mag.f
+1B0E,SRC 5 Phase CG Voltage Angle,ACsrcMMXU5.PhV.phsC.instCVal.ang.f
+1B00,SRC 5 Phase AG Voltage RMS,ACsrcMMXU5.VaRMS.instMag.f
+1B02,SRC 5 Phase BG Voltage RMS,ACsrcMMXU5.VbRMS.instMag.f
+1B04,SRC 5 Phase CG Voltage RMS,ACsrcMMXU5.VcRMS.instMag.f
+1908,SRC 5 Phase A Current Magnitude,ACsrcMMXU5.A.phsA.instCVal.mag.f
+190A,SRC 5 Phase A Current Angle,ACsrcMMXU5.A.phsA.instCVal.ang.f
+190B,SRC 5 Phase B Current Magnitude,ACsrcMMXU5.A.phsB.instCVal.mag.f
+190D,SRC 5 Phase B Current Angle,ACsrcMMXU5.A.phsB.instCVal.ang.f
+190E,SRC 5 Phase C Current Magnitude,ACsrcMMXU5.A.phsC.instCVal.mag.f
+1910,SRC 5 Phase C Current Angle,ACsrcMMXU5.A.phsC.instCVal.ang.f
+1911,SRC 5 Neutral Current Magnitude,ACsrcMMXU5.A.res.instCVal.mag.f
+1913,SRC 5 Neutral Current Angle,ACsrcMMXU5.A.res.instCVal.ang.f
+1900,SRC 5 Phase A Current RMS,ACsrcMMXU5.AaRMS.instMag.f
+1902,SRC 5 Phase B Current RMS,ACsrcMMXU5.AbRMS.instMag.f
+1904,SRC 5 Phase C Current RMS,ACsrcMMXU5.AcRMS.instMag.f
+1906,SRC 5 Neutral Current RMS,ACsrcMMXU5.AresRMS.instMag.f
+1922,SRC 5 Differential Ground Current Magnitude,ACsrcMMXU5.Adif.instCVal.mag.f
+1924,SRC 5 Differential Ground Current Angle,ACsrcMMXU5.Adif.instCVal.ang.f
+1C82,SRC 5 Phase A Real Power,ACsrcMMXU5.W.phsA.instCVal.mag.f
+1C84,SRC 5 Phase B Real Power,ACsrcMMXU5.W.phsB.instCVal.mag.f
+1C86,SRC 5 Phase C Real Power,ACsrcMMXU5.W.phsC.instCVal.mag.f
+1C8A,SRC 5 Phase A Reactive Power,ACsrcMMXU5.VAr.phsA.instCVal.mag.f
+1C8C,SRC 5 Phase B Reactive Power,ACsrcMMXU5.VAr.phsB.instCVal.mag.f
+1C8E,SRC 5 Phase C Reactive Power,ACsrcMMXU5.VAr.phsC.instCVal.mag.f
+1C92,SRC 5 Phase A Apparent Power,ACsrcMMXU5.VA.phsA.instCVal.mag.f
+1C94,SRC 5 Phase B Apparent Power,ACsrcMMXU5.VA.phsB.instCVal.mag.f
+1C96,SRC 5 Phase C Apparent Power,ACsrcMMXU5.VA.phsC.instCVal.mag.f
+1C99,SRC 5 Phase A Power Factor,ACsrcMMXU5.PF.phsA.instCVal.mag.f
+1C9A,SRC 5 Phase B Power Factor,ACsrcMMXU5.PF.phsB.instCVal.mag.f
+1C9B,SRC 5 Phase C Power Factor,ACsrcMMXU5.PF.phsC.instCVal.mag.f
+1CA0,SRC 6 Three Phase Real Power,ACsrcMMXU6.TotW.instMag.f
+1CA8,SRC 6 Three Phase Reactive Power,ACsrcMMXU6.TotVAr.instMag.f
+1CB0,SRC 6 Three Phase Apparent Power,ACsrcMMXU6.TotVA.instMag.f
+1CB8,SRC 6 Three Phase Power Factor,ACsrcMMXU6.TotPF.instMag.f
+1D8A,SRC 6 Frequency,ACsrcMMXU6.Hz.instMag.f
+1B55,SRC 6 Phase AB Voltage Magnitude,ACsrcMMXU6.PPV.phsAB.instCVal.mag.f
+1B57,SRC 6 Phase AB Voltage Angle,ACsrcMMXU6.PPV.phsAB.instCVal.ang.f
+1B58,SRC 6 Phase BC Voltage Magnitude,ACsrcMMXU6.PPV.phsBC.instCVal.mag.f
+1B5A,SRC 6 Phase BC Voltage Angle,ACsrcMMXU6.PPV.phsBC.instCVal.ang.f
+1B5B,SRC 6 Phase CA Voltage Magnitude,ACsrcMMXU6.PPV.phsCA.instCVal.mag.f
+1B5D,SRC 6 Phase CA Voltage Angle,ACsrcMMXU6.PPV.phsCA.instCVal.ang.f
+1B4F,SRC 6 Phase AB Voltage RMS,ACsrcMMXU6.VabRMS.instMag.f
+1B51,SRC 6 Phase BC Voltage RMS,ACsrcMMXU6.VbcRMS.instMag.f
+1B53,SRC 6 Phase CA Voltage RMS,ACsrcMMXU6.VcaRMS.instMag.f
+1B46,SRC 6 Phase AG Voltage Magnitude,ACsrcMMXU6.PhV.phsA.instCVal.mag.f
+1B48,SRC 6 Phase AG Voltage Angle,ACsrcMMXU6.PhV.phsA.instCVal.ang.f
+1B49,SRC 6 Phase BG Voltage Magnitude,ACsrcMMXU6.PhV.phsB.instCVal.mag.f
+1B4B,SRC 6 Phase BG Voltage Angle,ACsrcMMXU6.PhV.phsB.instCVal.ang.f
+1B4C,SRC 6 Phase CG Voltage Magnitude,ACsrcMMXU6.PhV.phsC.instCVal.mag.f
+1B4E,SRC 6 Phase CG Voltage Angle,ACsrcMMXU6.PhV.phsC.instCVal.ang.f
+1B40,SRC 6 Phase AG Voltage RMS,ACsrcMMXU6.VaRMS.instMag.f
+1B42,SRC 6 Phase BG Voltage RMS,ACsrcMMXU6.VbRMS.instMag.f
+1B44,SRC 6 Phase CG Voltage RMS,ACsrcMMXU6.VcRMS.instMag.f
+1948,SRC 6 Phase A Current Magnitude,ACsrcMMXU6.A.phsA.instCVal.mag.f
+194A,SRC 6 Phase A Current Angle,ACsrcMMXU6.A.phsA.instCVal.ang.f
+194B,SRC 6 Phase B Current Magnitude,ACsrcMMXU6.A.phsB.instCVal.mag.f
+194D,SRC 6 Phase B Current Angle,ACsrcMMXU6.A.phsB.instCVal.ang.f
+194E,SRC 6 Phase C Current Magnitude,ACsrcMMXU6.A.phsC.instCVal.mag.f
+1950,SRC 6 Phase C Current Angle,ACsrcMMXU6.A.phsC.instCVal.ang.f
+1951,SRC 6 Neutral Current Magnitude,ACsrcMMXU6.A.res.instCVal.mag.f
+1953,SRC 6 Neutral Current Angle,ACsrcMMXU6.A.res.instCVal.ang.f
+1940,SRC 6 Phase A Current RMS,ACsrcMMXU6.AaRMS.instMag.f
+1942,SRC 6 Phase B Current RMS,ACsrcMMXU6.AbRMS.instMag.f
+1944,SRC 6 Phase C Current RMS,ACsrcMMXU6.AcRMS.instMag.f
+1946,SRC 6 Neutral Current RMS,ACsrcMMXU6.AresRMS.instMag.f
+1962,SRC 6 Differential Ground Current Magnitude,ACsrcMMXU6.Adif.instCVal.mag.f
+1964,SRC 6 Differential Ground Current Angle,ACsrcMMXU6.Adif.instCVal.ang.f
+1CA2,SRC 6 Phase A Real Power,ACsrcMMXU6.W.phsA.instCVal.mag.f
+1CA4,SRC 6 Phase B Real Power,ACsrcMMXU6.W.phsB.instCVal.mag.f
+1CA6,SRC 6 Phase C Real Power,ACsrcMMXU6.W.phsC.instCVal.mag.f
+1CAA,SRC 6 Phase A Reactive Power,ACsrcMMXU6.VAr.phsA.instCVal.mag.f
+1CAC,SRC 6 Phase B Reactive Power,ACsrcMMXU6.VAr.phsB.instCVal.mag.f
+1CAE,SRC 6 Phase C Reactive Power,ACsrcMMXU6.VAr.phsC.instCVal.mag.f
+1CB2,SRC 6 Phase A Apparent Power,ACsrcMMXU6.VA.phsA.instCVal.mag.f
+1CB4,SRC 6 Phase B Apparent Power,ACsrcMMXU6.VA.phsB.instCVal.mag.f
+1CB6,SRC 6 Phase C Apparent Power,ACsrcMMXU6.VA.phsC.instCVal.mag.f
+1CB9,SRC 6 Phase A Power Factor,ACsrcMMXU6.PF.phsA.instCVal.mag.f
+1CBA,SRC 6 Phase B Power Factor,ACsrcMMXU6.PF.phsB.instCVal.mag.f
+1CBB,SRC 6 Phase C Power Factor,ACsrcMMXU6.PF.phsC.instCVal.mag.f
+1A20,SRC 1 Auxiliary Voltage Magnitude,ACsrcMMXN1.Vaux.instCVal.mag.f
+1A22,SRC 1 Auxiliary Voltage Angle,ACsrcMMXN1.Vaux.instCVal.ang.f
+1A1E,SRC 1 Auxiliary Voltage RMS,ACsrcMMXN1.VauxRMS.instMag.f
+1816,SRC 1 Ground Current Magnitude,ACsrcMMXN1.Agnd.instCVal.mag.f
+1818,SRC 1 Ground Current Angle,ACsrcMMXN1.Agnd.instCVal.ang.f
+
+1814,SRC 1 Ground Current RMS,ACsrcMMXN1.AgndRMS.instMag.f
+1A60,SRC 2 Auxiliary Voltage Magnitude,ACsrcMMXN2.Vaux.instCVal.mag.f
+1A62,SRC 2 Auxiliary Voltage Angle,ACsrcMMXN2.Vaux.instCVal.ang.f
+1A5E,SRC 2 Auxiliary Voltage RMS,ACsrcMMXN2.VauxRMS.instMag.f
+1856,SRC 2 Ground Current Magnitude,ACsrcMMXN2.Agnd.instCVal.mag.f
+1858,SRC 2 Ground Current Angle,ACsrcMMXN2.Agnd.instCVal.ang.f
+1854,SRC 2 Ground Current RMS,ACsrcMMXN2.AgndRMS.instMag.f
+1AA0,SRC 3 Auxiliary Voltage Magnitude,ACsrcMMXN3.Vaux.instCVal.mag.f
+1AA2,SRC 3 Auxiliary Voltage Angle,ACsrcMMXN3.Vaux.instCVal.ang.f
+1A9E,SRC 3 Auxiliary Voltage RMS,ACsrcMMXN3.VauxRMS.instMag.f
+1896,SRC 3 Ground Current Magnitude,ACsrcMMXN3.Agnd.instCVal.mag.f
+1898,SRC 3 Ground Current Angle,ACsrcMMXN3.Agnd.instCVal.ang.f
+1894,SRC 3 Ground Current RMS,ACsrcMMXN3.AgndRMS.instMag.f
+1AE0,SRC 4 Auxiliary Voltage Magnitude,ACsrcMMXN4.Vaux.instCVal.mag.f
+1AE2,SRC 4 Auxiliary Voltage Angle,ACsrcMMXN4.Vaux.instCVal.ang.f
+1ADE,SRC 4 Auxiliary Voltage RMS,ACsrcMMXN4.VauxRMS.instMag.f
+18D6,SRC 4 Ground Current Magnitude,ACsrcMMXN4.Agnd.instCVal.mag.f
+18D8,SRC 4 Ground Current Angle,ACsrcMMXN4.Agnd.instCVal.ang.f
+18D4,SRC 4 Ground Current RMS,ACsrcMMXN4.AgndRMS.instMag.f
+1B20,SRC 5 Auxiliary Voltage Magnitude,ACsrcMMXN5.Vaux.instCVal.mag.f
+1B22,SRC 5 Auxiliary Voltage Angle,ACsrcMMXN5.Vaux.instCVal.ang.f
+1B1E,SRC 5 Auxiliary Voltage RMS,ACsrcMMXN5.VauxRMS.instMag.f
+1916,SRC 5 Ground Current Magnitude,ACsrcMMXN5.Agnd.instCVal.mag.f
+1918,SRC 5 Ground Current Angle,ACsrcMMXN5.Agnd.instCVal.ang.f
+1914,SRC 5 Ground Current RMS,ACsrcMMXN5.AgndRMS.instMag.f
+1B60,SRC 6 Auxiliary Voltage Magnitude,ACsrcMMXN6.Vaux.instCVal.mag.f
+1B62,SRC 6 Auxiliary Voltage Angle,ACsrcMMXN6.Vaux.instCVal.ang.f
+1B5E,SRC 6 Auxiliary Voltage RMS,ACsrcMMXN6.VauxRMS.instMag.f
+1956,SRC 6 Ground Current Magnitude,ACsrcMMXN6.Agnd.instCVal.mag.f
+1958,SRC 6 Ground Current Angle,ACsrcMMXN6.Agnd.instCVal.ang.f
+1954,SRC 6 Ground Current RMS,ACsrcMMXN6.AgndRMS.instMag.f
+
+1818,SRC 1 Ground Current Angle,ACsrcMMXN1.Agnd.instCVal.ang.f
+181C,SRC 1 Positive Sequence Current Magnitude,ACsrcMSQI1.SeqA.c1.instCVal.mag.f
+181E,SRC 1 Positive Sequence Current Angle,ACsrcMSQI1.SeqA.c1.instCVal.ang.f
+181F,SRC 1 Negative Sequence Current Magnitude,ACsrcMSQI1.SeqA.c2.instCVal.mag.f
+1821,SRC 1 Negative Sequence Current Angle,ACsrcMSQI1.SeqA.c2.instCVal.ang.f
+1819,SRC 1 Zero Sequence Current Magnitude,ACsrcMSQI1.SeqA.c3.instCVal.mag.f
+181B,SRC 1 Zero Sequence Current Angle,ACsrcMSQI1.SeqA.c3.instCVal.ang.f
+1A26,SRC 1 Positive Sequence Voltage Magnitude,ACsrcMSQI1.SeqV.c1.instCVal.mag.f
+1A28,SRC 1 Positive Sequence Voltage Angle,ACsrcMSQI1.SeqV.c1.instCVal.ang.f
+1A29,SRC 1 Negative Sequence Voltage Magnitude,ACsrcMSQI1.SeqV.c2.instCVal.mag.f
+1A2B,SRC 1 Negative Sequence Voltage Angle,ACsrcMSQI1.SeqV.c2.instCVal.ang.f
+1A23,SRC 1 Zero Sequence Voltage Magnitude,ACsrcMSQI1.SeqV.c3.instCVal.mag.f
+1A25,SRC 1 Zero Sequence Voltage Angle,ACsrcMSQI1.SeqV.c3.instCVal.ang.f
+185C,SRC 2 Positive Sequence Current Magnitude,ACsrcMSQI2.SeqA.c1.instCVal.mag.f
+185E,SRC 2 Positive Sequence Current Angle,ACsrcMSQI2.SeqA.c1.instCVal.ang.f
+185F,SRC 2 Negative Sequence Current Magnitude,ACsrcMSQI2.SeqA.c2.instCVal.mag.f
+1861,SRC 2 Negative Sequence Current Angle,ACsrcMSQI2.SeqA.c2.instCVal.ang.f
+1859,SRC 2 Zero Sequence Current Magnitude,ACsrcMSQI2.SeqA.c3.instCVal.mag.f
+185B,SRC 2 Zero Sequence Current Angle,ACsrcMSQI2.SeqA.c3.instCVal.ang.f
+1A66,SRC 2 Positive Sequence Voltage Magnitude,ACsrcMSQI2.SeqV.c1.instCVal.mag.f
+1A68,SRC 2 Positive Sequence Voltage Angle,ACsrcMSQI2.SeqV.c1.instCVal.ang.f
+1A69,SRC 2 Negative Sequence Voltage Magnitude,ACsrcMSQI2.SeqV.c2.instCVal.mag.f
+1A6B,SRC 2 Negative Sequence Voltage Angle,ACsrcMSQI2.SeqV.c2.instCVal.ang.f
+1A63,SRC 2 Zero Sequence Voltage Magnitude,ACsrcMSQI2.SeqV.c3.instCVal.mag.f
+1A65,SRC 2 Zero Sequence Voltage Angle,ACsrcMSQI2.SeqV.c3.instCVal.ang.f
+189C,SRC 3 Positive Sequence Current Magnitude,ACsrcMSQI3.SeqA.c1.instCVal.mag.f
+189E,SRC 3 Positive Sequence Current Angle,ACsrcMSQI3.SeqA.c1.instCVal.ang.f
+189F,SRC 3 Negative Sequence Current Magnitude,ACsrcMSQI3.SeqA.c2.instCVal.mag.f
+18A1,SRC 3 Negative Sequence Current Angle,ACsrcMSQI3.SeqA.c2.instCVal.ang.f
+1899,SRC 3 Zero Sequence Current Magnitude,ACsrcMSQI3.SeqA.c3.instCVal.mag.f
+189B,SRC 3 Zero Sequence Current Angle,ACsrcMSQI3.SeqA.c3.instCVal.ang.f
+1AA6,SRC 3 Positive Sequence Voltage Magnitude,ACsrcMSQI3.SeqV.c1.instCVal.mag.f
+1AA8,SRC 3 Positive Sequence Voltage Angle,ACsrcMSQI3.SeqV.c1.instCVal.ang.f
+1AA9,SRC 3 Negative Sequence Voltage Magnitude,ACsrcMSQI3.SeqV.c2.instCVal.mag.f
+1AAB,SRC 3 Negative Sequence Voltage Angle,ACsrcMSQI3.SeqV.c2.instCVal.ang.f
+1AA3,SRC 3 Zero Sequence Voltage Magnitude,ACsrcMSQI3.SeqV.c3.instCVal.mag.f
+1AA5,SRC 3 Zero Sequence Voltage Angle,ACsrcMSQI3.SeqV.c3.instCVal.ang.f
+18DC,SRC 4 Positive Sequence Current Magnitude,ACsrcMSQI4.SeqA.c1.instCVal.mag.f
+18DE,SRC 4 Positive Sequence Current Angle,ACsrcMSQI4.SeqA.c1.instCVal.ang.f
+18DF,SRC 4 Negative Sequence Current Magnitude,ACsrcMSQI4.SeqA.c2.instCVal.mag.f
+18E1,SRC 4 Negative Sequence Current Angle,ACsrcMSQI4.SeqA.c2.instCVal.ang.f
+18D9,SRC 4 Zero Sequence Current Magnitude,ACsrcMSQI4.SeqA.c3.instCVal.mag.f
+18DB,SRC 4 Zero Sequence Current Angle,ACsrcMSQI4.SeqA.c3.instCVal.ang.f
+1AE6,SRC 4 Positive Sequence Voltage Magnitude,ACsrcMSQI4.SeqV.c1.instCVal.mag.f
+1AE8,SRC 4 Positive Sequence Voltage Angle,ACsrcMSQI4.SeqV.c1.instCVal.ang.f
+1AE9,SRC 4 Negative Sequence Voltage Magnitude,ACsrcMSQI4.SeqV.c2.instCVal.mag.f
+1AEB,SRC 4 Negative Sequence Voltage Angle,ACsrcMSQI4.SeqV.c2.instCVal.ang.f
+1AE3,SRC 4 Zero Sequence Voltage Magnitude,ACsrcMSQI4.SeqV.c3.instCVal.mag.f
+1AE5,SRC 4 Zero Sequence Voltage Angle,ACsrcMSQI4.SeqV.c3.instCVal.ang.f
+191C,SRC 5 Positive Sequence Current Magnitude,ACsrcMSQI5.SeqA.c1.instCVal.mag.f
+191E,SRC 5 Positive Sequence Current Angle,ACsrcMSQI5.SeqA.c1.instCVal.ang.f
+191F,SRC 5 Negative Sequence Current Magnitude,ACsrcMSQI5.SeqA.c2.instCVal.mag.f
+1921,SRC 5 Negative Sequence Current Angle,ACsrcMSQI5.SeqA.c2.instCVal.ang.f
+1919,SRC 5 Zero Sequence Current Magnitude,ACsrcMSQI5.SeqA.c3.instCVal.mag.f
+191B,SRC 5 Zero Sequence Current Angle,ACsrcMSQI5.SeqA.c3.instCVal.ang.f
+1B26,SRC 5 Positive Sequence Voltage Magnitude,ACsrcMSQI5.SeqV.c1.instCVal.mag.f
+1B28,SRC 5 Positive Sequence Voltage Angle,ACsrcMSQI5.SeqV.c1.instCVal.ang.f
+1B29,SRC 5 Negative Sequence Voltage Magnitude,ACsrcMSQI5.SeqV.c2.instCVal.mag.f
+1B2B,SRC 5 Negative Sequence Voltage Angle,ACsrcMSQI5.SeqV.c2.instCVal.ang.f
+1B23,SRC 5 Zero Sequence Voltage Magnitude,ACsrcMSQI5.SeqV.c3.instCVal.mag.f
+1B25,SRC 5 Zero Sequence Voltage Angle,ACsrcMSQI5.SeqV.c3.instCVal.ang.f
+195C,SRC 6 Positive Sequence Current Magnitude,ACsrcMSQI6.SeqA.c1.instCVal.mag.f
+195E,SRC 6 Positive Sequence Current Angle,ACsrcMSQI6.SeqA.c1.instCVal.ang.f
+195F,SRC 6 Negative Sequence Current Magnitude,ACsrcMSQI6.SeqA.c2.instCVal.mag.f
+1961,SRC 6 Negative Sequence Current Angle,ACsrcMSQI6.SeqA.c2.instCVal.ang.f
+1959,SRC 6 Zero Sequence Current Magnitude,ACsrcMSQI6.SeqA.c3.instCVal.mag.f
+195B,SRC 6 Zero Sequence Current Angle,ACsrcMSQI6.SeqA.c3.instCVal.ang.f
+1B66,SRC 6 Positive Sequence Voltage Magnitude,ACsrcMSQI6.SeqV.c1.instCVal.mag.f
+1B68,SRC 6 Positive Sequence Voltage Angle,ACsrcMSQI6.SeqV.c1.instCVal.ang.f
+1B69,SRC 6 Negative Sequence Voltage Magnitude,ACsrcMSQI6.SeqV.c2.instCVal.mag.f
+1B6B,SRC 6 Negative Sequence Voltage Angle,ACsrcMSQI6.SeqV.c2.instCVal.ang.f
+1B63,SRC 6 Zero Sequence Voltage Magnitude,ACsrcMSQI6.SeqV.c3.instCVal.mag.f
+1B65,SRC 6 Zero Sequence Voltage Angle,ACsrcMSQI6.SeqV.c3.instCVal.ang.f
+1D00,SRC 1 Positive Watthour,EnrMtrMMTR1.PosTotWh.instMag.f
+1D02,SRC 1 Negative Watthour,EnrMtrMMTR1.NegTotWh.instMag.f
+1D04,SRC 1 Positive Varhour,EnrMtrMMTR1.PosTotVArh.instMag.f
+1D06,SRC 1 Negative Varhour,EnrMtrMMTR1.NegTotVArh.instMag.f
+1D10,SRC 2 Positive Watthour,EnrMtrMMTR2.PosTotWh.instMag.f
+1D12,SRC 2 Negative Watthour,EnrMtrMMTR2.NegTotWh.instMag.f
+1D14,SRC 2 Positive Varhour,EnrMtrMMTR2.PosTotVArh.instMag.f
+1D16,SRC 2 Negative Varhour,EnrMtrMMTR2.NegTotVArh.instMag.f
+1D20,SRC 3 Positive Watthour,EnrMtrMMTR3.PosTotWh.instMag.f
+1D22,SRC 3 Negative Watthour,EnrMtrMMTR3.NegTotWh.instMag.f
+1D24,SRC 3 Positive Varhour,EnrMtrMMTR3.PosTotVArh.instMag.f
+1D26,SRC 3 Negative Varhour,EnrMtrMMTR3.NegTotVArh.instMag.f
+1D30,SRC 4 Positive Watthour,EnrMtrMMTR4.PosTotWh.instMag.f
+1D32,SRC 4 Negative Watthour,EnrMtrMMTR4.NegTotWh.instMag.f
+1D34,SRC 4 Positive Varhour,EnrMtrMMTR4.PosTotVArh.instMag.f
+1D36,SRC 4 Negative Varhour,EnrMtrMMTR4.NegTotVArh.instMag.f
+1D40,SRC 5 Positive Watthour,EnrMtrMMTR5.PosTotWh.instMag.f
+1D42,SRC 5 Negative Watthour,EnrMtrMMTR5.NegTotWh.instMag.f
+1D44,SRC 5 Positive Varhour,EnrMtrMMTR5.PosTotVArh.instMag.f
+1D46,SRC 5 Negative Varhour,EnrMtrMMTR5.NegTotVArh.instMag.f
+1D50,SRC 6 Positive Watthour,EnrMtrMMTR6.PosTotWh.instMag.f
+1D52,SRC 6 Negative Watthour,EnrMtrMMTR6.NegTotWh.instMag.f
+1D54,SRC 6 Positive Varhour,EnrMtrMMTR6.PosTotVArh.instMag.f
+1D56,SRC 6 Negative Varhour,EnrMtrMMTR6.NegTotVArh.instMag.f
+9900,FlexElement 1 Actual,FlxElGAPC1.OpSig.instMag.f
+9902,FlexElement 2 Actual,FlxElGAPC2.OpSig.instMag.f
+9904,FlexElement 3 Actual,FlxElGAPC3.OpSig.instMag.f
+9906,FlexElement 4 Actual,FlxElGAPC4.OpSig.instMag.f
+9908,FlexElement 5 Actual,FlxElGAPC5.OpSig.instMag.f
+990A,FlexElement 6 Actual,FlxElGAPC6.OpSig.instMag.f
+990C,FlexElement 7 Actual,FlxElGAPC7.OpSig.instMag.f
+990E,FlexElement 8 Actual,FlxElGAPC8.OpSig.instMag.f
+9910,FlexElement 9 Actual,FlxElGAPC9.OpSig.instMag.f
+9912,FlexElement 10 Actual,FlxElGAPC10.OpSig.instMag.f
+9914,FlexElement 11 Actual,FlxElGAPC11.OpSig.instMag.f
+9916,FlexElement 12 Actual,FlxElGAPC12.OpSig.instMag.f
+9918,FlexElement 13 Actual,FlxElGAPC13.OpSig.instMag.f
+991A,FlexElement 14 Actual,FlxElGAPC14.OpSig.instMag.f
+991C,FlexElement 15 Actual,FlxElGAPC15.OpSig.instMag.f
+991E,FlexElement 16 Actual,FlxElGAPC16.OpSig.instMag.f
+2301,Transformer Differential Phasor Iad Magnitude,PctDifPDIF1.DifAClc.phsA.instCVal.mag.f
+2309,Transformer Differential Phasor Ibd Magnitude,PctDifPDIF1.DifAClc.phsB.instCVal.mag.f
+2311,Transformer Differential Phasor Icd Magnitude,PctDifPDIF1.DifAClc.phsC.instCVal.mag.f
+2302,Transformer Differential Phasor Iad Angle,PctDifPDIF1.DifAClc.phsA.instCVal.ang.f
+230A,Transformer Differential Phasor Ibd Angle,PctDifPDIF1.DifAClc.phsB.instCVal.ang.f
+2312,Transformer Differential Phasor Icd Angle,PctDifPDIF1.DifAClc.phsC.instCVal.ang.f
+2305,Transformer Differential 2nd Harm Iad Magnitude,PctDifPDIF1.DifA2ndH.phsA.instCVal.mag.f
+230D,Transformer Differential 2nd Harm Ibd Magnitude,PctDifPDIF1.DifA2ndH.phsB.instCVal.mag.f
+2315,Transformer Differential 2nd Harm Icd Magnitude,PctDifPDIF1.DifA2ndH.phsC.instCVal.mag.f
+2306,Transformer Differential 2nd Harm Iad Angle,PctDifPDIF1.DifA2ndH.phsA.instCVal.ang.f
+230E,Transformer Differential 2nd Harm Ibd Angle,PctDifPDIF1.DifA2ndH.phsB.instCVal.ang.f
+2316,Transformer Differential 2nd Harm Icd Angle,PctDifPDIF1.DifA2ndH.phsC.instCVal.ang.f
+2307,Transformer Differential 5th Harm Iad Magnitude,PctDifPDIF1.DifA5thH.phsA.instCVal.mag.f
+230F,Transformer Differential 5th Harm Ibd Magnitude,PctDifPDIF1.DifA5thH.phsB.instCVal.mag.f
+2317,Transformer Differential 5th Harm Icd Magnitude,PctDifPDIF1.DifA5thH.phsC.instCVal.mag.f
+2308,Transformer Differential 5th Harm Iad Angle,PctDifPDIF1.DifA5thH.phsA.instCVal.ang.f
+2310,Transformer Differential 5th Harm Ibd Angle,PctDifPDIF1.DifA5thH.phsB.instCVal.ang.f
+2318,Transformer Differential 5th Harm Icd Angle,PctDifPDIF1.DifA5thH.phsC.instCVal.ang.f
+
+2303,Transformer Restraint Phasor Iar Magnitude,PctDifPDIF1.RstA.phsA.instCVal.mag.f
+2304,Transformer Restraint Phasor Iar Angle,PctDifPDIF1.RstA.phsA.instCVal.ang.f
+230B,Transformer Restraint Phasor Ibr Magnitude,PctDifPDIF1.RstA.phsB.instCVal.mag.f
+230C,Transformer Restraint Phasor Ibr Angle,PctDifPDIF1.RstA.phsB.instCVal.ang.f
+2313,Transformer Restraint Phasor Icr Magnitude,PctDifPDIF1.RstA.phsC.instCVal.mag.f
+2314,Transformer Restraint Phasor Icr Angle,PctDifPDIF1.RstA.phsC.instCVal.ang.f
+
+2330,Transformer Top Oil Temperature,HPTmpSPTR1.ToOilTmp.instMag.f
+2331,Transformer Hottest Spot Temperature,HPTmpSPTR1.HPTmpClc.instMag.f
+2332,Transformer Aging Factor,AgeSPTR1.AgeRte.instMag.f
+
+21D0,B90 Bus Zone 1 DMag,B_DifPDIF1.BDifAClc.instCVal.mag.f
+21D5,B90 Bus Zone 1 RMag,B_DifPDIF1.BRstA.instCVal.mag.f
+21DE,B90 Bus Zone 2 DMag,B_DifPDIF2.BDifAClc.instCVal.mag.f
+21E3,B90 Bus Zone 2 RMag,B_DifPDIF2.BRstA.instCVal.mag.f
+21EC,B90 Bus Zone 3 DMag,B_DifPDIF3.BDifAClc.instCVal.mag.f
+21F1,B90 Bus Zone 3 RMag,B_DifPDIF3.BRstA.instCVal.mag.f
+21FA,B90 Bus Zone 4 DMag,B_DifPDIF4.BDifAClc.instCVal.mag.f
+21FF,B90 Bus Zone 4 RMag,B_DifPDIF4.BRstA.instCVal.mag.f
+2208,B90 Bus Zone 5 DMag,B_DifPDIF5.BDifAClc.instCVal.mag.f
+220D,B90 Bus Zone 5 RMag,B_DifPDIF5.BRstA.instCVal.mag.f
+2216,B90 Bus Zone 6 DMag,B_DifPDIF6.BDifAClc.instCVal.mag.f
+221B,B90 Bus Zone 6 RMag,B_DifPDIF6.BRstA.instCVal.mag.f
+
+21D4,B90 Bus Zone Diff Angle,B_DifPDIF1.BDifAClc.instCVal.ang.f
+21D7,B90 Bus Zone Rest Angle,B_DifPDIF1.BRstA.instCVal.ang.f
+21E2,B90 Bus Zone Diff Angle,B_DifPDIF2.BDifAClc.instCVal.ang.f
+21E5,B90 Bus Zone Rest Angle,B_DifPDIF2.BRstA.instCVal.ang.f
+21F0,B90 Bus Zone Diff Angle,B_DifPDIF3.BDifAClc.instCVal.ang.f
+21F3,B90 Bus Zone Rest Angle,B_DifPDIF3.BRstA.instCVal.ang.f
+21FE,B90 Bus Zone Diff Angle,B_DifPDIF4.BDifAClc.instCVal.ang.f
+2201,B90 Bus Zone Rest Angle,B_DifPDIF4.BRstA.instCVal.ang.f
+220C,B90 Bus Zone Diff Angle,B_DifPDIF5.BDifAClc.instCVal.ang.f
+220F,B90 Bus Zone Rest Angle,B_DifPDIF5.BRstA.instCVal.ang.f
+221A,B90 Bus Zone Diff Angle,B_DifPDIF6.BDifAClc.instCVal.ang.f
+221D,B90 Bus Zone Rest Angle,B_DifPDIF6.BRstA.instCVal.ang.f
+
+6F00,TRM 1 Current Magnitude,B_AmpMMXN1.ChA.instCVal.mag.f
+6F03,TRM 2 Current Magnitude,B_AmpMMXN2.ChA.instCVal.mag.f
+6F06,TRM 3 Current Magnitude,B_AmpMMXN3.ChA.instCVal.mag.f
+6F09,TRM 4 Current Magnitude,B_AmpMMXN4.ChA.instCVal.mag.f
+6F0C,TRM 5 Current Magnitude,B_AmpMMXN5.ChA.instCVal.mag.f
+6F0F,TRM 6 Current Magnitude,B_AmpMMXN6.ChA.instCVal.mag.f
+6F12,TRM 7 Current Magnitude,B_AmpMMXN7.ChA.instCVal.mag.f
+6F15,TRM 8 Current Magnitude,B_AmpMMXN8.ChA.instCVal.mag.f
+6F18,TRM 9 Current Magnitude,B_AmpMMXN9.ChA.instCVal.mag.f
+6F1B,TRM 10 Current Magnitude,B_AmpMMXN10.ChA.instCVal.mag.f
+6F1E,TRM 11 Current Magnitude,B_AmpMMXN11.ChA.instCVal.mag.f
+6F21,TRM 12 Current Magnitude,B_AmpMMXN12.ChA.instCVal.mag.f
+6F24,TRM 13 Current Magnitude,B_AmpMMXN13.ChA.instCVal.mag.f
+6F27,TRM 14 Current Magnitude,B_AmpMMXN14.ChA.instCVal.mag.f
+6F2A,TRM 15 Current Magnitude,B_AmpMMXN15.ChA.instCVal.mag.f
+6F2D,TRM 16 Current Magnitude,B_AmpMMXN16.ChA.instCVal.mag.f
+6F30,TRM 17 Current Magnitude,B_AmpMMXN17.ChA.instCVal.mag.f
+6F33,TRM 18 Current Magnitude,B_AmpMMXN18.ChA.instCVal.mag.f
+6F36,TRM 19 Current Magnitude,B_AmpMMXN19.ChA.instCVal.mag.f
+6F39,TRM 20 Current Magnitude,B_AmpMMXN20.ChA.instCVal.mag.f
+6F3C,TRM 21 Current Magnitude,B_AmpMMXN21.ChA.instCVal.mag.f
+6F3F,TRM 22 Current Magnitude,B_AmpMMXN22.ChA.instCVal.mag.f
+6F42,TRM 23 Current Magnitude,B_AmpMMXN23.ChA.instCVal.mag.f
+6F45,TRM 24 Current Magnitude,B_AmpMMXN24.ChA.instCVal.mag.f
+
+6F48,TRM 1 Voltage Magnitude,B_VolMMXN1.ChV.instCVal.mag.f
+6F4B,TRM 2 Voltage Magnitude,B_VolMMXN2.ChV.instCVal.mag.f
+6F4E,TRM 3 Voltage Magnitude,B_VolMMXN3.ChV.instCVal.mag.f
+6F51,TRM 4 Voltage Magnitude,B_VolMMXN4.ChV.instCVal.mag.f
+6F54,TRM 5 Voltage Magnitude,B_VolMMXN5.ChV.instCVal.mag.f
+6F57,TRM 6 Voltage Magnitude,B_VolMMXN6.ChV.instCVal.mag.f
+6F5A,TRM 7 Voltage Magnitude,B_VolMMXN7.ChV.instCVal.mag.f
+6F5D,TRM 8 Voltage Magnitude,B_VolMMXN8.ChV.instCVal.mag.f
+6F60,TRM 9 Voltage Magnitude,B_VolMMXN9.ChV.instCVal.mag.f
+6F63,TRM 10 Voltage Magnitude,B_VolMMXN10.ChV.instCVal.mag.f
+6F66,TRM 11 Voltage Magnitude,B_VolMMXN11.ChV.instCVal.mag.f
+6F69,TRM 12 Voltage Magnitude,B_VolMMXN12.ChV.instCVal.mag.f
+
+6F02,TRM 1 Current Angle,B_AmpMMXN1.ChA.instCVal.ang.f
+6F05,TRM 2 Current Angle,B_AmpMMXN2.ChA.instCVal.ang.f
+6F08,TRM 3 Current Angle,B_AmpMMXN3.ChA.instCVal.ang.f
+6F0B,TRM 4 Current Angle,B_AmpMMXN4.ChA.instCVal.ang.f
+6F0E,TRM 5 Current Angle,B_AmpMMXN5.ChA.instCVal.ang.f
+6F11,TRM 6 Current Angle,B_AmpMMXN6.ChA.instCVal.ang.f
+6F14,TRM 7 Current Angle,B_AmpMMXN7.ChA.instCVal.ang.f
+6F17,TRM 8 Current Angle,B_AmpMMXN8.ChA.instCVal.ang.f
+6F1A,TRM 9 Current Angle,B_AmpMMXN9.ChA.instCVal.ang.f
+6F1D,TRM 10 Current Angle,B_AmpMMXN10.ChA.instCVal.ang.f
+6F20,TRM 11 Current Angle,B_AmpMMXN11.ChA.instCVal.ang.f
+6F23,TRM 12 Current Angle,B_AmpMMXN12.ChA.instCVal.ang.f
+6F26,TRM 13 Current Angle,B_AmpMMXN13.ChA.instCVal.ang.f
+6F29,TRM 14 Current Angle,B_AmpMMXN14.ChA.instCVal.ang.f
+6F2C,TRM 15 Current Angle,B_AmpMMXN15.ChA.instCVal.ang.f
+6F2F,TRM 16 Current Angle,B_AmpMMXN16.ChA.instCVal.ang.f
+6F32,TRM 17 Current Angle,B_AmpMMXN17.ChA.instCVal.ang.f
+6F35,TRM 18 Current Angle,B_AmpMMXN18.ChA.instCVal.ang.f
+6F38,TRM 19 Current Angle,B_AmpMMXN19.ChA.instCVal.ang.f
+6F3B,TRM 20 Current Angle,B_AmpMMXN20.ChA.instCVal.ang.f
+6F3E,TRM 21 Current Angle,B_AmpMMXN21.ChA.instCVal.ang.f
+6F41,TRM 22 Current Angle,B_AmpMMXN22.ChA.instCVal.ang.f
+6F44,TRM 23 Current Angle,B_AmpMMXN23.ChA.instCVal.ang.f
+6F47,TRM 24 Current Angle,B_AmpMMXN24.ChA.instCVal.ang.f
+
+6F4A,TRM 1 Voltage Angle,B_VolMMXN1.ChV.instCVal.ang.f
+6F4D,TRM 2 Voltage Angle,B_VolMMXN2.ChV.instCVal.ang.f
+6F50,TRM 3 Voltage Angle,B_VolMMXN3.ChV.instCVal.ang.f
+6F53,TRM 4 Voltage Angle,B_VolMMXN4.ChV.instCVal.ang.f
+6F56,TRM 5 Voltage Angle,B_VolMMXN5.ChV.instCVal.ang.f
+6F59,TRM 6 Voltage Angle,B_VolMMXN6.ChV.instCVal.ang.f
+6F5C,TRM 7 Voltage Angle,B_VolMMXN7.ChV.instCVal.ang.f
+6F5F,TRM 8 Voltage Angle,B_VolMMXN8.ChV.instCVal.ang.f
+6F62,TRM 9 Voltage Angle,B_VolMMXN9.ChV.instCVal.ang.f
+6F65,TRM 10 Voltage Angle,B_VolMMXN10.ChV.instCVal.ang.f
+6F68,TRM 11 Voltage Angle,B_VolMMXN11.ChV.instCVal.ang.f
+6F6B,TRM 12 Voltage Angle,B_VolMMXN12.ChV.instCVal.ang.f
+
+6FD0,Terminal Frequency,B_FrqMMXN1.Hz.instMag.f
+6FD1,Terminal Tracking Frequency,B_FrqMMXN1.TrcHz.instMag.f
+
+24C4,Local Vcomp Mag,VCompMMXU1.VolLoc.instCVal.mag.f
+24C6,Local Vcomp Ang,VCompMMXU1.VolLoc.instCVal.ang.f
+24C7,Term 1 Vcomp Mag,VCompMMXU1.VolRem1.instCVal.mag.f
+24C9,Term 1 Vcomp Ang,VCompMMXU1.VolRem1.instCVal.ang.f
+24CA,Term 2 Vcomp Mag,VCompMMXU1.VolRem2.instCVal.mag.f
+24CC,Term 2 Vcomp Ang,VCompMMXU1.VolRem2.instCVal.ang.f
+
+2F00,Breaker 1 Arcing Acc Arcing Amp Phase A,CBArc1SCBR1.AccAbr.instMag.f
+2F02,Breaker 1 Arcing Acc Arcing Amp Phase B,CBArc2SCBR1.AccAbr.instMag.f
+2F04,Breaker 1 Arcing Acc Arcing Amp Phase C,CBArc3SCBR1.AccAbr.instMag.f
+2F06,Breaker 1 Arcing Operating Time Phase A,CBArc1SCBR1.RctTmOpn.instMag.f
+2F07,Breaker 1 Arcing Operating Time Phase B,CBArc2SCBR1.RctTmOpn.instMag.f
+2F08,Breaker 1 Arcing Operating Time Phase C,CBArc3SCBR1.RctTmOpn.instMag.f
+2F09,Breaker 1 Arcing Operating Time,CBArc0SCBR1.OpTmOpn.instMag.f
+2F0A,Breaker 1 Arcing Amp Phase A,CBArc1SCBR1.SwA.instMag.f
+2F0C,Breaker 1 Arcing Amp Phase B,CBArc2SCBR1.SwA.instMag.f
+2F0E,Breaker 1 Arcing Amp Phase C,CBArc3SCBR1.SwA.instMag.f
+2F10,Breaker 1 Arcing Amp Max Phase A,CBArc1SCBR1.MaxIntrA.instMag.f
+2F12,Breaker 1 Arcing Amp Max Phase B,CBArc2SCBR1.MaxIntrA.instMag.f
+2F14,Breaker 1 Arcing Amp Max Phase C,CBArc3SCBR1.MaxIntrA.instMag.f
+
+2F16,Breaker 2 Arcing Acc Arcing Amp Phase A,CBArc1SCBR2.AccAbr.instMag.f
+2F18,Breaker 2 Arcing Acc Arcing Amp Phase B,CBArc2SCBR2.AccAbr.instMag.f
+2F1A,Breaker 2 Arcing Acc Arcing Amp Phase C,CBArc3SCBR2.AccAbr.instMag.f
+2F1C,Breaker 2 Arcing Operating Time Phase A,CBArc1SCBR2.RctTmOpn.instMag.f
+2F1D,Breaker 2 Arcing Operating Time Phase B,CBArc2SCBR2.RctTmOpn.instMag.f
+2F1E,Breaker 2 Arcing Operating Time Phase C,CBArc3SCBR2.RctTmOpn.instMag.f
+2F1F,Breaker 2 Arcing Operating Time,CBArc0SCBR2.OpTmOpn.instMag.f
+2F20,Breaker 2 Arcing Amp Phase A,CBArc1SCBR2.SwA.instMag.f
+2F22,Breaker 2 Arcing Amp Phase B,CBArc2SCBR2.SwA.instMag.f
+2F24,Breaker 2 Arcing Amp Phase C,CBArc3SCBR2.SwA.instMag.f
+2F26,Breaker 2 Arcing Amp Max Phase A,CBArc1SCBR2.MaxIntrA.instMag.f
+2F28,Breaker 2 Arcing Amp Max Phase B,CBArc2SCBR2.MaxIntrA.instMag.f
+2F2A,Breaker 2 Arcing Amp Max Phase C,CBArc3SCBR2.MaxIntrA.instMag.f
+
+2F2C,Breaker 3 Arcing Acc Arcing Amp Phase A,CBArc1SCBR3.AccAbr.instMag.f
+2F2E,Breaker 3 Arcing Acc Arcing Amp Phase B,CBArc2SCBR3.AccAbr.instMag.f
+2F30,Breaker 3 Arcing Acc Arcing Amp Phase C,CBArc3SCBR3.AccAbr.instMag.f
+2F32,Breaker 3 Arcing Operating Time Phase A,CBArc1SCBR3.RctTmOpn.instMag.f
+2F33,Breaker 3 Arcing Operating Time Phase B,CBArc2SCBR3.RctTmOpn.instMag.f
+2F34,Breaker 3 Arcing Operating Time Phase C,CBArc3SCBR3.RctTmOpn.instMag.f
+2F35,Breaker 3 Arcing Operating Time,CBArc0SCBR3.OpTmOpn.instMag.f
+2F36,Breaker 3 Arcing Amp Phase A,CBArc1SCBR3.SwA.instMag.f
+2F38,Breaker 3 Arcing Amp Phase B,CBArc2SCBR3.SwA.instMag.f
+2F3A,Breaker 3 Arcing Amp Phase C,CBArc3SCBR3.SwA.instMag.f
+2F3C,Breaker 3 Arcing Amp Max Phase A,CBArc1SCBR3.MaxIntrA.instMag.f
+2F3E,Breaker 3 Arcing Amp Max Phase B,CBArc2SCBR3.MaxIntrA.instMag.f
+2F40,Breaker 3 Arcing Amp Max Phase C,CBArc3SCBR3.MaxIntrA.instMag.f
+
+2F42,Breaker 4 Arcing Acc Arcing Amp Phase A,CBArc1SCBR4.AccAbr.instMag.f
+2F44,Breaker 4 Arcing Acc Arcing Amp Phase B,CBArc2SCBR4.AccAbr.instMag.f
+2F46,Breaker 4 Arcing Acc Arcing Amp Phase C,CBArc3SCBR4.AccAbr.instMag.f
+2F48,Breaker 4 Arcing Operating Time Phase A,CBArc1SCBR4.RctTmOpn.instMag.f
+2F49,Breaker 4 Arcing Operating Time Phase B,CBArc2SCBR4.RctTmOpn.instMag.f
+2F4A,Breaker 4 Arcing Operating Time Phase C,CBArc3SCBR4.RctTmOpn.instMag.f
+2F4B,Breaker 4 Arcing Operating Time,CBArc0SCBR4.OpTmOpn.instMag.f
+2F4C,Breaker 4 Arcing Amp Phase A,CBArc1SCBR4.SwA.instMag.f
+2F4E,Breaker 4 Arcing Amp Phase B,CBArc2SCBR4.SwA.instMag.f
+2F50,Breaker 4 Arcing Amp Phase C,CBArc3SCBR4.SwA.instMag.f
+2F52,Breaker 4 Arcing Amp Max Phase A,CBArc1SCBR4.MaxIntrA.instMag.f
+2F54,Breaker 4 Arcing Amp Max Phase B,CBArc2SCBR4.MaxIntrA.instMag.f
+2F56,Breaker 4 Arcing Amp Max Phase C,CBArc3SCBR4.MaxIntrA.instMag.f
+
+2F58,Breaker 5 Arcing Acc Arcing Amp Phase A,CBArc1SCBR5.AccAbr.instMag.f
+2F5A,Breaker 5 Arcing Acc Arcing Amp Phase B,CBArc2SCBR5.AccAbr.instMag.f
+2F5C,Breaker 5 Arcing Acc Arcing Amp Phase C,CBArc3SCBR5.AccAbr.instMag.f
+2F5E,Breaker 5 Arcing Operating Time Phase A,CBArc1SCBR5.RctTmOpn.instMag.f
+2F5F,Breaker 5 Arcing Operating Time Phase B,CBArc2SCBR5.RctTmOpn.instMag.f
+2F60,Breaker 5 Arcing Operating Time Phase C,CBArc3SCBR5.RctTmOpn.instMag.f
+2F61,Breaker 5 Arcing Operating Time,CBArc0SCBR5.OpTmOpn.instMag.f
+2F62,Breaker 5 Arcing Amp Phase A,CBArc1SCBR5.SwA.instMag.f
+2F64,Breaker 5 Arcing Amp Phase B,CBArc2SCBR5.SwA.instMag.f
+2F66,Breaker 5 Arcing Amp Phase C,CBArc3SCBR5.SwA.instMag.f
+2F68,Breaker 5 Arcing Amp Max Phase A,CBArc1SCBR5.MaxIntrA.instMag.f
+2F6A,Breaker 5 Arcing Amp Max Phase B,CBArc2SCBR5.MaxIntrA.instMag.f
+2F6C,Breaker 5 Arcing Amp Max Phase C,CBArc3SCBR5.MaxIntrA.instMag.f
+
+2F6E,Breaker 6 Arcing Acc Arcing Amp Phase A,CBArc1SCBR6.AccAbr.instMag.f
+2F70,Breaker 6 Arcing Acc Arcing Amp Phase B,CBArc2SCBR6.AccAbr.instMag.f
+2F72,Breaker 6 Arcing Acc Arcing Amp Phase C,CBArc3SCBR6.AccAbr.instMag.f
+2F74,Breaker 6 Arcing Operating Time Phase A,CBArc1SCBR6.RctTmOpn.instMag.f
+2F75,Breaker 6 Arcing Operating Time Phase B,CBArc2SCBR6.RctTmOpn.instMag.f
+2F76,Breaker 6 Arcing Operating Time Phase C,CBArc3SCBR6.RctTmOpn.instMag.f
+2F77,Breaker 6 Arcing Operating Time,CBArc0SCBR6.OpTmOpn.instMag.f
+2F78,Breaker 6 Arcing Amp Phase A,CBArc1SCBR6.SwA.instMag.f
+2F7A,Breaker 6 Arcing Amp Phase B,CBArc2SCBR6.SwA.instMag.f
+2F7C,Breaker 6 Arcing Amp Phase C,CBArc3SCBR6.SwA.instMag.f
+2F7E,Breaker 6 Arcing Amp Max Phase A,CBArc1SCBR6.MaxIntrA.instMag.f
+2F80,Breaker 6 Arcing Amp Max Phase B,CBArc2SCBR6.MaxIntrA.instMag.f
+2F82,Breaker 6 Arcing Amp Max Phase C,CBArc3SCBR6.MaxIntrA.instMag.f
+
+2801,SRC 1 Ia Harmonics [2],HThdMHAI1.HA.phsAHar(2).instCVal.mag.f
+2802,SRC 1 Ia Harmonics [3],HThdMHAI1.HA.phsAHar(3).instCVal.mag.f
+2803,SRC 1 Ia Harmonics [4],HThdMHAI1.HA.phsAHar(4).instCVal.mag.f
+2804,SRC 1 Ia Harmonics [5],HThdMHAI1.HA.phsAHar(5).instCVal.mag.f
+2805,SRC 1 Ia Harmonics [6],HThdMHAI1.HA.phsAHar(6).instCVal.mag.f
+2806,SRC 1 Ia Harmonics [7],HThdMHAI1.HA.phsAHar(7).instCVal.mag.f
+2807,SRC 1 Ia Harmonics [8],HThdMHAI1.HA.phsAHar(8).instCVal.mag.f
+2808,SRC 1 Ia Harmonics [9],HThdMHAI1.HA.phsAHar(9).instCVal.mag.f
+2809,SRC 1 Ia Harmonics [10],HThdMHAI1.HA.phsAHar(10).instCVal.mag.f
+280A,SRC 1 Ia Harmonics [11],HThdMHAI1.HA.phsAHar(11).instCVal.mag.f
+280B,SRC 1 Ia Harmonics [12],HThdMHAI1.HA.phsAHar(12).instCVal.mag.f
+280C,SRC 1 Ia Harmonics [13],HThdMHAI1.HA.phsAHar(13).instCVal.mag.f
+280D,SRC 1 Ia Harmonics [14],HThdMHAI1.HA.phsAHar(14).instCVal.mag.f
+280E,SRC 1 Ia Harmonics [15],HThdMHAI1.HA.phsAHar(15).instCVal.mag.f
+280F,SRC 1 Ia Harmonics [16],HThdMHAI1.HA.phsAHar(16).instCVal.mag.f
+2810,SRC 1 Ia Harmonics [17],HThdMHAI1.HA.phsAHar(17).instCVal.mag.f
+2811,SRC 1 Ia Harmonics [18],HThdMHAI1.HA.phsAHar(18).instCVal.mag.f
+2812,SRC 1 Ia Harmonics [19],HThdMHAI1.HA.phsAHar(19).instCVal.mag.f
+2813,SRC 1 Ia Harmonics [20],HThdMHAI1.HA.phsAHar(20).instCVal.mag.f
+2814,SRC 1 Ia Harmonics [21],HThdMHAI1.HA.phsAHar(21).instCVal.mag.f
+2815,SRC 1 Ia Harmonics [22],HThdMHAI1.HA.phsAHar(22).instCVal.mag.f
+2816,SRC 1 Ia Harmonics [23],HThdMHAI1.HA.phsAHar(23).instCVal.mag.f
+2817,SRC 1 Ia Harmonics [24],HThdMHAI1.HA.phsAHar(24).instCVal.mag.f
+2818,SRC 1 Ia Harmonics [25],HThdMHAI1.HA.phsAHar(25).instCVal.mag.f
+
+2864,SRC 2 Ia Harmonics [2],HThdMHAI2.HA.phsAHar(2).instCVal.mag.f
+2865,SRC 2 Ia Harmonics [3],HThdMHAI2.HA.phsAHar(3).instCVal.mag.f
+2866,SRC 2 Ia Harmonics [4],HThdMHAI2.HA.phsAHar(4).instCVal.mag.f
+2867,SRC 2 Ia Harmonics [5],HThdMHAI2.HA.phsAHar(5).instCVal.mag.f
+2868,SRC 2 Ia Harmonics [6],HThdMHAI2.HA.phsAHar(6).instCVal.mag.f
+2869,SRC 2 Ia Harmonics [7],HThdMHAI2.HA.phsAHar(7).instCVal.mag.f
+286A,SRC 2 Ia Harmonics [8],HThdMHAI2.HA.phsAHar(8).instCVal.mag.f
+286B,SRC 2 Ia Harmonics [9],HThdMHAI2.HA.phsAHar(9).instCVal.mag.f
+286C,SRC 2 Ia Harmonics [10],HThdMHAI2.HA.phsAHar(10).instCVal.mag.f
+286D,SRC 2 Ia Harmonics [11],HThdMHAI2.HA.phsAHar(11).instCVal.mag.f
+286E,SRC 2 Ia Harmonics [12],HThdMHAI2.HA.phsAHar(12).instCVal.mag.f
+286F,SRC 2 Ia Harmonics [13],HThdMHAI2.HA.phsAHar(13).instCVal.mag.f
+2870,SRC 2 Ia Harmonics [14],HThdMHAI2.HA.phsAHar(14).instCVal.mag.f
+2871,SRC 2 Ia Harmonics [15],HThdMHAI2.HA.phsAHar(15).instCVal.mag.f
+2872,SRC 2 Ia Harmonics [16],HThdMHAI2.HA.phsAHar(16).instCVal.mag.f
+2873,SRC 2 Ia Harmonics [17],HThdMHAI2.HA.phsAHar(17).instCVal.mag.f
+2874,SRC 2 Ia Harmonics [18],HThdMHAI2.HA.phsAHar(18).instCVal.mag.f
+2875,SRC 2 Ia Harmonics [19],HThdMHAI2.HA.phsAHar(19).instCVal.mag.f
+2876,SRC 2 Ia Harmonics [20],HThdMHAI2.HA.phsAHar(20).instCVal.mag.f
+2877,SRC 2 Ia Harmonics [21],HThdMHAI2.HA.phsAHar(21).instCVal.mag.f
+2878,SRC 2 Ia Harmonics [22],HThdMHAI2.HA.phsAHar(22).instCVal.mag.f
+2879,SRC 2 Ia Harmonics [23],HThdMHAI2.HA.phsAHar(23).instCVal.mag.f
+287A,SRC 2 Ia Harmonics [24],HThdMHAI2.HA.phsAHar(24).instCVal.mag.f
+287B,SRC 2 Ia Harmonics [25],HThdMHAI2.HA.phsAHar(25).instCVal.mag.f
+
+28C7,SRC 3 Ia Harmonics [2],HThdMHAI3.HA.phsAHar(2).instCVal.mag.f
+28C8,SRC 3 Ia Harmonics [3],HThdMHAI3.HA.phsAHar(3).instCVal.mag.f
+28C9,SRC 3 Ia Harmonics [4],HThdMHAI3.HA.phsAHar(4).instCVal.mag.f
+28CA,SRC 3 Ia Harmonics [5],HThdMHAI3.HA.phsAHar(5).instCVal.mag.f
+28CB,SRC 3 Ia Harmonics [6],HThdMHAI3.HA.phsAHar(6).instCVal.mag.f
+28CC,SRC 3 Ia Harmonics [7],HThdMHAI3.HA.phsAHar(7).instCVal.mag.f
+28CD,SRC 3 Ia Harmonics [8],HThdMHAI3.HA.phsAHar(8).instCVal.mag.f
+28CE,SRC 3 Ia Harmonics [9],HThdMHAI3.HA.phsAHar(9).instCVal.mag.f
+28CF,SRC 3 Ia Harmonics [10],HThdMHAI3.HA.phsAHar(10).instCVal.mag.f
+28D0,SRC 3 Ia Harmonics [11],HThdMHAI3.HA.phsAHar(11).instCVal.mag.f
+28D1,SRC 3 Ia Harmonics [12],HThdMHAI3.HA.phsAHar(12).instCVal.mag.f
+28D2,SRC 3 Ia Harmonics [13],HThdMHAI3.HA.phsAHar(13).instCVal.mag.f
+28D3,SRC 3 Ia Harmonics [14],HThdMHAI3.HA.phsAHar(14).instCVal.mag.f
+28D4,SRC 3 Ia Harmonics [15],HThdMHAI3.HA.phsAHar(15).instCVal.mag.f
+28D5,SRC 3 Ia Harmonics [16],HThdMHAI3.HA.phsAHar(16).instCVal.mag.f
+28D6,SRC 3 Ia Harmonics [17],HThdMHAI3.HA.phsAHar(17).instCVal.mag.f
+28D7,SRC 3 Ia Harmonics [18],HThdMHAI3.HA.phsAHar(18).instCVal.mag.f
+28D8,SRC 3 Ia Harmonics [19],HThdMHAI3.HA.phsAHar(19).instCVal.mag.f
+28D9,SRC 3 Ia Harmonics [20],HThdMHAI3.HA.phsAHar(20).instCVal.mag.f
+28DA,SRC 3 Ia Harmonics [21],HThdMHAI3.HA.phsAHar(21).instCVal.mag.f
+28DB,SRC 3 Ia Harmonics [22],HThdMHAI3.HA.phsAHar(22).instCVal.mag.f
+28DC,SRC 3 Ia Harmonics [23],HThdMHAI3.HA.phsAHar(23).instCVal.mag.f
+28DD,SRC 3 Ia Harmonics [24],HThdMHAI3.HA.phsAHar(24).instCVal.mag.f
+28DE,SRC 3 Ia Harmonics [25],HThdMHAI3.HA.phsAHar(25).instCVal.mag.f
+
+292A,SRC 4 Ia Harmonics [2],HThdMHAI4.HA.phsAHar(2).instCVal.mag.f
+292B,SRC 4 Ia Harmonics [3],HThdMHAI4.HA.phsAHar(3).instCVal.mag.f
+292C,SRC 4 Ia Harmonics [4],HThdMHAI4.HA.phsAHar(4).instCVal.mag.f
+292D,SRC 4 Ia Harmonics [5],HThdMHAI4.HA.phsAHar(5).instCVal.mag.f
+292E,SRC 4 Ia Harmonics [6],HThdMHAI4.HA.phsAHar(6).instCVal.mag.f
+292F,SRC 4 Ia Harmonics [7],HThdMHAI4.HA.phsAHar(7).instCVal.mag.f
+2930,SRC 4 Ia Harmonics [8],HThdMHAI4.HA.phsAHar(8).instCVal.mag.f
+2931,SRC 4 Ia Harmonics [9],HThdMHAI4.HA.phsAHar(9).instCVal.mag.f
+2932,SRC 4 Ia Harmonics [10],HThdMHAI4.HA.phsAHar(10).instCVal.mag.f
+2933,SRC 4 Ia Harmonics [11],HThdMHAI4.HA.phsAHar(11).instCVal.mag.f
+2934,SRC 4 Ia Harmonics [12],HThdMHAI4.HA.phsAHar(12).instCVal.mag.f
+2935,SRC 4 Ia Harmonics [13],HThdMHAI4.HA.phsAHar(13).instCVal.mag.f
+2936,SRC 4 Ia Harmonics [14],HThdMHAI4.HA.phsAHar(14).instCVal.mag.f
+2937,SRC 4 Ia Harmonics [15],HThdMHAI4.HA.phsAHar(15).instCVal.mag.f
+2938,SRC 4 Ia Harmonics [16],HThdMHAI4.HA.phsAHar(16).instCVal.mag.f
+2939,SRC 4 Ia Harmonics [17],HThdMHAI4.HA.phsAHar(17).instCVal.mag.f
+293A,SRC 4 Ia Harmonics [18],HThdMHAI4.HA.phsAHar(18).instCVal.mag.f
+293B,SRC 4 Ia Harmonics [19],HThdMHAI4.HA.phsAHar(19).instCVal.mag.f
+293C,SRC 4 Ia Harmonics [20],HThdMHAI4.HA.phsAHar(20).instCVal.mag.f
+293D,SRC 4 Ia Harmonics [21],HThdMHAI4.HA.phsAHar(21).instCVal.mag.f
+293E,SRC 4 Ia Harmonics [22],HThdMHAI4.HA.phsAHar(22).instCVal.mag.f
+293F,SRC 4 Ia Harmonics [23],HThdMHAI4.HA.phsAHar(23).instCVal.mag.f
+2940,SRC 4 Ia Harmonics [24],HThdMHAI4.HA.phsAHar(24).instCVal.mag.f
+2941,SRC 4 Ia Harmonics [25],HThdMHAI4.HA.phsAHar(25).instCVal.mag.f
+
+298D,SRC 5 Ia Harmonics [2],HThdMHAI5.HA.phsAHar(2).instCVal.mag.f
+298E,SRC 5 Ia Harmonics [3],HThdMHAI5.HA.phsAHar(3).instCVal.mag.f
+298F,SRC 5 Ia Harmonics [4],HThdMHAI5.HA.phsAHar(4).instCVal.mag.f
+2990,SRC 5 Ia Harmonics [5],HThdMHAI5.HA.phsAHar(5).instCVal.mag.f
+2991,SRC 5 Ia Harmonics [6],HThdMHAI5.HA.phsAHar(6).instCVal.mag.f
+2992,SRC 5 Ia Harmonics [7],HThdMHAI5.HA.phsAHar(7).instCVal.mag.f
+2993,SRC 5 Ia Harmonics [8],HThdMHAI5.HA.phsAHar(8).instCVal.mag.f
+2994,SRC 5 Ia Harmonics [9],HThdMHAI5.HA.phsAHar(9).instCVal.mag.f
+2995,SRC 5 Ia Harmonics [10],HThdMHAI5.HA.phsAHar(10).instCVal.mag.f
+2996,SRC 5 Ia Harmonics [11],HThdMHAI5.HA.phsAHar(11).instCVal.mag.f
+2997,SRC 5 Ia Harmonics [12],HThdMHAI5.HA.phsAHar(12).instCVal.mag.f
+2998,SRC 5 Ia Harmonics [13],HThdMHAI5.HA.phsAHar(13).instCVal.mag.f
+2999,SRC 5 Ia Harmonics [14],HThdMHAI5.HA.phsAHar(14).instCVal.mag.f
+299A,SRC 5 Ia Harmonics [15],HThdMHAI5.HA.phsAHar(15).instCVal.mag.f
+299B,SRC 5 Ia Harmonics [16],HThdMHAI5.HA.phsAHar(16).instCVal.mag.f
+299C,SRC 5 Ia Harmonics [17],HThdMHAI5.HA.phsAHar(17).instCVal.mag.f
+299D,SRC 5 Ia Harmonics [18],HThdMHAI5.HA.phsAHar(18).instCVal.mag.f
+299E,SRC 5 Ia Harmonics [19],HThdMHAI5.HA.phsAHar(19).instCVal.mag.f
+299F,SRC 5 Ia Harmonics [20],HThdMHAI5.HA.phsAHar(20).instCVal.mag.f
+29A0,SRC 5 Ia Harmonics [21],HThdMHAI5.HA.phsAHar(21).instCVal.mag.f
+29A1,SRC 5 Ia Harmonics [22],HThdMHAI5.HA.phsAHar(22).instCVal.mag.f
+29A2,SRC 5 Ia Harmonics [23],HThdMHAI5.HA.phsAHar(23).instCVal.mag.f
+29A3,SRC 5 Ia Harmonics [24],HThdMHAI5.HA.phsAHar(24).instCVal.mag.f
+29A4,SRC 5 Ia Harmonics [25],HThdMHAI5.HA.phsAHar(25).instCVal.mag.f
+
+29F0,SRC 6 Ia Harmonics [2],HThdMHAI6.HA.phsAHar(2).instCVal.mag.f
+29F1,SRC 6 Ia Harmonics [3],HThdMHAI6.HA.phsAHar(3).instCVal.mag.f
+29F2,SRC 6 Ia Harmonics [4],HThdMHAI6.HA.phsAHar(4).instCVal.mag.f
+29F3,SRC 6 Ia Harmonics [5],HThdMHAI6.HA.phsAHar(5).instCVal.mag.f
+29F4,SRC 6 Ia Harmonics [6],HThdMHAI6.HA.phsAHar(6).instCVal.mag.f
+29F5,SRC 6 Ia Harmonics [7],HThdMHAI6.HA.phsAHar(7).instCVal.mag.f
+29F6,SRC 6 Ia Harmonics [8],HThdMHAI6.HA.phsAHar(8).instCVal.mag.f
+29F7,SRC 6 Ia Harmonics [9],HThdMHAI6.HA.phsAHar(9).instCVal.mag.f
+29F8,SRC 6 Ia Harmonics [10],HThdMHAI6.HA.phsAHar(10).instCVal.mag.f
+29F9,SRC 6 Ia Harmonics [11],HThdMHAI6.HA.phsAHar(11).instCVal.mag.f
+29FA,SRC 6 Ia Harmonics [12],HThdMHAI6.HA.phsAHar(12).instCVal.mag.f
+29FB,SRC 6 Ia Harmonics [13],HThdMHAI6.HA.phsAHar(13).instCVal.mag.f
+29FC,SRC 6 Ia Harmonics [14],HThdMHAI6.HA.phsAHar(14).instCVal.mag.f
+29FD,SRC 6 Ia Harmonics [15],HThdMHAI6.HA.phsAHar(15).instCVal.mag.f
+29FE,SRC 6 Ia Harmonics [16],HThdMHAI6.HA.phsAHar(16).instCVal.mag.f
+29FF,SRC 6 Ia Harmonics [17],HThdMHAI6.HA.phsAHar(17).instCVal.mag.f
+2A00,SRC 6 Ia Harmonics [18],HThdMHAI6.HA.phsAHar(18).instCVal.mag.f
+2A01,SRC 6 Ia Harmonics [19],HThdMHAI6.HA.phsAHar(19).instCVal.mag.f
+2A02,SRC 6 Ia Harmonics [20],HThdMHAI6.HA.phsAHar(20).instCVal.mag.f
+2A03,SRC 6 Ia Harmonics [21],HThdMHAI6.HA.phsAHar(21).instCVal.mag.f
+2A04,SRC 6 Ia Harmonics [22],HThdMHAI6.HA.phsAHar(22).instCVal.mag.f
+2A05,SRC 6 Ia Harmonics [23],HThdMHAI6.HA.phsAHar(23).instCVal.mag.f
+2A06,SRC 6 Ia Harmonics [24],HThdMHAI6.HA.phsAHar(24).instCVal.mag.f
+2A07,SRC 6 Ia Harmonics [25],HThdMHAI6.HA.phsAHar(25).instCVal.mag.f
+
+2822,SRC 1 Ib Harmonics [2],HThdMHAI1.HA.phsBHar(2).instCVal.mag.f
+2823,SRC 1 Ib Harmonics [3],HThdMHAI1.HA.phsBHar(3).instCVal.mag.f
+2824,SRC 1 Ib Harmonics [4],HThdMHAI1.HA.phsBHar(4).instCVal.mag.f
+2825,SRC 1 Ib Harmonics [5],HThdMHAI1.HA.phsBHar(5).instCVal.mag.f
+2826,SRC 1 Ib Harmonics [6],HThdMHAI1.HA.phsBHar(6).instCVal.mag.f
+2827,SRC 1 Ib Harmonics [7],HThdMHAI1.HA.phsBHar(7).instCVal.mag.f
+2828,SRC 1 Ib Harmonics [8],HThdMHAI1.HA.phsBHar(8).instCVal.mag.f
+2829,SRC 1 Ib Harmonics [9],HThdMHAI1.HA.phsBHar(9).instCVal.mag.f
+282A,SRC 1 Ib Harmonics [10],HThdMHAI1.HA.phsBHar(10).instCVal.mag.f
+282B,SRC 1 Ib Harmonics [11],HThdMHAI1.HA.phsBHar(11).instCVal.mag.f
+282C,SRC 1 Ib Harmonics [12],HThdMHAI1.HA.phsBHar(12).instCVal.mag.f
+282D,SRC 1 Ib Harmonics [13],HThdMHAI1.HA.phsBHar(13).instCVal.mag.f
+282E,SRC 1 Ib Harmonics [14],HThdMHAI1.HA.phsBHar(14).instCVal.mag.f
+282F,SRC 1 Ib Harmonics [15],HThdMHAI1.HA.phsBHar(15).instCVal.mag.f
+2830,SRC 1 Ib Harmonics [16],HThdMHAI1.HA.phsBHar(16).instCVal.mag.f
+2831,SRC 1 Ib Harmonics [17],HThdMHAI1.HA.phsBHar(17).instCVal.mag.f
+2832,SRC 1 Ib Harmonics [18],HThdMHAI1.HA.phsBHar(18).instCVal.mag.f
+2833,SRC 1 Ib Harmonics [19],HThdMHAI1.HA.phsBHar(19).instCVal.mag.f
+2834,SRC 1 Ib Harmonics [20],HThdMHAI1.HA.phsBHar(20).instCVal.mag.f
+2835,SRC 1 Ib Harmonics [21],HThdMHAI1.HA.phsBHar(21).instCVal.mag.f
+2836,SRC 1 Ib Harmonics [22],HThdMHAI1.HA.phsBHar(22).instCVal.mag.f
+2837,SRC 1 Ib Harmonics [23],HThdMHAI1.HA.phsBHar(23).instCVal.mag.f
+2838,SRC 1 Ib Harmonics [24],HThdMHAI1.HA.phsBHar(24).instCVal.mag.f
+2839,SRC 1 Ib Harmonics [25],HThdMHAI1.HA.phsBHar(25).instCVal.mag.f
+2885,SRC 2 Ib Harmonics [2],HThdMHAI2.HA.phsBHar(2).instCVal.mag.f
+2886,SRC 2 Ib Harmonics [3],HThdMHAI2.HA.phsBHar(3).instCVal.mag.f
+2887,SRC 2 Ib Harmonics [4],HThdMHAI2.HA.phsBHar(4).instCVal.mag.f
+2888,SRC 2 Ib Harmonics [5],HThdMHAI2.HA.phsBHar(5).instCVal.mag.f
+2889,SRC 2 Ib Harmonics [6],HThdMHAI2.HA.phsBHar(6).instCVal.mag.f
+288A,SRC 2 Ib Harmonics [7],HThdMHAI2.HA.phsBHar(7).instCVal.mag.f
+288B,SRC 2 Ib Harmonics [8],HThdMHAI2.HA.phsBHar(8).instCVal.mag.f
+288C,SRC 2 Ib Harmonics [9],HThdMHAI2.HA.phsBHar(9).instCVal.mag.f
+288D,SRC 2 Ib Harmonics [10],HThdMHAI2.HA.phsBHar(10).instCVal.mag.f
+288E,SRC 2 Ib Harmonics [11],HThdMHAI2.HA.phsBHar(11).instCVal.mag.f
+288F,SRC 2 Ib Harmonics [12],HThdMHAI2.HA.phsBHar(12).instCVal.mag.f
+2890,SRC 2 Ib Harmonics [13],HThdMHAI2.HA.phsBHar(13).instCVal.mag.f
+2891,SRC 2 Ib Harmonics [14],HThdMHAI2.HA.phsBHar(14).instCVal.mag.f
+2892,SRC 2 Ib Harmonics [15],HThdMHAI2.HA.phsBHar(15).instCVal.mag.f
+2893,SRC 2 Ib Harmonics [16],HThdMHAI2.HA.phsBHar(16).instCVal.mag.f
+2894,SRC 2 Ib Harmonics [17],HThdMHAI2.HA.phsBHar(17).instCVal.mag.f
+2895,SRC 2 Ib Harmonics [18],HThdMHAI2.HA.phsBHar(18).instCVal.mag.f
+2896,SRC 2 Ib Harmonics [19],HThdMHAI2.HA.phsBHar(19).instCVal.mag.f
+2897,SRC 2 Ib Harmonics [20],HThdMHAI2.HA.phsBHar(20).instCVal.mag.f
+2898,SRC 2 Ib Harmonics [21],HThdMHAI2.HA.phsBHar(21).instCVal.mag.f
+2899,SRC 2 Ib Harmonics [22],HThdMHAI2.HA.phsBHar(22).instCVal.mag.f
+289A,SRC 2 Ib Harmonics [23],HThdMHAI2.HA.phsBHar(23).instCVal.mag.f
+289B,SRC 2 Ib Harmonics [24],HThdMHAI2.HA.phsBHar(24).instCVal.mag.f
+289C,SRC 2 Ib Harmonics [25],HThdMHAI2.HA.phsBHar(25).instCVal.mag.f
+28E8,SRC 3 Ib Harmonics [2],HThdMHAI3.HA.phsBHar(2).instCVal.mag.f
+28E9,SRC 3 Ib Harmonics [3],HThdMHAI3.HA.phsBHar(3).instCVal.mag.f
+28EA,SRC 3 Ib Harmonics [4],HThdMHAI3.HA.phsBHar(4).instCVal.mag.f
+28EB,SRC 3 Ib Harmonics [5],HThdMHAI3.HA.phsBHar(5).instCVal.mag.f
+28EC,SRC 3 Ib Harmonics [6],HThdMHAI3.HA.phsBHar(6).instCVal.mag.f
+28ED,SRC 3 Ib Harmonics [7],HThdMHAI3.HA.phsBHar(7).instCVal.mag.f
+28EE,SRC 3 Ib Harmonics [8],HThdMHAI3.HA.phsBHar(8).instCVal.mag.f
+28EF,SRC 3 Ib Harmonics [9],HThdMHAI3.HA.phsBHar(9).instCVal.mag.f
+28F0,SRC 3 Ib Harmonics [10],HThdMHAI3.HA.phsBHar(10).instCVal.mag.f
+28F1,SRC 3 Ib Harmonics [11],HThdMHAI3.HA.phsBHar(11).instCVal.mag.f
+28F2,SRC 3 Ib Harmonics [12],HThdMHAI3.HA.phsBHar(12).instCVal.mag.f
+28F3,SRC 3 Ib Harmonics [13],HThdMHAI3.HA.phsBHar(13).instCVal.mag.f
+28F4,SRC 3 Ib Harmonics [14],HThdMHAI3.HA.phsBHar(14).instCVal.mag.f
+28F5,SRC 3 Ib Harmonics [15],HThdMHAI3.HA.phsBHar(15).instCVal.mag.f
+28F6,SRC 3 Ib Harmonics [16],HThdMHAI3.HA.phsBHar(16).instCVal.mag.f
+28F7,SRC 3 Ib Harmonics [17],HThdMHAI3.HA.phsBHar(17).instCVal.mag.f
+28F8,SRC 3 Ib Harmonics [18],HThdMHAI3.HA.phsBHar(18).instCVal.mag.f
+28F9,SRC 3 Ib Harmonics [19],HThdMHAI3.HA.phsBHar(19).instCVal.mag.f
+28FA,SRC 3 Ib Harmonics [20],HThdMHAI3.HA.phsBHar(20).instCVal.mag.f
+28FB,SRC 3 Ib Harmonics [21],HThdMHAI3.HA.phsBHar(21).instCVal.mag.f
+28FC,SRC 3 Ib Harmonics [22],HThdMHAI3.HA.phsBHar(22).instCVal.mag.f
+28FD,SRC 3 Ib Harmonics [23],HThdMHAI3.HA.phsBHar(23).instCVal.mag.f
+28FE,SRC 3 Ib Harmonics [24],HThdMHAI3.HA.phsBHar(24).instCVal.mag.f
+28FF,SRC 3 Ib Harmonics [25],HThdMHAI3.HA.phsBHar(25).instCVal.mag.f
+294B,SRC 4 Ib Harmonics [2],HThdMHAI4.HA.phsBHar(2).instCVal.mag.f
+294C,SRC 4 Ib Harmonics [3],HThdMHAI4.HA.phsBHar(3).instCVal.mag.f
+294D,SRC 4 Ib Harmonics [4],HThdMHAI4.HA.phsBHar(4).instCVal.mag.f
+294E,SRC 4 Ib Harmonics [5],HThdMHAI4.HA.phsBHar(5).instCVal.mag.f
+294F,SRC 4 Ib Harmonics [6],HThdMHAI4.HA.phsBHar(6).instCVal.mag.f
+2950,SRC 4 Ib Harmonics [7],HThdMHAI4.HA.phsBHar(7).instCVal.mag.f
+2951,SRC 4 Ib Harmonics [8],HThdMHAI4.HA.phsBHar(8).instCVal.mag.f
+2952,SRC 4 Ib Harmonics [9],HThdMHAI4.HA.phsBHar(9).instCVal.mag.f
+2953,SRC 4 Ib Harmonics [10],HThdMHAI4.HA.phsBHar(10).instCVal.mag.f
+2954,SRC 4 Ib Harmonics [11],HThdMHAI4.HA.phsBHar(11).instCVal.mag.f
+2955,SRC 4 Ib Harmonics [12],HThdMHAI4.HA.phsBHar(12).instCVal.mag.f
+2956,SRC 4 Ib Harmonics [13],HThdMHAI4.HA.phsBHar(13).instCVal.mag.f
+2957,SRC 4 Ib Harmonics [14],HThdMHAI4.HA.phsBHar(14).instCVal.mag.f
+2958,SRC 4 Ib Harmonics [15],HThdMHAI4.HA.phsBHar(15).instCVal.mag.f
+2959,SRC 4 Ib Harmonics [16],HThdMHAI4.HA.phsBHar(16).instCVal.mag.f
+295A,SRC 4 Ib Harmonics [17],HThdMHAI4.HA.phsBHar(17).instCVal.mag.f
+295B,SRC 4 Ib Harmonics [18],HThdMHAI4.HA.phsBHar(18).instCVal.mag.f
+295C,SRC 4 Ib Harmonics [19],HThdMHAI4.HA.phsBHar(19).instCVal.mag.f
+295D,SRC 4 Ib Harmonics [20],HThdMHAI4.HA.phsBHar(20).instCVal.mag.f
+295E,SRC 4 Ib Harmonics [21],HThdMHAI4.HA.phsBHar(21).instCVal.mag.f
+295F,SRC 4 Ib Harmonics [22],HThdMHAI4.HA.phsBHar(22).instCVal.mag.f
+2960,SRC 4 Ib Harmonics [23],HThdMHAI4.HA.phsBHar(23).instCVal.mag.f
+2961,SRC 4 Ib Harmonics [24],HThdMHAI4.HA.phsBHar(24).instCVal.mag.f
+2962,SRC 4 Ib Harmonics [25],HThdMHAI4.HA.phsBHar(25).instCVal.mag.f
+29AE,SRC 5 Ib Harmonics [2],HThdMHAI5.HA.phsBHar(2).instCVal.mag.f
+29AF,SRC 5 Ib Harmonics [3],HThdMHAI5.HA.phsBHar(3).instCVal.mag.f
+29B0,SRC 5 Ib Harmonics [4],HThdMHAI5.HA.phsBHar(4).instCVal.mag.f
+29B1,SRC 5 Ib Harmonics [5],HThdMHAI5.HA.phsBHar(5).instCVal.mag.f
+29B2,SRC 5 Ib Harmonics [6],HThdMHAI5.HA.phsBHar(6).instCVal.mag.f
+29B3,SRC 5 Ib Harmonics [7],HThdMHAI5.HA.phsBHar(7).instCVal.mag.f
+29B4,SRC 5 Ib Harmonics [8],HThdMHAI5.HA.phsBHar(8).instCVal.mag.f
+29B5,SRC 5 Ib Harmonics [9],HThdMHAI5.HA.phsBHar(9).instCVal.mag.f
+29B6,SRC 5 Ib Harmonics [10],HThdMHAI5.HA.phsBHar(10).instCVal.mag.f
+29B7,SRC 5 Ib Harmonics [11],HThdMHAI5.HA.phsBHar(11).instCVal.mag.f
+29B8,SRC 5 Ib Harmonics [12],HThdMHAI5.HA.phsBHar(12).instCVal.mag.f
+29B9,SRC 5 Ib Harmonics [13],HThdMHAI5.HA.phsBHar(13).instCVal.mag.f
+29BA,SRC 5 Ib Harmonics [14],HThdMHAI5.HA.phsBHar(14).instCVal.mag.f
+29BB,SRC 5 Ib Harmonics [15],HThdMHAI5.HA.phsBHar(15).instCVal.mag.f
+29BC,SRC 5 Ib Harmonics [16],HThdMHAI5.HA.phsBHar(16).instCVal.mag.f
+29BD,SRC 5 Ib Harmonics [17],HThdMHAI5.HA.phsBHar(17).instCVal.mag.f
+29BE,SRC 5 Ib Harmonics [18],HThdMHAI5.HA.phsBHar(18).instCVal.mag.f
+29BF,SRC 5 Ib Harmonics [19],HThdMHAI5.HA.phsBHar(19).instCVal.mag.f
+29C0,SRC 5 Ib Harmonics [20],HThdMHAI5.HA.phsBHar(20).instCVal.mag.f
+29C1,SRC 5 Ib Harmonics [21],HThdMHAI5.HA.phsBHar(21).instCVal.mag.f
+29C2,SRC 5 Ib Harmonics [22],HThdMHAI5.HA.phsBHar(22).instCVal.mag.f
+29C3,SRC 5 Ib Harmonics [23],HThdMHAI5.HA.phsBHar(23).instCVal.mag.f
+29C4,SRC 5 Ib Harmonics [24],HThdMHAI5.HA.phsBHar(24).instCVal.mag.f
+29C5,SRC 5 Ib Harmonics [25],HThdMHAI5.HA.phsBHar(25).instCVal.mag.f
+2A11,SRC 6 Ib Harmonics [2],HThdMHAI6.HA.phsBHar(2).instCVal.mag.f
+2A12,SRC 6 Ib Harmonics [3],HThdMHAI6.HA.phsBHar(3).instCVal.mag.f
+2A13,SRC 6 Ib Harmonics [4],HThdMHAI6.HA.phsBHar(4).instCVal.mag.f
+2A14,SRC 6 Ib Harmonics [5],HThdMHAI6.HA.phsBHar(5).instCVal.mag.f
+2A15,SRC 6 Ib Harmonics [6],HThdMHAI6.HA.phsBHar(6).instCVal.mag.f
+2A16,SRC 6 Ib Harmonics [7],HThdMHAI6.HA.phsBHar(7).instCVal.mag.f
+2A17,SRC 6 Ib Harmonics [8],HThdMHAI6.HA.phsBHar(8).instCVal.mag.f
+2A18,SRC 6 Ib Harmonics [9],HThdMHAI6.HA.phsBHar(9).instCVal.mag.f
+2A19,SRC 6 Ib Harmonics [10],HThdMHAI6.HA.phsBHar(10).instCVal.mag.f
+2A1A,SRC 6 Ib Harmonics [11],HThdMHAI6.HA.phsBHar(11).instCVal.mag.f
+2A1B,SRC 6 Ib Harmonics [12],HThdMHAI6.HA.phsBHar(12).instCVal.mag.f
+2A1C,SRC 6 Ib Harmonics [13],HThdMHAI6.HA.phsBHar(13).instCVal.mag.f
+2A1D,SRC 6 Ib Harmonics [14],HThdMHAI6.HA.phsBHar(14).instCVal.mag.f
+2A1E,SRC 6 Ib Harmonics [15],HThdMHAI6.HA.phsBHar(15).instCVal.mag.f
+2A1F,SRC 6 Ib Harmonics [16],HThdMHAI6.HA.phsBHar(16).instCVal.mag.f
+2A20,SRC 6 Ib Harmonics [17],HThdMHAI6.HA.phsBHar(17).instCVal.mag.f
+2A21,SRC 6 Ib Harmonics [18],HThdMHAI6.HA.phsBHar(18).instCVal.mag.f
+2A22,SRC 6 Ib Harmonics [19],HThdMHAI6.HA.phsBHar(19).instCVal.mag.f
+2A23,SRC 6 Ib Harmonics [20],HThdMHAI6.HA.phsBHar(20).instCVal.mag.f
+2A24,SRC 6 Ib Harmonics [21],HThdMHAI6.HA.phsBHar(21).instCVal.mag.f
+2A25,SRC 6 Ib Harmonics [22],HThdMHAI6.HA.phsBHar(22).instCVal.mag.f
+2A26,SRC 6 Ib Harmonics [23],HThdMHAI6.HA.phsBHar(23).instCVal.mag.f
+2A27,SRC 6 Ib Harmonics [24],HThdMHAI6.HA.phsBHar(24).instCVal.mag.f
+2A28,SRC 6 Ib Harmonics [25],HThdMHAI6.HA.phsBHar(25).instCVal.mag.f
+
+2843,SRC 1 Ic Harmonics [2],HThdMHAI1.HA.phsCHar(2).instCVal.mag.f
+2844,SRC 1 Ic Harmonics [3],HThdMHAI1.HA.phsCHar(3).instCVal.mag.f
+2845,SRC 1 Ic Harmonics [4],HThdMHAI1.HA.phsCHar(4).instCVal.mag.f
+2846,SRC 1 Ic Harmonics [5],HThdMHAI1.HA.phsCHar(5).instCVal.mag.f
+2847,SRC 1 Ic Harmonics [6],HThdMHAI1.HA.phsCHar(6).instCVal.mag.f
+2848,SRC 1 Ic Harmonics [7],HThdMHAI1.HA.phsCHar(7).instCVal.mag.f
+2849,SRC 1 Ic Harmonics [8],HThdMHAI1.HA.phsCHar(8).instCVal.mag.f
+284A,SRC 1 Ic Harmonics [9],HThdMHAI1.HA.phsCHar(9).instCVal.mag.f
+284B,SRC 1 Ic Harmonics [10],HThdMHAI1.HA.phsCHar(10).instCVal.mag.f
+284C,SRC 1 Ic Harmonics [11],HThdMHAI1.HA.phsCHar(11).instCVal.mag.f
+284D,SRC 1 Ic Harmonics [12],HThdMHAI1.HA.phsCHar(12).instCVal.mag.f
+284E,SRC 1 Ic Harmonics [13],HThdMHAI1.HA.phsCHar(13).instCVal.mag.f
+284F,SRC 1 Ic Harmonics [14],HThdMHAI1.HA.phsCHar(14).instCVal.mag.f
+2850,SRC 1 Ic Harmonics [15],HThdMHAI1.HA.phsCHar(15).instCVal.mag.f
+2851,SRC 1 Ic Harmonics [16],HThdMHAI1.HA.phsCHar(16).instCVal.mag.f
+2852,SRC 1 Ic Harmonics [17],HThdMHAI1.HA.phsCHar(17).instCVal.mag.f
+2853,SRC 1 Ic Harmonics [18],HThdMHAI1.HA.phsCHar(18).instCVal.mag.f
+2854,SRC 1 Ic Harmonics [19],HThdMHAI1.HA.phsCHar(19).instCVal.mag.f
+2855,SRC 1 Ic Harmonics [20],HThdMHAI1.HA.phsCHar(20).instCVal.mag.f
+2856,SRC 1 Ic Harmonics [21],HThdMHAI1.HA.phsCHar(21).instCVal.mag.f
+2857,SRC 1 Ic Harmonics [22],HThdMHAI1.HA.phsCHar(22).instCVal.mag.f
+2858,SRC 1 Ic Harmonics [23],HThdMHAI1.HA.phsCHar(23).instCVal.mag.f
+2859,SRC 1 Ic Harmonics [24],HThdMHAI1.HA.phsCHar(24).instCVal.mag.f
+285A,SRC 1 Ic Harmonics [25],HThdMHAI1.HA.phsCHar(25).instCVal.mag.f
+28A6,SRC 2 Ic Harmonics [2],HThdMHAI2.HA.phsCHar(2).instCVal.mag.f
+28A7,SRC 2 Ic Harmonics [3],HThdMHAI2.HA.phsCHar(3).instCVal.mag.f
+28A8,SRC 2 Ic Harmonics [4],HThdMHAI2.HA.phsCHar(4).instCVal.mag.f
+28A9,SRC 2 Ic Harmonics [5],HThdMHAI2.HA.phsCHar(5).instCVal.mag.f
+28AA,SRC 2 Ic Harmonics [6],HThdMHAI2.HA.phsCHar(6).instCVal.mag.f
+28AB,SRC 2 Ic Harmonics [7],HThdMHAI2.HA.phsCHar(7).instCVal.mag.f
+28AC,SRC 2 Ic Harmonics [8],HThdMHAI2.HA.phsCHar(8).instCVal.mag.f
+28AD,SRC 2 Ic Harmonics [9],HThdMHAI2.HA.phsCHar(9).instCVal.mag.f
+28AE,SRC 2 Ic Harmonics [10],HThdMHAI2.HA.phsCHar(10).instCVal.mag.f
+28AF,SRC 2 Ic Harmonics [11],HThdMHAI2.HA.phsCHar(11).instCVal.mag.f
+28B0,SRC 2 Ic Harmonics [12],HThdMHAI2.HA.phsCHar(12).instCVal.mag.f
+28B1,SRC 2 Ic Harmonics [13],HThdMHAI2.HA.phsCHar(13).instCVal.mag.f
+28B2,SRC 2 Ic Harmonics [14],HThdMHAI2.HA.phsCHar(14).instCVal.mag.f
+28B3,SRC 2 Ic Harmonics [15],HThdMHAI2.HA.phsCHar(15).instCVal.mag.f
+28B4,SRC 2 Ic Harmonics [16],HThdMHAI2.HA.phsCHar(16).instCVal.mag.f
+28B5,SRC 2 Ic Harmonics [17],HThdMHAI2.HA.phsCHar(17).instCVal.mag.f
+28B6,SRC 2 Ic Harmonics [18],HThdMHAI2.HA.phsCHar(18).instCVal.mag.f
+28B7,SRC 2 Ic Harmonics [19],HThdMHAI2.HA.phsCHar(19).instCVal.mag.f
+28B8,SRC 2 Ic Harmonics [20],HThdMHAI2.HA.phsCHar(20).instCVal.mag.f
+28B9,SRC 2 Ic Harmonics [21],HThdMHAI2.HA.phsCHar(21).instCVal.mag.f
+28BA,SRC 2 Ic Harmonics [22],HThdMHAI2.HA.phsCHar(22).instCVal.mag.f
+28BB,SRC 2 Ic Harmonics [23],HThdMHAI2.HA.phsCHar(23).instCVal.mag.f
+28BC,SRC 2 Ic Harmonics [24],HThdMHAI2.HA.phsCHar(24).instCVal.mag.f
+28BD,SRC 2 Ic Harmonics [25],HThdMHAI2.HA.phsCHar(25).instCVal.mag.f
+2909,SRC 3 Ic Harmonics [2],HThdMHAI3.HA.phsCHar(2).instCVal.mag.f
+290A,SRC 3 Ic Harmonics [3],HThdMHAI3.HA.phsCHar(3).instCVal.mag.f
+290B,SRC 3 Ic Harmonics [4],HThdMHAI3.HA.phsCHar(4).instCVal.mag.f
+290C,SRC 3 Ic Harmonics [5],HThdMHAI3.HA.phsCHar(5).instCVal.mag.f
+290D,SRC 3 Ic Harmonics [6],HThdMHAI3.HA.phsCHar(6).instCVal.mag.f
+290E,SRC 3 Ic Harmonics [7],HThdMHAI3.HA.phsCHar(7).instCVal.mag.f
+290F,SRC 3 Ic Harmonics [8],HThdMHAI3.HA.phsCHar(8).instCVal.mag.f
+2910,SRC 3 Ic Harmonics [9],HThdMHAI3.HA.phsCHar(9).instCVal.mag.f
+2911,SRC 3 Ic Harmonics [10],HThdMHAI3.HA.phsCHar(10).instCVal.mag.f
+2912,SRC 3 Ic Harmonics [11],HThdMHAI3.HA.phsCHar(11).instCVal.mag.f
+2913,SRC 3 Ic Harmonics [12],HThdMHAI3.HA.phsCHar(12).instCVal.mag.f
+2914,SRC 3 Ic Harmonics [13],HThdMHAI3.HA.phsCHar(13).instCVal.mag.f
+2915,SRC 3 Ic Harmonics [14],HThdMHAI3.HA.phsCHar(14).instCVal.mag.f
+2916,SRC 3 Ic Harmonics [15],HThdMHAI3.HA.phsCHar(15).instCVal.mag.f
+2917,SRC 3 Ic Harmonics [16],HThdMHAI3.HA.phsCHar(16).instCVal.mag.f
+2918,SRC 3 Ic Harmonics [17],HThdMHAI3.HA.phsCHar(17).instCVal.mag.f
+2919,SRC 3 Ic Harmonics [18],HThdMHAI3.HA.phsCHar(18).instCVal.mag.f
+291A,SRC 3 Ic Harmonics [19],HThdMHAI3.HA.phsCHar(19).instCVal.mag.f
+291B,SRC 3 Ic Harmonics [20],HThdMHAI3.HA.phsCHar(20).instCVal.mag.f
+291C,SRC 3 Ic Harmonics [21],HThdMHAI3.HA.phsCHar(21).instCVal.mag.f
+291D,SRC 3 Ic Harmonics [22],HThdMHAI3.HA.phsCHar(22).instCVal.mag.f
+291E,SRC 3 Ic Harmonics [23],HThdMHAI3.HA.phsCHar(23).instCVal.mag.f
+291F,SRC 3 Ic Harmonics [24],HThdMHAI3.HA.phsCHar(24).instCVal.mag.f
+2920,SRC 3 Ic Harmonics [25],HThdMHAI3.HA.phsCHar(25).instCVal.mag.f
+296C,SRC 4 Ic Harmonics [2],HThdMHAI4.HA.phsCHar(2).instCVal.mag.f
+296D,SRC 4 Ic Harmonics [3],HThdMHAI4.HA.phsCHar(3).instCVal.mag.f
+296E,SRC 4 Ic Harmonics [4],HThdMHAI4.HA.phsCHar(4).instCVal.mag.f
+296F,SRC 4 Ic Harmonics [5],HThdMHAI4.HA.phsCHar(5).instCVal.mag.f
+2970,SRC 4 Ic Harmonics [6],HThdMHAI4.HA.phsCHar(6).instCVal.mag.f
+2971,SRC 4 Ic Harmonics [7],HThdMHAI4.HA.phsCHar(7).instCVal.mag.f
+2972,SRC 4 Ic Harmonics [8],HThdMHAI4.HA.phsCHar(8).instCVal.mag.f
+2973,SRC 4 Ic Harmonics [9],HThdMHAI4.HA.phsCHar(9).instCVal.mag.f
+2974,SRC 4 Ic Harmonics [10],HThdMHAI4.HA.phsCHar(10).instCVal.mag.f
+2975,SRC 4 Ic Harmonics [11],HThdMHAI4.HA.phsCHar(11).instCVal.mag.f
+2976,SRC 4 Ic Harmonics [12],HThdMHAI4.HA.phsCHar(12).instCVal.mag.f
+2977,SRC 4 Ic Harmonics [13],HThdMHAI4.HA.phsCHar(13).instCVal.mag.f
+2978,SRC 4 Ic Harmonics [14],HThdMHAI4.HA.phsCHar(14).instCVal.mag.f
+2979,SRC 4 Ic Harmonics [15],HThdMHAI4.HA.phsCHar(15).instCVal.mag.f
+297A,SRC 4 Ic Harmonics [16],HThdMHAI4.HA.phsCHar(16).instCVal.mag.f
+297B,SRC 4 Ic Harmonics [17],HThdMHAI4.HA.phsCHar(17).instCVal.mag.f
+297C,SRC 4 Ic Harmonics [18],HThdMHAI4.HA.phsCHar(18).instCVal.mag.f
+297D,SRC 4 Ic Harmonics [19],HThdMHAI4.HA.phsCHar(19).instCVal.mag.f
+297E,SRC 4 Ic Harmonics [20],HThdMHAI4.HA.phsCHar(20).instCVal.mag.f
+297F,SRC 4 Ic Harmonics [21],HThdMHAI4.HA.phsCHar(21).instCVal.mag.f
+2980,SRC 4 Ic Harmonics [22],HThdMHAI4.HA.phsCHar(22).instCVal.mag.f
+2981,SRC 4 Ic Harmonics [23],HThdMHAI4.HA.phsCHar(23).instCVal.mag.f
+2982,SRC 4 Ic Harmonics [24],HThdMHAI4.HA.phsCHar(24).instCVal.mag.f
+2983,SRC 4 Ic Harmonics [25],HThdMHAI4.HA.phsCHar(25).instCVal.mag.f
+29CF,SRC 5 Ic Harmonics [2],HThdMHAI5.HA.phsCHar(2).instCVal.mag.f
+29D0,SRC 5 Ic Harmonics [3],HThdMHAI5.HA.phsCHar(3).instCVal.mag.f
+29D1,SRC 5 Ic Harmonics [4],HThdMHAI5.HA.phsCHar(4).instCVal.mag.f
+29D2,SRC 5 Ic Harmonics [5],HThdMHAI5.HA.phsCHar(5).instCVal.mag.f
+29D3,SRC 5 Ic Harmonics [6],HThdMHAI5.HA.phsCHar(6).instCVal.mag.f
+29D4,SRC 5 Ic Harmonics [7],HThdMHAI5.HA.phsCHar(7).instCVal.mag.f
+29D5,SRC 5 Ic Harmonics [8],HThdMHAI5.HA.phsCHar(8).instCVal.mag.f
+29D6,SRC 5 Ic Harmonics [9],HThdMHAI5.HA.phsCHar(9).instCVal.mag.f
+29D7,SRC 5 Ic Harmonics [10],HThdMHAI5.HA.phsCHar(10).instCVal.mag.f
+29D8,SRC 5 Ic Harmonics [11],HThdMHAI5.HA.phsCHar(11).instCVal.mag.f
+29D9,SRC 5 Ic Harmonics [12],HThdMHAI5.HA.phsCHar(12).instCVal.mag.f
+29DA,SRC 5 Ic Harmonics [13],HThdMHAI5.HA.phsCHar(13).instCVal.mag.f
+29DB,SRC 5 Ic Harmonics [14],HThdMHAI5.HA.phsCHar(14).instCVal.mag.f
+29DC,SRC 5 Ic Harmonics [15],HThdMHAI5.HA.phsCHar(15).instCVal.mag.f
+29DD,SRC 5 Ic Harmonics [16],HThdMHAI5.HA.phsCHar(16).instCVal.mag.f
+29DE,SRC 5 Ic Harmonics [17],HThdMHAI5.HA.phsCHar(17).instCVal.mag.f
+29DF,SRC 5 Ic Harmonics [18],HThdMHAI5.HA.phsCHar(18).instCVal.mag.f
+29E0,SRC 5 Ic Harmonics [19],HThdMHAI5.HA.phsCHar(19).instCVal.mag.f
+29E1,SRC 5 Ic Harmonics [20],HThdMHAI5.HA.phsCHar(20).instCVal.mag.f
+29E2,SRC 5 Ic Harmonics [21],HThdMHAI5.HA.phsCHar(21).instCVal.mag.f
+29E3,SRC 5 Ic Harmonics [22],HThdMHAI5.HA.phsCHar(22).instCVal.mag.f
+29E4,SRC 5 Ic Harmonics [23],HThdMHAI5.HA.phsCHar(23).instCVal.mag.f
+29E5,SRC 5 Ic Harmonics [24],HThdMHAI5.HA.phsCHar(24).instCVal.mag.f
+29E6,SRC 5 Ic Harmonics [25],HThdMHAI5.HA.phsCHar(25).instCVal.mag.f
+2A32,SRC 6 Ic Harmonics [2],HThdMHAI6.HA.phsCHar(2).instCVal.mag.f
+2A33,SRC 6 Ic Harmonics [3],HThdMHAI6.HA.phsCHar(3).instCVal.mag.f
+2A34,SRC 6 Ic Harmonics [4],HThdMHAI6.HA.phsCHar(4).instCVal.mag.f
+2A35,SRC 6 Ic Harmonics [5],HThdMHAI6.HA.phsCHar(5).instCVal.mag.f
+2A36,SRC 6 Ic Harmonics [6],HThdMHAI6.HA.phsCHar(6).instCVal.mag.f
+2A37,SRC 6 Ic Harmonics [7],HThdMHAI6.HA.phsCHar(7).instCVal.mag.f
+2A38,SRC 6 Ic Harmonics [8],HThdMHAI6.HA.phsCHar(8).instCVal.mag.f
+2A39,SRC 6 Ic Harmonics [9],HThdMHAI6.HA.phsCHar(9).instCVal.mag.f
+2A3A,SRC 6 Ic Harmonics [10],HThdMHAI6.HA.phsCHar(10).instCVal.mag.f
+2A3B,SRC 6 Ic Harmonics [11],HThdMHAI6.HA.phsCHar(11).instCVal.mag.f
+2A3C,SRC 6 Ic Harmonics [12],HThdMHAI6.HA.phsCHar(12).instCVal.mag.f
+2A3D,SRC 6 Ic Harmonics [13],HThdMHAI6.HA.phsCHar(13).instCVal.mag.f
+2A3E,SRC 6 Ic Harmonics [14],HThdMHAI6.HA.phsCHar(14).instCVal.mag.f
+2A3F,SRC 6 Ic Harmonics [15],HThdMHAI6.HA.phsCHar(15).instCVal.mag.f
+2A40,SRC 6 Ic Harmonics [16],HThdMHAI6.HA.phsCHar(16).instCVal.mag.f
+2A41,SRC 6 Ic Harmonics [17],HThdMHAI6.HA.phsCHar(17).instCVal.mag.f
+2A42,SRC 6 Ic Harmonics [18],HThdMHAI6.HA.phsCHar(18).instCVal.mag.f
+2A43,SRC 6 Ic Harmonics [19],HThdMHAI6.HA.phsCHar(19).instCVal.mag.f
+2A44,SRC 6 Ic Harmonics [20],HThdMHAI6.HA.phsCHar(20).instCVal.mag.f
+2A45,SRC 6 Ic Harmonics [21],HThdMHAI6.HA.phsCHar(21).instCVal.mag.f
+2A46,SRC 6 Ic Harmonics [22],HThdMHAI6.HA.phsCHar(22).instCVal.mag.f
+2A47,SRC 6 Ic Harmonics [23],HThdMHAI6.HA.phsCHar(23).instCVal.mag.f
+2A48,SRC 6 Ic Harmonics [24],HThdMHAI6.HA.phsCHar(24).instCVal.mag.f
+2A49,SRC 6 Ic Harmonics [25],HThdMHAI6.HA.phsCHar(25).instCVal.mag.f
+
+1F81,SRC 1 Va Harmonics [2],HThdMHAI1.HPhV.phsAHar(2).instCVal.mag.f
+1F82,SRC 1 Va Harmonics [3],HThdMHAI1.HPhV.phsAHar(3).instCVal.mag.f
+1F83,SRC 1 Va Harmonics [4],HThdMHAI1.HPhV.phsAHar(4).instCVal.mag.f
+1F84,SRC 1 Va Harmonics [5],HThdMHAI1.HPhV.phsAHar(5).instCVal.mag.f
+1F85,SRC 1 Va Harmonics [6],HThdMHAI1.HPhV.phsAHar(6).instCVal.mag.f
+1F86,SRC 1 Va Harmonics [7],HThdMHAI1.HPhV.phsAHar(7).instCVal.mag.f
+1F87,SRC 1 Va Harmonics [8],HThdMHAI1.HPhV.phsAHar(8).instCVal.mag.f
+1F88,SRC 1 Va Harmonics [9],HThdMHAI1.HPhV.phsAHar(9).instCVal.mag.f
+1F89,SRC 1 Va Harmonics [10],HThdMHAI1.HPhV.phsAHar(10).instCVal.mag.f
+1F8A,SRC 1 Va Harmonics [11],HThdMHAI1.HPhV.phsAHar(11).instCVal.mag.f
+1F8B,SRC 1 Va Harmonics [12],HThdMHAI1.HPhV.phsAHar(12).instCVal.mag.f
+1F8C,SRC 1 Va Harmonics [13],HThdMHAI1.HPhV.phsAHar(13).instCVal.mag.f
+1F8D,SRC 1 Va Harmonics [14],HThdMHAI1.HPhV.phsAHar(14).instCVal.mag.f
+1F8E,SRC 1 Va Harmonics [15],HThdMHAI1.HPhV.phsAHar(15).instCVal.mag.f
+1F8F,SRC 1 Va Harmonics [16],HThdMHAI1.HPhV.phsAHar(16).instCVal.mag.f
+1F90,SRC 1 Va Harmonics [17],HThdMHAI1.HPhV.phsAHar(17).instCVal.mag.f
+1F91,SRC 1 Va Harmonics [18],HThdMHAI1.HPhV.phsAHar(18).instCVal.mag.f
+1F92,SRC 1 Va Harmonics [19],HThdMHAI1.HPhV.phsAHar(19).instCVal.mag.f
+1F93,SRC 1 Va Harmonics [20],HThdMHAI1.HPhV.phsAHar(20).instCVal.mag.f
+1F94,SRC 1 Va Harmonics [21],HThdMHAI1.HPhV.phsAHar(21).instCVal.mag.f
+1F95,SRC 1 Va Harmonics [22],HThdMHAI1.HPhV.phsAHar(22).instCVal.mag.f
+1F96,SRC 1 Va Harmonics [23],HThdMHAI1.HPhV.phsAHar(23).instCVal.mag.f
+1F97,SRC 1 Va Harmonics [24],HThdMHAI1.HPhV.phsAHar(24).instCVal.mag.f
+1F98,SRC 1 Va Harmonics [25],HThdMHAI1.HPhV.phsAHar(25).instCVal.mag.f
+1FCC,SRC 2 Va Harmonics [2],HThdMHAI2.HPhV.phsAHar(2).instCVal.mag.f
+1FCD,SRC 2 Va Harmonics [3],HThdMHAI2.HPhV.phsAHar(3).instCVal.mag.f
+1FCE,SRC 2 Va Harmonics [4],HThdMHAI2.HPhV.phsAHar(4).instCVal.mag.f
+1FCF,SRC 2 Va Harmonics [5],HThdMHAI2.HPhV.phsAHar(5).instCVal.mag.f
+1FD0,SRC 2 Va Harmonics [6],HThdMHAI2.HPhV.phsAHar(6).instCVal.mag.f
+1FD1,SRC 2 Va Harmonics [7],HThdMHAI2.HPhV.phsAHar(7).instCVal.mag.f
+1FD2,SRC 2 Va Harmonics [8],HThdMHAI2.HPhV.phsAHar(8).instCVal.mag.f
+1FD3,SRC 2 Va Harmonics [9],HThdMHAI2.HPhV.phsAHar(9).instCVal.mag.f
+1FD4,SRC 2 Va Harmonics [10],HThdMHAI2.HPhV.phsAHar(10).instCVal.mag.f
+1FD5,SRC 2 Va Harmonics [11],HThdMHAI2.HPhV.phsAHar(11).instCVal.mag.f
+1FD6,SRC 2 Va Harmonics [12],HThdMHAI2.HPhV.phsAHar(12).instCVal.mag.f
+1FD7,SRC 2 Va Harmonics [13],HThdMHAI2.HPhV.phsAHar(13).instCVal.mag.f
+1FD8,SRC 2 Va Harmonics [14],HThdMHAI2.HPhV.phsAHar(14).instCVal.mag.f
+1FD9,SRC 2 Va Harmonics [15],HThdMHAI2.HPhV.phsAHar(15).instCVal.mag.f
+1FDA,SRC 2 Va Harmonics [16],HThdMHAI2.HPhV.phsAHar(16).instCVal.mag.f
+1FDB,SRC 2 Va Harmonics [17],HThdMHAI2.HPhV.phsAHar(17).instCVal.mag.f
+1FDC,SRC 2 Va Harmonics [18],HThdMHAI2.HPhV.phsAHar(18).instCVal.mag.f
+1FDD,SRC 2 Va Harmonics [19],HThdMHAI2.HPhV.phsAHar(19).instCVal.mag.f
+1FDE,SRC 2 Va Harmonics [20],HThdMHAI2.HPhV.phsAHar(20).instCVal.mag.f
+1FDF,SRC 2 Va Harmonics [21],HThdMHAI2.HPhV.phsAHar(21).instCVal.mag.f
+1FE0,SRC 2 Va Harmonics [22],HThdMHAI2.HPhV.phsAHar(22).instCVal.mag.f
+1FE1,SRC 2 Va Harmonics [23],HThdMHAI2.HPhV.phsAHar(23).instCVal.mag.f
+1FE2,SRC 2 Va Harmonics [24],HThdMHAI2.HPhV.phsAHar(24).instCVal.mag.f
+1FE3,SRC 2 Va Harmonics [25],HThdMHAI2.HPhV.phsAHar(25).instCVal.mag.f
+2017,SRC 3 Va Harmonics [2],HThdMHAI3.HPhV.phsAHar(2).instCVal.mag.f
+2018,SRC 3 Va Harmonics [3],HThdMHAI3.HPhV.phsAHar(3).instCVal.mag.f
+2019,SRC 3 Va Harmonics [4],HThdMHAI3.HPhV.phsAHar(4).instCVal.mag.f
+201A,SRC 3 Va Harmonics [5],HThdMHAI3.HPhV.phsAHar(5).instCVal.mag.f
+201B,SRC 3 Va Harmonics [6],HThdMHAI3.HPhV.phsAHar(6).instCVal.mag.f
+201C,SRC 3 Va Harmonics [7],HThdMHAI3.HPhV.phsAHar(7).instCVal.mag.f
+201D,SRC 3 Va Harmonics [8],HThdMHAI3.HPhV.phsAHar(8).instCVal.mag.f
+201E,SRC 3 Va Harmonics [9],HThdMHAI3.HPhV.phsAHar(9).instCVal.mag.f
+201F,SRC 3 Va Harmonics [10],HThdMHAI3.HPhV.phsAHar(10).instCVal.mag.f
+2020,SRC 3 Va Harmonics [11],HThdMHAI3.HPhV.phsAHar(11).instCVal.mag.f
+2021,SRC 3 Va Harmonics [12],HThdMHAI3.HPhV.phsAHar(12).instCVal.mag.f
+2022,SRC 3 Va Harmonics [13],HThdMHAI3.HPhV.phsAHar(13).instCVal.mag.f
+2023,SRC 3 Va Harmonics [14],HThdMHAI3.HPhV.phsAHar(14).instCVal.mag.f
+2024,SRC 3 Va Harmonics [15],HThdMHAI3.HPhV.phsAHar(15).instCVal.mag.f
+2025,SRC 3 Va Harmonics [16],HThdMHAI3.HPhV.phsAHar(16).instCVal.mag.f
+2026,SRC 3 Va Harmonics [17],HThdMHAI3.HPhV.phsAHar(17).instCVal.mag.f
+2027,SRC 3 Va Harmonics [18],HThdMHAI3.HPhV.phsAHar(18).instCVal.mag.f
+2028,SRC 3 Va Harmonics [19],HThdMHAI3.HPhV.phsAHar(19).instCVal.mag.f
+2029,SRC 3 Va Harmonics [20],HThdMHAI3.HPhV.phsAHar(20).instCVal.mag.f
+202A,SRC 3 Va Harmonics [21],HThdMHAI3.HPhV.phsAHar(21).instCVal.mag.f
+202B,SRC 3 Va Harmonics [22],HThdMHAI3.HPhV.phsAHar(22).instCVal.mag.f
+202C,SRC 3 Va Harmonics [23],HThdMHAI3.HPhV.phsAHar(23).instCVal.mag.f
+202D,SRC 3 Va Harmonics [24],HThdMHAI3.HPhV.phsAHar(24).instCVal.mag.f
+202E,SRC 3 Va Harmonics [25],HThdMHAI3.HPhV.phsAHar(25).instCVal.mag.f
+2062,SRC 4 Va Harmonics [2],HThdMHAI4.HPhV.phsAHar(2).instCVal.mag.f
+2063,SRC 4 Va Harmonics [3],HThdMHAI4.HPhV.phsAHar(3).instCVal.mag.f
+2064,SRC 4 Va Harmonics [4],HThdMHAI4.HPhV.phsAHar(4).instCVal.mag.f
+2065,SRC 4 Va Harmonics [5],HThdMHAI4.HPhV.phsAHar(5).instCVal.mag.f
+2066,SRC 4 Va Harmonics [6],HThdMHAI4.HPhV.phsAHar(6).instCVal.mag.f
+2067,SRC 4 Va Harmonics [7],HThdMHAI4.HPhV.phsAHar(7).instCVal.mag.f
+2068,SRC 4 Va Harmonics [8],HThdMHAI4.HPhV.phsAHar(8).instCVal.mag.f
+2069,SRC 4 Va Harmonics [9],HThdMHAI4.HPhV.phsAHar(9).instCVal.mag.f
+206A,SRC 4 Va Harmonics [10],HThdMHAI4.HPhV.phsAHar(10).instCVal.mag.f
+206B,SRC 4 Va Harmonics [11],HThdMHAI4.HPhV.phsAHar(11).instCVal.mag.f
+206C,SRC 4 Va Harmonics [12],HThdMHAI4.HPhV.phsAHar(12).instCVal.mag.f
+206D,SRC 4 Va Harmonics [13],HThdMHAI4.HPhV.phsAHar(13).instCVal.mag.f
+206E,SRC 4 Va Harmonics [14],HThdMHAI4.HPhV.phsAHar(14).instCVal.mag.f
+206F,SRC 4 Va Harmonics [15],HThdMHAI4.HPhV.phsAHar(15).instCVal.mag.f
+2070,SRC 4 Va Harmonics [16],HThdMHAI4.HPhV.phsAHar(16).instCVal.mag.f
+2071,SRC 4 Va Harmonics [17],HThdMHAI4.HPhV.phsAHar(17).instCVal.mag.f
+2072,SRC 4 Va Harmonics [18],HThdMHAI4.HPhV.phsAHar(18).instCVal.mag.f
+2073,SRC 4 Va Harmonics [19],HThdMHAI4.HPhV.phsAHar(19).instCVal.mag.f
+2074,SRC 4 Va Harmonics [20],HThdMHAI4.HPhV.phsAHar(20).instCVal.mag.f
+2075,SRC 4 Va Harmonics [21],HThdMHAI4.HPhV.phsAHar(21).instCVal.mag.f
+2076,SRC 4 Va Harmonics [22],HThdMHAI4.HPhV.phsAHar(22).instCVal.mag.f
+2077,SRC 4 Va Harmonics [23],HThdMHAI4.HPhV.phsAHar(23).instCVal.mag.f
+2078,SRC 4 Va Harmonics [24],HThdMHAI4.HPhV.phsAHar(24).instCVal.mag.f
+2079,SRC 4 Va Harmonics [25],HThdMHAI4.HPhV.phsAHar(25).instCVal.mag.f
+20AD,SRC 5 Va Harmonics [2],HThdMHAI5.HPhV.phsAHar(2).instCVal.mag.f
+20AE,SRC 5 Va Harmonics [3],HThdMHAI5.HPhV.phsAHar(3).instCVal.mag.f
+20AF,SRC 5 Va Harmonics [4],HThdMHAI5.HPhV.phsAHar(4).instCVal.mag.f
+20B0,SRC 5 Va Harmonics [5],HThdMHAI5.HPhV.phsAHar(5).instCVal.mag.f
+20B1,SRC 5 Va Harmonics [6],HThdMHAI5.HPhV.phsAHar(6).instCVal.mag.f
+20B2,SRC 5 Va Harmonics [7],HThdMHAI5.HPhV.phsAHar(7).instCVal.mag.f
+20B3,SRC 5 Va Harmonics [8],HThdMHAI5.HPhV.phsAHar(8).instCVal.mag.f
+20B4,SRC 5 Va Harmonics [9],HThdMHAI5.HPhV.phsAHar(9).instCVal.mag.f
+20B5,SRC 5 Va Harmonics [10],HThdMHAI5.HPhV.phsAHar(10).instCVal.mag.f
+20B6,SRC 5 Va Harmonics [11],HThdMHAI5.HPhV.phsAHar(11).instCVal.mag.f
+20B7,SRC 5 Va Harmonics [12],HThdMHAI5.HPhV.phsAHar(12).instCVal.mag.f
+20B8,SRC 5 Va Harmonics [13],HThdMHAI5.HPhV.phsAHar(13).instCVal.mag.f
+20B9,SRC 5 Va Harmonics [14],HThdMHAI5.HPhV.phsAHar(14).instCVal.mag.f
+20BA,SRC 5 Va Harmonics [15],HThdMHAI5.HPhV.phsAHar(15).instCVal.mag.f
+20BB,SRC 5 Va Harmonics [16],HThdMHAI5.HPhV.phsAHar(16).instCVal.mag.f
+20BC,SRC 5 Va Harmonics [17],HThdMHAI5.HPhV.phsAHar(17).instCVal.mag.f
+20BD,SRC 5 Va Harmonics [18],HThdMHAI5.HPhV.phsAHar(18).instCVal.mag.f
+20BE,SRC 5 Va Harmonics [19],HThdMHAI5.HPhV.phsAHar(19).instCVal.mag.f
+20BF,SRC 5 Va Harmonics [20],HThdMHAI5.HPhV.phsAHar(20).instCVal.mag.f
+20C0,SRC 5 Va Harmonics [21],HThdMHAI5.HPhV.phsAHar(21).instCVal.mag.f
+20C1,SRC 5 Va Harmonics [22],HThdMHAI5.HPhV.phsAHar(22).instCVal.mag.f
+20C2,SRC 5 Va Harmonics [23],HThdMHAI5.HPhV.phsAHar(23).instCVal.mag.f
+20C3,SRC 5 Va Harmonics [24],HThdMHAI5.HPhV.phsAHar(24).instCVal.mag.f
+20C4,SRC 5 Va Harmonics [25],HThdMHAI5.HPhV.phsAHar(25).instCVal.mag.f
+20F8,SRC 6 Va Harmonics [2],HThdMHAI6.HPhV.phsAHar(2).instCVal.mag.f
+20F9,SRC 6 Va Harmonics [3],HThdMHAI6.HPhV.phsAHar(3).instCVal.mag.f
+20FA,SRC 6 Va Harmonics [4],HThdMHAI6.HPhV.phsAHar(4).instCVal.mag.f
+20FB,SRC 6 Va Harmonics [5],HThdMHAI6.HPhV.phsAHar(5).instCVal.mag.f
+20FC,SRC 6 Va Harmonics [6],HThdMHAI6.HPhV.phsAHar(6).instCVal.mag.f
+20FD,SRC 6 Va Harmonics [7],HThdMHAI6.HPhV.phsAHar(7).instCVal.mag.f
+20FE,SRC 6 Va Harmonics [8],HThdMHAI6.HPhV.phsAHar(8).instCVal.mag.f
+20FF,SRC 6 Va Harmonics [9],HThdMHAI6.HPhV.phsAHar(9).instCVal.mag.f
+2100,SRC 6 Va Harmonics [10],HThdMHAI6.HPhV.phsAHar(10).instCVal.mag.f
+2101,SRC 6 Va Harmonics [11],HThdMHAI6.HPhV.phsAHar(11).instCVal.mag.f
+2102,SRC 6 Va Harmonics [12],HThdMHAI6.HPhV.phsAHar(12).instCVal.mag.f
+2103,SRC 6 Va Harmonics [13],HThdMHAI6.HPhV.phsAHar(13).instCVal.mag.f
+2104,SRC 6 Va Harmonics [14],HThdMHAI6.HPhV.phsAHar(14).instCVal.mag.f
+2105,SRC 6 Va Harmonics [15],HThdMHAI6.HPhV.phsAHar(15).instCVal.mag.f
+2106,SRC 6 Va Harmonics [16],HThdMHAI6.HPhV.phsAHar(16).instCVal.mag.f
+2107,SRC 6 Va Harmonics [17],HThdMHAI6.HPhV.phsAHar(17).instCVal.mag.f
+2108,SRC 6 Va Harmonics [18],HThdMHAI6.HPhV.phsAHar(18).instCVal.mag.f
+2109,SRC 6 Va Harmonics [19],HThdMHAI6.HPhV.phsAHar(19).instCVal.mag.f
+210A,SRC 6 Va Harmonics [20],HThdMHAI6.HPhV.phsAHar(20).instCVal.mag.f
+210B,SRC 6 Va Harmonics [21],HThdMHAI6.HPhV.phsAHar(21).instCVal.mag.f
+210C,SRC 6 Va Harmonics [22],HThdMHAI6.HPhV.phsAHar(22).instCVal.mag.f
+210D,SRC 6 Va Harmonics [23],HThdMHAI6.HPhV.phsAHar(23).instCVal.mag.f
+210E,SRC 6 Va Harmonics [24],HThdMHAI6.HPhV.phsAHar(24).instCVal.mag.f
+210F,SRC 6 Va Harmonics [25],HThdMHAI6.HPhV.phsAHar(25).instCVal.mag.f
+
+1F9A,SRC 1 Vb Harmonics [2],HThdMHAI1.HPhV.phsBHar(2).instCVal.mag.f
+1F9B,SRC 1 Vb Harmonics [3],HThdMHAI1.HPhV.phsBHar(3).instCVal.mag.f
+1F9C,SRC 1 Vb Harmonics [4],HThdMHAI1.HPhV.phsBHar(4).instCVal.mag.f
+1F9D,SRC 1 Vb Harmonics [5],HThdMHAI1.HPhV.phsBHar(5).instCVal.mag.f
+1F9E,SRC 1 Vb Harmonics [6],HThdMHAI1.HPhV.phsBHar(6).instCVal.mag.f
+1F9F,SRC 1 Vb Harmonics [7],HThdMHAI1.HPhV.phsBHar(7).instCVal.mag.f
+1FA0,SRC 1 Vb Harmonics [8],HThdMHAI1.HPhV.phsBHar(8).instCVal.mag.f
+1FA1,SRC 1 Vb Harmonics [9],HThdMHAI1.HPhV.phsBHar(9).instCVal.mag.f
+1FA2,SRC 1 Vb Harmonics [10],HThdMHAI1.HPhV.phsBHar(10).instCVal.mag.f
+1FA3,SRC 1 Vb Harmonics [11],HThdMHAI1.HPhV.phsBHar(11).instCVal.mag.f
+1FA4,SRC 1 Vb Harmonics [12],HThdMHAI1.HPhV.phsBHar(12).instCVal.mag.f
+1FA5,SRC 1 Vb Harmonics [13],HThdMHAI1.HPhV.phsBHar(13).instCVal.mag.f
+1FA6,SRC 1 Vb Harmonics [14],HThdMHAI1.HPhV.phsBHar(14).instCVal.mag.f
+1FA7,SRC 1 Vb Harmonics [15],HThdMHAI1.HPhV.phsBHar(15).instCVal.mag.f
+1FA8,SRC 1 Vb Harmonics [16],HThdMHAI1.HPhV.phsBHar(16).instCVal.mag.f
+1FA9,SRC 1 Vb Harmonics [17],HThdMHAI1.HPhV.phsBHar(17).instCVal.mag.f
+1FAA,SRC 1 Vb Harmonics [18],HThdMHAI1.HPhV.phsBHar(18).instCVal.mag.f
+1FAB,SRC 1 Vb Harmonics [19],HThdMHAI1.HPhV.phsBHar(19).instCVal.mag.f
+1FAC,SRC 1 Vb Harmonics [20],HThdMHAI1.HPhV.phsBHar(20).instCVal.mag.f
+1FAD,SRC 1 Vb Harmonics [21],HThdMHAI1.HPhV.phsBHar(21).instCVal.mag.f
+1FAE,SRC 1 Vb Harmonics [22],HThdMHAI1.HPhV.phsBHar(22).instCVal.mag.f
+1FAF,SRC 1 Vb Harmonics [23],HThdMHAI1.HPhV.phsBHar(23).instCVal.mag.f
+1FB0,SRC 1 Vb Harmonics [24],HThdMHAI1.HPhV.phsBHar(24).instCVal.mag.f
+1FB1,SRC 1 Vb Harmonics [25],HThdMHAI1.HPhV.phsBHar(25).instCVal.mag.f
+1FE5,SRC 2 Vb Harmonics [2],HThdMHAI2.HPhV.phsBHar(2).instCVal.mag.f
+1FE6,SRC 2 Vb Harmonics [3],HThdMHAI2.HPhV.phsBHar(3).instCVal.mag.f
+1FE7,SRC 2 Vb Harmonics [4],HThdMHAI2.HPhV.phsBHar(4).instCVal.mag.f
+1FE8,SRC 2 Vb Harmonics [5],HThdMHAI2.HPhV.phsBHar(5).instCVal.mag.f
+1FE9,SRC 2 Vb Harmonics [6],HThdMHAI2.HPhV.phsBHar(6).instCVal.mag.f
+1FEA,SRC 2 Vb Harmonics [7],HThdMHAI2.HPhV.phsBHar(7).instCVal.mag.f
+1FEB,SRC 2 Vb Harmonics [8],HThdMHAI2.HPhV.phsBHar(8).instCVal.mag.f
+1FEC,SRC 2 Vb Harmonics [9],HThdMHAI2.HPhV.phsBHar(9).instCVal.mag.f
+1FED,SRC 2 Vb Harmonics [10],HThdMHAI2.HPhV.phsBHar(10).instCVal.mag.f
+1FEE,SRC 2 Vb Harmonics [11],HThdMHAI2.HPhV.phsBHar(11).instCVal.mag.f
+1FEF,SRC 2 Vb Harmonics [12],HThdMHAI2.HPhV.phsBHar(12).instCVal.mag.f
+1FF0,SRC 2 Vb Harmonics [13],HThdMHAI2.HPhV.phsBHar(13).instCVal.mag.f
+1FF1,SRC 2 Vb Harmonics [14],HThdMHAI2.HPhV.phsBHar(14).instCVal.mag.f
+1FF2,SRC 2 Vb Harmonics [15],HThdMHAI2.HPhV.phsBHar(15).instCVal.mag.f
+1FF3,SRC 2 Vb Harmonics [16],HThdMHAI2.HPhV.phsBHar(16).instCVal.mag.f
+1FF4,SRC 2 Vb Harmonics [17],HThdMHAI2.HPhV.phsBHar(17).instCVal.mag.f
+1FF5,SRC 2 Vb Harmonics [18],HThdMHAI2.HPhV.phsBHar(18).instCVal.mag.f
+1FF6,SRC 2 Vb Harmonics [19],HThdMHAI2.HPhV.phsBHar(19).instCVal.mag.f
+1FF7,SRC 2 Vb Harmonics [20],HThdMHAI2.HPhV.phsBHar(20).instCVal.mag.f
+1FF8,SRC 2 Vb Harmonics [21],HThdMHAI2.HPhV.phsBHar(21).instCVal.mag.f
+1FF9,SRC 2 Vb Harmonics [22],HThdMHAI2.HPhV.phsBHar(22).instCVal.mag.f
+1FFA,SRC 2 Vb Harmonics [23],HThdMHAI2.HPhV.phsBHar(23).instCVal.mag.f
+1FFB,SRC 2 Vb Harmonics [24],HThdMHAI2.HPhV.phsBHar(24).instCVal.mag.f
+1FFC,SRC 2 Vb Harmonics [25],HThdMHAI2.HPhV.phsBHar(25).instCVal.mag.f
+2030,SRC 3 Vb Harmonics [2],HThdMHAI3.HPhV.phsBHar(2).instCVal.mag.f
+2031,SRC 3 Vb Harmonics [3],HThdMHAI3.HPhV.phsBHar(3).instCVal.mag.f
+2032,SRC 3 Vb Harmonics [4],HThdMHAI3.HPhV.phsBHar(4).instCVal.mag.f
+2033,SRC 3 Vb Harmonics [5],HThdMHAI3.HPhV.phsBHar(5).instCVal.mag.f
+2034,SRC 3 Vb Harmonics [6],HThdMHAI3.HPhV.phsBHar(6).instCVal.mag.f
+2035,SRC 3 Vb Harmonics [7],HThdMHAI3.HPhV.phsBHar(7).instCVal.mag.f
+2036,SRC 3 Vb Harmonics [8],HThdMHAI3.HPhV.phsBHar(8).instCVal.mag.f
+2037,SRC 3 Vb Harmonics [9],HThdMHAI3.HPhV.phsBHar(9).instCVal.mag.f
+2038,SRC 3 Vb Harmonics [10],HThdMHAI3.HPhV.phsBHar(10).instCVal.mag.f
+2039,SRC 3 Vb Harmonics [11],HThdMHAI3.HPhV.phsBHar(11).instCVal.mag.f
+203A,SRC 3 Vb Harmonics [12],HThdMHAI3.HPhV.phsBHar(12).instCVal.mag.f
+203B,SRC 3 Vb Harmonics [13],HThdMHAI3.HPhV.phsBHar(13).instCVal.mag.f
+203C,SRC 3 Vb Harmonics [14],HThdMHAI3.HPhV.phsBHar(14).instCVal.mag.f
+203D,SRC 3 Vb Harmonics [15],HThdMHAI3.HPhV.phsBHar(15).instCVal.mag.f
+203E,SRC 3 Vb Harmonics [16],HThdMHAI3.HPhV.phsBHar(16).instCVal.mag.f
+203F,SRC 3 Vb Harmonics [17],HThdMHAI3.HPhV.phsBHar(17).instCVal.mag.f
+2040,SRC 3 Vb Harmonics [18],HThdMHAI3.HPhV.phsBHar(18).instCVal.mag.f
+2041,SRC 3 Vb Harmonics [19],HThdMHAI3.HPhV.phsBHar(19).instCVal.mag.f
+2042,SRC 3 Vb Harmonics [20],HThdMHAI3.HPhV.phsBHar(20).instCVal.mag.f
+2043,SRC 3 Vb Harmonics [21],HThdMHAI3.HPhV.phsBHar(21).instCVal.mag.f
+2044,SRC 3 Vb Harmonics [22],HThdMHAI3.HPhV.phsBHar(22).instCVal.mag.f
+2045,SRC 3 Vb Harmonics [23],HThdMHAI3.HPhV.phsBHar(23).instCVal.mag.f
+2046,SRC 3 Vb Harmonics [24],HThdMHAI3.HPhV.phsBHar(24).instCVal.mag.f
+2047,SRC 3 Vb Harmonics [25],HThdMHAI3.HPhV.phsBHar(25).instCVal.mag.f
+207B,SRC 4 Vb Harmonics [2],HThdMHAI4.HPhV.phsBHar(2).instCVal.mag.f
+207C,SRC 4 Vb Harmonics [3],HThdMHAI4.HPhV.phsBHar(3).instCVal.mag.f
+207D,SRC 4 Vb Harmonics [4],HThdMHAI4.HPhV.phsBHar(4).instCVal.mag.f
+207E,SRC 4 Vb Harmonics [5],HThdMHAI4.HPhV.phsBHar(5).instCVal.mag.f
+207F,SRC 4 Vb Harmonics [6],HThdMHAI4.HPhV.phsBHar(6).instCVal.mag.f
+2080,SRC 4 Vb Harmonics [7],HThdMHAI4.HPhV.phsBHar(7).instCVal.mag.f
+2081,SRC 4 Vb Harmonics [8],HThdMHAI4.HPhV.phsBHar(8).instCVal.mag.f
+2082,SRC 4 Vb Harmonics [9],HThdMHAI4.HPhV.phsBHar(9).instCVal.mag.f
+2083,SRC 4 Vb Harmonics [10],HThdMHAI4.HPhV.phsBHar(10).instCVal.mag.f
+2084,SRC 4 Vb Harmonics [11],HThdMHAI4.HPhV.phsBHar(11).instCVal.mag.f
+2085,SRC 4 Vb Harmonics [12],HThdMHAI4.HPhV.phsBHar(12).instCVal.mag.f
+2086,SRC 4 Vb Harmonics [13],HThdMHAI4.HPhV.phsBHar(13).instCVal.mag.f
+2087,SRC 4 Vb Harmonics [14],HThdMHAI4.HPhV.phsBHar(14).instCVal.mag.f
+2088,SRC 4 Vb Harmonics [15],HThdMHAI4.HPhV.phsBHar(15).instCVal.mag.f
+2089,SRC 4 Vb Harmonics [16],HThdMHAI4.HPhV.phsBHar(16).instCVal.mag.f
+208A,SRC 4 Vb Harmonics [17],HThdMHAI4.HPhV.phsBHar(17).instCVal.mag.f
+208B,SRC 4 Vb Harmonics [18],HThdMHAI4.HPhV.phsBHar(18).instCVal.mag.f
+208C,SRC 4 Vb Harmonics [19],HThdMHAI4.HPhV.phsBHar(19).instCVal.mag.f
+208D,SRC 4 Vb Harmonics [20],HThdMHAI4.HPhV.phsBHar(20).instCVal.mag.f
+208E,SRC 4 Vb Harmonics [21],HThdMHAI4.HPhV.phsBHar(21).instCVal.mag.f
+208F,SRC 4 Vb Harmonics [22],HThdMHAI4.HPhV.phsBHar(22).instCVal.mag.f
+2090,SRC 4 Vb Harmonics [23],HThdMHAI4.HPhV.phsBHar(23).instCVal.mag.f
+2091,SRC 4 Vb Harmonics [24],HThdMHAI4.HPhV.phsBHar(24).instCVal.mag.f
+2092,SRC 4 Vb Harmonics [25],HThdMHAI4.HPhV.phsBHar(25).instCVal.mag.f
+20C6,SRC 5 Vb Harmonics [2],HThdMHAI5.HPhV.phsBHar(2).instCVal.mag.f
+20C7,SRC 5 Vb Harmonics [3],HThdMHAI5.HPhV.phsBHar(3).instCVal.mag.f
+20C8,SRC 5 Vb Harmonics [4],HThdMHAI5.HPhV.phsBHar(4).instCVal.mag.f
+20C9,SRC 5 Vb Harmonics [5],HThdMHAI5.HPhV.phsBHar(5).instCVal.mag.f
+20CA,SRC 5 Vb Harmonics [6],HThdMHAI5.HPhV.phsBHar(6).instCVal.mag.f
+20CB,SRC 5 Vb Harmonics [7],HThdMHAI5.HPhV.phsBHar(7).instCVal.mag.f
+20CC,SRC 5 Vb Harmonics [8],HThdMHAI5.HPhV.phsBHar(8).instCVal.mag.f
+20CD,SRC 5 Vb Harmonics [9],HThdMHAI5.HPhV.phsBHar(9).instCVal.mag.f
+20CE,SRC 5 Vb Harmonics [10],HThdMHAI5.HPhV.phsBHar(10).instCVal.mag.f
+20CF,SRC 5 Vb Harmonics [11],HThdMHAI5.HPhV.phsBHar(11).instCVal.mag.f
+20D0,SRC 5 Vb Harmonics [12],HThdMHAI5.HPhV.phsBHar(12).instCVal.mag.f
+20D1,SRC 5 Vb Harmonics [13],HThdMHAI5.HPhV.phsBHar(13).instCVal.mag.f
+20D2,SRC 5 Vb Harmonics [14],HThdMHAI5.HPhV.phsBHar(14).instCVal.mag.f
+20D3,SRC 5 Vb Harmonics [15],HThdMHAI5.HPhV.phsBHar(15).instCVal.mag.f
+20D4,SRC 5 Vb Harmonics [16],HThdMHAI5.HPhV.phsBHar(16).instCVal.mag.f
+20D5,SRC 5 Vb Harmonics [17],HThdMHAI5.HPhV.phsBHar(17).instCVal.mag.f
+20D6,SRC 5 Vb Harmonics [18],HThdMHAI5.HPhV.phsBHar(18).instCVal.mag.f
+20D7,SRC 5 Vb Harmonics [19],HThdMHAI5.HPhV.phsBHar(19).instCVal.mag.f
+20D8,SRC 5 Vb Harmonics [20],HThdMHAI5.HPhV.phsBHar(20).instCVal.mag.f
+20D9,SRC 5 Vb Harmonics [21],HThdMHAI5.HPhV.phsBHar(21).instCVal.mag.f
+20DA,SRC 5 Vb Harmonics [22],HThdMHAI5.HPhV.phsBHar(22).instCVal.mag.f
+20DB,SRC 5 Vb Harmonics [23],HThdMHAI5.HPhV.phsBHar(23).instCVal.mag.f
+20DC,SRC 5 Vb Harmonics [24],HThdMHAI5.HPhV.phsBHar(24).instCVal.mag.f
+20DD,SRC 5 Vb Harmonics [25],HThdMHAI5.HPhV.phsBHar(25).instCVal.mag.f
+2111,SRC 6 Vb Harmonics [2],HThdMHAI6.HPhV.phsBHar(2).instCVal.mag.f
+2112,SRC 6 Vb Harmonics [3],HThdMHAI6.HPhV.phsBHar(3).instCVal.mag.f
+2113,SRC 6 Vb Harmonics [4],HThdMHAI6.HPhV.phsBHar(4).instCVal.mag.f
+2114,SRC 6 Vb Harmonics [5],HThdMHAI6.HPhV.phsBHar(5).instCVal.mag.f
+2115,SRC 6 Vb Harmonics [6],HThdMHAI6.HPhV.phsBHar(6).instCVal.mag.f
+2116,SRC 6 Vb Harmonics [7],HThdMHAI6.HPhV.phsBHar(7).instCVal.mag.f
+2117,SRC 6 Vb Harmonics [8],HThdMHAI6.HPhV.phsBHar(8).instCVal.mag.f
+2118,SRC 6 Vb Harmonics [9],HThdMHAI6.HPhV.phsBHar(9).instCVal.mag.f
+2119,SRC 6 Vb Harmonics [10],HThdMHAI6.HPhV.phsBHar(10).instCVal.mag.f
+211A,SRC 6 Vb Harmonics [11],HThdMHAI6.HPhV.phsBHar(11).instCVal.mag.f
+211B,SRC 6 Vb Harmonics [12],HThdMHAI6.HPhV.phsBHar(12).instCVal.mag.f
+211C,SRC 6 Vb Harmonics [13],HThdMHAI6.HPhV.phsBHar(13).instCVal.mag.f
+211D,SRC 6 Vb Harmonics [14],HThdMHAI6.HPhV.phsBHar(14).instCVal.mag.f
+211E,SRC 6 Vb Harmonics [15],HThdMHAI6.HPhV.phsBHar(15).instCVal.mag.f
+211F,SRC 6 Vb Harmonics [16],HThdMHAI6.HPhV.phsBHar(16).instCVal.mag.f
+2120,SRC 6 Vb Harmonics [17],HThdMHAI6.HPhV.phsBHar(17).instCVal.mag.f
+2121,SRC 6 Vb Harmonics [18],HThdMHAI6.HPhV.phsBHar(18).instCVal.mag.f
+2122,SRC 6 Vb Harmonics [19],HThdMHAI6.HPhV.phsBHar(19).instCVal.mag.f
+2123,SRC 6 Vb Harmonics [20],HThdMHAI6.HPhV.phsBHar(20).instCVal.mag.f
+2124,SRC 6 Vb Harmonics [21],HThdMHAI6.HPhV.phsBHar(21).instCVal.mag.f
+2125,SRC 6 Vb Harmonics [22],HThdMHAI6.HPhV.phsBHar(22).instCVal.mag.f
+2126,SRC 6 Vb Harmonics [23],HThdMHAI6.HPhV.phsBHar(23).instCVal.mag.f
+2127,SRC 6 Vb Harmonics [24],HThdMHAI6.HPhV.phsBHar(24).instCVal.mag.f
+2128,SRC 6 Vb Harmonics [25],HThdMHAI6.HPhV.phsBHar(25).instCVal.mag.f
+
+1FB3,SRC 1 Vc Harmonics [2],HThdMHAI1.HPhV.phsCHar(2).instCVal.mag.f
+1FB4,SRC 1 Vc Harmonics [3],HThdMHAI1.HPhV.phsCHar(3).instCVal.mag.f
+1FB5,SRC 1 Vc Harmonics [4],HThdMHAI1.HPhV.phsCHar(4).instCVal.mag.f
+1FB6,SRC 1 Vc Harmonics [5],HThdMHAI1.HPhV.phsCHar(5).instCVal.mag.f
+1FB7,SRC 1 Vc Harmonics [6],HThdMHAI1.HPhV.phsCHar(6).instCVal.mag.f
+1FB8,SRC 1 Vc Harmonics [7],HThdMHAI1.HPhV.phsCHar(7).instCVal.mag.f
+1FB9,SRC 1 Vc Harmonics [8],HThdMHAI1.HPhV.phsCHar(8).instCVal.mag.f
+1FBA,SRC 1 Vc Harmonics [9],HThdMHAI1.HPhV.phsCHar(9).instCVal.mag.f
+1FBB,SRC 1 Vc Harmonics [10],HThdMHAI1.HPhV.phsCHar(10).instCVal.mag.f
+1FBC,SRC 1 Vc Harmonics [11],HThdMHAI1.HPhV.phsCHar(11).instCVal.mag.f
+1FBD,SRC 1 Vc Harmonics [12],HThdMHAI1.HPhV.phsCHar(12).instCVal.mag.f
+1FBE,SRC 1 Vc Harmonics [13],HThdMHAI1.HPhV.phsCHar(13).instCVal.mag.f
+1FBF,SRC 1 Vc Harmonics [14],HThdMHAI1.HPhV.phsCHar(14).instCVal.mag.f
+1FC0,SRC 1 Vc Harmonics [15],HThdMHAI1.HPhV.phsCHar(15).instCVal.mag.f
+1FC1,SRC 1 Vc Harmonics [16],HThdMHAI1.HPhV.phsCHar(16).instCVal.mag.f
+1FC2,SRC 1 Vc Harmonics [17],HThdMHAI1.HPhV.phsCHar(17).instCVal.mag.f
+1FC3,SRC 1 Vc Harmonics [18],HThdMHAI1.HPhV.phsCHar(18).instCVal.mag.f
+1FC4,SRC 1 Vc Harmonics [19],HThdMHAI1.HPhV.phsCHar(19).instCVal.mag.f
+1FC5,SRC 1 Vc Harmonics [20],HThdMHAI1.HPhV.phsCHar(20).instCVal.mag.f
+1FC6,SRC 1 Vc Harmonics [21],HThdMHAI1.HPhV.phsCHar(21).instCVal.mag.f
+1FC7,SRC 1 Vc Harmonics [22],HThdMHAI1.HPhV.phsCHar(22).instCVal.mag.f
+1FC8,SRC 1 Vc Harmonics [23],HThdMHAI1.HPhV.phsCHar(23).instCVal.mag.f
+1FC9,SRC 1 Vc Harmonics [24],HThdMHAI1.HPhV.phsCHar(24).instCVal.mag.f
+1FCA,SRC 1 Vc Harmonics [25],HThdMHAI1.HPhV.phsCHar(25).instCVal.mag.f
+1FFE,SRC 2 Vc Harmonics [2],HThdMHAI2.HPhV.phsCHar(2).instCVal.mag.f
+1FFF,SRC 2 Vc Harmonics [3],HThdMHAI2.HPhV.phsCHar(3).instCVal.mag.f
+2000,SRC 2 Vc Harmonics [4],HThdMHAI2.HPhV.phsCHar(4).instCVal.mag.f
+2001,SRC 2 Vc Harmonics [5],HThdMHAI2.HPhV.phsCHar(5).instCVal.mag.f
+2002,SRC 2 Vc Harmonics [6],HThdMHAI2.HPhV.phsCHar(6).instCVal.mag.f
+2003,SRC 2 Vc Harmonics [7],HThdMHAI2.HPhV.phsCHar(7).instCVal.mag.f
+2004,SRC 2 Vc Harmonics [8],HThdMHAI2.HPhV.phsCHar(8).instCVal.mag.f
+2005,SRC 2 Vc Harmonics [9],HThdMHAI2.HPhV.phsCHar(9).instCVal.mag.f
+2006,SRC 2 Vc Harmonics [10],HThdMHAI2.HPhV.phsCHar(10).instCVal.mag.f
+2007,SRC 2 Vc Harmonics [11],HThdMHAI2.HPhV.phsCHar(11).instCVal.mag.f
+2008,SRC 2 Vc Harmonics [12],HThdMHAI2.HPhV.phsCHar(12).instCVal.mag.f
+2009,SRC 2 Vc Harmonics [13],HThdMHAI2.HPhV.phsCHar(13).instCVal.mag.f
+200A,SRC 2 Vc Harmonics [14],HThdMHAI2.HPhV.phsCHar(14).instCVal.mag.f
+200B,SRC 2 Vc Harmonics [15],HThdMHAI2.HPhV.phsCHar(15).instCVal.mag.f
+200C,SRC 2 Vc Harmonics [16],HThdMHAI2.HPhV.phsCHar(16).instCVal.mag.f
+200D,SRC 2 Vc Harmonics [17],HThdMHAI2.HPhV.phsCHar(17).instCVal.mag.f
+200E,SRC 2 Vc Harmonics [18],HThdMHAI2.HPhV.phsCHar(18).instCVal.mag.f
+200F,SRC 2 Vc Harmonics [19],HThdMHAI2.HPhV.phsCHar(19).instCVal.mag.f
+2010,SRC 2 Vc Harmonics [20],HThdMHAI2.HPhV.phsCHar(20).instCVal.mag.f
+2011,SRC 2 Vc Harmonics [21],HThdMHAI2.HPhV.phsCHar(21).instCVal.mag.f
+2012,SRC 2 Vc Harmonics [22],HThdMHAI2.HPhV.phsCHar(22).instCVal.mag.f
+2013,SRC 2 Vc Harmonics [23],HThdMHAI2.HPhV.phsCHar(23).instCVal.mag.f
+2014,SRC 2 Vc Harmonics [24],HThdMHAI2.HPhV.phsCHar(24).instCVal.mag.f
+2015,SRC 2 Vc Harmonics [25],HThdMHAI2.HPhV.phsCHar(25).instCVal.mag.f
+2049,SRC 3 Vc Harmonics [2],HThdMHAI3.HPhV.phsCHar(2).instCVal.mag.f
+204A,SRC 3 Vc Harmonics [3],HThdMHAI3.HPhV.phsCHar(3).instCVal.mag.f
+204B,SRC 3 Vc Harmonics [4],HThdMHAI3.HPhV.phsCHar(4).instCVal.mag.f
+204C,SRC 3 Vc Harmonics [5],HThdMHAI3.HPhV.phsCHar(5).instCVal.mag.f
+204D,SRC 3 Vc Harmonics [6],HThdMHAI3.HPhV.phsCHar(6).instCVal.mag.f
+204E,SRC 3 Vc Harmonics [7],HThdMHAI3.HPhV.phsCHar(7).instCVal.mag.f
+204F,SRC 3 Vc Harmonics [8],HThdMHAI3.HPhV.phsCHar(8).instCVal.mag.f
+2050,SRC 3 Vc Harmonics [9],HThdMHAI3.HPhV.phsCHar(9).instCVal.mag.f
+2051,SRC 3 Vc Harmonics [10],HThdMHAI3.HPhV.phsCHar(10).instCVal.mag.f
+2052,SRC 3 Vc Harmonics [11],HThdMHAI3.HPhV.phsCHar(11).instCVal.mag.f
+2053,SRC 3 Vc Harmonics [12],HThdMHAI3.HPhV.phsCHar(12).instCVal.mag.f
+2054,SRC 3 Vc Harmonics [13],HThdMHAI3.HPhV.phsCHar(13).instCVal.mag.f
+2055,SRC 3 Vc Harmonics [14],HThdMHAI3.HPhV.phsCHar(14).instCVal.mag.f
+2056,SRC 3 Vc Harmonics [15],HThdMHAI3.HPhV.phsCHar(15).instCVal.mag.f
+2057,SRC 3 Vc Harmonics [16],HThdMHAI3.HPhV.phsCHar(16).instCVal.mag.f
+2058,SRC 3 Vc Harmonics [17],HThdMHAI3.HPhV.phsCHar(17).instCVal.mag.f
+2059,SRC 3 Vc Harmonics [18],HThdMHAI3.HPhV.phsCHar(18).instCVal.mag.f
+205A,SRC 3 Vc Harmonics [19],HThdMHAI3.HPhV.phsCHar(19).instCVal.mag.f
+205B,SRC 3 Vc Harmonics [20],HThdMHAI3.HPhV.phsCHar(20).instCVal.mag.f
+205C,SRC 3 Vc Harmonics [21],HThdMHAI3.HPhV.phsCHar(21).instCVal.mag.f
+205D,SRC 3 Vc Harmonics [22],HThdMHAI3.HPhV.phsCHar(22).instCVal.mag.f
+205E,SRC 3 Vc Harmonics [23],HThdMHAI3.HPhV.phsCHar(23).instCVal.mag.f
+205F,SRC 3 Vc Harmonics [24],HThdMHAI3.HPhV.phsCHar(24).instCVal.mag.f
+2060,SRC 3 Vc Harmonics [25],HThdMHAI3.HPhV.phsCHar(25).instCVal.mag.f
+2094,SRC 4 Vc Harmonics [2],HThdMHAI4.HPhV.phsCHar(2).instCVal.mag.f
+2095,SRC 4 Vc Harmonics [3],HThdMHAI4.HPhV.phsCHar(3).instCVal.mag.f
+2096,SRC 4 Vc Harmonics [4],HThdMHAI4.HPhV.phsCHar(4).instCVal.mag.f
+2097,SRC 4 Vc Harmonics [5],HThdMHAI4.HPhV.phsCHar(5).instCVal.mag.f
+2098,SRC 4 Vc Harmonics [6],HThdMHAI4.HPhV.phsCHar(6).instCVal.mag.f
+2099,SRC 4 Vc Harmonics [7],HThdMHAI4.HPhV.phsCHar(7).instCVal.mag.f
+209A,SRC 4 Vc Harmonics [8],HThdMHAI4.HPhV.phsCHar(8).instCVal.mag.f
+209B,SRC 4 Vc Harmonics [9],HThdMHAI4.HPhV.phsCHar(9).instCVal.mag.f
+209C,SRC 4 Vc Harmonics [10],HThdMHAI4.HPhV.phsCHar(10).instCVal.mag.f
+209D,SRC 4 Vc Harmonics [11],HThdMHAI4.HPhV.phsCHar(11).instCVal.mag.f
+209E,SRC 4 Vc Harmonics [12],HThdMHAI4.HPhV.phsCHar(12).instCVal.mag.f
+209F,SRC 4 Vc Harmonics [13],HThdMHAI4.HPhV.phsCHar(13).instCVal.mag.f
+20A0,SRC 4 Vc Harmonics [14],HThdMHAI4.HPhV.phsCHar(14).instCVal.mag.f
+20A1,SRC 4 Vc Harmonics [15],HThdMHAI4.HPhV.phsCHar(15).instCVal.mag.f
+20A2,SRC 4 Vc Harmonics [16],HThdMHAI4.HPhV.phsCHar(16).instCVal.mag.f
+20A3,SRC 4 Vc Harmonics [17],HThdMHAI4.HPhV.phsCHar(17).instCVal.mag.f
+20A4,SRC 4 Vc Harmonics [18],HThdMHAI4.HPhV.phsCHar(18).instCVal.mag.f
+20A5,SRC 4 Vc Harmonics [19],HThdMHAI4.HPhV.phsCHar(19).instCVal.mag.f
+20A6,SRC 4 Vc Harmonics [20],HThdMHAI4.HPhV.phsCHar(20).instCVal.mag.f
+20A7,SRC 4 Vc Harmonics [21],HThdMHAI4.HPhV.phsCHar(21).instCVal.mag.f
+20A8,SRC 4 Vc Harmonics [22],HThdMHAI4.HPhV.phsCHar(22).instCVal.mag.f
+20A9,SRC 4 Vc Harmonics [23],HThdMHAI4.HPhV.phsCHar(23).instCVal.mag.f
+20AA,SRC 4 Vc Harmonics [24],HThdMHAI4.HPhV.phsCHar(24).instCVal.mag.f
+20AB,SRC 4 Vc Harmonics [25],HThdMHAI4.HPhV.phsCHar(25).instCVal.mag.f
+20DF,SRC 5 Vc Harmonics [2],HThdMHAI5.HPhV.phsCHar(2).instCVal.mag.f
+20E0,SRC 5 Vc Harmonics [3],HThdMHAI5.HPhV.phsCHar(3).instCVal.mag.f
+20E1,SRC 5 Vc Harmonics [4],HThdMHAI5.HPhV.phsCHar(4).instCVal.mag.f
+20E2,SRC 5 Vc Harmonics [5],HThdMHAI5.HPhV.phsCHar(5).instCVal.mag.f
+20E3,SRC 5 Vc Harmonics [6],HThdMHAI5.HPhV.phsCHar(6).instCVal.mag.f
+20E4,SRC 5 Vc Harmonics [7],HThdMHAI5.HPhV.phsCHar(7).instCVal.mag.f
+20E5,SRC 5 Vc Harmonics [8],HThdMHAI5.HPhV.phsCHar(8).instCVal.mag.f
+20E6,SRC 5 Vc Harmonics [9],HThdMHAI5.HPhV.phsCHar(9).instCVal.mag.f
+20E7,SRC 5 Vc Harmonics [10],HThdMHAI5.HPhV.phsCHar(10).instCVal.mag.f
+20E8,SRC 5 Vc Harmonics [11],HThdMHAI5.HPhV.phsCHar(11).instCVal.mag.f
+20E9,SRC 5 Vc Harmonics [12],HThdMHAI5.HPhV.phsCHar(12).instCVal.mag.f
+20EA,SRC 5 Vc Harmonics [13],HThdMHAI5.HPhV.phsCHar(13).instCVal.mag.f
+20EB,SRC 5 Vc Harmonics [14],HThdMHAI5.HPhV.phsCHar(14).instCVal.mag.f
+20EC,SRC 5 Vc Harmonics [15],HThdMHAI5.HPhV.phsCHar(15).instCVal.mag.f
+20ED,SRC 5 Vc Harmonics [16],HThdMHAI5.HPhV.phsCHar(16).instCVal.mag.f
+20EE,SRC 5 Vc Harmonics [17],HThdMHAI5.HPhV.phsCHar(17).instCVal.mag.f
+20EF,SRC 5 Vc Harmonics [18],HThdMHAI5.HPhV.phsCHar(18).instCVal.mag.f
+20F0,SRC 5 Vc Harmonics [19],HThdMHAI5.HPhV.phsCHar(19).instCVal.mag.f
+20F1,SRC 5 Vc Harmonics [20],HThdMHAI5.HPhV.phsCHar(20).instCVal.mag.f
+20F2,SRC 5 Vc Harmonics [21],HThdMHAI5.HPhV.phsCHar(21).instCVal.mag.f
+20F3,SRC 5 Vc Harmonics [22],HThdMHAI5.HPhV.phsCHar(22).instCVal.mag.f
+20F4,SRC 5 Vc Harmonics [23],HThdMHAI5.HPhV.phsCHar(23).instCVal.mag.f
+20F5,SRC 5 Vc Harmonics [24],HThdMHAI5.HPhV.phsCHar(24).instCVal.mag.f
+20F6,SRC 5 Vc Harmonics [25],HThdMHAI5.HPhV.phsCHar(25).instCVal.mag.f
+212A,SRC 6 Vc Harmonics [2],HThdMHAI6.HPhV.phsCHar(2).instCVal.mag.f
+212B,SRC 6 Vc Harmonics [3],HThdMHAI6.HPhV.phsCHar(3).instCVal.mag.f
+212C,SRC 6 Vc Harmonics [4],HThdMHAI6.HPhV.phsCHar(4).instCVal.mag.f
+212D,SRC 6 Vc Harmonics [5],HThdMHAI6.HPhV.phsCHar(5).instCVal.mag.f
+212E,SRC 6 Vc Harmonics [6],HThdMHAI6.HPhV.phsCHar(6).instCVal.mag.f
+212F,SRC 6 Vc Harmonics [7],HThdMHAI6.HPhV.phsCHar(7).instCVal.mag.f
+2130,SRC 6 Vc Harmonics [8],HThdMHAI6.HPhV.phsCHar(8).instCVal.mag.f
+2131,SRC 6 Vc Harmonics [9],HThdMHAI6.HPhV.phsCHar(9).instCVal.mag.f
+2132,SRC 6 Vc Harmonics [10],HThdMHAI6.HPhV.phsCHar(10).instCVal.mag.f
+2133,SRC 6 Vc Harmonics [11],HThdMHAI6.HPhV.phsCHar(11).instCVal.mag.f
+2134,SRC 6 Vc Harmonics [12],HThdMHAI6.HPhV.phsCHar(12).instCVal.mag.f
+2135,SRC 6 Vc Harmonics [13],HThdMHAI6.HPhV.phsCHar(13).instCVal.mag.f
+2136,SRC 6 Vc Harmonics [14],HThdMHAI6.HPhV.phsCHar(14).instCVal.mag.f
+2137,SRC 6 Vc Harmonics [15],HThdMHAI6.HPhV.phsCHar(15).instCVal.mag.f
+2138,SRC 6 Vc Harmonics [16],HThdMHAI6.HPhV.phsCHar(16).instCVal.mag.f
+2139,SRC 6 Vc Harmonics [17],HThdMHAI6.HPhV.phsCHar(17).instCVal.mag.f
+213A,SRC 6 Vc Harmonics [18],HThdMHAI6.HPhV.phsCHar(18).instCVal.mag.f
+213B,SRC 6 Vc Harmonics [19],HThdMHAI6.HPhV.phsCHar(19).instCVal.mag.f
+213C,SRC 6 Vc Harmonics [20],HThdMHAI6.HPhV.phsCHar(20).instCVal.mag.f
+213D,SRC 6 Vc Harmonics [21],HThdMHAI6.HPhV.phsCHar(21).instCVal.mag.f
+213E,SRC 6 Vc Harmonics [22],HThdMHAI6.HPhV.phsCHar(22).instCVal.mag.f
+213F,SRC 6 Vc Harmonics [23],HThdMHAI6.HPhV.phsCHar(23).instCVal.mag.f
+2140,SRC 6 Vc Harmonics [24],HThdMHAI6.HPhV.phsCHar(24).instCVal.mag.f
+2141,SRC 6 Vc Harmonics [25],HThdMHAI6.HPhV.phsCHar(25).instCVal.mag.f
+
+2800,SRC SRC 1 (SRC 1) Ia THD,HThdMHAI1.ThdA.phsA.instCVal.mag.f
+2821,SRC SRC 1 (SRC 1) Ib THD,HThdMHAI1.ThdA.phsB.instCVal.mag.f
+2842,SRC SRC 1 (SRC 1) Ic THD,HThdMHAI1.ThdA.phsC.instCVal.mag.f
+2863,SRC SRC 2 (SRC 2) Ia THD,HThdMHAI2.ThdA.phsA.instCVal.mag.f
+2884,SRC SRC 2 (SRC 2) Ib THD,HThdMHAI2.ThdA.phsB.instCVal.mag.f
+28A5,SRC SRC 2 (SRC 2) Ic THD,HThdMHAI2.ThdA.phsC.instCVal.mag.f
+28C6,SRC SRC 3 (SRC 3) Ia THD,HThdMHAI3.ThdA.phsA.instCVal.mag.f
+28E7,SRC SRC 3 (SRC 3) Ib THD,HThdMHAI3.ThdA.phsB.instCVal.mag.f
+2908,SRC SRC 3 (SRC 3) Ic THD,HThdMHAI3.ThdA.phsC.instCVal.mag.f
+2929,SRC SRC 4 (SRC 4) Ia THD,HThdMHAI4.ThdA.phsA.instCVal.mag.f
+294A,SRC SRC 4 (SRC 4) Ib THD,HThdMHAI4.ThdA.phsB.instCVal.mag.f
+296B,SRC SRC 4 (SRC 4) Ic THD,HThdMHAI4.ThdA.phsC.instCVal.mag.f
+298C,SRC SRC 5 (SRC 5) Ia THD,HThdMHAI5.ThdA.phsA.instCVal.mag.f
+29AD,SRC SRC 5 (SRC 5) Ib THD,HThdMHAI5.ThdA.phsB.instCVal.mag.f
+29CE,SRC SRC 5 (SRC 5) Ic THD,HThdMHAI5.ThdA.phsC.instCVal.mag.f
+29EF,SRC SRC 6 (SRC 6) Ia THD,HThdMHAI6.ThdA.phsA.instCVal.mag.f
+2A10,SRC SRC 6 (SRC 6) Ib THD,HThdMHAI6.ThdA.phsB.instCVal.mag.f
+2A31,SRC SRC 6 (SRC 6) Ic THD,HThdMHAI6.ThdA.phsC.instCVal.mag.f
+
+1F80,SRC 1 Va THD,HThdMHAI1.ThdPhV.phsA.instCVal.mag.f
+1F99,SRC 1 Vb THD,HThdMHAI1.ThdPhV.phsB.instCVal.mag.f
+1FB2,SRC 1 Vc THD,HThdMHAI1.ThdPhV.phsC.instCVal.mag.f
+22A0,SRC 1 Phase A THD,HThdMHAI1.ThdA.phsA.instCVal.mag.f,L60
+22A1,SRC 1 Phase B THD,HThdMHAI1.ThdA.phsB.instCVal.mag.f,L60
+22A2,SRC 1 Phase C THD,HThdMHAI1.ThdA.phsC.instCVal.mag.f,L60
+22A3,SRC 1 Neutral THD,HThdMHAI1.ThdA.neut.instCVal.mag.f
+
+1FCB,SRC 2 Va THD,HThdMHAI2.ThdPhV.phsA.instCVal.mag.f
+1FE4,SRC 2 Vb THD,HThdMHAI2.ThdPhV.phsB.instCVal.mag.f
+1FFD,SRC 2 Vc THD,HThdMHAI2.ThdPhV.phsC.instCVal.mag.f
+22A4,SRC 2 Phase A THD,HThdMHAI2.ThdA.phsA.instCVal.mag.f,L60
+22A5,SRC 2 Phase B THD,HThdMHAI2.ThdA.phsB.instCVal.mag.f,L60
+22A6,SRC 2 Phase C THD,HThdMHAI2.ThdA.phsC.instCVal.mag.f,L60
+22A7,SRC 2 Neutral THD,HThdMHAI2.ThdA.neut.instCVal.mag.f
+
+2016,SRC 3 Va THD,HThdMHAI3.ThdPhV.phsA.instCVal.mag.f
+202F,SRC 3 Vb THD,HThdMHAI3.ThdPhV.phsB.instCVal.mag.f
+2048,SRC 3 Vc THD,HThdMHAI3.ThdPhV.phsC.instCVal.mag.f
+22A8,SRC 3 Phase A THD,HThdMHAI3.ThdA.phsA.instCVal.mag.f,L60
+22A9,SRC 3 Phase B THD,HThdMHAI3.ThdA.phsB.instCVal.mag.f,L60
+22AA,SRC 3 Phase C THD,HThdMHAI3.ThdA.phsC.instCVal.mag.f,L60
+22AB,SRC 3 Neutral THD,HThdMHAI3.ThdA.neut.instCVal.mag.f
+
+2061,SRC 4 Va THD,HThdMHAI4.ThdPhV.phsA.instCVal.mag.f
+207A,SRC 4 Vb THD,HThdMHAI4.ThdPhV.phsB.instCVal.mag.f
+2093,SRC 4 Vc THD,HThdMHAI4.ThdPhV.phsC.instCVal.mag.f
+22AC,SRC 4 Phase A THD,HThdMHAI4.ThdA.phsA.instCVal.mag.f,L60
+22AD,SRC 4 Phase B THD,HThdMHAI4.ThdA.phsB.instCVal.mag.f,L60
+22AE,SRC 4 Phase C THD,HThdMHAI4.ThdA.phsC.instCVal.mag.f,L60
+22AF,SRC 4 Neutral THD,HThdMHAI4.ThdA.neut.instCVal.mag.f
+
+20AC,SRC 5 Va THD,HThdMHAI5.ThdPhV.phsA.instCVal.mag.f
+20C5,SRC 5 Vb THD,HThdMHAI5.ThdPhV.phsB.instCVal.mag.f
+20DE,SRC 5 Vc THD,HThdMHAI5.ThdPhV.phsC.instCVal.mag.f
+298C,SRC 5 Phase A THD,HThdMHAI5.ThdA.phsA.instCVal.mag.f
+29AD,SRC 5 Phase B THD,HThdMHAI5.ThdA.phsB.instCVal.mag.f
+29CE,SRC 5 Phase C THD,HThdMHAI5.ThdA.phsC.instCVal.mag.f
+22B3,SRC 5 Neutral THD,HThdMHAI5.ThdA.neut.instCVal.mag.f
+
+20F7,SRC 6 Va THD,HThdMHAI6.ThdPhV.phsA.instCVal.mag.f
+2110,SRC 6 Vb THD,HThdMHAI6.ThdPhV.phsB.instCVal.mag.f
+2129,SRC 6 Vc THD,HThdMHAI6.ThdPhV.phsC.instCVal.mag.f
+29EF,SRC 6 Phase A THD,HThdMHAI6.ThdA.phsA.instCVal.mag.f
+2A10,SRC 6 Phase B THD,HThdMHAI6.ThdA.phsB.instCVal.mag.f
+2A31,SRC 6 Phase C THD,HThdMHAI6.ThdA.phsC.instCVal.mag.f
+22B7,SRC 6 Neutral THD,HThdMHAI6.ThdA.neut.instCVal.mag.f
+
+2333,Transformer Daily Loss Of Life,LosLifSPTR1.LosLifeRte.instMag.f
+2335,Transformer Loss Of Life,LosLifSPTR1.LosLife.instMag.f
+
+A029,Motor Load Deviation At Brb Max,BknRotSVBR1.MaxLoadDev.instMag.f
+A020,Brb Component Level,BknRotSVBR1.CompLevel.instMag.f
+A026,Max Brb Component Level,BknRotSVBR1.MaxCompLevel.instMag.f
+A022,Motor Load At Brb Calc,BknRotSVBR1.MotLoad.instMag.f
+A023,Motor Load Deviation At Brb Calc,BknRotSVBR1.LoadDev.instMag.f
+A021,Brb Component Frequency,BknRotSVBR1.CompHz.instMag.f
+A027,Max Brb Component Frequency,BknRotSVBR1.MaxCompHz.instMag.f
+A028,Motor Load At Brb Max,BknRotSVBR1.MaxMotLoad.instMag.f
+
+A200,Amp Unbalance,AmpUnbPTOC1.CurUnb.instMag.f
+FFFF,Amp Unbalance,AmpUnbPTOC2.CurUnb.instMag.f
+663C,Start/Hour Lockout Time,StrRtePMRI1.StrHrLOTm.instMag.f
+
+3600,Raw Idif PhA,PhAUnPTOC1.RawAPh.phsA.instCVal.mag.f
+3602,Raw Idif PhB,PhAUnPTOC1.RawAPh.phsB.instCVal.mag.f
+3604,Raw Idif PhC,PhAUnPTOC1.RawAPh.phsC.instCVal.mag.f
+3606,Comp Iop PhA,PhAUnPTOC1.CompAPh.phsA.instCVal.mag.f
+3608,Comp Iop PhB,PhAUnPTOC1.CompAPh.phsB.instCVal.mag.f
+360A,Comp Iop PhC,PhAUnPTOC1.CompAPh.phsC.instCVal.mag.f
+
+360C,Raw Idif PhA,PhAUnPTOC2.RawAPh.phsA.instCVal.mag.f
+360E,Raw Idif PhB,PhAUnPTOC2.RawAPh.phsB.instCVal.mag.f
+3610,Raw Idif PhC,PhAUnPTOC2.RawAPh.phsC.instCVal.mag.f
+3612,Comp Iop PhA,PhAUnPTOC2.CompAPh.phsA.instCVal.mag.f
+3614,Comp Iop PhB,PhAUnPTOC2.CompAPh.phsB.instCVal.mag.f
+3616,Comp Iop PhC,PhAUnPTOC2.CompAPh.phsC.instCVal.mag.f
+
+3618,Raw Idif PhA,PhAUnPTOC3.RawAPh.phsA.instCVal.mag.f
+361A,Raw Idif PhB,PhAUnPTOC3.RawAPh.phsB.instCVal.mag.f
+361C,Raw Idif PhC,PhAUnPTOC3.RawAPh.phsC.instCVal.mag.f
+361E,Comp Iop PhA,PhAUnPTOC3.CompAPh.phsA.instCVal.mag.f
+3620,Comp Iop PhB,PhAUnPTOC3.CompAPh.phsB.instCVal.mag.f
+3622,Comp Iop PhC,PhAUnPTOC3.CompAPh.phsC.instCVal.mag.f
+
+6640,Field Ground Resistance,FldGnd0PHIZ1.GndRis.instMag.f
+6642,Field Ground Current,FldGnd0PHIZ1.GndAmp.instMag.f
+6645,Field Ground Field Voltage,FldGnd0PHIZ1.Vol.instMag.f
+6646,Field Ground Field Current,FldGnd0PHIZ1.Amp.instMag.f
+6643,Field Ground Injected Voltage,FldGnd0PHIZ1.InjVol.instMag.f
+6644,Field Ground Fault Location,FldGnd0PHIZ1.FltLocation.instMag.f
+167C,Stator Ground Resistance,SubHaPHIZ1.GndRis.instMag.f
+1678,Subharmonic Injection Voltage,SubHaPHIZ1.InjVol.instMag.f
+167A,Subharmonic Injection Current,SubHaPHIZ1.InjAmp.instMag.f
+167F,Subharmonic Injection Current Angle,SubHaPHIZ1.SHAmpAng.instMag.f
+3780,Capacitor Control Discharge Time Seconds,CapCtlGAPC1.DischargeTms.instMag.f
+3781,Capacitor Control Discharge Time Seconds,CapCtlGAPC2.DischargeTms.instMag.f
+3782,Capacitor Control Discharge Time Seconds,CapCtlGAPC3.DischargeTms.instMag.f
+3783,Capacitor Control Discharge Time Seconds,CapCtlGAPC4.DischargeTms.instMag.f
+1670,Stator Ground Vn 3rd,StatrPHIZ1.Ha3NV.instMag.f
+1674,Stator Ground V0 3rd,StatrPHIZ1.Ha3ZroV.instMag.f
+1672,Stator Ground Vn V0 3rd,StatrPHIZ1.SumHa3NVZroV.instMag.f
+37A0,OvUnFrecAccActualBand_1,HzBnd1PTUF1.HzObAccum.instMag.f
+37A1,OvUnFrecAccActualBand_2,HzBnd2PTUF1.HzObAccum.instMag.f
+37A2,OvUnFrecAccActualBand_3,HzBnd3PTUF1.HzObAccum.instMag.f
+37A3,OvUnFrecAccActualBand_4,HzBnd4PTUF1.HzObAccum.instMag.f
+37A4,OvUnFrecAccActualBand_5,HzBnd5PTUF1.HzObAccum.instMag.f
+37A5,OvUnFrecAccActualBand_6,HzBnd6PTUF1.HzObAccum.instMag.f
+37A6,OvUnFrecAccActualBand_7,HzBnd7PTUF1.HzObAccum.instMag.f
+68D2,Motor Acceleration 1 Starting Time,MAccTmPMSS1.StrAccTm1.instMag.f
+68D3,Motor Acceleration 1 Effective Current,MAccTmPMSS1.StrEffA1.instMag.f
+68D5,Motor Acceleration 1 Peak Current,MAccTmPMSS1.StrPeakA1.instMag.f
+68D0,Motor Acceleration 1 Time/Date,MAccTmPMSS1.StrTD1.instMag.f
+68E1,Motor Acceleration 2 Starting Time,MAccTmPMSS1.StrAccTm2.instMag.f
+68E2,Motor Acceleration 2 Effective Current,MAccTmPMSS1.StrEffA2.instMag.f
+68E4,Motor Acceleration 2 Peak Current,MAccTmPMSS1.StrPeakA2.instMag.f
+68DF,Motor Acceleration 2 Time/Date,MAccTmPMSS1.StrTD2.instMag.f
+68F0,Motor Acceleration 3 Starting Time,MAccTmPMSS1.StrAccTm3.instMag.f
+68F1,Motor Acceleration 3 Effective Current,MAccTmPMSS1.StrEffA3.instMag.f
+68F3,Motor Acceleration 3 Peak Current,MAccTmPMSS1.StrPeakA3.instMag.f
+68EE,Motor Acceleration 3 Time/Date,MAccTmPMSS1.StrTD3.instMag.f
+68FF,Motor Acceleration 4 Starting Time,MAccTmPMSS1.StrAccTm4.instMag.f
+6900,Motor Acceleration 4 Effective Current,MAccTmPMSS1.StrEffA4.instMag.f
+6902,Motor Acceleration 4 Peak Current,MAccTmPMSS1.StrPeakA4.instMag.f
+68FD,Motor Acceleration 4 Time/Date,MAccTmPMSS1.StrTD4.instMag.f
+690E,Motor Acceleration 5 Starting Time,MAccTmPMSS1.StrAccTm5.instMag.f
+690F,Motor Acceleration 5 Effective Current,MAccTmPMSS1.StrEffA5.instMag.f
+6911,Motor Acceleration 5 Peak Current,MAccTmPMSS1.StrPeakA5.instMag.f
+690C,Motor Acceleration 5 Time/Date,MAccTmPMSS1.StrTD5.instMag.f
+16C0,Field RTD 1 Value,FRTDsGGIO1.AnIn1.instMag.f
+16C1,Field RTD 2 Value,FRTDsGGIO1.AnIn2.instMag.f
+16C2,Field RTD 3 Value,FRTDsGGIO1.AnIn3.instMag.f
+16C3,Field RTD 4 Value,FRTDsGGIO1.AnIn4.instMag.f
+16C4,Field RTD 5 Value,FRTDsGGIO1.AnIn5.instMag.f
+16C5,Field RTD 6 Value,FRTDsGGIO1.AnIn6.instMag.f
+16C6,Field RTD 7 Value,FRTDsGGIO1.AnIn7.instMag.f
+16C7,Field RTD 8 Value,FRTDsGGIO1.AnIn8.instMag.f
+16C8,Field Transducer 1 Value,FTDRsGGIO1.AnIn1.instMag.f
+16CA,Field Transducer 2 Value,FTDRsGGIO1.AnIn2.instMag.f
+16CC,Field Transducer 3 Value,FTDRsGGIO1.AnIn3.instMag.f
+16CE,Field Transducer 4 Value,FTDRsGGIO1.AnIn4.instMag.f
+16D0,Field Transducer 5 Value,FTDRsGGIO1.AnIn5.instMag.f
+16D2,Field Transducer 6 Value,FTDRsGGIO1.AnIn6.instMag.f
+16D4,Field Transducer 7 Value,FTDRsGGIO1.AnIn7.instMag.f
+16D6,Field Transducer 8 Value,FTDRsGGIO1.AnIn8.instMag.f
+
+87C0,RRTD RTD 1 Value,RRTDsSTMP1.Tmp.instMag.f
+87C1,RRTD RTD 2 Value,RRTDsSTMP2.Tmp.instMag.f
+87C2,RRTD RTD 3 Value,RRTDsSTMP3.Tmp.instMag.f
+87C3,RRTD RTD 4 Value,RRTDsSTMP4.Tmp.instMag.f
+87C4,RRTD RTD 5 Value,RRTDsSTMP5.Tmp.instMag.f
+87C5,RRTD RTD 6 Value,RRTDsSTMP6.Tmp.instMag.f
+87C6,RRTD RTD 7 Value,RRTDsSTMP7.Tmp.instMag.f
+87C7,RRTD RTD 8 Value,RRTDsSTMP8.Tmp.instMag.f
+87C8,RRTD RTD 9 Value,RRTDsSTMP9.Tmp.instMag.f
+87C9,RRTD RTD 10 Value,RRTDsSTMP10.Tmp.instMag.f
+87CA,RRTD RTD 11 Value,RRTDsSTMP11.Tmp.instMag.f
+87CB,RRTD RTD 12 Value,RRTDsSTMP12.Tmp.instMag.f
+
+A560,PID 1 Out,PIDRegFPID1.Out.instMag.f
+A562,PID 1 Delta Out,PIDRegFPID1.DeltaOut.instMag.f
+A564,PID 1 Setpoint,PIDRegFPID1.Spt.instMag.f
+
+A566,PID 2 Out,PIDRegFPID2.Out.instMag.f
+A568,PID 2 Delta Out,PIDRegFPID2.DeltaOut.instMag.f
+A56A,PID 2 Setpoint,PIDRegFPID2.Spt.instMag.f
+
+A56C,PID 3 Out,PIDRegFPID3.Out.instMag.f
+A56E,PID 3 Delta Out,PIDRegFPID3.DeltaOut.instMag.f
+A570,PID 3 Setpoint,PIDRegFPID3.Spt.instMag.f
+
+A572,PID 4 Out,PIDRegFPID4.Out.instMag.f
+A574,PID 4 Delta Out,PIDRegFPID4.DeltaOut.instMag.f
+A576,PID 4 Setpoint,PIDRegFPID4.Spt.instMag.f
+
+A506,PID 1 Proportional Gain,PIDRegFPID1.KP.setMag.i
+A51A,PID 2 Proportional Gain,PIDRegFPID2.KP.setMag.i
+A52E,PID 3 Proportional Gain,PIDRegFPID3.KP.setMag.i
+A542,PID 4 Proportional Gain,PIDRegFPID4.KP.setMag.i
+
+A506,PID 1 Proportional Gain,PIDRegFPID1.KI.setMag.i
+A51A,PID 2 Proportional Gain,PIDRegFPID2.KI.setMag.i
+A52E,PID 3 Proportional Gain,PIDRegFPID3.KI.setMag.i
+A542,PID 4 Proportional Gain,PIDRegFPID4.KI.setMag.i
+
+A506,PID 1 Proportional Gain,PIDRegFPID1.KD.setMag.i
+A51A,PID 2 Proportional Gain,PIDRegFPID2.KD.setMag.i
+A52E,PID 3 Proportional Gain,PIDRegFPID3.KD.setMag.i
+A542,PID 4 Proportional Gain,PIDRegFPID4.KD.setMag.i
+
+8262,Digitizer 1 Limit,DgtzrGAPC1.Lim.setMag.i
+8266,Digitizer 2 Limit,DgtzrGAPC2.Lim.setMag.i
+826A,Digitizer 3 Limit,DgtzrGAPC3.Lim.setMag.i
+826E,Digitizer 4 Limit,DgtzrGAPC4.Lim.setMag.i
+8272,Digitizer 5 Limit,DgtzrGAPC5.Lim.setMag.i
+82A0,Digitizer 1 Output,DgtzrGAPC1.Out.instMag.f
+82A2,Digitizer 2 Output,DgtzrGAPC2.Out.instMag.f
+82A4,Digitizer 3 Output,DgtzrGAPC3.Out.instMag.f
+82A6,Digitizer 4 Output,DgtzrGAPC4.Out.instMag.f
+82A8,Digitizer 5 Output,DgtzrGAPC5.Out.instMag.f
+
+8150,Comparator 1 Argument A Value,Cmp8BtGAPC1.AnOutput1.instMag.f
+8152,Comparator 1 Argument B Value,Cmp8BtGAPC1.AnOutput2.instMag.f
+8154,Comparator 1 Output Value,Cmp8BtGAPC1.AnOutput3.instMag.f
+8156,Comparator 2 Argument A Value,Cmp8BtGAPC2.AnOutput1.instMag.f
+8158,Comparator 2 Argument B Value,Cmp8BtGAPC2.AnOutput2.instMag.f
+815A,Comparator 2 Output Value,Cmp8BtGAPC2.AnOutput3.instMag.f
+815C,Comparator 3 Argument A Value,Cmp8BtGAPC3.AnOutput1.instMag.f
+815E,Comparator 3 Argument B Value,Cmp8BtGAPC3.AnOutput2.instMag.f
+8160,Comparator 3 Output Value,Cmp8BtGAPC3.AnOutput3.instMag.f
+8162,Comparator 4 Argument A Value,Cmp8BtGAPC4.AnOutput1.instMag.f
+8164,Comparator 4 Argument B Value,Cmp8BtGAPC4.AnOutput2.instMag.f
+8166,Comparator 4 Output Value,Cmp8BtGAPC4.AnOutput3.instMag.f
+8168,Comparator 5 Argument A Value,Cmp8BtGAPC5.AnOutput1.instMag.f
+816A,Comparator 5 Argument B Value,Cmp8BtGAPC5.AnOutput2.instMag.f
+816C,Comparator 5 Output Value,Cmp8BtGAPC5.AnOutput3.instMag.f
+816E,Comparator 6 Argument A Value,Cmp8BtGAPC6.AnOutput1.instMag.f
+8170,Comparator 6 Argument B Value,Cmp8BtGAPC6.AnOutput2.instMag.f
+8172,Comparator 6 Output Value,Cmp8BtGAPC6.AnOutput3.instMag.f
+1E00,Demand Ia,DmdMtrMMTR1.AaDmd.instMag.f
+1E02,Demand Ib,DmdMtrMMTR1.AbDmd.instMag.f
+1E04,Demand Ic,DmdMtrMMTR1.AcDmd.instMag.f
+1E06,Demand Watt,DmdMtrMMTR1.WDmd.instMag.f
+1E08,Demand Var,DmdMtrMMTR1.VArDmd.instMag.f
+1E0A,Demand Va,DmdMtrMMTR1.VADmd.instMag.f
+1E10,Demand Ia,DmdMtrMMTR2.AaDmd.instMag.f
+1E12,Demand Ib,DmdMtrMMTR2.AbDmd.instMag.f
+1E14,Demand Ic,DmdMtrMMTR2.AcDmd.instMag.f
+1E16,Demand Watt,DmdMtrMMTR2.WDmd.instMag.f
+1E18,Demand Var,DmdMtrMMTR2.VArDmd.instMag.f
+1E1A,Demand Va,DmdMtrMMTR2.VADmd.instMag.f
+1E20,Demand Ia,DmdMtrMMTR3.AaDmd.instMag.f
+1E22,Demand Ib,DmdMtrMMTR3.AbDmd.instMag.f
+1E24,Demand Ic,DmdMtrMMTR3.AcDmd.instMag.f
+1E26,Demand Watt,DmdMtrMMTR3.WDmd.instMag.f
+1E28,Demand Var,DmdMtrMMTR3.VArDmd.instMag.f
+1E2A,Demand Va,DmdMtrMMTR3.VADmd.instMag.f
+1E30,Demand Ia,DmdMtrMMTR4.AaDmd.instMag.f
+1E32,Demand Ib,DmdMtrMMTR4.AbDmd.instMag.f
+1E34,Demand Ic,DmdMtrMMTR4.AcDmd.instMag.f
+1E36,Demand Watt,DmdMtrMMTR4.WDmd.instMag.f
+1E38,Demand Var,DmdMtrMMTR4.VArDmd.instMag.f
+1E3A,Demand Va,DmdMtrMMTR4.VADmd.instMag.f
+1E40,Demand Ia,DmdMtrMMTR5.AaDmd.instMag.f
+1E42,Demand Ib,DmdMtrMMTR5.AbDmd.instMag.f
+1E44,Demand Ic,DmdMtrMMTR5.AcDmd.instMag.f
+1E46,Demand Watt,DmdMtrMMTR5.WDmd.instMag.f
+1E48,Demand Var,DmdMtrMMTR5.VArDmd.instMag.f
+1E4A,Demand Va,DmdMtrMMTR5.VADmd.instMag.f
+1E50,Demand Ia,DmdMtrMMTR6.AaDmd.instMag.f
+1E52,Demand Ib,DmdMtrMMTR6.AbDmd.instMag.f
+1E54,Demand Ic,DmdMtrMMTR6.AcDmd.instMag.f
+1E56,Demand Watt,DmdMtrMMTR6.WDmd.instMag.f
+1E58,Demand Var,DmdMtrMMTR6.VArDmd.instMag.f
+1E5A,Demand Va,DmdMtrMMTR6.VADmd.instMag.f
+0800,Digital Counter 1 Value,DigCntFCNT1.CntRs.actVal
+0802,Digital Counter 1 Frozen,DigCntFCNT1.CntRs.frVal
+0808,Digital Counter 2 Value,DigCntFCNT2.CntRs.actVal
+080A,Digital Counter 2 Frozen,DigCntFCNT2.CntRs.frVal
+0810,Digital Counter 3 Value,DigCntFCNT3.CntRs.actVal
+0812,Digital Counter 3 Frozen,DigCntFCNT3.CntRs.frVal
+0818,Digital Counter 4 Value,DigCntFCNT4.CntRs.actVal
+081A,Digital Counter 4 Frozen,DigCntFCNT4.CntRs.frVal
+0820,Digital Counter 5 Value,DigCntFCNT5.CntRs.actVal
+0822,Digital Counter 5 Frozen,DigCntFCNT5.CntRs.frVal
+0828,Digital Counter 6 Value,DigCntFCNT6.CntRs.actVal
+082A,Digital Counter 6 Frozen,DigCntFCNT6.CntRs.frVal
+0830,Digital Counter 7 Value,DigCntFCNT7.CntRs.actVal
+0832,Digital Counter 7 Frozen,DigCntFCNT7.CntRs.frVal
+0838,Digital Counter 8 Value,DigCntFCNT8.CntRs.actVal
+083A,Digital Counter 8 Frozen,DigCntFCNT8.CntRs.frVal
+
+6633,Thermal Model Trip Time On Overload,MotThmPTTR1.OvlTripTm.instMag.f
+6631,Thermal Model Capacity Used,MotThmPTTR1.ThmCap.instMag.f
+6634,Thermal Model Lockout Time,MotThmPTTR1.ThmLOTm.instMag.f
+6638,Thermal Model Load,MotThmPTTR1.Amp.instMag.f
+
+663A,Thermal Model Motor Unbalance,MotThmPTTR1.MotUnb.instMag.f
+663B,Thermal Model Biased Motor Load,MotThmPTTR1.BiasMotLod.instMag.f
+663F,Total Motor Lockout Time,MotThmPTTR1.TotLOTm.instMag.f
+
+37B0,CT Bank1 Compensated I1 Current,PhCmp1PDIF1.CmpCt1I1.instMag.f
+37B4,CT Bank2 Compensated I1 Current,PhCmp1PDIF1.CmpCt2I1.instMag.f
+37B2,CT Bank1 Compensated I2 Current,PhCmp1PDIF1.CmpCt1I2.instMag.f
+37B6,CT Bank2 Compensated I2 Current,PhCmp1PDIF1.CmpCt2I2.instMag.f
+
+2A60,Synchrocheck 1 Delta Voltage,SynChkRSYN1.DifVClc.instMag.f
+2A64,Synchrocheck 1 Delta Frequency,SynChkRSYN1.DifHzClc.instMag.f
+2A62,Synchrocheck 1 Delta Phase,SynChkRSYN1.DifAngClc.instMag.f
+2A63,Synchrocheck 1 Synchscope,SynChkRSYN1.DifAngDis.instMag.f
+2A65,Synchrocheck 1 V1 Mag,SynChkRSYN1.V1Src.instCVal.mag.f
+2A67,Synchrocheck 1 V1 Ang,SynChkRSYN1.V1Src.instCVal.ang.f
+2A68,Synchrocheck 1 V2 Mag,SynChkRSYN1.V2Src.instCVal.mag.f
+2A6A,Synchrocheck 1 V2 Ang,SynChkRSYN1.V2Src.instCVal.ang.f
+2A6B,Synchrocheck 1 V2_ Mag,SynChkRSYN1.ProjectedV2.instCVal.mag.f
+2A6D,Synchrocheck 1 V2_ Ang,SynChkRSYN1.ProjectedV2.instCVal.ang.f
+2A6E,Synchrocheck 1 Delta_ Phase,SynChkRSYN1.ProjectedDif.instMag.f
+2A6F,Synchrocheck 1 _Synchscope,SynChkRSYN1.ProjDifDis.instMag.f
+2A70,Synchrocheck 2 Delta Voltage,SynChkRSYN2.DifVClc.instMag.f
+2A74,Synchrocheck 2 Delta Frequency,SynChkRSYN2.DifHzClc.instMag.f
+2A72,Synchrocheck 2 Delta Phase,SynChkRSYN2.DifAngClc.instMag.f
+2A73,Synchrocheck 2 Synchscope,SynChkRSYN2.DifAngDis.instMag.f
+2A75,Synchrocheck 2 V1 Mag,SynChkRSYN2.V1Src.instCVal.mag.f
+2A77,Synchrocheck 2 V1 Ang,SynChkRSYN2.V1Src.instCVal.ang.f
+2A78,Synchrocheck 2 V2 Mag,SynChkRSYN2.V2Src.instCVal.mag.f
+2A7A,Synchrocheck 2 V2 Ang,SynChkRSYN2.V2Src.instCVal.ang.f
+2A7B,Synchrocheck 2 V2_ Mag,SynChkRSYN2.ProjectedV2.instCVal.mag.f
+2A7D,Synchrocheck 2 V2_ Ang,SynChkRSYN2.ProjectedV2.instCVal.ang.f
+2A7E,Synchrocheck 2 Delta_ Phase,SynChkRSYN2.ProjectedDif.instMag.f
+2A7F,Synchrocheck 2 _Synchscope,SynChkRSYN2.ProjDifDis.instMag.f
+2A80,Synchrocheck 3 Delta Voltage,SynChkRSYN3.DifVClc.instMag.f
+2A84,Synchrocheck 3 Delta Frequency,SynChkRSYN3.DifHzClc.instMag.f
+2A82,Synchrocheck 3 Delta Phase,SynChkRSYN3.DifAngClc.instMag.f
+2A83,Synchrocheck 3 Synchscope,SynChkRSYN3.DifAngDis.instMag.f
+2A85,Synchrocheck 3 V1 Mag,SynChkRSYN3.V1Src.instCVal.mag.f
+2A87,Synchrocheck 3 V1 Ang,SynChkRSYN3.V1Src.instCVal.ang.f
+2A88,Synchrocheck 3 V2 Mag,SynChkRSYN3.V2Src.instCVal.mag.f
+2A8A,Synchrocheck 3 V2 Ang,SynChkRSYN3.V2Src.instCVal.ang.f
+2A8B,Synchrocheck 3 V2_ Mag,SynChkRSYN3.ProjectedV2.instCVal.mag.f
+2A8D,Synchrocheck 3 V2_ Ang,SynChkRSYN3.ProjectedV2.instCVal.ang.f
+2A8E,Synchrocheck 3 Delta_ Phase,SynChkRSYN3.ProjectedDif.instMag.f
+2A8F,Synchrocheck 3 _Synchscope,SynChkRSYN3.ProjDifDis.instMag.f
+2A90,Synchrocheck 4 Delta Voltage,SynChkRSYN4.DifVClc.instMag.f
+2A94,Synchrocheck 4 Delta Frequency,SynChkRSYN4.DifHzClc.instMag.f
+2A92,Synchrocheck 4 Delta Phase,SynChkRSYN4.DifAngClc.instMag.f
+2A93,Synchrocheck 4 Synchscope,SynChkRSYN4.DifAngDis.instMag.f
+2A95,Synchrocheck 4 V1 Mag,SynChkRSYN4.V1Src.instCVal.mag.f
+2A97,Synchrocheck 4 V1 Ang,SynChkRSYN4.V1Src.instCVal.ang.f
+2A98,Synchrocheck 4 V2 Mag,SynChkRSYN4.V2Src.instCVal.mag.f
+2A9A,Synchrocheck 4 V2 Ang,SynChkRSYN4.V2Src.instCVal.ang.f
+2A9B,Synchrocheck 4 V2_ Mag,SynChkRSYN4.ProjectedV2.instCVal.mag.f
+2A9D,Synchrocheck 4 V2_ Ang,SynChkRSYN4.ProjectedV2.instCVal.ang.f
+2A9E,Synchrocheck 4 Delta_ Phase,SynChkRSYN4.ProjectedDif.instMag.f
+2A9F,Synchrocheck 4 _Synchscope,SynChkRSYN4.ProjDifDis.instMag.f
+2AA0,Synchrocheck 5 Delta Voltage,SynChkRSYN5.DifVClc.instMag.f
+2AA4,Synchrocheck 5 Delta Frequency,SynChkRSYN5.DifHzClc.instMag.f
+2AA2,Synchrocheck 5 Delta Phase,SynChkRSYN5.DifAngClc.instMag.f
+2AA3,Synchrocheck 5 Synchscope,SynChkRSYN5.DifAngDis.instMag.f
+2AA5,Synchrocheck 5 V1 Mag,SynChkRSYN5.V1Src.instCVal.mag.f
+2AA7,Synchrocheck 5 V1 Ang,SynChkRSYN5.V1Src.instCVal.ang.f
+2AA8,Synchrocheck 5 V2 Mag,SynChkRSYN5.V2Src.instCVal.mag.f
+2AAA,Synchrocheck 5 V2 Ang,SynChkRSYN5.V2Src.instCVal.ang.f
+2AAB,Synchrocheck 5 V2_ Mag,SynChkRSYN5.ProjectedV2.instCVal.mag.f
+2AAD,Synchrocheck 5 V2_ Ang,SynChkRSYN5.ProjectedV2.instCVal.ang.f
+2AAE,Synchrocheck 5 Delta_ Phase,SynChkRSYN5.ProjectedDif.instMag.f
+2AAF,Synchrocheck 5 _Synchscope,SynChkRSYN5.ProjDifDis.instMag.f
+2AB0,Synchrocheck 6 Delta Voltage,SynChkRSYN6.DifVClc.instMag.f
+2AB4,Synchrocheck 6 Delta Frequency,SynChkRSYN6.DifHzClc.instMag.f
+2AB2,Synchrocheck 6 Delta Phase,SynChkRSYN6.DifAngClc.instMag.f
+2AB3,Synchrocheck 6 Synchscope,SynChkRSYN6.DifAngDis.instMag.f
+2AB5,Synchrocheck 6 V1 Mag,SynChkRSYN6.V1Src.instCVal.mag.f
+2AB7,Synchrocheck 6 V1 Ang,SynChkRSYN6.V1Src.instCVal.ang.f
+2AB8,Synchrocheck 6 V2 Mag,SynChkRSYN6.V2Src.instCVal.mag.f
+2ABA,Synchrocheck 6 V2 Ang,SynChkRSYN6.V2Src.instCVal.ang.f
+2ABB,Synchrocheck 6 V2_ Mag,SynChkRSYN6.ProjectedV2.instCVal.mag.f
+2ABD,Synchrocheck 6 V2_ Ang,SynChkRSYN6.ProjectedV2.instCVal.ang.f
+2ABE,Synchrocheck 6 Delta_ Phase,SynChkRSYN6.ProjectedDif.instMag.f
+2ABF,Synchrocheck 6 _Synchscope,SynChkRSYN6.ProjDifDis.instMag.f
+2AC0,Synchrocheck 7 Delta Voltage,SynChkRSYN7.DifVClc.instMag.f
+2AC4,Synchrocheck 7 Delta Frequency,SynChkRSYN7.DifHzClc.instMag.f
+2AC2,Synchrocheck 7 Delta Phase,SynChkRSYN7.DifAngClc.instMag.f
+2AC3,Synchrocheck 7 Synchscope,SynChkRSYN7.DifAngDis.instMag.f
+2AC5,Synchrocheck 7 V1 Mag,SynChkRSYN7.V1Src.instCVal.mag.f
+2AC7,Synchrocheck 7 V1 Ang,SynChkRSYN7.V1Src.instCVal.ang.f
+2AC8,Synchrocheck 7 V2 Mag,SynChkRSYN7.V2Src.instCVal.mag.f
+2ACA,Synchrocheck 7 V2 Ang,SynChkRSYN7.V2Src.instCVal.ang.f
+2ACB,Synchrocheck 7 V2_ Mag,SynChkRSYN7.ProjectedV2.instCVal.mag.f
+2ACD,Synchrocheck 7 V2_ Ang,SynChkRSYN7.ProjectedV2.instCVal.ang.f
+2ACE,Synchrocheck 7 Delta_ Phase,SynChkRSYN7.ProjectedDif.instMag.f
+2ACF,Synchrocheck 7 _Synchscope,SynChkRSYN7.ProjDifDis.instMag.f
+2AD0,Synchrocheck 8 Delta Voltage,SynChkRSYN8.DifVClc.instMag.f
+2AD4,Synchrocheck 8 Delta Frequency,SynChkRSYN8.DifHzClc.instMag.f
+2AD2,Synchrocheck 8 Delta Phase,SynChkRSYN8.DifAngClc.instMag.f
+2AD3,Synchrocheck 8 Synchscope,SynChkRSYN8.DifAngDis.instMag.f
+2AD5,Synchrocheck 8 V1 Mag,SynChkRSYN8.V1Src.instCVal.mag.f
+2AD7,Synchrocheck 8 V1 Ang,SynChkRSYN8.V1Src.instCVal.ang.f
+2AD8,Synchrocheck 8 V2 Mag,SynChkRSYN8.V2Src.instCVal.mag.f
+2ADA,Synchrocheck 8 V2 Ang,SynChkRSYN8.V2Src.instCVal.ang.f
+2ADB,Synchrocheck 8 V2_ Mag,SynChkRSYN8.ProjectedV2.instCVal.mag.f
+2ADD,Synchrocheck 8 V2_ Ang,SynChkRSYN8.ProjectedV2.instCVal.ang.f
+2ADE,Synchrocheck 8 Delta_ Phase,SynChkRSYN8.ProjectedDif.instMag.f
+2ADF,Synchrocheck 8 _Synchscope,SynChkRSYN8.ProjDifDis.instMag.f
+2AE0,Synchrocheck 9 Delta Voltage,SynChkRSYN9.DifVClc.instMag.f
+2AE4,Synchrocheck 9 Delta Frequency,SynChkRSYN9.DifHzClc.instMag.f
+2AE2,Synchrocheck 9 Delta Phase,SynChkRSYN9.DifAngClc.instMag.f
+2AE3,Synchrocheck 9 Synchscope,SynChkRSYN9.DifAngDis.instMag.f
+2AE5,Synchrocheck 9 V1 Mag,SynChkRSYN9.V1Src.instCVal.mag.f
+2AE7,Synchrocheck 9 V1 Ang,SynChkRSYN9.V1Src.instCVal.ang.f
+2AE8,Synchrocheck 9 V2 Mag,SynChkRSYN9.V2Src.instCVal.mag.f
+2AEA,Synchrocheck 9 V2 Ang,SynChkRSYN9.V2Src.instCVal.ang.f
+2AEB,Synchrocheck 9 V2_ Mag,SynChkRSYN9.ProjectedV2.instCVal.mag.f
+2AED,Synchrocheck 9 V2_ Ang,SynChkRSYN9.ProjectedV2.instCVal.ang.f
+2AEE,Synchrocheck 9 Delta_ Phase,SynChkRSYN9.ProjectedDif.instMag.f
+2AEF,Synchrocheck 9 _Synchscope,SynChkRSYN9.ProjDifDis.instMag.f
+2AF0,Synchrocheck 10 Delta Voltage,SynChkRSYN10.DifVClc.instMag.f
+2AF4,Synchrocheck 10 Delta Frequency,SynChkRSYN10.DifHzClc.instMag.f
+2AF2,Synchrocheck 10 Delta Phase,SynChkRSYN10.DifAngClc.instMag.f
+2AF3,Synchrocheck 10 Synchscope,SynChkRSYN10.DifAngDis.instMag.f
+2AF5,Synchrocheck 10 V1 Mag,SynChkRSYN10.V1Src.instCVal.mag.f
+2AF7,Synchrocheck 10 V1 Ang,SynChkRSYN10.V1Src.instCVal.ang.f
+2AF8,Synchrocheck 10 V2 Mag,SynChkRSYN10.V2Src.instCVal.mag.f
+2AFA,Synchrocheck 10 V2 Ang,SynChkRSYN10.V2Src.instCVal.ang.f
+2AFB,Synchrocheck 10 V2_ Mag,SynChkRSYN10.ProjectedV2.instCVal.mag.f
+2AFD,Synchrocheck 10 V2_ Ang,SynChkRSYN10.ProjectedV2.instCVal.ang.f
+2AFE,Synchrocheck 10 Delta_ Phase,SynChkRSYN10.ProjectedDif.instMag.f
+2AFF,Synchrocheck 10 _Synchscope,SynChkRSYN10.ProjDifDis.instMag.f
+
+24A1,Differential Current IA Angle,LinDfPDIF1.DifAClc.phsA.instCVal.ang.f
+24A2,Differential Current IB Angle,LinDfPDIF1.DifAClc.phsB.instCVal.ang.f
+24A3,Differential Current IC Angle,LinDfPDIF1.DifAClc.phsC.instCVal.ang.f
+24B8,Differential Current IG Angle,LinDfPDIF1.DifAClc.neut.instCVal.ang.f
+376B,PTP-IRIG-B DELTA,TmClkLTMS1.TmnsDelta.instMag.f
+2498,Local IA Angle,LinDf0MMXU1.A.phsA.instCVal.ang.f
+2499,Local IB Angle,LinDf0MMXU1.A.phsB.instCVal.ang.f
+249A,Local IC Angle,LinDf0MMXU1.A.phsC.instCVal.ang.f
+249B,Remote1 IA Angle,LinDf1MMXU1.A.phsA.instCVal.ang.f
+249C,Remote1 IB Angle,LinDf1MMXU1.A.phsB.instCVal.ang.f
+249D,Remote1 IC Angle,LinDf1MMXU1.A.phsC.instCVal.ang.f
+249E,Remote2 IA Angle,LinDf2MMXU1.A.phsA.instCVal.ang.f
+249F,Remote2 IB Angle,LinDf2MMXU1.A.phsB.instCVal.ang.f
+24A0,Remote2 IC Angle,LinDf2MMXU1.A.phsC.instCVal.ang.f
+
+6390,Bank Overvoltage 1 Vop A,CPhOvPTOV1.OpV.phsA.instCVal.mag.f
+6391,Bank Overvoltage 1 Vop B,CPhOvPTOV1.OpV.phsB.instCVal.mag.f
+6392,Bank Overvoltage 1 Vop C,CPhOvPTOV1.OpV.phsC.instCVal.mag.f
+6393,Bank Overvoltage 2 Vop A,CPhOvPTOV2.OpV.phsA.instCVal.mag.f
+6394,Bank Overvoltage 2 Vop B,CPhOvPTOV2.OpV.phsB.instCVal.mag.f
+6395,Bank Overvoltage 2 Vop C,CPhOvPTOV2.OpV.phsC.instCVal.mag.f
+6396,Bank Overvoltage 3 Vop A,CPhOvPTOV3.OpV.phsA.instCVal.mag.f
+6397,Bank Overvoltage 3 Vop B,CPhOvPTOV3.OpV.phsB.instCVal.mag.f
+6398,Bank Overvoltage 3 Vop C,CPhOvPTOV3.OpV.phsC.instCVal.mag.f
+
+36F6,Neutral Voltage Unbalance 1 Mag,NuVUnPTOV1.NeutVx.instCVal.mag.f
+36F0,Neutral Voltage Unbalance 1 Ang,NuVUnPTOV1.NeutVx.instCVal.ang.f
+36F4,Neutral Voltage Unbalance 1 Bus V0 Mag,NuVUnPTOV1.BusV0.instCVal.mag.f
+36F2,Neutral Voltage Unbalance 1 Bus V0 Ang,NuVUnPTOV1.BusV0.instCVal.ang.f
+36F8,Neutral Voltage Unbalance 1 Operating Voltage,NuVUnPTOV1.VOp.instMag.f
+36FA,Neutral Voltage Unbalance 1 Restraining Voltage,NuVUnPTOV1.VRst.instMag.f
+3702,Neutral Voltage Unbalance 2 Mag,NuVUnPTOV2.NeutVx.instCVal.mag.f
+36FC,Neutral Voltage Unbalance 2 Ang,NuVUnPTOV2.NeutVx.instCVal.ang.f
+3700,Neutral Voltage Unbalance 2 Bus V0 Mag,NuVUnPTOV2.BusV0.instCVal.mag.f
+36FE,Neutral Voltage Unbalance 2 Bus V0 Ang,NuVUnPTOV2.BusV0.instCVal.ang.f
+3704,Neutral Voltage Unbalance 2 Operating Voltage,NuVUnPTOV2.VOp.instMag.f
+3706,Neutral Voltage Unbalance 2 Restraining Voltage,NuVUnPTOV2.VRst.instMag.f
+370E,Neutral Voltage Unbalance 3 Mag,NuVUnPTOV3.NeutVx.instCVal.mag.f
+3708,Neutral Voltage Unbalance 3 Ang,NuVUnPTOV3.NeutVx.instCVal.ang.f
+370C,Neutral Voltage Unbalance 3 Bus V0 Mag,NuVUnPTOV3.BusV0.instCVal.mag.f
+370A,Neutral Voltage Unbalance 3 Bus V0 Ang,NuVUnPTOV3.BusV0.instCVal.ang.f
+3710,Neutral Voltage Unbalance 3 Operating Voltage,NuVUnPTOV3.VOp.instMag.f
+3712,Neutral Voltage Unbalance 3 Restraining Voltage,NuVUnPTOV3.VRst.instMag.f
+
+34C0,DCMA Input 1 Value,TDCInGGIO1.AnIn01.instMag.f
+34C2,DCMA Input 2 Value,TDCInGGIO1.AnIn02.instMag.f
+34C4,DCMA Input 3 Value,TDCInGGIO1.AnIn03.instMag.f
+34C6,DCMA Input 4 Value,TDCInGGIO1.AnIn04.instMag.f
+34C8,DCMA Input 5 Value,TDCInGGIO1.AnIn05.instMag.f
+34CA,DCMA Input 6 Value,TDCInGGIO1.AnIn06.instMag.f
+34CC,DCMA Input 7 Value,TDCInGGIO1.AnIn07.instMag.f
+34CE,DCMA Input 8 Value,TDCInGGIO1.AnIn08.instMag.f
+34D0,DCMA Input 9 Value,TDCInGGIO1.AnIn09.instMag.f
+34D2,DCMA Input 10 Value,TDCInGGIO1.AnIn10.instMag.f
+34D4,DCMA Input 11 Value,TDCInGGIO1.AnIn11.instMag.f
+34D6,DCMA Input 12 Value,TDCInGGIO1.AnIn12.instMag.f
+34D8,DCMA Input 13 Value,TDCInGGIO1.AnIn13.instMag.f
+34DA,DCMA Input 14 Value,TDCInGGIO1.AnIn14.instMag.f
+34DC,DCMA Input 15 Value,TDCInGGIO1.AnIn15.instMag.f
+34DE,DCMA Input 16 Value,TDCInGGIO1.AnIn16.instMag.f
+34E0,DCMA Input 17 Value,TDCInGGIO1.AnIn17.instMag.f
+34E2,DCMA Input 18 Value,TDCInGGIO1.AnIn18.instMag.f
+34E4,DCMA Input 19 Value,TDCInGGIO1.AnIn19.instMag.f
+34E6,DCMA Input 20 Value,TDCInGGIO1.AnIn20.instMag.f
+34E8,DCMA Input 21 Value,TDCInGGIO1.AnIn21.instMag.f
+34EA,DCMA Input 22 Value,TDCInGGIO1.AnIn22.instMag.f
+34EC,DCMA Input 23 Value,TDCInGGIO1.AnIn23.instMag.f
+34EE,DCMA Input 24 Value,TDCInGGIO1.AnIn24.instMag.f
+
+D7B1,DCMA Input 1 Max Value,TDCInGGIO1.MaxVal01.setMag.f
+D7C4,DCMA Input 2 Max Value,TDCInGGIO1.MaxVal02.setMag.f
+D7D7,DCMA Input 3 Max Value,TDCInGGIO1.MaxVal03.setMag.f
+D7EA,DCMA Input 4 Max Value,TDCInGGIO1.MaxVal04.setMag.f
+D7FD,DCMA Input 5 Max Value,TDCInGGIO1.MaxVal05.setMag.f
+D810,DCMA Input 6 Max Value,TDCInGGIO1.MaxVal06.setMag.f
+D823,DCMA Input 7 Max Value,TDCInGGIO1.MaxVal07.setMag.f
+D836,DCMA Input 8 Max Value,TDCInGGIO1.MaxVal08.setMag.f
+D849,DCMA Input 9 Max Value,TDCInGGIO1.MaxVal09.setMag.f
+D85C,DCMA Input 10 Max Value,TDCInGGIO1.MaxVal10.setMag.f
+D86F,DCMA Input 11 Max Value,TDCInGGIO1.MaxVal11.setMag.f
+D882,DCMA Input 12 Max Value,TDCInGGIO1.MaxVal12.setMag.f
+D892,DCMA Input 13 Max Value,TDCInGGIO1.MaxVal13.setMag.f
+D8A8,DCMA Input 14 Max Value,TDCInGGIO1.MaxVal14.setMag.f
+D8BB,DCMA Input 15 Max Value,TDCInGGIO1.MaxVal15.setMag.f
+D8CE,DCMA Input 16 Max Value,TDCInGGIO1.MaxVal16.setMag.f
+D8E1,DCMA Input 17 Max Value,TDCInGGIO1.MaxVal17.setMag.f
+D8F4,DCMA Input 18 Max Value,TDCInGGIO1.MaxVal18.setMag.f
+D907,DCMA Input 19 Max Value,TDCInGGIO1.MaxVal19.setMag.f
+D91A,DCMA Input 20 Max Value,TDCInGGIO1.MaxVal20.setMag.f
+D92D,DCMA Input 21 Max Value,TDCInGGIO1.MaxVal21.setMag.f
+D940,DCMA Input 22 Max Value,TDCInGGIO1.MaxVal22.setMag.f
+D953,DCMA Input 23 Max Value,TDCInGGIO1.MaxVal23.setMag.f
+D966,DCMA Input 24 Max Value,TDCInGGIO1.MaxVal24.setMag.f
+
+D7AF,DCMA Input 1 Min Value,TDCInGGIO1.MinVal01.setMag.f
+D7C2,DCMA Input 2 Min Value,TDCInGGIO1.MinVal02.setMag.f
+D7D5,DCMA Input 3 Min Value,TDCInGGIO1.MinVal03.setMag.f
+D7E8,DCMA Input 4 Min Value,TDCInGGIO1.MinVal04.setMag.f
+D7FB,DCMA Input 5 Min Value,TDCInGGIO1.MinVal05.setMag.f
+D80E,DCMA Input 6 Min Value,TDCInGGIO1.MinVal06.setMag.f
+D821,DCMA Input 7 Min Value,TDCInGGIO1.MinVal07.setMag.f
+D834,DCMA Input 8 Min Value,TDCInGGIO1.MinVal08.setMag.f
+D847,DCMA Input 9 Min Value,TDCInGGIO1.MinVal09.setMag.f
+D85A,DCMA Input 10 Min Value,TDCInGGIO1.MinVal10.setMag.f
+D86D,DCMA Input 11 Min Value,TDCInGGIO1.MinVal11.setMag.f
+D880,DCMA Input 12 Min Value,TDCInGGIO1.MinVal12.setMag.f
+D893,DCMA Input 13 Min Value,TDCInGGIO1.MinVal13.setMag.f
+D8A6,DCMA Input 14 Min Value,TDCInGGIO1.MinVal14.setMag.f
+D8B9,DCMA Input 15 Min Value,TDCInGGIO1.MinVal15.setMag.f
+D8CC,DCMA Input 16 Min Value,TDCInGGIO1.MinVal16.setMag.f
+D8DF,DCMA Input 17 Min Value,TDCInGGIO1.MinVal17.setMag.f
+D8F2,DCMA Input 18 Min Value,TDCInGGIO1.MinVal18.setMag.f
+D905,DCMA Input 19 Min Value,TDCInGGIO1.MinVal19.setMag.f
+D918,DCMA Input 20 Min Value,TDCInGGIO1.MinVal20.setMag.f
+D92B,DCMA Input 21 Min Value,TDCInGGIO1.MinVal21.setMag.f
+D93E,DCMA Input 22 Min Value,TDCInGGIO1.MinVal22.setMag.f
+D951,DCMA Input 23 Min Value,TDCInGGIO1.MinVal23.setMag.f
+D964,DCMA Input 24 Min Value,TDCInGGIO1.MinVal24.setMag.f
+
+34F0,RTD Input 1,PRTDsSTMP1.Tmp.instMag.f
+34F1,RTD Input 2,PRTDsSTMP2.Tmp.instMag.f
+34F2,RTD Input 3,PRTDsSTMP3.Tmp.instMag.f
+34F3,RTD Input 4,PRTDsSTMP4.Tmp.instMag.f
+34F4,RTD Input 5,PRTDsSTMP5.Tmp.instMag.f
+34F5,RTD Input 6,PRTDsSTMP6.Tmp.instMag.f
+34F6,RTD Input 7,PRTDsSTMP7.Tmp.instMag.f
+34F7,RTD Input 8,PRTDsSTMP8.Tmp.instMag.f
+34F8,RTD Input 9,PRTDsSTMP9.Tmp.instMag.f
+34F9,RTD Input 10,PRTDsSTMP10.Tmp.instMag.f
+34FA,RTD Input 11,PRTDsSTMP11.Tmp.instMag.f
+34FB,RTD Input 12,PRTDsSTMP12.Tmp.instMag.f
+34FC,RTD Input 13,PRTDsSTMP13.Tmp.instMag.f
+34FD,RTD Input 14,PRTDsSTMP14.Tmp.instMag.f
+34FE,RTD Input 15,PRTDsSTMP15.Tmp.instMag.f
+34FF,RTD Input 16,PRTDsSTMP16.Tmp.instMag.f
+3500,RTD Input 17,PRTDsSTMP17.Tmp.instMag.f
+3501,RTD Input 18,PRTDsSTMP18.Tmp.instMag.f
+3502,RTD Input 19,PRTDsSTMP19.Tmp.instMag.f
+3503,RTD Input 20,PRTDsSTMP20.Tmp.instMag.f
+3504,RTD Input 21,PRTDsSTMP21.Tmp.instMag.f
+3505,RTD Input 22,PRTDsSTMP22.Tmp.instMag.f
+3506,RTD Input 23,PRTDsSTMP23.Tmp.instMag.f
+3507,RTD Input 24,PRTDsSTMP24.Tmp.instMag.f
+3508,RTD Input 25,PRTDsSTMP25.Tmp.instMag.f
+3509,RTD Input 26,PRTDsSTMP26.Tmp.instMag.f
+350A,RTD Input 27,PRTDsSTMP27.Tmp.instMag.f
+350B,RTD Input 28,PRTDsSTMP28.Tmp.instMag.f
+350C,RTD Input 29,PRTDsSTMP29.Tmp.instMag.f
+350D,RTD Input 30,PRTDsSTMP30.Tmp.instMag.f
+350E,RTD Input 31,PRTDsSTMP31.Tmp.instMag.f
+350F,RTD Input 32,PRTDsSTMP32.Tmp.instMag.f
+3510,RTD Input 33,PRTDsSTMP33.Tmp.instMag.f
+3511,RTD Input 34,PRTDsSTMP34.Tmp.instMag.f
+3512,RTD Input 35,PRTDsSTMP35.Tmp.instMag.f
+3513,RTD Input 36,PRTDsSTMP36.Tmp.instMag.f
+3514,RTD Input 37,PRTDsSTMP37.Tmp.instMag.f
+3515,RTD Input 38,PRTDsSTMP38.Tmp.instMag.f
+3516,RTD Input 39,PRTDsSTMP39.Tmp.instMag.f
+3517,RTD Input 40,PRTDsSTMP40.Tmp.instMag.f
+3518,RTD Input 41,PRTDsSTMP41.Tmp.instMag.f
+3519,RTD Input 42,PRTDsSTMP42.Tmp.instMag.f
+351A,RTD Input 43,PRTDsSTMP43.Tmp.instMag.f
+351B,RTD Input 44,PRTDsSTMP44.Tmp.instMag.f
+351C,RTD Input 45,PRTDsSTMP45.Tmp.instMag.f
+351D,RTD Input 46,PRTDsSTMP46.Tmp.instMag.f
+351E,RTD Input 47,PRTDsSTMP47.Tmp.instMag.f
+351F,RTD Input 48,PRTDsSTMP48.Tmp.instMag.f
+
+34F0,RTD Input 1 Value,TRTDsGGIO1.AnIn01.instMag.f
+34F1,RTD Input 2 Value,TRTDsGGIO1.AnIn02.instMag.f
+34F2,RTD Input 3 Value,TRTDsGGIO1.AnIn03.instMag.f
+34F3,RTD Input 4 Value,TRTDsGGIO1.AnIn04.instMag.f
+34F4,RTD Input 5 Value,TRTDsGGIO1.AnIn05.instMag.f
+34F5,RTD Input 6 Value,TRTDsGGIO1.AnIn06.instMag.f
+34F6,RTD Input 7 Value,TRTDsGGIO1.AnIn07.instMag.f
+34F7,RTD Input 8 Value,TRTDsGGIO1.AnIn08.instMag.f
+34F8,RTD Input 9 Value,TRTDsGGIO1.AnIn09.instMag.f
+34F9,RTD Input 10 Value,TRTDsGGIO1.AnIn10.instMag.f
+34FA,RTD Input 11 Value,TRTDsGGIO1.AnIn11.instMag.f
+34FB,RTD Input 12 Value,TRTDsGGIO1.AnIn12.instMag.f
+34FC,RTD Input 13 Value,TRTDsGGIO1.AnIn13.instMag.f
+34FD,RTD Input 14 Value,TRTDsGGIO1.AnIn14.instMag.f
+34FE,RTD Input 15 Value,TRTDsGGIO1.AnIn15.instMag.f
+34FF,RTD Input 16 Value,TRTDsGGIO1.AnIn16.instMag.f
+3500,RTD Input 17 Value,TRTDsGGIO1.AnIn17.instMag.f
+3501,RTD Input 18 Value,TRTDsGGIO1.AnIn18.instMag.f
+3502,RTD Input 19 Value,TRTDsGGIO1.AnIn19.instMag.f
+3503,RTD Input 20 Value,TRTDsGGIO1.AnIn20.instMag.f
+3504,RTD Input 21 Value,TRTDsGGIO1.AnIn21.instMag.f
+3505,RTD Input 22 Value,TRTDsGGIO1.AnIn22.instMag.f
+3506,RTD Input 23 Value,TRTDsGGIO1.AnIn23.instMag.f
+3507,RTD Input 24 Value,TRTDsGGIO1.AnIn24.instMag.f
+3508,RTD Input 25 Value,TRTDsGGIO1.AnIn25.instMag.f
+3509,RTD Input 26 Value,TRTDsGGIO1.AnIn26.instMag.f
+350A,RTD Input 27 Value,TRTDsGGIO1.AnIn27.instMag.f
+350B,RTD Input 28 Value,TRTDsGGIO1.AnIn28.instMag.f
+350C,RTD Input 29 Value,TRTDsGGIO1.AnIn29.instMag.f
+350D,RTD Input 30 Value,TRTDsGGIO1.AnIn30.instMag.f
+350E,RTD Input 31 Value,TRTDsGGIO1.AnIn31.instMag.f
+350F,RTD Input 32 Value,TRTDsGGIO1.AnIn32.instMag.f
+3510,RTD Input 33 Value,TRTDsGGIO1.AnIn33.instMag.f
+3511,RTD Input 34 Value,TRTDsGGIO1.AnIn34.instMag.f
+3512,RTD Input 35 Value,TRTDsGGIO1.AnIn35.instMag.f
+3513,RTD Input 36 Value,TRTDsGGIO1.AnIn36.instMag.f
+3514,RTD Input 37 Value,TRTDsGGIO1.AnIn37.instMag.f
+3515,RTD Input 38 Value,TRTDsGGIO1.AnIn38.instMag.f
+3516,RTD Input 39 Value,TRTDsGGIO1.AnIn39.instMag.f
+3517,RTD Input 40 Value,TRTDsGGIO1.AnIn40.instMag.f
+3518,RTD Input 41 Value,TRTDsGGIO1.AnIn41.instMag.f
+3519,RTD Input 42 Value,TRTDsGGIO1.AnIn42.instMag.f
+351A,RTD Input 43 Value,TRTDsGGIO1.AnIn43.instMag.f
+351B,RTD Input 44 Value,TRTDsGGIO1.AnIn44.instMag.f
+351C,RTD Input 45 Value,TRTDsGGIO1.AnIn45.instMag.f
+351D,RTD Input 46 Value,TRTDsGGIO1.AnIn46.instMag.f
+351E,RTD Input 47 Value,TRTDsGGIO1.AnIn47.instMag.f
+351F,RTD Input 48 Value,TRTDsGGIO1.AnIn48.instMag.f
+
+9364,DCMA Output 1 Max Value,TDCOutGGIO1.MaxVal01.setMag.f
+936A,DCMA Output 2 Max Value,TDCOutGGIO1.MaxVal02.setMag.f
+9370,DCMA Output 3 Max Value,TDCOutGGIO1.MaxVal03.setMag.f
+9376,DCMA Output 4 Max Value,TDCOutGGIO1.MaxVal04.setMag.f
+937C,DCMA Output 5 Max Value,TDCOutGGIO1.MaxVal05.setMag.f
+9382,DCMA Output 6 Max Value,TDCOutGGIO1.MaxVal06.setMag.f
+9388,DCMA Output 7 Max Value,TDCOutGGIO1.MaxVal07.setMag.f
+938E,DCMA Output 8 Max Value,TDCOutGGIO1.MaxVal08.setMag.f
+9394,DCMA Output 9 Max Value,TDCOutGGIO1.MaxVal09.setMag.f
+939A,DCMA Output 10 Max Value,TDCOutGGIO1.MaxVal10.setMag.f
+93A0,DCMA Output 11 Max Value,TDCOutGGIO1.MaxVal11.setMag.f
+93A6,DCMA Output 12 Max Value,TDCOutGGIO1.MaxVal12.setMag.f
+93AC,DCMA Output 13 Max Value,TDCOutGGIO1.MaxVal13.setMag.f
+93B2,DCMA Output 14 Max Value,TDCOutGGIO1.MaxVal14.setMag.f
+93B8,DCMA Output 15 Max Value,TDCOutGGIO1.MaxVal15.setMag.f
+93BE,DCMA Output 16 Max Value,TDCOutGGIO1.MaxVal16.setMag.f
+93C4,DCMA Output 17 Max Value,TDCOutGGIO1.MaxVal17.setMag.f
+93CA,DCMA Output 18 Max Value,TDCOutGGIO1.MaxVal18.setMag.f
+93D0,DCMA Output 19 Max Value,TDCOutGGIO1.MaxVal19.setMag.f
+93D6,DCMA Output 20 Max Value,TDCOutGGIO1.MaxVal20.setMag.f
+93DC,DCMA Output 21 Max Value,TDCOutGGIO1.MaxVal21.setMag.f
+93E2,DCMA Output 22 Max Value,TDCOutGGIO1.MaxVal22.setMag.f
+93E8,DCMA Output 23 Max Value,TDCOutGGIO1.MaxVal23.setMag.f
+93EE,DCMA Output 24 Max Value,TDCOutGGIO1.MaxVal24.setMag.f
+
+9362,DCMA Output 1 Min Value,TDCOutGGIO1.MinVal01.setMag.f
+9368,DCMA Output 2 Min Value,TDCOutGGIO1.MinVal02.setMag.f
+936E,DCMA Output 3 Min Value,TDCOutGGIO1.MinVal03.setMag.f
+9374,DCMA Output 4 Min Value,TDCOutGGIO1.MinVal04.setMag.f
+937A,DCMA Output 5 Min Value,TDCOutGGIO1.MinVal05.setMag.f
+9380,DCMA Output 6 Min Value,TDCOutGGIO1.MinVal06.setMag.f
+9386,DCMA Output 7 Min Value,TDCOutGGIO1.MinVal07.setMag.f
+938C,DCMA Output 8 Min Value,TDCOutGGIO1.MinVal08.setMag.f
+9392,DCMA Output 9 Min Value,TDCOutGGIO1.MinVal09.setMag.f
+9398,DCMA Output 10 Min Value,TDCOutGGIO1.MinVal10.setMag.f
+939E,DCMA Output 11 Min Value,TDCOutGGIO1.MinVal11.setMag.f
+93A4,DCMA Output 12 Min Value,TDCOutGGIO1.MinVal12.setMag.f
+93AA,DCMA Output 13 Min Value,TDCOutGGIO1.MinVal13.setMag.f
+93B0,DCMA Output 14 Min Value,TDCOutGGIO1.MinVal14.setMag.f
+93B6,DCMA Output 15 Min Value,TDCOutGGIO1.MinVal15.setMag.f
+93BC,DCMA Output 16 Min Value,TDCOutGGIO1.MinVal16.setMag.f
+93C2,DCMA Output 17 Min Value,TDCOutGGIO1.MinVal17.setMag.f
+93C8,DCMA Output 18 Min Value,TDCOutGGIO1.MinVal18.setMag.f
+93CE,DCMA Output 19 Min Value,TDCOutGGIO1.MinVal19.setMag.f
+93D4,DCMA Output 20 Min Value,TDCOutGGIO1.MinVal20.setMag.f
+93DA,DCMA Output 21 Min Value,TDCOutGGIO1.MinVal21.setMag.f
+93E0,DCMA Output 22 Min Value,TDCOutGGIO1.MinVal22.setMag.f
+93E6,DCMA Output 23 Min Value,TDCOutGGIO1.MinVal23.setMag.f
+93EC,DCMA Output 24 Min Value,TDCOutGGIO1.MinVal24.setMag.f
+
+36C4,Neutral Cur Unbalance INsp Actual,NeAUnPTOC1.RawAnsp.instMag.f
+36C6,Neutral Cur Unbalance Iop Actual,NeAUnPTOC1.CompAop.instMag.f
+36C8,Neutral Cur Unbalance INsp Actual,NeAUnPTOC2.RawAnsp.instMag.f
+36CA,Neutral Cur Unbalance Iop Actual,NeAUnPTOC2.CompAop.instMag.f
+36CC,Neutral Cur Unbalance INsp Actual,NeAUnPTOC3.RawAnsp.instMag.f
+36CE,Neutral Cur Unbalance Iop Actual,NeAUnPTOC3.CompAop.instMag.f
+
+3642,Voltage Differential 1 Phase A Diff Voltage Actual,VDifPDIF1.DifVPh.phsA.instCVal.mag.f
+3646,Voltage Differential 1 Phase B Diff Voltage Actual,VDifPDIF1.DifVPh.phsB.instCVal.mag.f
+364A,Voltage Differential 1 Phase C Diff Voltage Actual,VDifPDIF1.DifVPh.phsC.instCVal.mag.f
+3640,Voltage Differential 1 Phase A Bus Voltage Actual,VDifPDIF1.BusVPh.phsA.instCVal.mag.f
+3644,Voltage Differential 1 Phase B Bus Voltage Actual,VDifPDIF1.BusVPh.phsB.instCVal.mag.f
+3648,Voltage Differential 1 Phase C Bus Voltage Actual,VDifPDIF1.BusVPh.phsC.instCVal.mag.f
+364E,Voltage Differential 2 Phase A Diff Voltage Actual,VDifPDIF2.DifVPh.phsA.instCVal.mag.f
+3652,Voltage Differential 2 Phase B Diff Voltage Actual,VDifPDIF2.DifVPh.phsB.instCVal.mag.f
+3656,Voltage Differential 2 Phase C Diff Voltage Actual,VDifPDIF2.DifVPh.phsC.instCVal.mag.f
+364C,Voltage Differential 2 Phase A Bus Voltage Actual,VDifPDIF2.BusVPh.phsA.instCVal.mag.f
+3650,Voltage Differential 2 Phase B Bus Voltage Actual,VDifPDIF2.BusVPh.phsB.instCVal.mag.f
+3654,Voltage Differential 2 Phase C Bus Voltage Actual,VDifPDIF2.BusVPh.phsC.instCVal.mag.f
+365A,Voltage Differential 3 Phase A Diff Voltage Actual,VDifPDIF3.DifVPh.phsA.instCVal.mag.f
+365E,Voltage Differential 3 Phase B Diff Voltage Actual,VDifPDIF3.DifVPh.phsB.instCVal.mag.f
+3662,Voltage Differential 3 Phase C Diff Voltage Actual,VDifPDIF3.DifVPh.phsC.instCVal.mag.f
+3658,Voltage Differential 3 Phase A Bus Voltage Actual,VDifPDIF3.BusVPh.phsA.instCVal.mag.f
+365C,Voltage Differential 3 Phase B Bus Voltage Actual,VDifPDIF3.BusVPh.phsB.instCVal.mag.f
+3660,Voltage Differential 3 Phase C Bus Voltage Actual,VDifPDIF3.BusVPh.phsC.instCVal.mag.f

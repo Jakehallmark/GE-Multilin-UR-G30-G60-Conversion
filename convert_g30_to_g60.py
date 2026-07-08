@@ -171,17 +171,87 @@ def ur_title_case(device_name: str) -> str:
     return "".join(result)
 
 
+def derive_output_file_stem(device_name: str, firmware_version: str) -> str:
+    """Build the output file base name, including firmware to avoid cross-version overwrites."""
+    fw = firmware_version.strip()
+    if fw:
+        return f"{device_name} FW{fw}"
+    return device_name
+
+
+def _is_spec_token(token: str) -> bool:
+    t = token.lower()
+    return bool(re.fullmatch(r"\d+v", t) or re.fullmatch(r"\d+a", t))
+
+
+def _is_firmware_token(token: str) -> bool:
+    t = token.lower()
+    if t.startswith("firmware"):
+        return True
+    if re.fullmatch(r"\d+\.\d+", t):
+        return True
+    if re.fullmatch(r"\d+-\d+", t):
+        return True
+    return False
+
+
+def _is_site_descriptor_token(token: str) -> bool:
+    return not _is_firmware_token(token) and not _is_spec_token(token)
+
+
+def derive_g30_identity_from_urs_stem(stem: str) -> str:
+    """Build a lowercase deviceName-like string from a .urs export filename.
+
+    EnerVista filenames often omit the underscore form used in XML deviceName
+    attributes (e.g. ``Publix 1563 Cocoa Beach 6.06 208v 3000A``).  When no
+    underscore is present, keep site/location tokens (store number, city, etc.),
+    extract voltage/amperage, and synthesize the ``site _208v3000a`` form so URS
+    and XML outputs share the same naming scheme.
+    """
+    name = stem.strip().lower()
+    name = re.sub(r"\s+\d{1,2}-\d{1,2}-\d{2,4}.*$", "", name)
+    name = re.sub(r"\s*\([^)]*\)", "", name).strip()
+
+    if "_" in name:
+        return name
+
+    tokens = name.split()
+    if not tokens:
+        return name
+
+    first_word = tokens[0]
+    descriptor = [t for t in tokens[1:] if _is_site_descriptor_token(t)]
+
+    volt = re.search(r"(\d+)\s*v", name)
+    amp = re.search(r"(\d+)\s*a", name)
+    spec_parts: list[str] = []
+    if volt:
+        spec_parts.append(f"{volt.group(1)}v")
+    if amp:
+        spec_parts.append(f"{amp.group(1)}a")
+    spec_suffix = f"_{''.join(spec_parts)}" if spec_parts else ""
+
+    if descriptor:
+        return f"{first_word} {' '.join(descriptor)}{spec_suffix}"
+    if spec_suffix:
+        return f"{first_word}{spec_suffix}"
+    return name
+
+
 def derive_output_device_name(g30_device_name: str, g60_order_code: str) -> str:
     """
     Build the output deviceName from the G30 device identity and the G60 model.
 
     Approach:
       - Site prefix  = first word of G30 deviceName       (e.g. 'publix')
+      - Descriptor   = remaining tokens before the specs
+                       underscore, excluding firmware/spec tokens
+                       (e.g. '1563 cocoa beach')
       - G60 model    = first segment of G60 orderCode,
                        lowercased                          (e.g. 'G60' -> 'g60')
       - Specs suffix = everything from the first '_' in
                        the G30 deviceName onwards          (e.g. '_208v4000a[86]')
-      - Result       = '{prefix} {model}{suffix}'
+      - Result       = '{prefix} {descriptor} {model}{suffix}'
 
     This is robust to any G60 template because it reads the model from the
     orderCode rather than from the template's deviceName.
@@ -192,18 +262,59 @@ def derive_output_device_name(g30_device_name: str, g60_order_code: str) -> str:
       result          = 'publix g60_208v4000a[86]'
     """
     g60_model = g60_order_code.split("-")[0].lower()
-    first_word = g30_device_name.split(" ")[0] if " " in g30_device_name else g30_device_name
     underscore_idx = g30_device_name.find("_")
     suffix = g30_device_name[underscore_idx:] if underscore_idx != -1 else ""
+    prefix_part = (
+        g30_device_name[:underscore_idx].strip()
+        if underscore_idx != -1
+        else g30_device_name.strip()
+    )
+
+    tokens = prefix_part.split()
+    if not tokens:
+        return f"{g60_model}{suffix}".strip()
+
+    first_word = tokens[0]
+    middle_tokens = [t for t in tokens[1:] if _is_site_descriptor_token(t)]
+    middle = " ".join(middle_tokens)
+
+    if middle:
+        return f"{first_word} {middle} {g60_model}{suffix}"
     return f"{first_word} {g60_model}{suffix}"
 
 
-def derive_output_file_stem(device_name: str, firmware_version: str) -> str:
-    """Build the output file base name, including firmware to avoid cross-version overwrites."""
-    fw = firmware_version.strip()
-    if fw:
-        return f"{device_name} FW{fw}"
-    return device_name
+def validate_g30_settings_xml(path: Path) -> ET.Element:
+    """Parse and validate a G30 UR Setup settings export.
+
+    Raises:
+        ValueError: If the file is not a usable G30 settings export.
+    """
+    try:
+        root = parse_xml(path)
+    except ET.ParseError as exc:
+        raise ValueError(f"Not a valid XML file: {path.name}") from exc
+
+    if root.tag != "URDevice":
+        raise ValueError(
+            f"Expected a UR Setup device export (<URDevice> root), not <{root.tag}>."
+        )
+
+    order_code = (root.get("orderCode") or "").upper()
+    if order_code.startswith("G60"):
+        raise ValueError(
+            "This file appears to be a G60 settings export. Select a G30 source file."
+        )
+    if order_code and not order_code.startswith("G30"):
+        raise ValueError(
+            f"Unexpected relay model ({root.get('orderCode')}). Expected a G30 export."
+        )
+
+    if not any(root.iter("Setting")):
+        raise ValueError(
+            "No settings found in this XML file. It may be empty or not a settings export."
+        )
+
+    return root
 
 
 def build_path_map(root: ET.Element) -> dict:
@@ -528,30 +639,87 @@ def parse_coded_urs_display(urs_value: str) -> tuple[str, str]:
     return "", urs_value or ""
 
 
-def resolve_analogoperand_csv(firmware_side_dir: Path, preferred_fw: str = "") -> Optional[Path]:
+def _analogoperand_csv_revision(path: Path) -> int:
+    """Extract the numeric revision from ``AnalogoperandTo61850_<rev>.csv``."""
+    suffix = path.stem.rsplit("_", 1)[-1]
+    digits = "".join(ch for ch in suffix if ch.isdigit())
+    return int(digits) if digits else 0
+
+
+# SFD build suffixes that differ from the URDevice ``version`` field.
+_SFD_SUFFIX_TO_CSV_REV: dict[str, int] = {
+    "606": 600,  # A09ma606 archive is FW 6.0x; projects report version 600
+}
+
+
+def firmware_version_to_csv_revision(version: str) -> int:
+    """Map a UR firmware version or SFD build suffix to an Analogoperand CSV rev.
+
+    G30 archives in ``firmware/g30/`` map to firmware lines as:
+      A09ma590 → 5.9x (590), A09ma606 → 6.0x (600), A09ma766 → 7.6x (760),
+      A09ma844 → 8.4x (840).
+
+    5.x/6.x builds use the URDevice version field (590, 600). The ``A09ma606``
+    SFD package is 6.06 but projects report ``version="600"``. 7.x/8.x builds
+    floor to the line revision (766 → 760, 844 → 840).
+    """
+    digits = "".join(ch for ch in (version or "") if ch.isdigit())
+    if not digits:
+        return 0
+    key = digits[:3] if len(digits) >= 3 else digits
+    mapped = _SFD_SUFFIX_TO_CSV_REV.get(key)
+    if mapped is not None:
+        return mapped
+    n = int(key)
+    if n < 700:
+        return n
+    return (n // 10) * 10
+
+
+def resolve_analogoperand_csv(
+    firmware_side_dir: Path, preferred_fw: str = ""
+) -> Optional[Path]:
     """Pick AnalogoperandTo61850_*.csv under firmware/g30 or firmware/g60."""
+    path, _expected, _exact = resolve_analogoperand_csv_detailed(firmware_side_dir, preferred_fw)
+    return path
+
+
+def resolve_analogoperand_csv_detailed(
+    firmware_side_dir: Path, preferred_fw: str = ""
+) -> tuple[Optional[Path], int, bool]:
+    """Return (csv_path, expected_revision, exact_match)."""
     if not firmware_side_dir.is_dir():
-        return None
+        return None, 0, False
     candidates = sorted(firmware_side_dir.glob("AnalogoperandTo61850_*.csv"))
     if not candidates:
-        return None
-    if preferred_fw:
-        digits = "".join(ch for ch in preferred_fw if ch.isdigit())
-        for path in candidates:
-            stem_digits = "".join(ch for ch in path.stem if ch.isdigit())
-            if digits and stem_digits.endswith(digits[-3:] if len(digits) >= 3 else digits):
-                return path
-            if digits and digits in stem_digits:
-                return path
-    # Prefer higher revision number when no explicit match.
-    def rev_key(path: Path) -> tuple:
-        digits = "".join(ch for ch in path.stem if ch.isdigit()) or "0"
-        try:
-            return (0, int(digits))
-        except ValueError:
-            return (1, path.name.lower())
+        return None, 0, False
 
-    return sorted(candidates, key=rev_key)[-1]
+    by_revision: dict[int, Path] = {}
+    for path in candidates:
+        rev = _analogoperand_csv_revision(path)
+        if rev:
+            by_revision[rev] = path
+
+    if not by_revision:
+        return candidates[-1], 0, False
+
+    if preferred_fw:
+        target = firmware_version_to_csv_revision(preferred_fw)
+        if target in by_revision:
+            return by_revision[target], target, True
+        lower = [rev for rev in by_revision if rev <= target]
+        if lower:
+            chosen = by_revision[max(lower)]
+            return chosen, target, _analogoperand_csv_revision(chosen) == target
+        # 5.x/6.x CSVs are absent from modern URPC; 740 is the closest IEC join
+        # table until AnalogoperandTo61850_590.csv / _600.csv are sourced.
+        if target < 700 and 740 in by_revision:
+            return by_revision[740], target, False
+        chosen = by_revision[min(by_revision)]
+        return chosen, target, False
+
+    chosen = by_revision[max(by_revision)]
+    return chosen, _analogoperand_csv_revision(chosen), True
 
 
 def _is_logic_operand_table(items: str) -> bool:
@@ -891,7 +1059,7 @@ def convert(
     output_dir: Path,
 ) -> None:
     print(f"Reading G30      : {g30_path}")
-    g30_root = parse_xml(g30_path)
+    g30_root = validate_g30_settings_xml(g30_path)
     print(f"Reading G60      : {g60_template_path}")
     g60_root = parse_xml(g60_template_path)
 

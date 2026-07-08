@@ -306,10 +306,43 @@ def update_header_for_output(
     return fields
 
 
+def _normalize_device_key(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", (name or "").lower())
+
+
 def find_companion_xml(urs_path: Path) -> Optional[Path]:
-    """Return a sibling .xml file if one exists next to the .urs."""
+    """Return a G30 settings XML for a .urs export, if available.
+
+    Checks, in order:
+      1. Sibling ``<stem>.xml`` next to the .urs
+      2. EnerVista Offline ``TargetSettingFile.xml`` in a matching folder
+    """
     xml_path = urs_path.with_suffix(".xml")
-    return xml_path if xml_path.exists() else None
+    if xml_path.exists():
+        return xml_path
+
+    offline_root = Path(r"C:\ProgramData\GE Power Management\urpc\Offline")
+    if not offline_root.is_dir():
+        return None
+
+    stem_key = _normalize_device_key(urs_path.stem)
+    best: Optional[Path] = None
+    best_score = 0
+    for folder in offline_root.iterdir():
+        if not folder.is_dir():
+            continue
+        candidate = folder / "TargetSettingFile.xml"
+        if not candidate.is_file():
+            continue
+        folder_key = _normalize_device_key(folder.name)
+        if folder_key == stem_key:
+            return candidate
+        if stem_key in folder_key or folder_key in stem_key:
+            score = min(len(stem_key), len(folder_key))
+            if score > best_score:
+                best_score = score
+                best = candidate
+    return best
 
 
 def paired_urs_path(xml_path: Path) -> Optional[Path]:

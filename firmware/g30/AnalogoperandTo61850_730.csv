@@ -1,0 +1,691 @@
+0,Off,@Master/LLN0.Zero.mag.f
+FFFFFFFE,Not Implemented Yet,@Master/LLN0.TBD.mag.f
+
+B210,IEC61850 GOOSE Analog Input 1 ,@Master/GGIO3.AnIn01.mag.f
+B212,IEC61850 GOOSE Analog Input 2 ,@Master/GGIO3.AnIn02.mag.f
+B214,IEC61850 GOOSE Analog Input 3 ,@Master/GGIO3.AnIn03.mag.f
+B216,IEC61850 GOOSE Analog Input 4 ,@Master/GGIO3.AnIn04.mag.f
+B218,IEC61850 GOOSE Analog Input 5 ,@Master/GGIO3.AnIn05.mag.f
+B21A,IEC61850 GOOSE Analog Input 6 ,@Master/GGIO3.AnIn06.mag.f
+B21C,IEC61850 GOOSE Analog Input 7 ,@Master/GGIO3.AnIn07.mag.f
+B21E,IEC61850 GOOSE Analog Input 8 ,@Master/GGIO3.AnIn08.mag.f
+B220,IEC61850 GOOSE Analog Input 9 ,@Master/GGIO3.AnIn09.mag.f
+B222,IEC61850 GOOSE Analog Input 10 ,@Master/GGIO3.AnIn10.mag.f
+B224,IEC61850 GOOSE Analog Input 11 ,@Master/GGIO3.AnIn11.mag.f
+B226,IEC61850 GOOSE Analog Input 12 ,@Master/GGIO3.AnIn12.mag.f
+B228,IEC61850 GOOSE Analog Input 13 ,@Master/GGIO3.AnIn13.mag.f
+B22A,IEC61850 GOOSE Analog Input 14 ,@Master/GGIO3.AnIn14.mag.f
+B22C,IEC61850 GOOSE Analog Input 15 ,@Master/GGIO3.AnIn15.mag.f
+B22E,IEC61850 GOOSE Analog Input 16 ,@Master/GGIO3.AnIn16.mag.f
+B230,IEC61850 GOOSE Analog Input 17 ,@Master/GGIO3.AnIn17.mag.f
+B232,IEC61850 GOOSE Analog Input 18 ,@Master/GGIO3.AnIn18.mag.f
+B234,IEC61850 GOOSE Analog Input 19 ,@Master/GGIO3.AnIn19.mag.f
+B236,IEC61850 GOOSE Analog Input 20 ,@Master/GGIO3.AnIn20.mag.f
+B238,IEC61850 GOOSE Analog Input 21 ,@Master/GGIO3.AnIn21.mag.f
+B23A,IEC61850 GOOSE Analog Input 22 ,@Master/GGIO3.AnIn22.mag.f
+B23C,IEC61850 GOOSE Analog Input 23 ,@Master/GGIO3.AnIn23.mag.f
+B23E,IEC61850 GOOSE Analog Input 24 ,@Master/GGIO3.AnIn24.mag.f
+B240,IEC61850 GOOSE Analog Input 25 ,@Master/GGIO3.AnIn25.mag.f
+B242,IEC61850 GOOSE Analog Input 26 ,@Master/GGIO3.AnIn26.mag.f
+B244,IEC61850 GOOSE Analog Input 27 ,@Master/GGIO3.AnIn27.mag.f
+B246,IEC61850 GOOSE Analog Input 28 ,@Master/GGIO3.AnIn28.mag.f
+B248,IEC61850 GOOSE Analog Input 29 ,@Master/GGIO3.AnIn29.mag.f
+B24A,IEC61850 GOOSE Analog Input 30 ,@Master/GGIO3.AnIn30.mag.f
+B24C,IEC61850 GOOSE Analog Input 31 ,@Master/GGIO3.AnIn31.mag.f
+B24E,IEC61850 GOOSE Analog Input 32 ,@Master/GGIO3.AnIn32.mag.f
+B360,Watt Ground Fault 1 Operating Power,@Prot/WattPSDE1.Watt.instMag.f
+B362,Watt Ground Fault 2 Operating Power,@Prot/WattPSDE2.Watt.instMag.f
+B364,Watt Ground Fault 3 Operating Power,@Prot/WattPSDE3.Watt.instMag.f
+B366,Watt Ground Fault 4 Operating Power,@Prot/WattPSDE4.Watt.instMag.f
+B303,Wattmetric Gnd Flt 1 OV PKP,@Prot/WattPSDE1.VolMin.setMag.i
+B304,Wattmetric Gnd Flt 2 OV PKP,@Prot/WattPSDE2.VolMin.setMag.i
+B305,Wattmetric Gnd Flt 1 OC PKP,@Prot/WattPSDE2.AmpMin.setMag.i
+16A0,RGF 1 Differential Ground Current Magnitude,@Prot/RgDifPDIF1.DifAClc.net.instCVal.mag.f
+16A2,RGF 1 Restricted Ground Current Magnitude,@Prot/RgDifPDIF1.RstA.net.instCVal.mag.f
+16A4,RGF 2 Differential Ground Current Magnitude,@Prot/RgDifPDIF2.DifAClc.net.instCVal.mag.f
+16A6,RGF 2 Restricted Ground Current Magnitude,@Prot/RgDifPDIF2.RstA.net.instCVal.mag.f
+16A8,RGF 3 Differential Ground Current Magnitude,@Prot/RgDifPDIF3.DifAClc.net.instCVal.mag.f
+16AA,RGF 3 Restricted Ground Current Magnitude,@Prot/RgDifPDIF3.RstA.net.instCVal.mag.f
+16AC,RGF 4 Differential Ground Current Magnitude,@Prot/RgDifPDIF4.DifAClc.net.instCVal.mag.f
+16AE,RGF 4 Restricted Ground Current Magnitude,@Prot/RgDifPDIF4.RstA.net.instCVal.mag.f
+16B0,RGF 5 Differential Ground Current Magnitude,@Prot/RgDifPDIF5.DifAClc.net.instCVal.mag.f
+16B2,RGF 5 Restricted Ground Current Magnitude,@Prot/RgDifPDIF5.RstA.net.instCVal.mag.f
+16B4,RGF 6 Differential Ground Current Magnitude,@Prot/RgDifPDIF6.DifAClc.net.instCVal.mag.f
+16B6,RGF 6 Restricted Ground Current Magnitude,@Prot/RgDifPDIF6.RstA.net.instCVal.mag.f
+1680,Sens Dir Power 1 Actual,@Prot/SenPDOP1.TotW.instMag.f
+1682,Sens Dir Power 2 Actual,@Prot/SenPDOP2.TotW.instMag.f
+16E0,Rate of Change 1 Actual,@Prot/RteHzPFRC1.HzChgRte.instMag.f
+16E4,Rate of Change 2 Actual,@Prot/RteHzPFRC2.HzChgRte.instMag.f
+16E8,Rate of Change 3 Actual,@Prot/RteHzPFRC3.HzChgRte.instMag.f
+16EC,Rate of Change 4 Actual,@Prot/RteHzPFRC4.HzChgRte.instMag.f
+2492,Differential Current IA Magnitude,@Prot/LinDfPDIF1.DifAClc.phsA.instCVal.mag.f
+2494,Differential Current IB Magnitude,@Prot/LinDfPDIF1.DifAClc.phsB.instCVal.mag.f
+2496,Differential Current IC Magnitude,@Prot/LinDfPDIF1.DifAClc.phsC.instCVal.mag.f
+24B6,Differential Current IG Magnitude,@Prot/LinDfPDIF1.DifAClc.neut.instCVal.mag.f
+24B0,Restraint Current IA,@Prot/LinDfPDIF1.RstA.phsA.instCVal.mag.f
+24B2,Restraint Current IB,@Prot/LinDfPDIF1.RstA.phsB.instCVal.mag.f
+24B4,Restraint Current IC,@Prot/LinDfPDIF1.RstA.phsC.instCVal.mag.f
+24B9,Restraint Current IG,@Prot/LinDfPDIF1.RstA.neut.instCVal.mag.f
+2480,Local IA Magnitude,@Prot/LinDf0MMXU1.A.phsA.instCVal.mag.f
+2482,Local IB Magnitude,@Prot/LinDf0MMXU1.A.phsB.instCVal.mag.f
+2484,Local IC Magnitude,@Prot/LinDf0MMXU1.A.phsC.instCVal.mag.f
+2486,Remote1 IA Magnitude,@Prot/LinDf1MMXU1.A.phsA.instCVal.mag.f
+2488,Remote1 IB Magnitude,@Prot/LinDf1MMXU1.A.phsB.instCVal.mag.f
+248A,Remote1 IC Magnitude,@Prot/LinDf1MMXU1.A.phsC.instCVal.mag.f
+248C,Remote2 IA Magnitude,@Prot/LinDf2MMXU1.A.phsA.instCVal.mag.f
+248E,Remote2 IB Magnitude,@Prot/LinDf2MMXU1.A.phsB.instCVal.mag.f
+2490,Remote2 IC Magnitude,@Prot/LinDf2MMXU1.A.phsC.instCVal.mag.f
+2400,Synchrocheck 1 Delta Voltage,@Ctrl/SynChkRSYN1.DifVClc.instMag.f
+2402,Synchrocheck 1 Delta Frequency,@Ctrl/SynChkRSYN1.DifHzClc.instMag.f
+2403,Synchrocheck 1 Delta Phase,@Ctrl/SynChkRSYN1.DifAngClc.instMag.f
+2404,Synchrocheck 2 Delta Voltage,@Ctrl/SynChkRSYN2.DifVClc.instMag.f
+2406,Synchrocheck 2 Delta Frequency,@Ctrl/SynChkRSYN2.DifHzClc.instMag.f
+2407,Synchrocheck 2 Delta Phase,@Ctrl/SynChkRSYN2.DifAngClc.instMag.f
+2408,Synchrocheck 3 Delta Voltage,@Ctrl/SynChkRSYN3.DifVClc.instMag.f
+240A,Synchrocheck 3 Delta Frequency,@Ctrl/SynChkRSYN3.DifHzClc.instMag.f
+240B,Synchrocheck 3 Delta Phase,@Ctrl/SynChkRSYN3.DifAngClc.instMag.f
+240C,Synchrocheck 4 Delta Voltage,@Ctrl/SynChkRSYN4.DifVClc.instMag.f
+240E,Synchrocheck 4 Delta Frequency,@Ctrl/SynChkRSYN4.DifHzClc.instMag.f
+240F,Synchrocheck 4 Delta Phase,@Ctrl/SynChkRSYN4.DifAngClc.instMag.f
+2500,Bus Diff IA Magnitude,@Prot/BusDifPDIF1.DifAClc.phsA.instCVal.mag.f
+2502,Bus Diff IA Angle,@Prot/BusDifPDIF1.DifAClc.phsA.instCVal.ang.f
+2503,Bus Diff IB Magnitude,@Prot/BusDifPDIF1.DifAClc.phsB.instCVal.mag.f
+2505,Bus Diff IB Angle,@Prot/BusDifPDIF1.DifAClc.phsB.instCVal.ang.f
+2506,Bus Diff IC Magnitude,@Prot/BusDifPDIF1.DifAClc.phsC.instCVal.mag.f
+2508,Bus Diff IC Angle,@Prot/BusDifPDIF1.DifAClc.phsC.instCVal.ang.f
+2509,Bus Rest IA Magnitude,@Prot/BusDifPDIF1.RstA.phsA.instCVal.mag.f
+250B,Bus Rest IA Angle,@Prot/BusDifPDIF1.RstA.phsA.instCVal.ang.f
+250C,Bus Rest IB Magnitude,@Prot/BusDifPDIF1.RstA.phsB.instCVal.mag.f
+250E,Bus Rest IB Angle,@Prot/BusDifPDIF1.RstA.phsB.instCVal.ang.f
+250F,Bus Rest IC Magnitude,@Prot/BusDifPDIF1.RstA.phsC.instCVal.mag.f
+2511,Bus Rest IC Angle,@Prot/BusDifPDIF1.RstA.phsC.instCVal.ang.f
+2520,Bus Diff IA Magnitude,@Prot/BusDifPDIF2.DifAClc.phsA.instCVal.mag.f
+2522,Bus Diff IA Angle,@Prot/BusDifPDIF2.DifAClc.phsA.instCVal.ang.f
+2523,Bus Diff IB Magnitude,@Prot/BusDifPDIF2.DifAClc.phsB.instCVal.mag.f
+2525,Bus Diff IB Angle,@Prot/BusDifPDIF2.DifAClc.phsB.instCVal.ang.f
+2526,Bus Diff IC Magnitude,@Prot/BusDifPDIF2.DifAClc.phsC.instCVal.mag.f
+2528,Bus Diff IC Angle,@Prot/BusDifPDIF2.DifAClc.phsC.instCVal.ang.f
+2529,Bus Rest IA Magnitude,@Prot/BusDifPDIF2.RstA.phsA.instCVal.mag.f
+252B,Bus Rest IA Angle,@Prot/BusDifPDIF2.RstA.phsA.instCVal.ang.f
+252C,Bus Rest IB Magnitude,@Prot/BusDifPDIF2.RstA.phsB.instCVal.mag.f
+252E,Bus Rest IB Angle,@Prot/BusDifPDIF2.RstA.phsB.instCVal.ang.f
+252F,Bus Rest IC Magnitude,@Prot/BusDifPDIF2.RstA.phsC.instCVal.mag.f
+2531,Bus Rest IC Angle,@Prot/BusDifPDIF2.RstA.phsC.instCVal.ang.f
+1C00,SRC 1 Three Phase Real Power,@Meter/ACsrcMMXU1.TotW.instMag.f
+1C08,SRC 1 Three Phase Reactive Power,@Meter/ACsrcMMXU1.TotVAr.instMag.f
+1C10,SRC 1 Three Phase Apparent Power,@Meter/ACsrcMMXU1.TotVA.instMag.f
+1C18,SRC 1 Three Phase Power Factor,@Meter/ACsrcMMXU1.TotPF.instMag.f
+1D80,SRC 1 Frequency,@Meter/ACsrcMMXU1.Hz.instMag.f
+1A15,SRC 1 Phase AB Voltage Magnitude,@Meter/ACsrcMMXU1.PPV.phsAB.instCVal.mag.f
+1A17,SRC 1 Phase AB Voltage Angle,@Meter/ACsrcMMXU1.PPV.phsAB.instCVal.ang.f
+1A18,SRC 1 Phase BC Voltage Magnitude,@Meter/ACsrcMMXU1.PPV.phsBC.instCVal.mag.f
+1A1A,SRC 1 Phase BC Voltage Angle,@Meter/ACsrcMMXU1.PPV.phsBC.instCVal.ang.f
+1A1B,SRC 1 Phase CA Voltage Magnitude,@Meter/ACsrcMMXU1.PPV.phsCA.instCVal.mag.f
+1A1D,SRC 1 Phase CA Voltage Angle,@Meter/ACsrcMMXU1.PPV.phsCA.instCVal.ang.f
+1A0F,SRC 1 Phase AB Voltage RMS,@Meter/ACsrcMMXU1.VabRMS.instMag.f
+1A11,SRC 1 Phase BC Voltage RMS,@Meter/ACsrcMMXU1.VbcRMS.instMag.f
+1A13,SRC 1 Phase CA Voltage RMS,@Meter/ACsrcMMXU1.VcaRMS.instMag.f
+1A06,SRC 1 Phase AG Voltage Magnitude,@Meter/ACsrcMMXU1.PhV.phsA.instCVal.mag.f
+1A08,SRC 1 Phase AG Voltage Angle,@Meter/ACsrcMMXU1.PhV.phsA.instCVal.ang.f
+1A09,SRC 1 Phase BG Voltage Magnitude,@Meter/ACsrcMMXU1.PhV.phsB.instCVal.mag.f
+1A0B,SRC 1 Phase BG Voltage Angle,@Meter/ACsrcMMXU1.PhV.phsB.instCVal.ang.f
+1A0C,SRC 1 Phase CG Voltage Magnitude,@Meter/ACsrcMMXU1.PhV.phsC.instCVal.mag.f
+1A0E,SRC 1 Phase CG Voltage Angle,@Meter/ACsrcMMXU1.PhV.phsC.instCVal.ang.f
+1A00,SRC 1 Phase AG Voltage RMS,@Meter/ACsrcMMXU1.VaRMS.instMag.f
+1A02,SRC 1 Phase BG Voltage RMS,@Meter/ACsrcMMXU1.VbRMS.instMag.f
+1A04,SRC 1 Phase CG Voltage RMS,@Meter/ACsrcMMXU1.VcRMS.instMag.f
+1808,SRC 1 Phase A Current Magnitude,@Meter/ACsrcMMXU1.A.phsA.instCVal.mag.f
+180A,SRC 1 Phase A Current Angle,@Meter/ACsrcMMXU1.A.phsA.instCVal.ang.f
+180B,SRC 1 Phase B Current Magnitude,@Meter/ACsrcMMXU1.A.phsB.instCVal.mag.f
+180D,SRC 1 Phase B Current Angle,@Meter/ACsrcMMXU1.A.phsB.instCVal.ang.f
+180E,SRC 1 Phase C Current Magnitude,@Meter/ACsrcMMXU1.A.phsC.instCVal.mag.f
+1810,SRC 1 Phase C Current Angle,@Meter/ACsrcMMXU1.A.phsC.instCVal.ang.f
+1811,SRC 1 Neutral Current Magnitude,@Meter/ACsrcMMXU1.A.res.instCVal.mag.f
+1813,SRC 1 Neutral Current Angle,@Meter/ACsrcMMXU1.A.res.instCVal.ang.f
+1800,SRC 1 Phase A Current RMS,@Meter/ACsrcMMXU1.AaRMS.instMag.f
+1802,SRC 1 Phase B Current RMS,@Meter/ACsrcMMXU1.AbRMS.instMag.f
+1804,SRC 1 Phase C Current RMS,@Meter/ACsrcMMXU1.AcRMS.instMag.f
+1806,SRC 1 Neutral Current RMS,@Meter/ACsrcMMXU1.AresRMS.instMag.f
+1822,SRC 1 Differential Ground Current Magnitude,@Meter/ACsrcMMXU1.Adif.instCVal.mag.f
+1824,SRC 1 Differential Ground Current Angle,@Meter/ACsrcMMXU1.Adif.instCVal.ang.f
+1C02,SRC 1 Phase A Real Power,@Meter/ACsrcMMXU1.W.phsA.instCVal.mag.f
+1C04,SRC 1 Phase B Real Power,@Meter/ACsrcMMXU1.W.phsB.instCVal.mag.f
+1C06,SRC 1 Phase C Real Power,@Meter/ACsrcMMXU1.W.phsC.instCVal.mag.f
+1C0A,SRC 1 Phase A Reactive Power,@Meter/ACsrcMMXU1.VAr.phsA.instCVal.mag.f
+1C0C,SRC 1 Phase B Reactive Power,@Meter/ACsrcMMXU1.VAr.phsB.instCVal.mag.f
+1C0E,SRC 1 Phase C Reactive Power,@Meter/ACsrcMMXU1.VAr.phsC.instCVal.mag.f
+1C12,SRC 1 Phase A Apparent Power,@Meter/ACsrcMMXU1.VA.phsA.instCVal.mag.f
+1C14,SRC 1 Phase B Apparent Power,@Meter/ACsrcMMXU1.VA.phsB.instCVal.mag.f
+1C16,SRC 1 Phase C Apparent Power,@Meter/ACsrcMMXU1.VA.phsC.instCVal.mag.f
+1C19,SRC 1 Phase A Power Factor,@Meter/ACsrcMMXU1.PF.phsA.instCVal.mag.f
+1C1A,SRC 1 Phase B Power Factor,@Meter/ACsrcMMXU1.PF.phsB.instCVal.mag.f
+1C1B,SRC 1 Phase C Power Factor,@Meter/ACsrcMMXU1.PF.phsC.instCVal.mag.f
+1C20,SRC 2 Three Phase Real Power,@Meter/ACsrcMMXU2.TotW.instMag.f
+1C28,SRC 2 Three Phase Reactive Power,@Meter/ACsrcMMXU2.TotVAr.instMag.f
+1C30,SRC 2 Three Phase Apparent Power,@Meter/ACsrcMMXU2.TotVA.instMag.f
+1C38,SRC 2 Three Phase Power Factor,@Meter/ACsrcMMXU2.TotPF.instMag.f
+1D82,SRC 2 Frequency,@Meter/ACsrcMMXU2.Hz.instMag.f
+1A55,SRC 2 Phase AB Voltage Magnitude,@Meter/ACsrcMMXU2.PPV.phsAB.instCVal.mag.f
+1A57,SRC 2 Phase AB Voltage Angle,@Meter/ACsrcMMXU2.PPV.phsAB.instCVal.ang.f
+1A58,SRC 2 Phase BC Voltage Magnitude,@Meter/ACsrcMMXU2.PPV.phsBC.instCVal.mag.f
+1A5A,SRC 2 Phase BC Voltage Angle,@Meter/ACsrcMMXU2.PPV.phsBC.instCVal.ang.f
+1A5B,SRC 2 Phase CA Voltage Magnitude,@Meter/ACsrcMMXU2.PPV.phsCA.instCVal.mag.f
+1A5D,SRC 2 Phase CA Voltage Angle,@Meter/ACsrcMMXU2.PPV.phsCA.instCVal.ang.f
+1A4F,SRC 2 Phase AB Voltage RMS,@Meter/ACsrcMMXU2.VabRMS.instMag.f
+1A51,SRC 2 Phase BC Voltage RMS,@Meter/ACsrcMMXU2.VbcRMS.instMag.f
+1A53,SRC 2 Phase CA Voltage RMS,@Meter/ACsrcMMXU2.VcaRMS.instMag.f
+1A46,SRC 2 Phase AG Voltage Magnitude,@Meter/ACsrcMMXU2.PhV.phsA.instCVal.mag.f
+1A48,SRC 2 Phase AG Voltage Angle,@Meter/ACsrcMMXU2.PhV.phsA.instCVal.ang.f
+1A49,SRC 2 Phase BG Voltage Magnitude,@Meter/ACsrcMMXU2.PhV.phsB.instCVal.mag.f
+1A4B,SRC 2 Phase BG Voltage Angle,@Meter/ACsrcMMXU2.PhV.phsB.instCVal.ang.f
+1A4C,SRC 2 Phase CG Voltage Magnitude,@Meter/ACsrcMMXU2.PhV.phsC.instCVal.mag.f
+1A4E,SRC 2 Phase CG Voltage Angle,@Meter/ACsrcMMXU2.PhV.phsC.instCVal.ang.f
+1A40,SRC 2 Phase AG Voltage RMS,@Meter/ACsrcMMXU2.VaRMS.instMag.f
+1A42,SRC 2 Phase BG Voltage RMS,@Meter/ACsrcMMXU2.VbRMS.instMag.f
+1A44,SRC 2 Phase CG Voltage RMS,@Meter/ACsrcMMXU2.VcRMS.instMag.f
+1848,SRC 2 Phase A Current Magnitude,@Meter/ACsrcMMXU2.A.phsA.instCVal.mag.f
+184A,SRC 2 Phase A Current Angle,@Meter/ACsrcMMXU2.A.phsA.instCVal.ang.f
+184B,SRC 2 Phase B Current Magnitude,@Meter/ACsrcMMXU2.A.phsB.instCVal.mag.f
+184D,SRC 2 Phase B Current Angle,@Meter/ACsrcMMXU2.A.phsB.instCVal.ang.f
+184E,SRC 2 Phase C Current Magnitude,@Meter/ACsrcMMXU2.A.phsC.instCVal.mag.f
+1850,SRC 2 Phase C Current Angle,@Meter/ACsrcMMXU2.A.phsC.instCVal.ang.f
+1851,SRC 2 Neutral Current Magnitude,@Meter/ACsrcMMXU2.A.res.instCVal.mag.f
+1853,SRC 2 Neutral Current Angle,@Meter/ACsrcMMXU2.A.res.instCVal.ang.f
+1840,SRC 2 Phase A Current RMS,@Meter/ACsrcMMXU2.AaRMS.instMag.f
+1842,SRC 2 Phase B Current RMS,@Meter/ACsrcMMXU2.AbRMS.instMag.f
+1844,SRC 2 Phase C Current RMS,@Meter/ACsrcMMXU2.AcRMS.instMag.f
+1846,SRC 2 Neutral Current RMS,@Meter/ACsrcMMXU2.AresRMS.instMag.f
+1862,SRC 2 Differential Ground Current Magnitude,@Meter/ACsrcMMXU2.Adif.instCVal.mag.f
+1864,SRC 2 Differential Ground Current Angle,@Meter/ACsrcMMXU2.Adif.instCVal.ang.f
+1C22,SRC 2 Phase A Real Power,@Meter/ACsrcMMXU2.W.phsA.instCVal.mag.f
+1C24,SRC 2 Phase B Real Power,@Meter/ACsrcMMXU2.W.phsB.instCVal.mag.f
+1C26,SRC 2 Phase C Real Power,@Meter/ACsrcMMXU2.W.phsC.instCVal.mag.f
+1C2A,SRC 2 Phase A Reactive Power,@Meter/ACsrcMMXU2.VAr.phsA.instCVal.mag.f
+1C2C,SRC 2 Phase B Reactive Power,@Meter/ACsrcMMXU2.VAr.phsB.instCVal.mag.f
+1C2E,SRC 2 Phase C Reactive Power,@Meter/ACsrcMMXU2.VAr.phsC.instCVal.mag.f
+1C32,SRC 2 Phase A Apparent Power,@Meter/ACsrcMMXU2.VA.phsA.instCVal.mag.f
+1C34,SRC 2 Phase B Apparent Power,@Meter/ACsrcMMXU2.VA.phsB.instCVal.mag.f
+1C36,SRC 2 Phase C Apparent Power,@Meter/ACsrcMMXU2.VA.phsC.instCVal.mag.f
+1C39,SRC 2 Phase A Power Factor,@Meter/ACsrcMMXU2.PF.phsA.instCVal.mag.f
+1C3A,SRC 2 Phase B Power Factor,@Meter/ACsrcMMXU2.PF.phsB.instCVal.mag.f
+1C3B,SRC 2 Phase C Power Factor,@Meter/ACsrcMMXU2.PF.phsC.instCVal.mag.f
+1C40,SRC 3 Three Phase Real Power,@Meter/ACsrcMMXU3.TotW.instMag.f
+1C48,SRC 3 Three Phase Reactive Power,@Meter/ACsrcMMXU3.TotVAr.instMag.f
+1C50,SRC 3 Three Phase Apparent Power,@Meter/ACsrcMMXU3.TotVA.instMag.f
+1C58,SRC 3 Three Phase Power Factor,@Meter/ACsrcMMXU3.TotPF.instMag.f
+1D84,SRC 3 Frequency,@Meter/ACsrcMMXU3.Hz.instMag.f
+1A95,SRC 3 Phase AB Voltage Magnitude,@Meter/ACsrcMMXU3.PPV.phsAB.instCVal.mag.f
+1A97,SRC 3 Phase AB Voltage Angle,@Meter/ACsrcMMXU3.PPV.phsAB.instCVal.ang.f
+1A98,SRC 3 Phase BC Voltage Magnitude,@Meter/ACsrcMMXU3.PPV.phsBC.instCVal.mag.f
+1A9A,SRC 3 Phase BC Voltage Angle,@Meter/ACsrcMMXU3.PPV.phsBC.instCVal.ang.f
+1A9B,SRC 3 Phase CA Voltage Magnitude,@Meter/ACsrcMMXU3.PPV.phsCA.instCVal.mag.f
+1A9D,SRC 3 Phase CA Voltage Angle,@Meter/ACsrcMMXU3.PPV.phsCA.instCVal.ang.f
+1A8F,SRC 3 Phase AB Voltage RMS,@Meter/ACsrcMMXU3.VabRMS.instMag.f
+1A91,SRC 3 Phase BC Voltage RMS,@Meter/ACsrcMMXU3.VbcRMS.instMag.f
+1A93,SRC 3 Phase CA Voltage RMS,@Meter/ACsrcMMXU3.VcaRMS.instMag.f
+1A86,SRC 3 Phase AG Voltage Magnitude,@Meter/ACsrcMMXU3.PhV.phsA.instCVal.mag.f
+1A88,SRC 3 Phase AG Voltage Angle,@Meter/ACsrcMMXU3.PhV.phsA.instCVal.ang.f
+1A89,SRC 3 Phase BG Voltage Magnitude,@Meter/ACsrcMMXU3.PhV.phsB.instCVal.mag.f
+1A8B,SRC 3 Phase BG Voltage Angle,@Meter/ACsrcMMXU3.PhV.phsB.instCVal.ang.f
+1A8C,SRC 3 Phase CG Voltage Magnitude,@Meter/ACsrcMMXU3.PhV.phsC.instCVal.mag.f
+1A8E,SRC 3 Phase CG Voltage Angle,@Meter/ACsrcMMXU3.PhV.phsC.instCVal.ang.f
+1A80,SRC 3 Phase AG Voltage RMS,@Meter/ACsrcMMXU3.VaRMS.instMag.f
+1A82,SRC 3 Phase BG Voltage RMS,@Meter/ACsrcMMXU3.VbRMS.instMag.f
+1A84,SRC 3 Phase CG Voltage RMS,@Meter/ACsrcMMXU3.VcRMS.instMag.f
+1888,SRC 3 Phase A Current Magnitude,@Meter/ACsrcMMXU3.A.phsA.instCVal.mag.f
+188A,SRC 3 Phase A Current Angle,@Meter/ACsrcMMXU3.A.phsA.instCVal.ang.f
+188B,SRC 3 Phase B Current Magnitude,@Meter/ACsrcMMXU3.A.phsB.instCVal.mag.f
+188D,SRC 3 Phase B Current Angle,@Meter/ACsrcMMXU3.A.phsB.instCVal.ang.f
+188E,SRC 3 Phase C Current Magnitude,@Meter/ACsrcMMXU3.A.phsC.instCVal.mag.f
+1890,SRC 3 Phase C Current Angle,@Meter/ACsrcMMXU3.A.phsC.instCVal.ang.f
+1891,SRC 3 Neutral Current Magnitude,@Meter/ACsrcMMXU3.A.res.instCVal.mag.f
+1893,SRC 3 Neutral Current Angle,@Meter/ACsrcMMXU3.A.res.instCVal.ang.f
+1880,SRC 3 Phase A Current RMS,@Meter/ACsrcMMXU3.AaRMS.instMag.f
+1882,SRC 3 Phase B Current RMS,@Meter/ACsrcMMXU3.AbRMS.instMag.f
+1884,SRC 3 Phase C Current RMS,@Meter/ACsrcMMXU3.AcRMS.instMag.f
+1886,SRC 3 Neutral Current RMS,@Meter/ACsrcMMXU3.AresRMS.instMag.f
+18A2,SRC 3 Differential Ground Current Magnitude,@Meter/ACsrcMMXU3.Adif.instCVal.mag.f
+18A4,SRC 3 Differential Ground Current Angle,@Meter/ACsrcMMXU3.Adif.instCVal.ang.f
+1C42,SRC 3 Phase A Real Power,@Meter/ACsrcMMXU3.W.phsA.instCVal.mag.f
+1C44,SRC 3 Phase B Real Power,@Meter/ACsrcMMXU3.W.phsB.instCVal.mag.f
+1C46,SRC 3 Phase C Real Power,@Meter/ACsrcMMXU3.W.phsC.instCVal.mag.f
+1C4A,SRC 3 Phase A Reactive Power,@Meter/ACsrcMMXU3.VAr.phsA.instCVal.mag.f
+1C4C,SRC 3 Phase B Reactive Power,@Meter/ACsrcMMXU3.VAr.phsB.instCVal.mag.f
+1C4E,SRC 3 Phase C Reactive Power,@Meter/ACsrcMMXU3.VAr.phsC.instCVal.mag.f
+1C52,SRC 3 Phase A Apparent Power,@Meter/ACsrcMMXU3.VA.phsA.instCVal.mag.f
+1C54,SRC 3 Phase B Apparent Power,@Meter/ACsrcMMXU3.VA.phsB.instCVal.mag.f
+1C56,SRC 3 Phase C Apparent Power,@Meter/ACsrcMMXU3.VA.phsC.instCVal.mag.f
+1C59,SRC 3 Phase A Power Factor,@Meter/ACsrcMMXU3.PF.phsA.instCVal.mag.f
+1C5A,SRC 3 Phase B Power Factor,@Meter/ACsrcMMXU3.PF.phsB.instCVal.mag.f
+1C5B,SRC 3 Phase C Power Factor,@Meter/ACsrcMMXU3.PF.phsC.instCVal.mag.f
+1C60,SRC 4 Three Phase Real Power,@Meter/ACsrcMMXU4.TotW.instMag.f
+1C68,SRC 4 Three Phase Reactive Power,@Meter/ACsrcMMXU4.TotVAr.instMag.f
+1C70,SRC 4 Three Phase Apparent Power,@Meter/ACsrcMMXU4.TotVA.instMag.f
+1C78,SRC 4 Three Phase Power Factor,@Meter/ACsrcMMXU4.TotPF.instMag.f
+1D86,SRC 4 Frequency,@Meter/ACsrcMMXU4.Hz.instMag.f
+1AD5,SRC 4 Phase AB Voltage Magnitude,@Meter/ACsrcMMXU4.PPV.phsAB.instCVal.mag.f
+1AD7,SRC 4 Phase AB Voltage Angle,@Meter/ACsrcMMXU4.PPV.phsAB.instCVal.ang.f
+1AD8,SRC 4 Phase BC Voltage Magnitude,@Meter/ACsrcMMXU4.PPV.phsBC.instCVal.mag.f
+1ADA,SRC 4 Phase BC Voltage Angle,@Meter/ACsrcMMXU4.PPV.phsBC.instCVal.ang.f
+1ADB,SRC 4 Phase CA Voltage Magnitude,@Meter/ACsrcMMXU4.PPV.phsCA.instCVal.mag.f
+1ADD,SRC 4 Phase CA Voltage Angle,@Meter/ACsrcMMXU4.PPV.phsCA.instCVal.ang.f
+1ACF,SRC 4 Phase AB Voltage RMS,@Meter/ACsrcMMXU4.VabRMS.instMag.f
+1AD1,SRC 4 Phase BC Voltage RMS,@Meter/ACsrcMMXU4.VbcRMS.instMag.f
+1AD3,SRC 4 Phase CA Voltage RMS,@Meter/ACsrcMMXU4.VcaRMS.instMag.f
+1AC6,SRC 4 Phase AG Voltage Magnitude,@Meter/ACsrcMMXU4.PhV.phsA.instCVal.mag.f
+1AC8,SRC 4 Phase AG Voltage Angle,@Meter/ACsrcMMXU4.PhV.phsA.instCVal.ang.f
+1AC9,SRC 4 Phase BG Voltage Magnitude,@Meter/ACsrcMMXU4.PhV.phsB.instCVal.mag.f
+1ACB,SRC 4 Phase BG Voltage Angle,@Meter/ACsrcMMXU4.PhV.phsB.instCVal.ang.f
+1ACC,SRC 4 Phase CG Voltage Magnitude,@Meter/ACsrcMMXU4.PhV.phsC.instCVal.mag.f
+1ACE,SRC 4 Phase CG Voltage Angle,@Meter/ACsrcMMXU4.PhV.phsC.instCVal.ang.f
+1AC0,SRC 4 Phase AG Voltage RMS,@Meter/ACsrcMMXU4.VaRMS.instMag.f
+1AC2,SRC 4 Phase BG Voltage RMS,@Meter/ACsrcMMXU4.VbRMS.instMag.f
+1AC4,SRC 4 Phase CG Voltage RMS,@Meter/ACsrcMMXU4.VcRMS.instMag.f
+18C8,SRC 4 Phase A Current Magnitude,@Meter/ACsrcMMXU4.A.phsA.instCVal.mag.f
+18CA,SRC 4 Phase A Current Angle,@Meter/ACsrcMMXU4.A.phsA.instCVal.ang.f
+18CB,SRC 4 Phase B Current Magnitude,@Meter/ACsrcMMXU4.A.phsB.instCVal.mag.f
+18CD,SRC 4 Phase B Current Angle,@Meter/ACsrcMMXU4.A.phsB.instCVal.ang.f
+18CE,SRC 4 Phase C Current Magnitude,@Meter/ACsrcMMXU4.A.phsC.instCVal.mag.f
+18D0,SRC 4 Phase C Current Angle,@Meter/ACsrcMMXU4.A.phsC.instCVal.ang.f
+18D1,SRC 4 Neutral Current Magnitude,@Meter/ACsrcMMXU4.A.res.instCVal.mag.f
+18D3,SRC 4 Neutral Current Angle,@Meter/ACsrcMMXU4.A.res.instCVal.ang.f
+18C0,SRC 4 Phase A Current RMS,@Meter/ACsrcMMXU4.AaRMS.instMag.f
+18C2,SRC 4 Phase B Current RMS,@Meter/ACsrcMMXU4.AbRMS.instMag.f
+18C4,SRC 4 Phase C Current RMS,@Meter/ACsrcMMXU4.AcRMS.instMag.f
+18C6,SRC 4 Neutral Current RMS,@Meter/ACsrcMMXU4.AresRMS.instMag.f
+18E2,SRC 4 Differential Ground Current Magnitude,@Meter/ACsrcMMXU4.Adif.instCVal.mag.f
+18E4,SRC 4 Differential Ground Current Angle,@Meter/ACsrcMMXU4.Adif.instCVal.ang.f
+1C62,SRC 4 Phase A Real Power,@Meter/ACsrcMMXU4.W.phsA.instCVal.mag.f
+1C64,SRC 4 Phase B Real Power,@Meter/ACsrcMMXU4.W.phsB.instCVal.mag.f
+1C66,SRC 4 Phase C Real Power,@Meter/ACsrcMMXU4.W.phsC.instCVal.mag.f
+1C6A,SRC 4 Phase A Reactive Power,@Meter/ACsrcMMXU4.VAr.phsA.instCVal.mag.f
+1C6C,SRC 4 Phase B Reactive Power,@Meter/ACsrcMMXU4.VAr.phsB.instCVal.mag.f
+1C6E,SRC 4 Phase C Reactive Power,@Meter/ACsrcMMXU4.VAr.phsC.instCVal.mag.f
+1C72,SRC 4 Phase A Apparent Power,@Meter/ACsrcMMXU4.VA.phsA.instCVal.mag.f
+1C74,SRC 4 Phase B Apparent Power,@Meter/ACsrcMMXU4.VA.phsB.instCVal.mag.f
+1C76,SRC 4 Phase C Apparent Power,@Meter/ACsrcMMXU4.VA.phsC.instCVal.mag.f
+1C79,SRC 4 Phase A Power Factor,@Meter/ACsrcMMXU4.PF.phsA.instCVal.mag.f
+1C7A,SRC 4 Phase B Power Factor,@Meter/ACsrcMMXU4.PF.phsB.instCVal.mag.f
+1C7B,SRC 4 Phase C Power Factor,@Meter/ACsrcMMXU4.PF.phsC.instCVal.mag.f
+1C80,SRC 5 Three Phase Real Power,@Meter/ACsrcMMXU5.TotW.instMag.f
+1C88,SRC 5 Three Phase Reactive Power,@Meter/ACsrcMMXU5.TotVAr.instMag.f
+1C90,SRC 5 Three Phase Apparent Power,@Meter/ACsrcMMXU5.TotVA.instMag.f
+1C98,SRC 5 Three Phase Power Factor,@Meter/ACsrcMMXU5.TotPF.instMag.f
+1D88,SRC 5 Frequency,@Meter/ACsrcMMXU5.Hz.instMag.f
+1B15,SRC 5 Phase AB Voltage Magnitude,@Meter/ACsrcMMXU5.PPV.phsAB.instCVal.mag.f
+1B17,SRC 5 Phase AB Voltage Angle,@Meter/ACsrcMMXU5.PPV.phsAB.instCVal.ang.f
+1B18,SRC 5 Phase BC Voltage Magnitude,@Meter/ACsrcMMXU5.PPV.phsBC.instCVal.mag.f
+1B1A,SRC 5 Phase BC Voltage Angle,@Meter/ACsrcMMXU5.PPV.phsBC.instCVal.ang.f
+1B1B,SRC 5 Phase CA Voltage Magnitude,@Meter/ACsrcMMXU5.PPV.phsCA.instCVal.mag.f
+1B1D,SRC 5 Phase CA Voltage Angle,@Meter/ACsrcMMXU5.PPV.phsCA.instCVal.ang.f
+1B0F,SRC 5 Phase AB Voltage RMS,@Meter/ACsrcMMXU5.VabRMS.instMag.f
+1B11,SRC 5 Phase BC Voltage RMS,@Meter/ACsrcMMXU5.VbcRMS.instMag.f
+1B13,SRC 5 Phase CA Voltage RMS,@Meter/ACsrcMMXU5.VcaRMS.instMag.f
+1B06,SRC 5 Phase AG Voltage Magnitude,@Meter/ACsrcMMXU5.PhV.phsA.instCVal.mag.f
+1B08,SRC 5 Phase AG Voltage Angle,@Meter/ACsrcMMXU5.PhV.phsA.instCVal.ang.f
+1B09,SRC 5 Phase BG Voltage Magnitude,@Meter/ACsrcMMXU5.PhV.phsB.instCVal.mag.f
+1B0B,SRC 5 Phase BG Voltage Angle,@Meter/ACsrcMMXU5.PhV.phsB.instCVal.ang.f
+1B0C,SRC 5 Phase CG Voltage Magnitude,@Meter/ACsrcMMXU5.PhV.phsC.instCVal.mag.f
+1B0E,SRC 5 Phase CG Voltage Angle,@Meter/ACsrcMMXU5.PhV.phsC.instCVal.ang.f
+1B00,SRC 5 Phase AG Voltage RMS,@Meter/ACsrcMMXU5.VaRMS.instMag.f
+1B02,SRC 5 Phase BG Voltage RMS,@Meter/ACsrcMMXU5.VbRMS.instMag.f
+1B04,SRC 5 Phase CG Voltage RMS,@Meter/ACsrcMMXU5.VcRMS.instMag.f
+1908,SRC 5 Phase A Current Magnitude,@Meter/ACsrcMMXU5.A.phsA.instCVal.mag.f
+190A,SRC 5 Phase A Current Angle,@Meter/ACsrcMMXU5.A.phsA.instCVal.ang.f
+190B,SRC 5 Phase B Current Magnitude,@Meter/ACsrcMMXU5.A.phsB.instCVal.mag.f
+190D,SRC 5 Phase B Current Angle,@Meter/ACsrcMMXU5.A.phsB.instCVal.ang.f
+190E,SRC 5 Phase C Current Magnitude,@Meter/ACsrcMMXU5.A.phsC.instCVal.mag.f
+1910,SRC 5 Phase C Current Angle,@Meter/ACsrcMMXU5.A.phsC.instCVal.ang.f
+1911,SRC 5 Neutral Current Magnitude,@Meter/ACsrcMMXU5.A.res.instCVal.mag.f
+1913,SRC 5 Neutral Current Angle,@Meter/ACsrcMMXU5.A.res.instCVal.ang.f
+1900,SRC 5 Phase A Current RMS,@Meter/ACsrcMMXU5.AaRMS.instMag.f
+1902,SRC 5 Phase B Current RMS,@Meter/ACsrcMMXU5.AbRMS.instMag.f
+1904,SRC 5 Phase C Current RMS,@Meter/ACsrcMMXU5.AcRMS.instMag.f
+1906,SRC 5 Neutral Current RMS,@Meter/ACsrcMMXU5.AresRMS.instMag.f
+1922,SRC 5 Differential Ground Current Magnitude,@Meter/ACsrcMMXU5.Adif.instCVal.mag.f
+1924,SRC 5 Differential Ground Current Angle,@Meter/ACsrcMMXU5.Adif.instCVal.ang.f
+1C82,SRC 5 Phase A Real Power,@Meter/ACsrcMMXU5.W.phsA.instCVal.mag.f
+1C84,SRC 5 Phase B Real Power,@Meter/ACsrcMMXU5.W.phsB.instCVal.mag.f
+1C86,SRC 5 Phase C Real Power,@Meter/ACsrcMMXU5.W.phsC.instCVal.mag.f
+1C8A,SRC 5 Phase A Reactive Power,@Meter/ACsrcMMXU5.VAr.phsA.instCVal.mag.f
+1C8C,SRC 5 Phase B Reactive Power,@Meter/ACsrcMMXU5.VAr.phsB.instCVal.mag.f
+1C8E,SRC 5 Phase C Reactive Power,@Meter/ACsrcMMXU5.VAr.phsC.instCVal.mag.f
+1C92,SRC 5 Phase A Apparent Power,@Meter/ACsrcMMXU5.VA.phsA.instCVal.mag.f
+1C94,SRC 5 Phase B Apparent Power,@Meter/ACsrcMMXU5.VA.phsB.instCVal.mag.f
+1C96,SRC 5 Phase C Apparent Power,@Meter/ACsrcMMXU5.VA.phsC.instCVal.mag.f
+1C99,SRC 5 Phase A Power Factor,@Meter/ACsrcMMXU5.PF.phsA.instCVal.mag.f
+1C9A,SRC 5 Phase B Power Factor,@Meter/ACsrcMMXU5.PF.phsB.instCVal.mag.f
+1C9B,SRC 5 Phase C Power Factor,@Meter/ACsrcMMXU5.PF.phsC.instCVal.mag.f
+1CA0,SRC 6 Three Phase Real Power,@Meter/ACsrcMMXU6.TotW.instMag.f
+1CA8,SRC 6 Three Phase Reactive Power,@Meter/ACsrcMMXU6.TotVAr.instMag.f
+1CB0,SRC 6 Three Phase Apparent Power,@Meter/ACsrcMMXU6.TotVA.instMag.f
+1CB8,SRC 6 Three Phase Power Factor,@Meter/ACsrcMMXU6.TotPF.instMag.f
+1D8A,SRC 6 Frequency,@Meter/ACsrcMMXU6.Hz.instMag.f
+1B55,SRC 6 Phase AB Voltage Magnitude,@Meter/ACsrcMMXU6.PPV.phsAB.instCVal.mag.f
+1B57,SRC 6 Phase AB Voltage Angle,@Meter/ACsrcMMXU6.PPV.phsAB.instCVal.ang.f
+1B58,SRC 6 Phase BC Voltage Magnitude,@Meter/ACsrcMMXU6.PPV.phsBC.instCVal.mag.f
+1B5A,SRC 6 Phase BC Voltage Angle,@Meter/ACsrcMMXU6.PPV.phsBC.instCVal.ang.f
+1B5B,SRC 6 Phase CA Voltage Magnitude,@Meter/ACsrcMMXU6.PPV.phsCA.instCVal.mag.f
+1B5D,SRC 6 Phase CA Voltage Angle,@Meter/ACsrcMMXU6.PPV.phsCA.instCVal.ang.f
+1B4F,SRC 6 Phase AB Voltage RMS,@Meter/ACsrcMMXU6.VabRMS.instMag.f
+1B51,SRC 6 Phase BC Voltage RMS,@Meter/ACsrcMMXU6.VbcRMS.instMag.f
+1B53,SRC 6 Phase CA Voltage RMS,@Meter/ACsrcMMXU6.VcaRMS.instMag.f
+1B46,SRC 6 Phase AG Voltage Magnitude,@Meter/ACsrcMMXU6.PhV.phsA.instCVal.mag.f
+1B48,SRC 6 Phase AG Voltage Angle,@Meter/ACsrcMMXU6.PhV.phsA.instCVal.ang.f
+1B49,SRC 6 Phase BG Voltage Magnitude,@Meter/ACsrcMMXU6.PhV.phsB.instCVal.mag.f
+1B4B,SRC 6 Phase BG Voltage Angle,@Meter/ACsrcMMXU6.PhV.phsB.instCVal.ang.f
+1B4C,SRC 6 Phase CG Voltage Magnitude,@Meter/ACsrcMMXU6.PhV.phsC.instCVal.mag.f
+1B4E,SRC 6 Phase CG Voltage Angle,@Meter/ACsrcMMXU6.PhV.phsC.instCVal.ang.f
+1B40,SRC 6 Phase AG Voltage RMS,@Meter/ACsrcMMXU6.VaRMS.instMag.f
+1B42,SRC 6 Phase BG Voltage RMS,@Meter/ACsrcMMXU6.VbRMS.instMag.f
+1B44,SRC 6 Phase CG Voltage RMS,@Meter/ACsrcMMXU6.VcRMS.instMag.f
+1948,SRC 6 Phase A Current Magnitude,@Meter/ACsrcMMXU6.A.phsA.instCVal.mag.f
+194A,SRC 6 Phase A Current Angle,@Meter/ACsrcMMXU6.A.phsA.instCVal.ang.f
+194B,SRC 6 Phase B Current Magnitude,@Meter/ACsrcMMXU6.A.phsB.instCVal.mag.f
+194D,SRC 6 Phase B Current Angle,@Meter/ACsrcMMXU6.A.phsB.instCVal.ang.f
+194E,SRC 6 Phase C Current Magnitude,@Meter/ACsrcMMXU6.A.phsC.instCVal.mag.f
+1950,SRC 6 Phase C Current Angle,@Meter/ACsrcMMXU6.A.phsC.instCVal.ang.f
+1951,SRC 6 Neutral Current Magnitude,@Meter/ACsrcMMXU6.A.res.instCVal.mag.f
+1953,SRC 6 Neutral Current Angle,@Meter/ACsrcMMXU6.A.res.instCVal.ang.f
+1940,SRC 6 Phase A Current RMS,@Meter/ACsrcMMXU6.AaRMS.instMag.f
+1942,SRC 6 Phase B Current RMS,@Meter/ACsrcMMXU6.AbRMS.instMag.f
+1944,SRC 6 Phase C Current RMS,@Meter/ACsrcMMXU6.AcRMS.instMag.f
+1946,SRC 6 Neutral Current RMS,@Meter/ACsrcMMXU6.AresRMS.instMag.f
+1962,SRC 6 Differential Ground Current Magnitude,@Meter/ACsrcMMXU6.Adif.instCVal.mag.f
+1964,SRC 6 Differential Ground Current Angle,@Meter/ACsrcMMXU6.Adif.instCVal.ang.f
+1CA2,SRC 6 Phase A Real Power,@Meter/ACsrcMMXU6.W.phsA.instCVal.mag.f
+1CA4,SRC 6 Phase B Real Power,@Meter/ACsrcMMXU6.W.phsB.instCVal.mag.f
+1CA6,SRC 6 Phase C Real Power,@Meter/ACsrcMMXU6.W.phsC.instCVal.mag.f
+1CAA,SRC 6 Phase A Reactive Power,@Meter/ACsrcMMXU6.VAr.phsA.instCVal.mag.f
+1CAC,SRC 6 Phase B Reactive Power,@Meter/ACsrcMMXU6.VAr.phsB.instCVal.mag.f
+1CAE,SRC 6 Phase C Reactive Power,@Meter/ACsrcMMXU6.VAr.phsC.instCVal.mag.f
+1CB2,SRC 6 Phase A Apparent Power,@Meter/ACsrcMMXU6.VA.phsA.instCVal.mag.f
+1CB4,SRC 6 Phase B Apparent Power,@Meter/ACsrcMMXU6.VA.phsB.instCVal.mag.f
+1CB6,SRC 6 Phase C Apparent Power,@Meter/ACsrcMMXU6.VA.phsC.instCVal.mag.f
+1CB9,SRC 6 Phase A Power Factor,@Meter/ACsrcMMXU6.PF.phsA.instCVal.mag.f
+1CBA,SRC 6 Phase B Power Factor,@Meter/ACsrcMMXU6.PF.phsB.instCVal.mag.f
+1CBB,SRC 6 Phase C Power Factor,@Meter/ACsrcMMXU6.PF.phsC.instCVal.mag.f
+1A20,SRC 1 Auxiliary Voltage Magnitude,@Meter/ACsrcMMXN1.Vaux.instCVal.mag.f
+1A22,SRC 1 Auxiliary Voltage Angle,@Meter/ACsrcMMXN1.Vaux.instCVal.ang.f
+1A1E,SRC 1 Auxiliary Voltage RMS,@Meter/ACsrcMMXN1.VauxRMS.instMag.f
+1816,SRC 1 Ground Current Magnitude,@Meter/ACsrcMMXN1.Agnd.instCVal.mag.f
+1818,SRC 1 Ground Current Angle,@Meter/ACsrcMMXN1.Agnd.instCVal.ang.f
+
+1814,SRC 1 Ground Current RMS,@Meter/ACsrcMMXN1.AgndRMS.instMag.f
+1A60,SRC 2 Auxiliary Voltage Magnitude,@Meter/ACsrcMMXN2.Vaux.instCVal.mag.f
+1A62,SRC 2 Auxiliary Voltage Angle,@Meter/ACsrcMMXN2.Vaux.instCVal.ang.f
+1A5E,SRC 2 Auxiliary Voltage RMS,@Meter/ACsrcMMXN2.VauxRMS.instMag.f
+1856,SRC 2 Ground Current Magnitude,@Meter/ACsrcMMXN2.Agnd.instCVal.mag.f
+1858,SRC 2 Ground Current Angle,@Meter/ACsrcMMXN2.Agnd.instCVal.ang.f
+1854,SRC 2 Ground Current RMS,@Meter/ACsrcMMXN2.AgndRMS.instMag.f
+1AA0,SRC 3 Auxiliary Voltage Magnitude,@Meter/ACsrcMMXN3.Vaux.instCVal.mag.f
+1AA2,SRC 3 Auxiliary Voltage Angle,@Meter/ACsrcMMXN3.Vaux.instCVal.ang.f
+1A9E,SRC 3 Auxiliary Voltage RMS,@Meter/ACsrcMMXN3.VauxRMS.instMag.f
+1896,SRC 3 Ground Current Magnitude,@Meter/ACsrcMMXN3.Agnd.instCVal.mag.f
+1898,SRC 3 Ground Current Angle,@Meter/ACsrcMMXN3.Agnd.instCVal.ang.f
+1894,SRC 3 Ground Current RMS,@Meter/ACsrcMMXN3.AgndRMS.instMag.f
+1AE0,SRC 4 Auxiliary Voltage Magnitude,@Meter/ACsrcMMXN4.Vaux.instCVal.mag.f
+1AE2,SRC 4 Auxiliary Voltage Angle,@Meter/ACsrcMMXN4.Vaux.instCVal.ang.f
+1ADE,SRC 4 Auxiliary Voltage RMS,@Meter/ACsrcMMXN4.VauxRMS.instMag.f
+18D6,SRC 4 Ground Current Magnitude,@Meter/ACsrcMMXN4.Agnd.instCVal.mag.f
+18D8,SRC 4 Ground Current Angle,@Meter/ACsrcMMXN4.Agnd.instCVal.ang.f
+18D4,SRC 4 Ground Current RMS,@Meter/ACsrcMMXN4.AgndRMS.instMag.f
+1B20,SRC 5 Auxiliary Voltage Magnitude,@Meter/ACsrcMMXN5.Vaux.instCVal.mag.f
+1B22,SRC 5 Auxiliary Voltage Angle,@Meter/ACsrcMMXN5.Vaux.instCVal.ang.f
+1B1E,SRC 5 Auxiliary Voltage RMS,@Meter/ACsrcMMXN5.VauxRMS.instMag.f
+1916,SRC 5 Ground Current Magnitude,@Meter/ACsrcMMXN5.Agnd.instCVal.mag.f
+1918,SRC 5 Ground Current Angle,@Meter/ACsrcMMXN5.Agnd.instCVal.ang.f
+1914,SRC 5 Ground Current RMS,@Meter/ACsrcMMXN5.AgndRMS.instMag.f
+1B60,SRC 6 Auxiliary Voltage Magnitude,@Meter/ACsrcMMXN6.Vaux.instCVal.mag.f
+1B62,SRC 6 Auxiliary Voltage Angle,@Meter/ACsrcMMXN6.Vaux.instCVal.ang.f
+1B5E,SRC 6 Auxiliary Voltage RMS,@Meter/ACsrcMMXN6.VauxRMS.instMag.f
+1956,SRC 6 Ground Current Magnitude,@Meter/ACsrcMMXN6.Agnd.instCVal.mag.f
+1958,SRC 6 Ground Current Angle,@Meter/ACsrcMMXN6.Agnd.instCVal.ang.f
+1954,SRC 6 Ground Current RMS,@Meter/ACsrcMMXN6.AgndRMS.instMag.f
+181C,SRC 1 Positive Sequence Current Magnitude,@Meter/ACsrcMSQI1.SeqA.c1.instCVal.mag.f
+181E,SRC 1 Positive Sequence Current Angle,@Meter/ACsrcMSQI1.SeqA.c1.instCVal.ang.f
+181F,SRC 1 Negative Sequence Current Magnitude,@Meter/ACsrcMSQI1.SeqA.c2.instCVal.mag.f
+1821,SRC 1 Negative Sequence Current Angle,@Meter/ACsrcMSQI1.SeqA.c2.instCVal.ang.f
+1819,SRC 1 Zero Sequence Current Magnitude,@Meter/ACsrcMSQI1.SeqA.c3.instCVal.mag.f
+181B,SRC 1 Zero Sequence Current Angle,@Meter/ACsrcMSQI1.SeqA.c3.instCVal.ang.f
+1A26,SRC 1 Positive Sequence Voltage Magnitude,@Meter/ACsrcMSQI1.SeqV.c1.instCVal.mag.f
+1A28,SRC 1 Positive Sequence Voltage Angle,@Meter/ACsrcMSQI1.SeqV.c1.instCVal.ang.f
+1A29,SRC 1 Negative Sequence Voltage Magnitude,@Meter/ACsrcMSQI1.SeqV.c2.instCVal.mag.f
+1A2B,SRC 1 Negative Sequence Voltage Angle,@Meter/ACsrcMSQI1.SeqV.c2.instCVal.ang.f
+1A23,SRC 1 Zero Sequence Voltage Magnitude,@Meter/ACsrcMSQI1.SeqV.c3.instCVal.mag.f
+1A25,SRC 1 Zero Sequence Voltage Angle,@Meter/ACsrcMSQI1.SeqV.c3.instCVal.ang.f
+185C,SRC 2 Positive Sequence Current Magnitude,@Meter/ACsrcMSQI2.SeqA.c1.instCVal.mag.f
+185E,SRC 2 Positive Sequence Current Angle,@Meter/ACsrcMSQI2.SeqA.c1.instCVal.ang.f
+185F,SRC 2 Negative Sequence Current Magnitude,@Meter/ACsrcMSQI2.SeqA.c2.instCVal.mag.f
+1861,SRC 2 Negative Sequence Current Angle,@Meter/ACsrcMSQI2.SeqA.c2.instCVal.ang.f
+1859,SRC 2 Zero Sequence Current Magnitude,@Meter/ACsrcMSQI2.SeqA.c3.instCVal.mag.f
+185B,SRC 2 Zero Sequence Current Angle,@Meter/ACsrcMSQI2.SeqA.c3.instCVal.ang.f
+1A66,SRC 2 Positive Sequence Voltage Magnitude,@Meter/ACsrcMSQI2.SeqV.c1.instCVal.mag.f
+1A68,SRC 2 Positive Sequence Voltage Angle,@Meter/ACsrcMSQI2.SeqV.c1.instCVal.ang.f
+1A69,SRC 2 Negative Sequence Voltage Magnitude,@Meter/ACsrcMSQI2.SeqV.c2.instCVal.mag.f
+1A6B,SRC 2 Negative Sequence Voltage Angle,@Meter/ACsrcMSQI2.SeqV.c2.instCVal.ang.f
+1A63,SRC 2 Zero Sequence Voltage Magnitude,@Meter/ACsrcMSQI2.SeqV.c3.instCVal.mag.f
+1A65,SRC 2 Zero Sequence Voltage Angle,@Meter/ACsrcMSQI2.SeqV.c3.instCVal.ang.f
+189C,SRC 3 Positive Sequence Current Magnitude,@Meter/ACsrcMSQI3.SeqA.c1.instCVal.mag.f
+189E,SRC 3 Positive Sequence Current Angle,@Meter/ACsrcMSQI3.SeqA.c1.instCVal.ang.f
+189F,SRC 3 Negative Sequence Current Magnitude,@Meter/ACsrcMSQI3.SeqA.c2.instCVal.mag.f
+18A1,SRC 3 Negative Sequence Current Angle,@Meter/ACsrcMSQI3.SeqA.c2.instCVal.ang.f
+1899,SRC 3 Zero Sequence Current Magnitude,@Meter/ACsrcMSQI3.SeqA.c3.instCVal.mag.f
+189B,SRC 3 Zero Sequence Current Angle,@Meter/ACsrcMSQI3.SeqA.c3.instCVal.ang.f
+1AA6,SRC 3 Positive Sequence Voltage Magnitude,@Meter/ACsrcMSQI3.SeqV.c1.instCVal.mag.f
+1AA8,SRC 3 Positive Sequence Voltage Angle,@Meter/ACsrcMSQI3.SeqV.c1.instCVal.ang.f
+1AA9,SRC 3 Negative Sequence Voltage Magnitude,@Meter/ACsrcMSQI3.SeqV.c2.instCVal.mag.f
+1AAB,SRC 3 Negative Sequence Voltage Angle,@Meter/ACsrcMSQI3.SeqV.c2.instCVal.ang.f
+1AA3,SRC 3 Zero Sequence Voltage Magnitude,@Meter/ACsrcMSQI3.SeqV.c3.instCVal.mag.f
+1AA5,SRC 3 Zero Sequence Voltage Angle,@Meter/ACsrcMSQI3.SeqV.c3.instCVal.ang.f
+18DC,SRC 4 Positive Sequence Current Magnitude,@Meter/ACsrcMSQI4.SeqA.c1.instCVal.mag.f
+18DE,SRC 4 Positive Sequence Current Angle,@Meter/ACsrcMSQI4.SeqA.c1.instCVal.ang.f
+18DF,SRC 4 Negative Sequence Current Magnitude,@Meter/ACsrcMSQI4.SeqA.c2.instCVal.mag.f
+18E1,SRC 4 Negative Sequence Current Angle,@Meter/ACsrcMSQI4.SeqA.c2.instCVal.ang.f
+18D9,SRC 4 Zero Sequence Current Magnitude,@Meter/ACsrcMSQI4.SeqA.c3.instCVal.mag.f
+18DB,SRC 4 Zero Sequence Current Angle,@Meter/ACsrcMSQI4.SeqA.c3.instCVal.ang.f
+1AE6,SRC 4 Positive Sequence Voltage Magnitude,@Meter/ACsrcMSQI4.SeqV.c1.instCVal.mag.f
+1AE8,SRC 4 Positive Sequence Voltage Angle,@Meter/ACsrcMSQI4.SeqV.c1.instCVal.ang.f
+1AE9,SRC 4 Negative Sequence Voltage Magnitude,@Meter/ACsrcMSQI4.SeqV.c2.instCVal.mag.f
+1AEB,SRC 4 Negative Sequence Voltage Angle,@Meter/ACsrcMSQI4.SeqV.c2.instCVal.ang.f
+1AE3,SRC 4 Zero Sequence Voltage Magnitude,@Meter/ACsrcMSQI4.SeqV.c3.instCVal.mag.f
+1AE5,SRC 4 Zero Sequence Voltage Angle,@Meter/ACsrcMSQI4.SeqV.c3.instCVal.ang.f
+191C,SRC 5 Positive Sequence Current Magnitude,@Meter/ACsrcMSQI5.SeqA.c1.instCVal.mag.f
+191E,SRC 5 Positive Sequence Current Angle,@Meter/ACsrcMSQI5.SeqA.c1.instCVal.ang.f
+191F,SRC 5 Negative Sequence Current Magnitude,@Meter/ACsrcMSQI5.SeqA.c2.instCVal.mag.f
+1921,SRC 5 Negative Sequence Current Angle,@Meter/ACsrcMSQI5.SeqA.c2.instCVal.ang.f
+1919,SRC 5 Zero Sequence Current Magnitude,@Meter/ACsrcMSQI5.SeqA.c3.instCVal.mag.f
+191B,SRC 5 Zero Sequence Current Angle,@Meter/ACsrcMSQI5.SeqA.c3.instCVal.ang.f
+1B26,SRC 5 Positive Sequence Voltage Magnitude,@Meter/ACsrcMSQI5.SeqV.c1.instCVal.mag.f
+1B28,SRC 5 Positive Sequence Voltage Angle,@Meter/ACsrcMSQI5.SeqV.c1.instCVal.ang.f
+1B29,SRC 5 Negative Sequence Voltage Magnitude,@Meter/ACsrcMSQI5.SeqV.c2.instCVal.mag.f
+1B2B,SRC 5 Negative Sequence Voltage Angle,@Meter/ACsrcMSQI5.SeqV.c2.instCVal.ang.f
+1B23,SRC 5 Zero Sequence Voltage Magnitude,@Meter/ACsrcMSQI5.SeqV.c3.instCVal.mag.f
+1B25,SRC 5 Zero Sequence Voltage Angle,@Meter/ACsrcMSQI5.SeqV.c3.instCVal.ang.f
+195C,SRC 6 Positive Sequence Current Magnitude,@Meter/ACsrcMSQI6.SeqA.c1.instCVal.mag.f
+195E,SRC 6 Positive Sequence Current Angle,@Meter/ACsrcMSQI6.SeqA.c1.instCVal.ang.f
+195F,SRC 6 Negative Sequence Current Magnitude,@Meter/ACsrcMSQI6.SeqA.c2.instCVal.mag.f
+1961,SRC 6 Negative Sequence Current Angle,@Meter/ACsrcMSQI6.SeqA.c2.instCVal.ang.f
+1959,SRC 6 Zero Sequence Current Magnitude,@Meter/ACsrcMSQI6.SeqA.c3.instCVal.mag.f
+195B,SRC 6 Zero Sequence Current Angle,@Meter/ACsrcMSQI6.SeqA.c3.instCVal.ang.f
+1B66,SRC 6 Positive Sequence Voltage Magnitude,@Meter/ACsrcMSQI6.SeqV.c1.instCVal.mag.f
+1B68,SRC 6 Positive Sequence Voltage Angle,@Meter/ACsrcMSQI6.SeqV.c1.instCVal.ang.f
+1B69,SRC 6 Negative Sequence Voltage Magnitude,@Meter/ACsrcMSQI6.SeqV.c2.instCVal.mag.f
+1B6B,SRC 6 Negative Sequence Voltage Angle,@Meter/ACsrcMSQI6.SeqV.c2.instCVal.ang.f
+1B63,SRC 6 Zero Sequence Voltage Magnitude,@Meter/ACsrcMSQI6.SeqV.c3.instCVal.mag.f
+1B65,SRC 6 Zero Sequence Voltage Angle,@Meter/ACsrcMSQI6.SeqV.c3.instCVal.ang.f
+1D00,SRC 1 Positive Watthour,@Meter/EnrMtrMMTR1.PosTotWh.instMag.f
+1D02,SRC 1 Negative Watthour,@Meter/EnrMtrMMTR1.NegTotWh.instMag.f
+1D04,SRC 1 Positive Varhour,@Meter/EnrMtrMMTR1.PosTotVArh.instMag.f
+1D06,SRC 1 Negative Varhour,@Meter/EnrMtrMMTR1.NegTotVArh.instMag.f
+1D10,SRC 2 Positive Watthour,@Meter/EnrMtrMMTR2.PosTotWh.instMag.f
+1D12,SRC 2 Negative Watthour,@Meter/EnrMtrMMTR2.NegTotWh.instMag.f
+1D14,SRC 2 Positive Varhour,@Meter/EnrMtrMMTR2.PosTotVArh.instMag.f
+1D16,SRC 2 Negative Varhour,@Meter/EnrMtrMMTR2.NegTotVArh.instMag.f
+1D20,SRC 3 Positive Watthour,@Meter/EnrMtrMMTR3.PosTotWh.instMag.f
+1D22,SRC 3 Negative Watthour,@Meter/EnrMtrMMTR3.NegTotWh.instMag.f
+1D24,SRC 3 Positive Varhour,@Meter/EnrMtrMMTR3.PosTotVArh.instMag.f
+1D26,SRC 3 Negative Varhour,@Meter/EnrMtrMMTR3.NegTotVArh.instMag.f
+1D30,SRC 4 Positive Watthour,@Meter/EnrMtrMMTR4.PosTotWh.instMag.f
+1D32,SRC 4 Negative Watthour,@Meter/EnrMtrMMTR4.NegTotWh.instMag.f
+1D34,SRC 4 Positive Varhour,@Meter/EnrMtrMMTR4.PosTotVArh.instMag.f
+1D36,SRC 4 Negative Varhour,@Meter/EnrMtrMMTR4.NegTotVArh.instMag.f
+1D40,SRC 5 Positive Watthour,@Meter/EnrMtrMMTR5.PosTotWh.instMag.f
+1D42,SRC 5 Negative Watthour,@Meter/EnrMtrMMTR5.NegTotWh.instMag.f
+1D44,SRC 5 Positive Varhour,@Meter/EnrMtrMMTR5.PosTotVArh.instMag.f
+1D46,SRC 5 Negative Varhour,@Meter/EnrMtrMMTR5.NegTotVArh.instMag.f
+1D50,SRC 6 Positive Watthour,@Meter/EnrMtrMMTR6.PosTotWh.instMag.f
+1D52,SRC 6 Negative Watthour,@Meter/EnrMtrMMTR6.NegTotWh.instMag.f
+1D54,SRC 6 Positive Varhour,@Meter/EnrMtrMMTR6.PosTotVArh.instMag.f
+1D56,SRC 6 Negative Varhour,@Meter/EnrMtrMMTR6.NegTotVArh.instMag.f
+9900,FlexElement 1 Actual,@Gen/FlxElGAPC1.OpSig.instMag.f
+9902,FlexElement 2 Actual,@Gen/FlxElGAPC2.OpSig.instMag.f
+9904,FlexElement 3 Actual,@Gen/FlxElGAPC3.OpSig.instMag.f
+9906,FlexElement 4 Actual,@Gen/FlxElGAPC4.OpSig.instMag.f
+9908,FlexElement 5 Actual,@Gen/FlxElGAPC5.OpSig.instMag.f
+990A,FlexElement 6 Actual,@Gen/FlxElGAPC6.OpSig.instMag.f
+990C,FlexElement 7 Actual,@Gen/FlxElGAPC7.OpSig.instMag.f
+990E,FlexElement 8 Actual,@Gen/FlxElGAPC8.OpSig.instMag.f
+9910,FlexElement 9 Actual,@Gen/FlxElGAPC9.OpSig.instMag.f
+9912,FlexElement 10 Actual,@Gen/FlxElGAPC10.OpSig.instMag.f
+9914,FlexElement 11 Actual,@Gen/FlxElGAPC11.OpSig.instMag.f
+9916,FlexElement 12 Actual,@Gen/FlxElGAPC12.OpSig.instMag.f
+9918,FlexElement 13 Actual,@Gen/FlxElGAPC13.OpSig.instMag.f
+991A,FlexElement 14 Actual,@Gen/FlxElGAPC14.OpSig.instMag.f
+991C,FlexElement 15 Actual,@Gen/FlxElGAPC15.OpSig.instMag.f
+991E,FlexElement 16 Actual,@Gen/FlxElGAPC16.OpSig.instMag.f
+2301,Transformer Differential Phasor Iad Magnitude,@Prot/PctDifPDIF1.DifAClc.phsA.instCVal.mag.f
+2309,Transformer Differential Phasor Ibd Magnitude,@Prot/PctDifPDIF1.DifAClc.phsB.instCVal.mag.f
+2311,Transformer Differential Phasor Icd Magnitude,@Prot/PctDifPDIF1.DifAClc.phsC.instCVal.mag.f
+2302,Transformer Differential Phasor Iad Angle,@Prot/PctDifPDIF1.DifAClc.phsA.instCVal.ang.f
+230A,Transformer Differential Phasor Ibd Angle,@Prot/PctDifPDIF1.DifAClc.phsB.instCVal.ang.f
+2312,Transformer Differential Phasor Icd Angle,@Prot/PctDifPDIF1.DifAClc.phsC.instCVal.ang.f
+2305,Transformer Differential 2nd Harm Iad Magnitude,@Prot/PctDifPDIF1.DifA2ndH.phsA.instCVal.mag.f
+230D,Transformer Differential 2nd Harm Ibd Magnitude,@Prot/PctDifPDIF1.DifA2ndH.phsB.instCVal.mag.f
+2315,Transformer Differential 2nd Harm Icd Magnitude,@Prot/PctDifPDIF1.DifA2ndH.phsC.instCVal.mag.f
+2306,Transformer Differential 2nd Harm Iad Angle,@Prot/PctDifPDIF1.DifA2ndH.phsA.instCVal.ang.f
+230E,Transformer Differential 2nd Harm Ibd Angle,@Prot/PctDifPDIF1.DifA2ndH.phsB.instCVal.ang.f
+2316,Transformer Differential 2nd Harm Icd Angle,@Prot/PctDifPDIF1.DifA2ndH.phsC.instCVal.ang.f
+2307,Transformer Differential 5th Harm Iad Magnitude,@Prot/PctDifPDIF1.DifA5thH.phsA.instCVal.mag.f
+230F,Transformer Differential 5th Harm Ibd Magnitude,@Prot/PctDifPDIF1.DifA5thH.phsB.instCVal.mag.f
+2317,Transformer Differential 5th Harm Icd Magnitude,@Prot/PctDifPDIF1.DifA5thH.phsC.instCVal.mag.f
+2308,Transformer Differential 5th Harm Iad Angle,@Prot/PctDifPDIF1.DifA5thH.phsA.instCVal.ang.f
+2310,Transformer Differential 5th Harm Ibd Angle,@Prot/PctDifPDIF1.DifA5thH.phsB.instCVal.ang.f
+2318,Transformer Differential 5th Harm Icd Angle,@Prot/PctDifPDIF1.DifA5thH.phsC.instCVal.ang.f
+2330,Transformer Top Oil Temperature,@Ctrl/HPTmpSPTR1.ToOilTmp.instMag.f
+2331,Transformer Hottest Spot Temperature,@Ctrl/HPTmpSPTR1.HPTmpClc.instMag.f
+2332,Transformer Aging Factor,@Ctrl/AgeSPTR1.AgeRte.instMag.f
+2333,Transformer Daily Loss Of Life,@Ctrl/LosLifSPTR1.LosLifeRte.instMag.f
+2335,Transformer Loss Of Life,@Ctrl/LosLifSPTR1.LosLife.instMag.f
+
+2303,Transformer Restraint Phasor Iar Magnitude,@Prot/PctDifPDIF1.RstA.phsA.instCVal.mag.f
+2304,Transformer Restraint Phasor Iar Angle,@Prot/PctDifPDIF1.RstA.phsA.instCVal.ang.f
+230B,Transformer Restraint Phasor Ibr Magnitude,@Prot/PctDifPDIF1.RstA.phsB.instCVal.mag.f
+230C,Transformer Restraint Phasor Ibr Angle,@Prot/PctDifPDIF1.RstA.phsB.instCVal.ang.f
+2313,Transformer Restraint Phasor Icr Magnitude,@Prot/PctDifPDIF1.RstA.phsC.instCVal.mag.f
+2314,Transformer Restraint Phasor Icr Angle,@Prot/PctDifPDIF1.RstA.phsC.instCVal.ang.f
+
+21D0,B90 Bus Zone 1 DMag,@Prot/B_DifPDIF1.BDifAClc.instCVal.mag.f
+21D5,B90 Bus Zone 1 RMag,@Prot/B_DifPDIF1.BRstA.instCVal.mag.f
+21DE,B90 Bus Zone 2 DMag,@Prot/B_DifPDIF2.BDifAClc.instCVal.mag.f
+21E3,B90 Bus Zone 2 RMag,@Prot/B_DifPDIF2.BRstA.instCVal.mag.f
+21EC,B90 Bus Zone 3 DMag,@Prot/B_DifPDIF3.BDifAClc.instCVal.mag.f
+21F1,B90 Bus Zone 3 RMag,@Prot/B_DifPDIF3.BRstA.instCVal.mag.f
+21FA,B90 Bus Zone 4 DMag,@Prot/B_DifPDIF4.BDifAClc.instCVal.mag.f
+21FF,B90 Bus Zone 4 RMag,@Prot/B_DifPDIF4.BRstA.instCVal.mag.f
+2208,B90 Bus Zone 5 DMag,@Prot/B_DifPDIF5.BDifAClc.instCVal.mag.f
+220D,B90 Bus Zone 5 RMag,@Prot/B_DifPDIF5.BRstA.instCVal.mag.f
+2216,B90 Bus Zone 6 DMag,@Prot/B_DifPDIF6.BDifAClc.instCVal.mag.f
+221B,B90 Bus Zone 6 RMag,@Prot/B_DifPDIF6.BRstA.instCVal.mag.f
+
+21D4,B90 Bus Zone Diff Angle,@Prot/B_DifPDIF1.BDifAClc.instCVal.ang.f
+21D7,B90 Bus Zone Rest Angle,@Prot/B_DifPDIF1.BRstA.instCVal.ang.f
+21E2,B90 Bus Zone Diff Angle,@Prot/B_DifPDIF2.BDifAClc.instCVal.ang.f
+21E5,B90 Bus Zone Rest Angle,@Prot/B_DifPDIF2.BRstA.instCVal.ang.f
+21F0,B90 Bus Zone Diff Angle,@Prot/B_DifPDIF3.BDifAClc.instCVal.ang.f
+21F3,B90 Bus Zone Rest Angle,@Prot/B_DifPDIF3.BRstA.instCVal.ang.f
+21FE,B90 Bus Zone Diff Angle,@Prot/B_DifPDIF4.BDifAClc.instCVal.ang.f
+2201,B90 Bus Zone Rest Angle,@Prot/B_DifPDIF4.BRstA.instCVal.ang.f
+220C,B90 Bus Zone Diff Angle,@Prot/B_DifPDIF5.BDifAClc.instCVal.ang.f
+220F,B90 Bus Zone Rest Angle,@Prot/B_DifPDIF5.BRstA.instCVal.ang.f
+221A,B90 Bus Zone Diff Angle,@Prot/B_DifPDIF6.BDifAClc.instCVal.ang.f
+221D,B90 Bus Zone Rest Angle,@Prot/B_DifPDIF6.BRstA.instCVal.ang.f
+
+6F00,TRM 1 Current Magnitude,@Meter/B_AmpMMXN1.ChA.instCVal.mag.f
+6F03,TRM 2 Current Magnitude,@Meter/B_AmpMMXN2.ChA.instCVal.mag.f
+6F06,TRM 3 Current Magnitude,@Meter/B_AmpMMXN3.ChA.instCVal.mag.f
+6F09,TRM 4 Current Magnitude,@Meter/B_AmpMMXN4.ChA.instCVal.mag.f
+6F0C,TRM 5 Current Magnitude,@Meter/B_AmpMMXN5.ChA.instCVal.mag.f
+6F0F,TRM 6 Current Magnitude,@Meter/B_AmpMMXN6.ChA.instCVal.mag.f
+6F12,TRM 7 Current Magnitude,@Meter/B_AmpMMXN7.ChA.instCVal.mag.f
+6F15,TRM 8 Current Magnitude,@Meter/B_AmpMMXN8.ChA.instCVal.mag.f
+6F18,TRM 9 Current Magnitude,@Meter/B_AmpMMXN9.ChA.instCVal.mag.f
+6F1B,TRM 10 Current Magnitude,@Meter/B_AmpMMXN10.ChA.instCVal.mag.f
+6F1E,TRM 11 Current Magnitude,@Meter/B_AmpMMXN11.ChA.instCVal.mag.f
+6F21,TRM 12 Current Magnitude,@Meter/B_AmpMMXN12.ChA.instCVal.mag.f
+6F24,TRM 13 Current Magnitude,@Meter/B_AmpMMXN13.ChA.instCVal.mag.f
+6F27,TRM 14 Current Magnitude,@Meter/B_AmpMMXN14.ChA.instCVal.mag.f
+6F2A,TRM 15 Current Magnitude,@Meter/B_AmpMMXN15.ChA.instCVal.mag.f
+6F2D,TRM 16 Current Magnitude,@Meter/B_AmpMMXN16.ChA.instCVal.mag.f
+6F30,TRM 17 Current Magnitude,@Meter/B_AmpMMXN17.ChA.instCVal.mag.f
+6F33,TRM 18 Current Magnitude,@Meter/B_AmpMMXN18.ChA.instCVal.mag.f
+6F36,TRM 19 Current Magnitude,@Meter/B_AmpMMXN19.ChA.instCVal.mag.f
+6F39,TRM 20 Current Magnitude,@Meter/B_AmpMMXN20.ChA.instCVal.mag.f
+6F3C,TRM 21 Current Magnitude,@Meter/B_AmpMMXN21.ChA.instCVal.mag.f
+6F3F,TRM 22 Current Magnitude,@Meter/B_AmpMMXN22.ChA.instCVal.mag.f
+6F42,TRM 23 Current Magnitude,@Meter/B_AmpMMXN23.ChA.instCVal.mag.f
+6F45,TRM 24 Current Magnitude,@Meter/B_AmpMMXN24.ChA.instCVal.mag.f
+
+6F48,TRM 1 Voltage Magnitude,@Meter/B_VolMMXN1.ChV.instCVal.mag.f
+6F4B,TRM 2 Voltage Magnitude,@Meter/B_VolMMXN2.ChV.instCVal.mag.f
+6F4E,TRM 3 Voltage Magnitude,@Meter/B_VolMMXN3.ChV.instCVal.mag.f
+6F51,TRM 4 Voltage Magnitude,@Meter/B_VolMMXN4.ChV.instCVal.mag.f
+6F54,TRM 5 Voltage Magnitude,@Meter/B_VolMMXN5.ChV.instCVal.mag.f
+6F57,TRM 6 Voltage Magnitude,@Meter/B_VolMMXN6.ChV.instCVal.mag.f
+6F5A,TRM 7 Voltage Magnitude,@Meter/B_VolMMXN7.ChV.instCVal.mag.f
+6F5D,TRM 8 Voltage Magnitude,@Meter/B_VolMMXN8.ChV.instCVal.mag.f
+6F60,TRM 9 Voltage Magnitude,@Meter/B_VolMMXN9.ChV.instCVal.mag.f
+6F63,TRM 10 Voltage Magnitude,@Meter/B_VolMMXN10.ChV.instCVal.mag.f
+6F66,TRM 11 Voltage Magnitude,@Meter/B_VolMMXN11.ChV.instCVal.mag.f
+6F69,TRM 12 Voltage Magnitude,@Meter/B_VolMMXN12.ChV.instCVal.mag.f
+
+6F02,TRM 1 Current Angle,@Meter/B_AmpMMXN1.ChA.instCVal.ang.f
+6F05,TRM 2 Current Angle,@Meter/B_AmpMMXN2.ChA.instCVal.ang.f
+6F08,TRM 3 Current Angle,@Meter/B_AmpMMXN3.ChA.instCVal.ang.f
+6F0B,TRM 4 Current Angle,@Meter/B_AmpMMXN4.ChA.instCVal.ang.f
+6F0E,TRM 5 Current Angle,@Meter/B_AmpMMXN5.ChA.instCVal.ang.f
+6F11,TRM 6 Current Angle,@Meter/B_AmpMMXN6.ChA.instCVal.ang.f
+6F14,TRM 7 Current Angle,@Meter/B_AmpMMXN7.ChA.instCVal.ang.f
+6F17,TRM 8 Current Angle,@Meter/B_AmpMMXN8.ChA.instCVal.ang.f
+6F1A,TRM 9 Current Angle,@Meter/B_AmpMMXN9.ChA.instCVal.ang.f
+6F1D,TRM 10 Current Angle,@Meter/B_AmpMMXN10.ChA.instCVal.ang.f
+6F20,TRM 11 Current Angle,@Meter/B_AmpMMXN11.ChA.instCVal.ang.f
+6F23,TRM 12 Current Angle,@Meter/B_AmpMMXN12.ChA.instCVal.ang.f
+6F26,TRM 13 Current Angle,@Meter/B_AmpMMXN13.ChA.instCVal.ang.f
+6F29,TRM 14 Current Angle,@Meter/B_AmpMMXN14.ChA.instCVal.ang.f
+6F2C,TRM 15 Current Angle,@Meter/B_AmpMMXN15.ChA.instCVal.ang.f
+6F2F,TRM 16 Current Angle,@Meter/B_AmpMMXN16.ChA.instCVal.ang.f
+6F32,TRM 17 Current Angle,@Meter/B_AmpMMXN17.ChA.instCVal.ang.f
+6F35,TRM 18 Current Angle,@Meter/B_AmpMMXN18.ChA.instCVal.ang.f
+6F38,TRM 19 Current Angle,@Meter/B_AmpMMXN19.ChA.instCVal.ang.f
+6F3B,TRM 20 Current Angle,@Meter/B_AmpMMXN20.ChA.instCVal.ang.f
+6F3E,TRM 21 Current Angle,@Meter/B_AmpMMXN21.ChA.instCVal.ang.f
+6F41,TRM 22 Current Angle,@Meter/B_AmpMMXN22.ChA.instCVal.ang.f
+6F44,TRM 23 Current Angle,@Meter/B_AmpMMXN23.ChA.instCVal.ang.f
+6F47,TRM 24 Current Angle,@Meter/B_AmpMMXN24.ChA.instCVal.ang.f
+
+6F4A,TRM 1 Voltage Angle,@Meter/B_VolMMXN1.ChV.instCVal.ang.f
+6F4D,TRM 2 Voltage Angle,@Meter/B_VolMMXN2.ChV.instCVal.ang.f
+6F50,TRM 3 Voltage Angle,@Meter/B_VolMMXN3.ChV.instCVal.ang.f
+6F53,TRM 4 Voltage Angle,@Meter/B_VolMMXN4.ChV.instCVal.ang.f
+6F56,TRM 5 Voltage Angle,@Meter/B_VolMMXN5.ChV.instCVal.ang.f
+6F59,TRM 6 Voltage Angle,@Meter/B_VolMMXN6.ChV.instCVal.ang.f
+6F5C,TRM 7 Voltage Angle,@Meter/B_VolMMXN7.ChV.instCVal.ang.f
+6F5F,TRM 8 Voltage Angle,@Meter/B_VolMMXN8.ChV.instCVal.ang.f
+6F62,TRM 9 Voltage Angle,@Meter/B_VolMMXN9.ChV.instCVal.ang.f
+6F65,TRM 10 Voltage Angle,@Meter/B_VolMMXN10.ChV.instCVal.ang.f
+6F68,TRM 11 Voltage Angle,@Meter/B_VolMMXN11.ChV.instCVal.ang.f
+6F6B,TRM 12 Voltage Angle,@Meter/B_VolMMXN12.ChV.instCVal.ang.f
+
+6FD0,Terminal Frequency,@Meter/B_FrqMMXN1.Hz.instMag.f
+6FD1,Terminal Tracking Frequency,@Meter/B_FrqMMXN1.TrcHz.instMag.f
