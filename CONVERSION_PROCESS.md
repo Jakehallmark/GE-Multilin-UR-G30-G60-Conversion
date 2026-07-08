@@ -1,6 +1,11 @@
 # G30 → G60 Conversion Process — Technical Reference
 
-This document describes how `convert_g30_to_g60.py` converts GE Multilin UR **G30** relay settings XML into **G60** format. It walks through every stage of the pipeline, explains why each step is designed the way it is, and includes code excerpts from the script.
+This document describes how GE Multilin UR **G30** relay settings are converted into **G60** format. Two file formats are supported by two cooperating pipelines:
+
+- **XML pipeline** — `convert_g30_to_g60.py` converts UR Setup **`.xml`** settings exports and produces a converted `.xml` plus an HTML review report.
+- **URS pipeline** — `convert_g30_to_g60_urs.py` (with `urs_io.py`) converts EnerVista **`.urs`** device exports and produces an EnerVista-ready `.urs`. This is the **default workflow** in the AiO app.
+
+The URS pipeline reuses the XML pipeline's register-matching and value-transfer logic — the `.xml` base template remains the source of truth for setting types, enum/operand tables, and remapping rules. The sections below walk through every stage of both pipelines, explain why each step is designed the way it is, and include code excerpts.
 
 ---
 
@@ -19,9 +24,10 @@ This document describes how `convert_g30_to_g60.py` converts GE Multilin UR **G3
 11. [Phase 7 — Classify Results](#phase-7--classify-results)
 12. [Phase 8 — Sanitize and Write Output](#phase-8--sanitize-and-write-output)
 13. [Phase 9 — HTML Conversion Report](#phase-9--html-conversion-report)
-14. [Register Matching Key](#register-matching-key)
-15. [What the Script Never Changes](#what-the-script-never-changes)
-16. [Failure and Fallback Behavior](#failure-and-fallback-behavior)
+14. [URS Pipeline (.urs Device Exports)](#urs-pipeline-urs-device-exports)
+15. [Register Matching Key](#register-matching-key)
+16. [What the Script Never Changes](#what-the-script-never-changes)
+17. [Failure and Fallback Behavior](#failure-and-fallback-behavior)
 
 ---
 
@@ -39,9 +45,13 @@ The converter does **not** invent a G60 structure from scratch. It starts from a
 
 **Design principle:** The G60 template is the source of truth for structure, firmware identity, and G60-native codes. The G30 file is the source of truth for site-specific configuration intent.
 
+The same principle applies to the URS pipeline: a blank **`G60 Base.urs`** template provides the register map and EnerVista file structure, while the `G60 Base.xml` template still supplies setting types and the enum/operand code tables used for remapping. See [URS Pipeline](#urs-pipeline-urs-device-exports).
+
 ---
 
 ## Inputs and Outputs
+
+### XML pipeline
 
 | Input | Purpose |
 |-------|---------|
@@ -53,9 +63,24 @@ The converter does **not** invent a G60 structure from scratch. It starts from a
 | `<DeviceName>.xml` | Converted G60 settings, UTF-16 LE encoded, ready for UR Setup import |
 | `<DeviceName>_OR.html` | Self-contained conversion report for review |
 
+### URS pipeline
+
+| Input | Purpose |
+|-------|---------|
+| G30 source `.urs` | EnerVista device export — site-specific register values to convert |
+| `bases/G60 Base.urs` | Blank G60 `.urs` template — register numbers + EnerVista file structure |
+| `bases/G60 Base.xml` | Paired XML template — setting types + enum/operand code tables |
+| G30 companion `.xml` *(optional)* | Same stem/folder as the `.urs`; supplies signal operand tables for user-display remapping |
+
+| Output | Purpose |
+|--------|---------|
+| `<DeviceName> FW<version>.urs` | Converted G60 device export, UTF-8 / CRLF, ready for EnerVista import |
+
 ---
 
 ## High-Level Pipeline
+
+*(XML pipeline — see [URS Pipeline](#urs-pipeline-urs-device-exports) for the `.urs` flow.)*
 
 ```mermaid
 flowchart TD
@@ -99,6 +124,17 @@ if __name__ == "__main__":
 **Why:** The G60 template path is fixed relative to the script so drag-and-drop usage (via `Convert G30 to G60.bat`) never requires the operator to specify it. Default output goes to `Converted/` to avoid overwriting inputs.
 
 `select_base_template()` resolves `bases/G60 Base.xml` under the script directory and raises if missing — there is no auto-detection because the template must match the target relay firmware exactly.
+
+### URS entry point
+
+The URS pipeline has its own CLI in `convert_g30_to_g60_urs.py`:
+
+```
+python convert_g30_to_g60_urs.py <g30_source.urs> [output_dir]
+    [--firmware 860|8.5x|...] [--g60-xml PATH] [--g60-urs PATH]
+```
+
+`main()` parses the optional flags, requires a `.urs` input, resolves the paired `.xml`/`.urs` templates via `resolve_g60_templates()`, and calls `convert_urs()`. In normal use the AiO app (`aio/app.py`) drives `convert_urs()` directly — the operator picks a G30 `.urs` and a target firmware, and the app selects the matching base pair.
 
 ---
 
@@ -662,6 +698,191 @@ Tables support live text filtering via a search box.
 
 ---
 
+## URS Pipeline (.urs Device Exports)
+
+The URS pipeline converts EnerVista **`.urs`** device exports. It is the **default workflow** in the AiO app (`aio/app.py`) and is implemented by `convert_g30_to_g60_urs.py` on top of `urs_io.py`. Rather than reimplement the remapping rules, it **reuses the XML converter's transfer engine** by bridging each `.urs` register through a synthetic XML `Setting` element.
+
+### Why a separate format
+
+`.xml` settings exports (UR Setup) and `.urs` device exports (EnerVista) describe the same relay but store it very differently:
+
+| Aspect | `.xml` (UR Setup) | `.urs` (EnerVista) |
+|--------|-------------------|--------------------|
+| Structure | Nested `Section`/`Screen`/`Setting` tree | Flat, line-oriented text |
+| Register identity | `(labelID, group, module, item, bit)` | `(labelID, group, module, item)` — no `bit` field |
+| Enum/Flex value | `value` + `EnumValue`/`FlexValue` attributes | Single `code (display name)` string |
+| Number/Text value | `value` attribute | Plain string (`30 min`, `1.000 s`) |
+| Setting type / min / max | Present on every `Setting` | **Absent** — must come from the paired `.xml` |
+| Encoding | UTF-16 LE | UTF-8, CRLF line endings |
+
+Because `.urs` carries no setting types or operand tables, the pipeline needs **three** templates working together: the G30 `.urs` (values), the G60 `.urs` (register map + structure), and the G60 `.xml` (types + code tables).
+
+### The `.urs` file format (`urs_io.py`)
+
+A `.urs` file is parsed into four ordered parts, preserving opaque sections verbatim:
+
+```
+HEADER,...          device identity and metadata
+URPC_DATA,...       labels, FlexLogic metadata, front-panel strings (opaque)
+DATA,...            register settings: labelID, reg#, group, module, item, value
+END                 end of register block
+[optional sections] FlexGraphFormat, Metering formats, etc. (tail)
+```
+
+```python
+@dataclass(frozen=True)
+class UrsDataRow:
+    label_id: str
+    reg_num: str
+    group: str
+    module: str
+    item: str
+    value: str
+
+    @property
+    def key(self) -> tuple[str, str, str, str]:
+        return (self.label_id, self.group, self.module, self.item)
+```
+
+**Why preserve `URPC_DATA` and tail lines byte-for-byte:** these blocks (FlexLogic label tables, front-panel text, metering/graph formats) are structural EnerVista data, not per-register settings. The converter only overlays `DATA` rows; everything else is copied from the G60 `.urs` template unchanged.
+
+### High-level URS pipeline
+
+```mermaid
+flowchart TD
+    A[AiO app / CLI] --> B[parse_urs_file G30 .urs]
+    A --> C[parse_urs_file G60 .urs template]
+    A --> D[parse_xml G60 Base.xml]
+    D --> E[build_lookup + operand/signal tables]
+    B --> F[Iterate G60 .urs DATA rows]
+    C --> F
+    F --> G{G60 XML Setting for key?}
+    G -->|No| H[Keep template row]
+    G -->|Yes| I{G30 .urs row for key?}
+    I -->|No| J[Re-emit G60 default value]
+    I -->|Yes| K[make_setting_element from G30 value]
+    K --> L[transfer_value on G60 XML copy]
+    L --> M[_format_urs_value back to code display]
+    H --> N[Assemble output rows]
+    J --> N
+    M --> N
+    E --> L
+    N --> O[update_header_for_output]
+    O --> P[write_urs_file UTF-8 CRLF + tail]
+```
+
+### Resolving the paired templates
+
+```python
+def resolve_g60_templates(app_dir, *, firmware=None, g60_xml_path=None, g60_urs_path=None):
+    base_dir = app_dir / "bases"
+    xml_path = g60_xml_path or resolve_base_template(base_dir, firmware).path
+    urs_path = resolve_urs_template(xml_path, base_dir, g60_urs_path)
+    return xml_path, urs_path
+```
+
+`resolve_urs_template()` looks for a `.urs` with the **same stem** as the chosen `.xml` (e.g. `G60 Base [8.7x].xml` → `G60 Base [8.7x].urs`), then falls back to `bases/G60 Base.urs`. The AiO app disables URS conversion for a firmware whose base has no `.urs` pair (`BaseTemplateInfo.has_urs_pair`).
+
+**Why pair by stem:** the `.urs` register map and the `.xml` type/code tables must come from the *same firmware*. Pairing by filename stem guarantees they stay in lockstep as new firmware bases are added.
+
+### Building the bridge tables
+
+`convert_urs()` reuses the XML builders against the G60 `.xml` template:
+
+```python
+g60_lookup = build_lookup(g60_work)                        # (labelID,group,module,item,bit) -> Setting
+g60_operand_map = build_flex_operand_map(g60_work)         # Flex operand name -> G60 code
+_, g60_signal_name_to_code = build_signal_operand_tables(g60_work)
+```
+
+If a companion G30 `.xml` is found (`find_companion_xml`), its signal table supplies `g30_signal_code_to_name` so user-display Items can be remapped by signal name — exactly as in the XML pipeline. Without it, identity falls back to the `.urs` filename stem and user-display remapping is skipped.
+
+### Bridging each row through `transfer_value`
+
+The loop iterates the **G60 `.urs` template's DATA rows** (the output register map). For each row it looks up two things: the G60 `.xml` `Setting` (for type + remap rules) and the G30 `.urs` row (for the source value). Note the four-part `.urs` key is padded with `bit="0"` to match the five-part XML key:
+
+```python
+for tpl_row in g60_urs_tpl.data_rows:
+    key = tpl_row.key                                   # (labelID, group, module, item)
+    g60_key = (key[0], key[1], key[2], key[3], "0")     # add bit for XML lookup
+    g60_setting = g60_lookup.get(g60_key)
+    g30_row = g30_lookup.get(key)
+
+    if g60_setting is None:                 # no type info -> pass template row through
+        output_rows.append(tpl_row); stats.kept_default += 1; continue
+
+    if g30_row is None:                     # G60-only register -> re-emit its default
+        default_value = _format_urs_value(dict(g60_setting.attrib),
+                                           g60_setting.get("SettingType", ""), g60_operand_map)
+        output_rows.append(UrsDataRow(..., value=default_value)); stats.kept_default += 1; continue
+
+    setting_type = g60_setting.get("SettingType", "")
+    g30_el = make_setting_element(key[0], key[1], key[2], key[3], "0", setting_type, g30_row.value)
+    work_setting = copy.deepcopy(g60_setting)           # never mutate the shared lookup
+
+    note = transfer_value(work_setting, g30_el, g60_flex_fv_map, g60_operand_map,
+                          g30_signal_code_to_name or None, g60_signal_name_to_code or None)
+    if note:
+        stats.auto_adjusted += 1
+
+    new_value = _format_urs_value(dict(work_setting.attrib), setting_type,
+                                  g60_operand_map, source_urs_value=g30_row.value)
+    output_rows.append(UrsDataRow(..., value=new_value)); stats.transferred += 1
+```
+
+**Why deep-copy the G60 setting:** the same `Setting` object can be returned for repeated keys in the lookup; `transfer_value()` mutates the element in place, so each row works on its own copy to avoid cross-contamination.
+
+**Why synthesize a G30 `Setting`:** `make_setting_element()` parses the `.urs` value string (`code (display)` for Enum/Flex, plain text otherwise) into the exact attribute shape (`value`, `EnumValue`/`FlexValue`) that `transfer_value()` already knows how to handle. This is what lets the URS pipeline inherit every XML remapping rule (decimal reformat, FlexLogic opcode widening, hardware-address matching, user-display offsets, …) with no duplication.
+
+### Re-serializing to a `.urs` value
+
+After transfer, `_format_urs_value()` converts the mutated XML attributes back into the `.urs` `code (display name)` form. It prefers to preserve the **source display text** when the code is unchanged, so the output stays visually identical to native EnerVista exports:
+
+```python
+if setting_type == "Flex":
+    flex_val = attrs.get("FlexValue", "")
+    src_code, src_display = _parse_coded_urs_value(source_urs_value)
+    if flex_val and src_code == flex_val and src_display:
+        return f"{flex_val} ({src_display})"      # code unchanged: keep original label
+    display = _flex_code_to_name(operand_map).get(flex_val, attrs.get("value", ""))
+    return f"{flex_val} ({display})"              # code changed: use canonical G60 name
+```
+
+Enum values follow the same pattern (`EnumValue (display)`), and Number/Text fall back to `setting_attrs_to_urs_value()` (the plain string).
+
+### Writing the output
+
+```python
+output_urs = UrsFile(
+    header_fields=update_header_for_output(g60_urs_tpl.header_fields, g60_order_code, g60_version),
+    urpc_lines=list(g60_urs_tpl.urpc_lines),   # copied verbatim from G60 template
+    data_rows=output_rows,
+    tail_lines=list(g60_urs_tpl.tail_lines),
+)
+write_urs_file(output_urs, output_path)
+```
+
+- **`update_header_for_output()`** rewrites order code, firmware version, and timestamp but **preserves the template's checksum/token (field 8)** — EnerVista rejects files with a missing token.
+- **`ensure_device_tail()`** (inside `write_urs_file`) appends the `[FlexGraphFormat]` / `[MeteringNFormat]` / `[VAL_61850]` blocks if a blank base lacks them, so the output imports as a full device readback.
+- Output is written as **UTF-8 with CRLF** line endings (required by EnerVista), and the same overwrite-protection guard as the XML pipeline prevents clobbering any input file.
+
+### What the URS pipeline does *not* (yet) produce
+
+The URS flow prints a console summary (transferred / kept-default / auto-adjusted / G30-only dropped) but does **not** generate an HTML report. The register-level audit trail remains a feature of the XML pipeline. `compare_urs_structure()` in `urs_io.py` is available for round-trip structural verification (URPC/DATA counts, key sets, value mismatches).
+
+### URS console summary
+
+```
+  G30 DATA rows (source)          : 4831
+  G60 DATA rows (template)        : 4903
+  Transferred G30 -> G60          : 4750
+    of which auto-adjusted        : 14
+  Kept at G60 template defaults   : 153
+  G30-only (not in G60 template)  : 81
+```
+
+---
+
 ## Register Matching Key
 
 The fundamental identity of every setting:
@@ -709,6 +930,11 @@ These attributes always come from the G60 template:
 | Output path would overwrite input | Script exits with error |
 | `bases/G60 Base.xml` missing | Script exits with error |
 | Signal operand table (10013) missing | User-display remapping skipped; warning printed |
+| **(URS)** `.urs` register has no type info in G60 `.xml` | Template `.urs` row passed through unchanged (kept-default) |
+| **(URS)** G60 register has no G30 `.urs` source | G60 default value re-emitted from the `.xml` template |
+| **(URS)** No `.urs` paired with the selected G60 `.xml` base | `resolve_urs_template` raises; AiO app disables URS conversion for that firmware |
+| **(URS)** No companion G30 `.xml` | Identity derived from `.urs` filename stem; user-display remapping skipped |
+| **(URS)** Input is not a `.urs` file | CLI exits with error before conversion |
 
 **Target after import:** Zero **Invalid Settings** in UR Setup. Invalid entries indicate a value/format/code problem requiring investigation. **Differences** in Device Comparison are expected for intentional configuration changes, name differences, and G60-only features.
 
@@ -763,12 +989,17 @@ class G60OnlyRecord: ...     # G60 setting with no G30 source
 
 | File | Role |
 |------|------|
-| `convert_g30_to_g60.py` | Main converter (source of truth) |
-| `bases/G60 Base*.xml` | G60 templates — must match target firmware |
+| `convert_g30_to_g60.py` | XML converter + shared transfer engine (source of truth) |
+| `convert_g30_to_g60_urs.py` | URS pipeline orchestrator; reuses the XML transfer engine |
+| `urs_io.py` | `.urs` parse/serialize, template pairing, header/tail handling |
+| `bases/G60 Base*.xml` | G60 XML templates — setting types + code tables |
+| `bases/G60 Base*.urs` | G60 URS templates — register map + EnerVista structure |
+| `aio/app.py` | AiO desktop app; URS conversion is the default workflow |
+| `aio/base_templates.py` | Firmware base discovery / selection (`has_urs_pair`) |
 | `Convert G30 to G60.bat` | Windows drag-and-drop launcher |
 | `azure/function_app/convert_g30_to_g60.py` | Copy deployed to Azure Function (sync via `azure/sync-from-root.ps1`) |
 | `README.md` | Operator quick-start guide |
 
 ---
 
-*Generated from `convert_g30_to_g60.py` as of the FlexLogic dual-format syntax-code fix (2026-07-06).*
+*Updated to document the URS (.urs) conversion pipeline (`convert_g30_to_g60_urs.py` + `urs_io.py`), which reuses the XML transfer engine and is the default AiO workflow. XML pipeline current as of the FlexLogic dual-format syntax-code fix (2026-07-06).*

@@ -25,6 +25,16 @@ class BaseTemplateInfo:
             return f"Firmware {fw} — {self.order_code}"
         return f"Firmware {fw}"
 
+    @property
+    def urs_path(self) -> Optional[Path]:
+        """Paired .urs template with the same stem as this XML base, if present."""
+        urs = self.path.with_suffix(".urs")
+        return urs if urs.is_file() else None
+
+    @property
+    def has_urs_pair(self) -> bool:
+        return self.urs_path is not None
+
 
 def app_base_dir() -> Path:
     """Directory containing bundled base templates (dev or PyInstaller)."""
