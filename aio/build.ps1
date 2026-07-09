@@ -85,6 +85,10 @@ if (-not $fletExe) {
     }
 }
 
+. (Join-Path $AioDir "read-version.ps1")
+
+Write-Host "Building version $AppDisplayVersion (file version $AppFileVersion)"
+
 Push-Location $AioDir
 try {
     # Repo-root modules (convert_g30_to_g60, urs_io, etc.) live outside aio/.
@@ -98,13 +102,19 @@ try {
         --distpath $StageDir `
         --add-data "$BasesDir;bases" `
         --add-data "$FirmwareDir;firmware" `
+        --add-data "$AioDir\version.json;." `
         --file-description "GE Multilin UR G30 to G60 settings converter" `
         --product-name "G30 to G60 Converter" `
+        --product-version $AppVersion `
+        --file-version $AppFileVersion `
+        --company-name "GE Multilin UR Tools" `
+        --copyright "Copyright (C) 2026" `
         --hidden-import convert_g30_to_g60 `
         --hidden-import convert_g30_to_g60_urs `
         --hidden-import urs_io `
         --hidden-import base_templates `
-        --hidden-import aio.base_templates
+        --hidden-import aio.base_templates `
+        --hidden-import app_version
 
     if ($null -ne $prevPythonPath) {
         $env:PYTHONPATH = $prevPythonPath
@@ -122,6 +132,12 @@ try {
 
     Copy-Item -LiteralPath $StageExe -Destination $ReleaseExe -Force
     Write-Host "Built: $ReleaseExe"
+
+    $verifyScript = Join-Path $AioDir "verify-standalone.ps1"
+    if (Test-Path -LiteralPath $verifyScript) {
+        Write-Host "Verifying exe starts without python.exe on PATH..."
+        & $verifyScript -ExePath $ReleaseExe
+    }
 
     $shouldSign = $Sign -or (Test-SigningConfigured)
     if ($shouldSign) {

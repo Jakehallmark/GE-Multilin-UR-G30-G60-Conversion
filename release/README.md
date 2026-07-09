@@ -5,4 +5,6 @@ The prebuilt **G30-to-G60-Converter.exe** is not committed to git (GitHub file s
 - Download from [GitHub Releases](https://github.com/Jakehallmark/GE-Multilin-UR-G30-G60-Conversion/releases), or
 - Build locally: run `aio/build.ps1` (writes `release/G30-to-G60-Converter.exe`).
 
+No Python install is required on the target PC to run the exe.
+
 See the repository README for details.

@@ -38,6 +38,16 @@ jobs:
           }
           "tag=$tag" >> $env:GITHUB_OUTPUT
 
+      - name: Verify version.json matches tag
+        shell: pwsh
+        run: |
+          $tag = "${{ steps.version.outputs.tag }}" -replace '^v',''
+          $json = (Get-Content aio/version.json -Raw | ConvertFrom-Json).version
+          if ($json -ne $tag) {
+            throw "aio/version.json version ($json) does not match tag ($tag)"
+          }
+          Write-Host "Release version $json"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -78,6 +88,7 @@ jobs:
           $exe = "release/G30-to-G60-Converter.exe"
           if (-not (Test-Path $exe)) { throw "Missing $exe" }
           Write-Host "Built $exe ($((Get-Item $exe).Length) bytes)"
+          ./aio/verify-standalone.ps1 -ExePath $exe
 
       - name: Create GitHub Release with exe
         uses: softprops/action-gh-release@v2

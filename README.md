@@ -29,9 +29,9 @@ For cloud deployment, see [azure/README.md](azure/README.md).
 ## Quick start — GUI (recommended)
 
 1. Download **`G30-to-G60-Converter.exe`** from [GitHub Releases](https://github.com/Jakehallmark/GE-Multilin-UR-G30-G60-Conversion/releases) (recommended) or clone this repo and run `release/G30-to-G60-Converter.exe`.
-2. Run the exe — no Python install required.
-3. Select your G30 settings file, pick **target firmware** from the dropdown, and convert.
-4. Output goes to **`Desktop\G60_Conversion\`** as `<DeviceName> FW<version>.xml` and `_OR.html`.
+2. Run the exe — **no Python install required** (the exe bundles its own runtime).
+3. Select your G30 settings file, pick **target firmware**, and convert.
+4. Output goes to **`Desktop\G60_Conversion\`** (`.urs` for URS workflow, or `.xml` + `_OR.html` for XML workflow).
 
 ---
 
@@ -69,12 +69,21 @@ python convert_g30_to_g60.py "source.xml" "C:\Work\Converted"
 
 ## Requirements
 
-- **CLI:** Python 3.10+ — standard library only
-- **GUI:** Flet (`aio/requirements.txt`) — or use `release/G30-to-G60-Converter.exe`
+| Use case | Python on target PC |
+|----------|---------------------|
+| **`G30-to-G60-Converter.exe` (GUI)** | No — standalone exe |
+| **`Convert G30 to G60.bat` / CLI** | Yes — Python 3.10+ (standard library only) |
+| **Building the GUI from source** | Yes — Python 3.10+, Flet, PyInstaller |
+
 - **`bases/G60 Base*.xml`** must be present — one template per supported target firmware
 - G30 and G60 XML can be **UTF-8 or UTF-16 LE** (auto-detected)
+- Windows 10/11 64-bit for the GUI exe
 
 **Do not commit G30 source files** — they contain site-specific relay configuration.
+
+### GUI troubleshooting
+
+If the exe crashes on first launch with **`Access is denied`** under `C:\Users\<you>\.flet\client\`, that is a Flet cache permissions issue (not a missing Python install). Rebuild from the latest source or use a current GitHub Release — the app now extracts its desktop runtime to `%LOCALAPPDATA%\G30-to-G60-Converter\` instead.
 
 ---
 
@@ -115,13 +124,35 @@ Pushing a version tag runs [`.github/workflows/release.yml`](.github/workflows/r
 
 ### Publish a new version
 
+**Recommended** — one command bumps the version, tags, pushes, and builds the exe:
+
+```powershell
+.\aio\release.ps1
+```
+
+This updates `aio/version.json`, commits, creates a tag like `v1.0.4`, pushes to GitHub (which triggers CI to attach the exe to the Release), and runs a local build to `release/G30-to-G60-Converter.exe`.
+
+Options:
+
+```powershell
+.\aio\release.ps1 -Version 1.0.4    # explicit semver (next build number auto-increments)
+.\aio\release.ps1 -Bump minor         # bump minor instead of patch
+.\aio\release.ps1 -SkipPush           # commit + tag + build locally only
+.\aio\release.ps1 -SkipBuild          # tag/push only; CI builds the exe
+.\aio\release.ps1 -Sign               # Authenticode-sign the local build
+```
+
+Versioning: `aio/version.json` is the single source of truth. The Git tag matches `version` (e.g. `v1.0.4`). Windows exe **File version** uses four parts: `1.0.4.<build>` where `<build>` increments on rebuilds of the same release.
+
+Manual flow (if you prefer):
+
 ```powershell
 git add .
 git commit -m "Your changes"
 git push origin main
 
-git tag v1.0.3
-git push origin v1.0.3
+git tag v1.0.4
+git push origin v1.0.4
 ```
 
 When the Action finishes (green checkmark), open **Releases** — you should see `G30-to-G60-Converter.exe` as a downloadable asset (not just source zip/tar.gz).
