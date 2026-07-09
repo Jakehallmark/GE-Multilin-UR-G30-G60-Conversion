@@ -2,14 +2,9 @@
 # Requires: pip install -r aio/requirements.txt pyinstaller
 #
 #   C:\path\to\repo\aio\build.ps1
-#   C:\path\to\repo\aio\build.ps1 -Sign          # also Authenticode-sign (see CODE_SIGNING.md)
 #
 # Close G30-to-G60-Converter.exe before rebuilding — Windows locks the file
 # while it is running and PyInstaller cannot overwrite it.
-
-param(
-    [switch]$Sign
-)
 
 $ErrorActionPreference = "Stop"
 $AioDir = $PSScriptRoot
@@ -21,22 +16,7 @@ $ReleaseDir = Join-Path $RepoRoot "release"
 $ReleaseExe = Join-Path $ReleaseDir "G30-to-G60-Converter.exe"
 $StageDir = Join-Path $AioDir "dist"
 $StageExe = Join-Path $StageDir "G30-to-G60-Converter.exe"
-$SignScript = Join-Path $AioDir "sign.ps1"
-$SignConfig = Join-Path $AioDir "signing.local.ps1"
 $ExeName = "G30-to-G60-Converter"
-
-if (Test-Path -LiteralPath $SignConfig) {
-    Write-Host "Loading signing config from signing.local.ps1"
-    . $SignConfig
-}
-
-function Test-SigningConfigured {
-    return (
-        ($env:ARTIFACT_SIGNING_ENDPOINT -and $env:ARTIFACT_SIGNING_ACCOUNT -and $env:ARTIFACT_SIGNING_PROFILE) -or
-        $env:CODE_SIGN_PFX_PATH -or
-        $env:CODE_SIGN_CERT_THUMBPRINT
-    )
-}
 
 if (-not (Get-ChildItem -LiteralPath $BasesDir -Filter "G60 Base*.xml" -ErrorAction SilentlyContinue)) {
     throw "No G60 Base*.xml files in $BasesDir"
@@ -142,7 +122,8 @@ try {
         --hidden-import urs_io `
         --hidden-import base_templates `
         --hidden-import aio.base_templates `
-        --hidden-import app_version
+        --hidden-import app_version `
+        --hidden-import verify_conversion
 
     if ($null -ne $prevPythonPath) {
         $env:PYTHONPATH = $prevPythonPath
@@ -167,17 +148,11 @@ try {
         & $verifyScript -ExePath $ReleaseExe
     }
 
-    $shouldSign = $Sign -or (Test-SigningConfigured)
-    if ($shouldSign) {
-        if (-not (Test-SigningConfigured)) {
-            throw "Build -Sign was passed but no signing credentials are configured. See aio/CODE_SIGNING.md"
-        }
-        & $SignScript -FilePath $ReleaseExe
-    } else {
-        Write-Host ""
-        Write-Host "Note: exe is unsigned. Edge/SmartScreen will warn on SharePoint downloads."
-        Write-Host "      See aio/CODE_SIGNING.md to set up Authenticode signing."
-    }
+    $sha256 = (Get-FileHash -LiteralPath $ReleaseExe -Algorithm SHA256).Hash
+    Write-Host ""
+    Write-Host "SHA256 (local build only — CI release hash will differ):"
+    Write-Host "  $sha256"
+    Write-Host "For IT allowlisting, use the SHA256 on the GitHub Release page after tag push."
 }
 finally {
     Pop-Location

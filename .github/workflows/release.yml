@@ -60,28 +60,6 @@ jobs:
         shell: pwsh
         run: ./aio/build.ps1
 
-      # Optional: sign the release exe (requires secrets — see aio/CODE_SIGNING.md).
-      # - name: Azure login
-      #   if: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT != '' }}
-      #   uses: azure/login@v2
-      #   with:
-      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
-      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      #
-      # - name: Install signing tool
-      #   if: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT != '' }}
-      #   run: dotnet tool install -g --prerelease sign
-      #
-      # - name: Build and sign GUI exe
-      #   if: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT != '' }}
-      #   shell: pwsh
-      #   env:
-      #     ARTIFACT_SIGNING_ENDPOINT: ${{ secrets.ARTIFACT_SIGNING_ENDPOINT }}
-      #     ARTIFACT_SIGNING_ACCOUNT: ${{ secrets.ARTIFACT_SIGNING_ACCOUNT }}
-      #     ARTIFACT_SIGNING_PROFILE: ${{ secrets.ARTIFACT_SIGNING_PROFILE }}
-      #   run: ./aio/build.ps1 -Sign
-
       - name: Verify exe
         shell: pwsh
         run: |
@@ -90,14 +68,36 @@ jobs:
           Write-Host "Built $exe ($((Get-Item $exe).Length) bytes)"
           ./aio/verify-standalone.ps1 -ExePath $exe
 
+      - name: Generate release notes
+        shell: pwsh
+        run: ./aio/generate-release-notes.ps1 -BuiltInCi
+
+      - name: Publish SHA256 to workflow summary
+        shell: pwsh
+        run: |
+          $exe = "release/G30-to-G60-Converter.exe"
+          $sha = (Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash
+          $sizeMb = [math]::Round((Get-Item -LiteralPath $exe).Length / 1MB, 1)
+          Write-Host "SHA256 (BeyondTrust / Intune): $sha"
+          @"
+          ## G30-to-G60-Converter.exe
+
+          | Property | Value |
+          |----------|-------|
+          | Size | $sizeMb MB |
+          | SHA256 | ``$sha`` |
+          "@ | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding utf8 -Append
+
       - name: Create GitHub Release with exe
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
-          name: ${{ steps.version.outputs.tag }}
-          generate_release_notes: true
+          name: G30 → G60 Converter ${{ steps.version.outputs.tag }}
+          body_path: release/RELEASE_NOTES.md
+          generate_release_notes: false
           fail_on_unmatched_files: true
           files: |
             release/G30-to-G60-Converter.exe
+            docs/STRESS_TEST_REPORT.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

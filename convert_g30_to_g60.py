@@ -24,6 +24,8 @@ Usage:
   (g30_input required; output_dir defaults to ./Converted)
 """
 
+from __future__ import annotations
+
 import html as html_lib
 import re
 import xml.etree.ElementTree as ET
@@ -31,7 +33,10 @@ import sys
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
+
+if TYPE_CHECKING:
+    from verify_conversion import VerificationResult
 
 
 # ΓöÇΓöÇ Data structures ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
@@ -309,7 +314,7 @@ def validate_g30_settings_xml(path: Path) -> ET.Element:
             f"Unexpected relay model ({root.get('orderCode')}). Expected a G30 export."
         )
 
-    if not any(root.iter("Setting")):
+    if next(root.iter("Setting"), None) is None:
         raise ValueError(
             "No settings found in this XML file. It may be empty or not a settings export."
         )
@@ -1057,7 +1062,7 @@ def convert(
     g30_path: Path,
     g60_template_path: Path,
     output_dir: Path,
-) -> None:
+) -> VerificationResult:
     print(f"Reading G30      : {g30_path}")
     g30_root = validate_g30_settings_xml(g30_path)
     print(f"Reading G60      : {g60_template_path}")
@@ -1141,6 +1146,7 @@ def convert(
 
     transferred_records: list[TransferredRecord] = []
     g60_only_records: list[G60OnlyRecord] = []
+    transferred_keys: set[tuple[str, str, str, str, str]] = set()
 
     for setting in g60_root.iter("Setting"):
         key = (
@@ -1182,6 +1188,7 @@ def convert(
                 rec.range_warning = check_range(setting, rec.g30_value)
 
             transferred_records.append(rec)
+            transferred_keys.add(key)
         else:
             g60_only_records.append(G60OnlyRecord(
                 path=path,
@@ -1274,6 +1281,16 @@ def convert(
     with open(output_html_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"HTML written : {output_html_path.name}  ({output_html_path.stat().st_size:,} bytes)")
+
+    from verify_conversion import verify_xml_tree
+
+    verification: VerificationResult = verify_xml_tree(
+        g60_root,
+        output_xml_path,
+        transferred_keys=transferred_keys,
+    )
+    print(f"  Post-write verification : {verification.format_summary()}")
+    return verification
 
 
 # ΓöÇΓöÇ HTML report builder ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
@@ -1724,11 +1741,8 @@ function filterTable(input) {{
 if __name__ == "__main__":
     here = Path(__file__).parent
 
-    # Drag-and-drop or command-line usage:
+    # Developer CLI only — end users should run G30-to-G60-Converter.exe.
     #   python convert_g30_to_g60.py  <g30_source.xml>  [output_dir]
-    #
-    # When a file is dropped onto this script (or the .bat launcher), Windows
-    # passes its path as sys.argv[1]; the output directory is resolved automatically.
     if len(sys.argv) < 2:
         print("Usage:  python convert_g30_to_g60.py  <g30_source.xml>  [output_dir]")
         print(f"  G60 template : bases/G60 Base.xml (under script folder)")

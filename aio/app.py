@@ -35,7 +35,7 @@ def _bootstrap_flet_desktop_for_frozen() -> None:
         return
 
     try:
-        import flet_desktop.version as flet_desktop_version
+        import flet_desktop.version as flet_desktop_version  # type: ignore[import-untyped]
     except ImportError:
         return
 
@@ -81,13 +81,24 @@ else:
         sys.path.insert(0, str(APP_DIR))
 
 import flet as ft
+from typing import Any, cast
 
 from convert_g30_to_g60 import convert, validate_g30_settings_xml  # noqa: E402
 from convert_g30_to_g60_urs import convert_urs  # noqa: E402
+from verify_conversion import VerificationResult, write_verification_report  # noqa: E402
 from urs_io import parse_urs_file, resolve_urs_template  # noqa: E402
 
 from base_templates import BaseTemplateInfo, app_base_dir, discover_base_templates  # noqa: E402
 from app_version import get_version_info  # noqa: E402
+
+
+def _click(handler: Any) -> Any:
+    """Bridge handler types for Flet's invariant ControlEventHandler stubs."""
+    return handler
+
+
+def _controls(controls: list[Any]) -> list[ft.Control]:
+    return cast(list[ft.Control], controls)
 
 
 @dataclass(frozen=True)
@@ -188,17 +199,19 @@ class ConverterWizard:
         self._last_xml: Path | None = None
         self._last_html: Path | None = None
         self._last_urs: Path | None = None
+        self._verification: VerificationResult | None = None
+        self._verification_report_path: Path | None = None
         self.about_dialog = ft.AlertDialog(
             modal=True,
             title=ft.Text("About G30 → G60 Converter"),
-            actions=[ft.TextButton(content="Close", on_click=self._close_about)],
+            actions=_controls([ft.TextButton(content="Close", on_click=_click(self._close_about))]),
             actions_alignment=ft.MainAxisAlignment.END,
         )
 
         self.content_area = ft.Container(expand=True)
         self.header_area = ft.Container()
-        self.next_btn = ft.FilledButton(content="Next", on_click=self._on_next)
-        self.back_btn = ft.OutlinedButton(content="Back", on_click=self._on_back)
+        self.next_btn = ft.FilledButton(content="Next", on_click=_click(self._on_next))
+        self.back_btn = ft.OutlinedButton(content="Back", on_click=_click(self._on_back))
         self.step_row = ft.Row(alignment=ft.MainAxisAlignment.CENTER, spacing=8)
 
         self._configure_page()
@@ -207,19 +220,27 @@ class ConverterWizard:
 
     @property
     def _pal(self) -> Palette:
-        if self.page.theme_mode == ft.ThemeMode.DARK:
-            return DARK_PALETTE
-        return LIGHT_PALETTE
+        return DARK_PALETTE if self._is_dark_effective() else LIGHT_PALETTE
+
+    def _is_dark_effective(self) -> bool:
+        mode = self.page.theme_mode
+        if mode == ft.ThemeMode.DARK:
+            return True
+        if mode == ft.ThemeMode.LIGHT:
+            return False
+        brightness = getattr(self.page, "platform_brightness", ft.Brightness.LIGHT)
+        return brightness == ft.Brightness.DARK
 
     def _configure_page(self) -> None:
         info = get_version_info()
         self.page.title = f"G30 → G60 Converter {info.version}"
         self.page.padding = 0
-        self.page.theme_mode = ft.ThemeMode.LIGHT
-        self.page.window.width = 760
-        self.page.window.height = 640
-        self.page.window.min_width = 680
-        self.page.window.min_height = 560
+        self.page.theme_mode = ft.ThemeMode.SYSTEM
+        self.page.window.width = 800
+        self.page.window.height = 820
+        self.page.window.min_width = 700
+        self.page.window.min_height = 680
+        self.page.on_platform_brightness_change = self._on_platform_brightness_change
         self._apply_theme()
 
     def _apply_theme(self) -> None:
@@ -228,11 +249,15 @@ class ConverterWizard:
         self.page.theme = ft.Theme(font_family="Segoe UI", color_scheme_seed=pal.accent)
         self.page.dark_theme = ft.Theme(font_family="Segoe UI", color_scheme_seed=pal.accent)
 
+    def _on_platform_brightness_change(self, _event: ft.PlatformBrightnessChangeEvent) -> None:
+        if self.page.theme_mode != ft.ThemeMode.SYSTEM:
+            return
+        self._apply_theme()
+        self._render()
+
     async def _toggle_theme(self, _event: ft.ControlEvent) -> None:
         self.page.theme_mode = (
-            ft.ThemeMode.DARK
-            if self.page.theme_mode == ft.ThemeMode.LIGHT
-            else ft.ThemeMode.LIGHT
+            ft.ThemeMode.LIGHT if self._is_dark_effective() else ft.ThemeMode.DARK
         )
         self._apply_theme()
         self._render()
@@ -294,27 +319,27 @@ class ConverterWizard:
         if not self.page.controls:
             body = ft.Container(
                 expand=True,
-                padding=ft.Padding.symmetric(horizontal=28, vertical=20),
+                padding=ft.Padding.symmetric(horizontal=28, vertical=16),
                 content=ft.Column(
                     expand=True,
-                    spacing=16,
-                    controls=[
+                    spacing=12,
+                    controls=_controls([
                         self.header_area,
                         ft.Divider(height=1, color=self._pal.border),
                         self.step_row,
                         self.content_area,
                         ft.Row(
                             alignment=ft.MainAxisAlignment.END,
-                            controls=[self.back_btn, self.next_btn],
+                            controls=_controls([self.back_btn, self.next_btn]),
                         ),
-                    ],
+                    ]),
                 ),
             )
             self.page.add(
                 ft.Column(
                     expand=True,
                     spacing=0,
-                    controls=[body],
+                    controls=_controls([body]),
                 )
             )
         else:
@@ -433,7 +458,7 @@ class ConverterWizard:
             content=ft.Row(
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 vertical_alignment=ft.CrossAxisAlignment.START,
-                controls=[
+                controls=_controls([
                     ft.Column(
                         spacing=2,
                         expand=True,
@@ -453,22 +478,24 @@ class ConverterWizard:
                     ),
                     ft.Row(
                         spacing=4,
-                        controls=[
+                        controls=_controls([
                             ft.IconButton(
                                 icon=ft.Icons.DARK_MODE
-                                if self.page.theme_mode == ft.ThemeMode.LIGHT
+                                if not self._is_dark_effective()
                                 else ft.Icons.LIGHT_MODE,
                                 icon_size=20,
-                                tooltip="Toggle dark mode",
+                                tooltip="Switch to dark mode"
+                                if not self._is_dark_effective()
+                                else "Switch to light mode",
                                 style=ft.ButtonStyle(color=self._pal.dim),
-                                on_click=self._toggle_theme,
+                                on_click=_click(self._toggle_theme),
                             ),
                             ft.IconButton(
                                 icon=ft.Icons.INFO_OUTLINE,
                                 icon_size=20,
                                 tooltip="About",
                                 style=ft.ButtonStyle(color=self._pal.dim),
-                                on_click=self._show_about,
+                                on_click=_click(self._show_about),
                             ),
                             ft.Container(
                                 bgcolor=self._pal.step_chip_bg,
@@ -481,9 +508,9 @@ class ConverterWizard:
                                     weight=ft.FontWeight.W_600,
                                 ),
                             ),
-                        ],
+                        ]),
                     ),
-                ],
+                ]),
             ),
         )
 
@@ -519,6 +546,14 @@ class ConverterWizard:
         self._last_html = None
         self._last_urs = None
         self._render()
+
+    def _step_column(self, controls: list[ft.Control], *, scroll: bool = True) -> ft.Column:
+        return ft.Column(
+            spacing=12,
+            expand=True,
+            scroll=ft.ScrollMode.AUTO if scroll else ft.ScrollMode.HIDDEN,
+            controls=controls,
+        )
 
     def _card(self, content: ft.Control, *, padding: int = 20) -> ft.Container:
         return ft.Container(
@@ -575,15 +610,49 @@ class ConverterWizard:
             description: str,
             badge: str,
             recommended: bool = False,
+            fw_note: str = "",
         ) -> ft.Container:
             selected = self.format_mode == mode
             border_color = self._pal.accent if selected else self._pal.border
             bg = self._pal.selected_bg if selected else self._pal.card
+            badge_row_controls: list[ft.Control] = [
+                ft.Text(
+                    title,
+                    size=15,
+                    weight=ft.FontWeight.W_600,
+                    color=self._pal.text,
+                ),
+                ft.Container(
+                    bgcolor=self._pal.badge_accent_bg if recommended else self._pal.badge_muted_bg,
+                    border_radius=4,
+                    padding=ft.Padding.symmetric(horizontal=8, vertical=2),
+                    content=ft.Text(
+                        badge,
+                        size=10,
+                        weight=ft.FontWeight.W_700,
+                        color=self._pal.accent if recommended else self._pal.dim,
+                    ),
+                ),
+            ]
+            if fw_note:
+                badge_row_controls.append(
+                    ft.Container(
+                        bgcolor=self._pal.step_chip_bg,
+                        border_radius=4,
+                        padding=ft.Padding.symmetric(horizontal=8, vertical=2),
+                        content=ft.Text(
+                            fw_note,
+                            size=10,
+                            weight=ft.FontWeight.W_600,
+                            color=self._pal.dim,
+                        ),
+                    )
+                )
             return ft.Container(
                 border=ft.Border.all(2 if selected else 1, border_color),
                 border_radius=8,
                 bgcolor=bg,
-                padding=16,
+                padding=14,
                 on_click=lambda _e, m=mode: self._set_format_mode(m),
                 content=ft.Row(
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -593,26 +662,9 @@ class ConverterWizard:
                             expand=True,
                             controls=[
                                 ft.Row(
-                                    controls=[
-                                        ft.Text(
-                                            title,
-                                            size=15,
-                                            weight=ft.FontWeight.W_600,
-                                            color=self._pal.text,
-                                        ),
-                                        ft.Container(
-                                            bgcolor=self._pal.badge_accent_bg if recommended else self._pal.badge_muted_bg,
-                                            border_radius=4,
-                                            padding=ft.Padding.symmetric(horizontal=8, vertical=2),
-                                            content=ft.Text(
-                                                badge,
-                                                size=10,
-                                                weight=ft.FontWeight.W_700,
-                                                color=self._pal.accent if recommended else self._pal.dim,
-                                            ),
-                                        ),
-                                    ],
+                                    controls=badge_row_controls,
                                     spacing=8,
+                                    wrap=True,
                                 ),
                                 ft.Text(description, size=13, color=self._pal.dim),
                             ],
@@ -625,41 +677,66 @@ class ConverterWizard:
                 ),
             )
 
-        return ft.Column(
-            scroll=ft.ScrollMode.AUTO,
-            spacing=16,
-            controls=[
+        return self._step_column(
+            [
                 self._section_title(
                     "Welcome",
                     "This wizard walks you through converting a G30 relay export into G60 format.",
                 ),
                 self._card(
                     ft.Column(
-                        spacing=12,
+                        spacing=10,
                         controls=[
                             ft.Text("What are you converting?", size=14, weight=ft.FontWeight.W_600),
                             format_card(
                                 "urs",
                                 "URS device export",
-                                "Recommended. Produces a .urs file ready to import in EnerVista on the G60.",
+                                "Produces a .urs file ready to import in EnerVista on the G60.",
                                 "Recommended",
                                 recommended=True,
+                                fw_note="G30 FW 7.3x+",
                             ),
                             format_card(
                                 "xml",
                                 "XML settings export",
-                                "Legacy path. Produces G60 .xml plus an HTML conversion report for review.",
+                                "Produces G60 .xml plus an HTML conversion report for review.",
                                 "Advanced",
+                                fw_note="G30 FW pre-7.3x",
+                            ),
+                            ft.Container(
+                                bgcolor=self._pal.step_chip_bg,
+                                border_radius=8,
+                                padding=10,
+                                content=ft.Row(
+                                    spacing=8,
+                                    vertical_alignment=ft.CrossAxisAlignment.START,
+                                    controls=[
+                                        ft.Icon(ft.Icons.INFO_OUTLINE, size=18, color=self._pal.dim),
+                                        ft.Text(
+                                            "Use URS for G30 firmware 7.3x and newer. For older firmware "
+                                            "(5.x–7.2x), prefer the XML settings export — User Display "
+                                            "Pages are mapped more reliably.",
+                                            size=12,
+                                            color=self._pal.dim,
+                                            expand=True,
+                                        ),
+                                    ],
+                                ),
                             ),
                         ],
-                    )
+                    ),
+                    padding=16,
                 ),
                 self._card(
                     ft.Column(
-                        spacing=8,
+                        spacing=6,
                         controls=[
                             ft.Text("Before you begin", size=14, weight=ft.FontWeight.W_600),
-                            ft.Text("1. Export your G30 settings from EnerVista as a .urs file.", size=13, color=self._pal.dim),
+                            ft.Text(
+                                "1. Export your G30 settings from EnerVista (.urs for 7.3x+, or XML for older firmware).",
+                                size=13,
+                                color=self._pal.dim,
+                            ),
                             ft.Text(
                                 "2. Know the target G60 firmware version you will load the file onto.",
                                 size=13,
@@ -675,6 +752,7 @@ class ConverterWizard:
                     padding=16,
                 ),
             ],
+            scroll=False,
         )
 
     def _set_format_mode(self, mode: str) -> None:
@@ -755,7 +833,7 @@ class ConverterWizard:
                     border_radius=8,
                     bgcolor=drop_bg,
                     padding=28,
-                    on_click=browse,
+                    on_click=_click(browse),
                     content=ft.Column(
                         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                         spacing=10,
@@ -793,9 +871,10 @@ class ConverterWizard:
 
             status_icon = ft.Icons.CHECK_CIRCLE if urs_ok else ft.Icons.WARNING_AMBER_ROUNDED
             status_color = self._pal.ok if urs_ok else self._pal.warn
+            urs_path = template.urs_path
             status_text = (
-                f"URS base available ({template.urs_path.name})"
-                if urs_ok
+                f"URS base available ({urs_path.name})"
+                if urs_ok and urs_path is not None
                 else "No paired .urs base — URS conversion unavailable"
             )
 
@@ -883,13 +962,13 @@ class ConverterWizard:
         return ft.Column(
             scroll=ft.ScrollMode.AUTO,
             spacing=16,
-            controls=[
+            controls=_controls([
                 self._section_title(
                     "Output location",
                     "Choose where the converted file should be saved.",
                 ),
                 ft.Row(
-                    controls=[
+                    controls=_controls([
                         ft.TextField(
                             value=self.output_dir,
                             expand=True,
@@ -897,8 +976,8 @@ class ConverterWizard:
                             border_color=self._pal.border,
                             on_change=lambda e: None,
                         ),
-                        ft.OutlinedButton(content="Browse…", on_click=browse_output),
-                    ],
+                        ft.OutlinedButton(content="Browse…", on_click=_click(browse_output)),
+                    ]),
                 ),
                 self._card(
                     ft.Column(
@@ -912,7 +991,7 @@ class ConverterWizard:
                         ],
                     ),
                 ),
-            ],
+            ]),
         )
 
     def _review_row(self, label: str, value: str) -> ft.Row:
@@ -943,7 +1022,7 @@ class ConverterWizard:
             return ft.Column(
                 scroll=ft.ScrollMode.AUTO,
                 spacing=16,
-                controls=[
+                controls=_controls([
                     ft.Container(
                         alignment=ft.Alignment.CENTER,
                         content=ft.Column(
@@ -958,14 +1037,14 @@ class ConverterWizard:
                     ),
                     self._log_expansion(),
                     ft.Row(
-                        controls=[
+                        controls=_controls([
                             ft.OutlinedButton(
                                 content="Back to output",
-                                on_click=self._back_from_failure,
+                                on_click=_click(self._back_from_failure),
                             ),
-                        ],
+                        ]),
                     ),
-                ],
+                ]),
             )
 
         result_name = (
@@ -993,11 +1072,19 @@ class ConverterWizard:
                     on_click=lambda _e: self._open_report(),
                 )
             )
+        if self._verification_report_path and self._verification_report_path.is_file():
+            actions.append(
+                ft.OutlinedButton(
+                    content="Open verification report",
+                    on_click=lambda _e: self._open_verification_report(),
+                )
+            )
 
+        verify_card = self._build_verification_card()
         return ft.Column(
             scroll=ft.ScrollMode.AUTO,
             spacing=16,
-            controls=[
+            controls=_controls([
                 ft.Container(
                     alignment=ft.Alignment.CENTER,
                     content=ft.Column(
@@ -1011,6 +1098,7 @@ class ConverterWizard:
                         ],
                     ),
                 ),
+                *([verify_card] if verify_card is not None else []),
                 self._card(
                     ft.Column(
                         spacing=8,
@@ -1039,8 +1127,167 @@ class ConverterWizard:
                 ),
                 ft.Row(wrap=True, spacing=10, controls=actions),
                 self._log_expansion(),
-            ],
+            ]),
         )
+
+    def _build_verification_card(self) -> ft.Control | None:
+        verification = self._verification
+        if verification is None:
+            return None
+
+        if verification.ok:
+            return self._card(
+                ft.Row(
+                    spacing=10,
+                    controls=[
+                        ft.Icon(ft.Icons.VERIFIED, color=self._pal.ok),
+                        ft.Column(
+                            expand=True,
+                            spacing=4,
+                            controls=[
+                                ft.Text(
+                                    "Output verification passed",
+                                    size=14,
+                                    weight=ft.FontWeight.W_600,
+                                    color=self._pal.ok,
+                                ),
+                                ft.Text(
+                                    verification.format_short(),
+                                    size=13,
+                                    color=self._pal.dim,
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+                padding=14,
+            )
+
+        report_buttons: list[ft.Control] = [
+            ft.OutlinedButton(
+                content="Save verification report",
+                icon=ft.Icons.SAVE_ALT,
+                on_click=_click(self._save_verification_report),
+            ),
+        ]
+        if self._verification_report_path and self._verification_report_path.is_file():
+            report_buttons.append(
+                ft.OutlinedButton(
+                    content="Open saved report",
+                    icon=ft.Icons.DESCRIPTION_OUTLINED,
+                    on_click=_click(self._open_verification_report),
+                )
+            )
+
+        return self._card(
+            ft.Column(
+                spacing=8,
+                controls=[
+                    ft.Row(
+                        spacing=10,
+                        controls=[
+                            ft.Icon(ft.Icons.WARNING_AMBER_ROUNDED, color=self._pal.warn),
+                            ft.Column(
+                                expand=True,
+                                spacing=4,
+                                controls=[
+                                    ft.Text(
+                                        "Output verification found mismatches",
+                                        size=14,
+                                        weight=ft.FontWeight.W_600,
+                                        color=self._pal.warn,
+                                    ),
+                                    ft.Text(
+                                        verification.format_short(),
+                                        size=13,
+                                        color=self._pal.dim,
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                    ft.Text(
+                        "Some written values differ from what the converter expected. "
+                        "Expand the list below or save a report before importing to the relay.",
+                        size=13,
+                        color=self._pal.dim,
+                    ),
+                    ft.ExpansionTile(
+                        title=ft.Text(
+                            f"Show all {len(verification.mismatches):,} mismatch(es)",
+                            size=13,
+                            color=self._pal.text,
+                        ),
+                        controls=[
+                            ft.Container(
+                                bgcolor=self._pal.log_bg,
+                                border_radius=6,
+                                padding=12,
+                                content=ft.Column(
+                                    scroll=ft.ScrollMode.AUTO,
+                                    height=220,
+                                    controls=[
+                                        ft.Text(
+                                            verification.format_mismatch_details(),
+                                            font_family="Consolas",
+                                            size=11,
+                                            color=self._pal.text,
+                                            selectable=True,
+                                        ),
+                                    ],
+                                ),
+                            ),
+                        ],
+                    ),
+                    ft.Row(wrap=True, spacing=10, controls=_controls(report_buttons)),
+                ],
+            ),
+            padding=14,
+        )
+
+    def _converted_output_path(self) -> Path | None:
+        if self._last_urs and self._last_urs.is_file():
+            return self._last_urs
+        if self._last_xml and self._last_xml.is_file():
+            return self._last_xml
+        return None
+
+    def _verification_template_label(self) -> str:
+        try:
+            return self._selected_template().label
+        except ValueError:
+            return ""
+
+    def _show_snackbar(self, message: str) -> None:
+        self.page.show_dialog(ft.SnackBar(content=ft.Text(message)))
+
+    def _save_verification_report(self, _event: ft.ControlEvent) -> None:
+        verification = self._verification
+        output_path = self._converted_output_path()
+        if verification is None or output_path is None:
+            self._show_snackbar("Nothing to save — run a conversion first.")
+            return
+        if verification.ok:
+            self._show_snackbar("Verification passed — no mismatch report needed.")
+            return
+        try:
+            source_path = Path(self.g30_path) if self.g30_path.strip() else None
+            self._verification_report_path = write_verification_report(
+                verification,
+                output_path,
+                source_path=source_path,
+                template_label=self._verification_template_label(),
+            )
+        except OSError as exc:
+            self._show_snackbar(f"Could not save report: {exc}")
+            return
+        self._show_snackbar(f"Saved {self._verification_report_path.name}")
+        self._render()
+
+    def _open_verification_report(self, _event: ft.ControlEvent | None = None) -> None:
+        path = self._verification_report_path
+        if path and path.is_file():
+            os.startfile(path)
 
     def _log_expansion(self) -> ft.ExpansionTile:
         return ft.ExpansionTile(
@@ -1076,6 +1323,8 @@ class ConverterWizard:
         self._last_xml = None
         self._last_html = None
         self._last_urs = None
+        self._verification = None
+        self._verification_report_path = None
         self._render()
 
         if self.format_mode == "urs":
@@ -1091,13 +1340,14 @@ class ConverterWizard:
         old_stdout = sys.stdout
         sys.stdout = buffer
         error: Exception | None = None
+        verification: VerificationResult | None = None
         try:
-            convert(g30, template, out_dir)
+            verification = convert(g30, template, out_dir)
         except Exception as exc:
             error = exc
         finally:
             sys.stdout = old_stdout
-        self.page.run_task(self._xml_convert_done, out_dir, buffer.getvalue(), error)
+        self.page.run_task(self._xml_convert_done, out_dir, buffer.getvalue(), error, verification)
 
     def _run_urs_convert(self, g30: Path, template: BaseTemplateInfo, out_dir: Path) -> None:
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -1106,20 +1356,31 @@ class ConverterWizard:
         sys.stdout = buffer
         error: Exception | None = None
         output_path: Path | None = None
+        verification: VerificationResult | None = None
         try:
             urs_template = resolve_urs_template(template.path, app_base_dir())
-            output_path = convert_urs(g30, urs_template, template.path, out_dir)
+            result = convert_urs(g30, urs_template, template.path, out_dir)
+            output_path = result.output_path
+            verification = result.verification
         except Exception as exc:
             error = exc
         finally:
             sys.stdout = old_stdout
-        self.page.run_task(self._urs_convert_done, out_dir, buffer.getvalue(), error, output_path)
+        self.page.run_task(
+            self._urs_convert_done,
+            out_dir,
+            buffer.getvalue(),
+            error,
+            output_path,
+            verification,
+        )
 
     async def _xml_convert_done(
         self,
         out_dir: Path,
         log_text: str,
         error: Exception | None,
+        verification: VerificationResult | None,
     ) -> None:
         self.busy = False
         self.log_text = log_text
@@ -1132,6 +1393,7 @@ class ConverterWizard:
         html_files = sorted(out_dir.glob("*_OR.html"), key=lambda p: p.stat().st_mtime, reverse=True)
         self._last_xml = xml_files[0] if xml_files else None
         self._last_html = html_files[0] if html_files else None
+        self._verification = verification
         self._render()
 
     async def _urs_convert_done(
@@ -1140,6 +1402,7 @@ class ConverterWizard:
         log_text: str,
         error: Exception | None,
         output_path: Path | None,
+        verification: VerificationResult | None,
     ) -> None:
         self.busy = False
         self.log_text = log_text
@@ -1152,6 +1415,7 @@ class ConverterWizard:
         if self._last_urs is None or not self._last_urs.is_file():
             urs_files = sorted(out_dir.glob("*.urs"), key=lambda p: p.stat().st_mtime, reverse=True)
             self._last_urs = urs_files[0] if urs_files else None
+        self._verification = verification
         self._render()
 
     def _open_output(self) -> None:
@@ -1175,7 +1439,7 @@ async def main(page: ft.Page) -> None:
 
 
 def main_entry() -> None:
-    ft.run(main)
+    ft.run(main)  # type: ignore[reportUnknownMemberType]
 
 
 if __name__ == "__main__":

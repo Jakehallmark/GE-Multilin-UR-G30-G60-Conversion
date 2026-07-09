@@ -62,6 +62,7 @@ from urs_io import (
     update_header_for_output,
     write_urs_file,
 )
+from verify_conversion import VerificationResult, verify_urs_rows
 
 _CODED_VALUE_RE = re.compile(r"^(\d+)\s+\((.+)\)\s*$", re.DOTALL)
 
@@ -72,6 +73,12 @@ class UrsConversionStats:
   kept_default: int = 0
   dropped_g30: int = 0
   auto_adjusted: int = 0
+
+
+@dataclass
+class UrsConvertResult:
+    output_path: Path
+    verification: VerificationResult
 
 
 
@@ -285,11 +292,11 @@ def convert_urs(
     *,
     g30_xml_path: Optional[Path] = None,
     app_dir: Optional[Path] = None,
-) -> Path:
+) -> UrsConvertResult:
     """
     Convert a G30 .urs file to G60 format.
 
-    Returns the path to the written output .urs file.
+    Returns the written output path and a post-write verification report.
     """
     root_dir = app_dir or app_root_dir()
 
@@ -385,6 +392,7 @@ def convert_urs(
 
     stats = UrsConversionStats()
     output_rows: list[UrsDataRow] = []
+    transferred_keys: set[tuple[str, str, str, str]] = set()
 
     for tpl_row in g60_urs_tpl.data_rows:
         key = tpl_row.key
@@ -438,6 +446,7 @@ def convert_urs(
                 )
             )
             stats.transferred += 1
+            transferred_keys.add(key)
             continue
 
         needs_remap = setting_type == "Flex" or (
@@ -456,6 +465,7 @@ def convert_urs(
                 )
             )
             stats.transferred += 1
+            transferred_keys.add(key)
             continue
 
         g30_el = make_setting_element(
@@ -495,6 +505,7 @@ def convert_urs(
             )
         )
         stats.transferred += 1
+        transferred_keys.add(key)
 
     g60_keys = {row.key for row in g60_urs_tpl.data_rows}
     stats.dropped_g30 = sum(1 for key in g30_lookup if key not in g60_keys)
@@ -520,6 +531,12 @@ def convert_urs(
     output_dir.mkdir(parents=True, exist_ok=True)
     write_urs_file(output_urs, output_path)
 
+    verification = verify_urs_rows(
+        output_rows,
+        output_path,
+        transferred_keys=transferred_keys,
+    )
+
     sep = "-" * 60
     print(f"\n{sep}")
     print(f"  G30 DATA rows (source)          : {len(g30_urs.data_rows)}")
@@ -531,8 +548,9 @@ def convert_urs(
     print(f"  G30-only (not in G60 template)    : {stats.dropped_g30}")
     print(f"{sep}\n")
     print(f"URS written : {output_path.name}  ({output_path.stat().st_size:,} bytes)")
+    print(f"  Post-write verification : {verification.format_summary()}")
 
-    return output_path
+    return UrsConvertResult(output_path=output_path, verification=verification)
 
 
 def main(argv: Optional[list[str]] = None) -> int:

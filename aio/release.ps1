@@ -5,7 +5,6 @@
 #   .\aio\release.ps1 -Bump minor         # bump minor instead of patch
 #   .\aio\release.ps1 -SkipPush           # commit + tag + build locally only
 #   .\aio\release.ps1 -SkipBuild          # commit/tag/push only (CI builds the exe)
-#   .\aio\release.ps1 -Sign               # Authenticode-sign after local build
 #
 # Stages all tracked/untracked files (respecting .gitignore) together with the
 # version bump — not just aio/version.json.
@@ -16,8 +15,7 @@ param(
     [string]$Bump = "patch",
     [string]$Message,
     [switch]$SkipPush,
-    [switch]$SkipBuild,
-    [switch]$Sign
+    [switch]$SkipBuild
 )
 
 $ErrorActionPreference = "Stop"
@@ -128,11 +126,7 @@ git -C $RepoRoot commit -m $commitMessage
 git -C $RepoRoot tag -a $AppTag -m "Release $AppDisplayVersion"
 
 if (-not $SkipBuild) {
-    if ($Sign) {
-        & $BuildScript -Sign
-    } else {
-        & $BuildScript
-    }
+    & $BuildScript
 } else {
     Write-Host "Skipped local build (-SkipBuild). GitHub Actions will build on tag push."
 }
@@ -153,4 +147,6 @@ Write-Host ""
 Write-Host "Done."
 Write-Host "  Tag:       $AppTag"
 Write-Host "  Exe:       $(Join-Path $RepoRoot 'release\G30-to-G60-Converter.exe')"
-Write-Host "  GitHub CI will also attach the exe to the Release for $AppTag."
+Write-Host "  GitHub CI will build the exe, compute SHA256 from that CI build,"
+Write-Host "  generate release notes, and publish the Release for $AppTag."
+Write-Host "  Use the SHA256 on the GitHub Release page for IT allowlisting (not a local build hash)."

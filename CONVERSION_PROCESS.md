@@ -56,7 +56,7 @@ The same principle applies to the URS pipeline: a blank **`G60 Base.urs`** templ
 | Input | Purpose |
 |-------|---------|
 | G30 source XML | Site-specific configuration to convert |
-| `bases/G60 Base.xml` | Blank G60 template from target firmware (default for CLI / Azure) |
+| `bases/G60 Base.xml` | Blank G60 template from target firmware (default) |
 
 | Output | Purpose |
 |--------|---------|
@@ -84,7 +84,7 @@ The same principle applies to the URS pipeline: a blank **`G60 Base.urs`** templ
 
 ```mermaid
 flowchart TD
-    A[CLI / Drag-and-drop] --> B[parse_xml G30 + G60 Base]
+    A[G30-to-G60-Converter.exe or dev CLI] --> B[parse_xml G30 + G60 Base]
     B --> C[Derive output filename]
     C --> D[build_lookup + build_path_map]
     D --> E[Build remapping dictionaries]
@@ -121,7 +121,7 @@ if __name__ == "__main__":
     convert(g30_path, g60_template_path, output_dir)
 ```
 
-**Why:** The G60 template path is fixed relative to the script so drag-and-drop usage (via `Convert G30 to G60.bat`) never requires the operator to specify it. Default output goes to `Converted/` to avoid overwriting inputs.
+**Why:** The G60 template path is fixed relative to the script so CLI runs never require the operator to specify it. Default output goes to `Converted/` to avoid overwriting inputs. End users should use **`G30-to-G60-Converter.exe`** instead.
 
 `select_base_template()` resolves `bases/G60 Base.xml` under the script directory and raises if missing — there is no auto-detection because the template must match the target relay firmware exactly.
 
@@ -868,7 +868,7 @@ write_urs_file(output_urs, output_path)
 
 ### What the URS pipeline does *not* (yet) produce
 
-The URS flow prints a console summary (transferred / kept-default / auto-adjusted / G30-only dropped) but does **not** generate an HTML report. The register-level audit trail remains a feature of the XML pipeline. `compare_urs_structure()` in `urs_io.py` is available for round-trip structural verification (URPC/DATA counts, key sets, value mismatches).
+The URS flow prints a console summary (transferred / kept-default / auto-adjusted / G30-only dropped) and runs **post-write verification** — the output file is re-read and compared register-by-register against the expected values (transferred setpoints and G60 template defaults). Decimal precision drift and coded-value display text differences are tolerated; unexpected value changes are flagged. The XML pipeline performs the same check after writing the output `.xml`. `compare_urs_structure()` in `urs_io.py` remains available for ad-hoc round-trip structural checks.
 
 ### URS console summary
 
@@ -994,10 +994,8 @@ class G60OnlyRecord: ...     # G60 setting with no G30 source
 | `urs_io.py` | `.urs` parse/serialize, template pairing, header/tail handling |
 | `bases/G60 Base*.xml` | G60 XML templates — setting types + code tables |
 | `bases/G60 Base*.urs` | G60 URS templates — register map + EnerVista structure |
-| `aio/app.py` | AiO desktop app; URS conversion is the default workflow |
+| `aio/app.py` | Desktop GUI (primary distribution); URS conversion is the default workflow |
 | `aio/base_templates.py` | Firmware base discovery / selection (`has_urs_pair`) |
-| `Convert G30 to G60.bat` | Windows drag-and-drop launcher |
-| `azure/function_app/convert_g30_to_g60.py` | Copy deployed to Azure Function (sync via `azure/sync-from-root.ps1`) |
 | `README.md` | Operator quick-start guide |
 
 ---

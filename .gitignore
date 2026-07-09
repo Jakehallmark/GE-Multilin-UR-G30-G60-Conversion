@@ -16,10 +16,6 @@ firmware/**/*.vrc
 _tmp_signal_probe/
 _tmp_firmware_list.txt
 
-# Azure function_app copies are synced at deploy time (not stored in git)
-azure/function_app/G60 Base*.xml
-azure/function_app/bases/
-
 # Conversion reports and other HTML output
 *.html
 
@@ -38,7 +34,6 @@ aio/build/
 aio/dist/
 aio/pack-staging/
 aio/*.spec
-aio/signing.local.ps1
 
 # Python
 __pycache__/
@@ -49,10 +44,6 @@ __pycache__/
 venv/
 .python_packages/
 
-# Azure Function local secrets and deploy zips
-azure/function_app/local.settings.json
-azure/*.zip
-
 # OS / editor
 .DS_Store
 Thumbs.db
@@ -62,10 +53,10 @@ desktop.ini
 /.vscode/
 .vscode/
 
-# Optional local docs assets (PDF briefs, etc.)
-/docs/
-docs/
-aio/CODE_SIGNING.md
+# Optional local docs assets (PDF briefs, etc.) — keep committed validation report
+docs/*
+!docs/STRESS_TEST_REPORT.md
 
 # Prebuilt GUI installer (too large for git; see GitHub Releases)
 release/*.exe
+release/RELEASE_NOTES.md
