@@ -1,13 +1,14 @@
-# Bump version, commit, tag, push to GitHub, and build the release exe.
+# Bump version, commit all pending changes, tag, push to GitHub, and build the exe.
 #
-#   .\aio\release.ps1                     # bump patch (e.g. 1.0.4 -> 1.0.5), push tag, build
+#   .\aio\release.ps1                     # bump patch, commit everything, push tag, build
 #   .\aio\release.ps1 -Version 1.1.0      # explicit semver
 #   .\aio\release.ps1 -Bump minor         # bump minor instead of patch
-#   .\aio\release.ps1 -SkipPush           # update version + build locally only
-#   .\aio\release.ps1 -SkipBuild          # tag/push only (CI builds the exe on GitHub)
+#   .\aio\release.ps1 -SkipPush           # commit + tag + build locally only
+#   .\aio\release.ps1 -SkipBuild          # commit/tag/push only (CI builds the exe)
 #   .\aio\release.ps1 -Sign               # Authenticode-sign after local build
 #
-# Requires: git, network access for push, pip deps for build.ps1
+# Stages all tracked/untracked files (respecting .gitignore) together with the
+# version bump — not just aio/version.json.
 
 param(
     [string]$Version,
@@ -101,23 +102,27 @@ $versionPayload = [ordered]@{
 Write-Host "Release version: $AppDisplayVersion"
 Write-Host "Git tag:         $AppTag"
 
-$status = git -C $RepoRoot status --porcelain
-if ($status) {
-    $other = $status | Where-Object { $_ -notmatch "version\.json" }
-    if ($other) {
-        Write-Warning @"
-Other uncommitted changes will NOT be included in the release commit:
-$other
-Commit them separately before running release.ps1, or stash them.
-"@
-    }
+$pending = git -C $RepoRoot status --porcelain
+if ($pending) {
     Write-Host ""
-    Write-Host "Working tree:"
-    Write-Host $status
+    Write-Host "Staging pending changes for release commit:"
+    Write-Host $pending
+    git -C $RepoRoot add -A
+} else {
+    Write-Host ""
+    Write-Host "No pending file changes besides version.json."
+    git -C $RepoRoot add $VersionFile
 }
 
+$staged = @(git -C $RepoRoot diff --cached --name-only)
+if ($staged.Count -eq 0) {
+    throw "Nothing staged to commit."
+}
+Write-Host ""
+Write-Host "Files in release commit:"
+$staged | ForEach-Object { Write-Host "  $_" }
+
 $commitMessage = if ($Message) { $Message } else { "Release $AppTag (build $AppBuild)" }
-git -C $RepoRoot add $VersionFile
 git -C $RepoRoot commit -m $commitMessage
 
 git -C $RepoRoot tag -a $AppTag -m "Release $AppDisplayVersion"

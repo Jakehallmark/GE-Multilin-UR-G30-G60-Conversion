@@ -36,6 +36,7 @@ packaging/out/
 dist/
 aio/build/
 aio/dist/
+aio/pack-staging/
 aio/*.spec
 aio/signing.local.ps1
 

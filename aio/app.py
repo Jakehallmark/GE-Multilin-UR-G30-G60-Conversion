@@ -249,7 +249,7 @@ class ConverterWizard:
             controls=[
                 ft.Text(f"Version {info.display}", size=15, weight=ft.FontWeight.W_600, color=pal.text),
                 ft.Text(
-                    "Converts GE Multilin UR G30 relay settings for G60 import.",
+                    "Converts GE Multilin UR G30 relay settings for G60 upgrades.",
                     size=13,
                     color=pal.dim,
                 ),
@@ -258,6 +258,11 @@ class ConverterWizard:
                     size=12,
                     color=pal.accent,
                     selectable=True,
+                ),
+                ft.Text(
+                    "Built by Jacob Hallmark, Product Support",
+                    size=12,
+                    color=pal.dim,
                 ),
             ],
         )

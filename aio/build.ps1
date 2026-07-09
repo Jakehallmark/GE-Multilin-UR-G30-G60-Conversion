@@ -16,6 +16,7 @@ $AioDir = $PSScriptRoot
 $RepoRoot = Split-Path $AioDir -Parent
 $BasesDir = Join-Path $RepoRoot "bases"
 $FirmwareDir = Join-Path $RepoRoot "firmware"
+$FirmwareBundleDir = Join-Path $AioDir "pack-staging\firmware-bundle"
 $ReleaseDir = Join-Path $RepoRoot "release"
 $ReleaseExe = Join-Path $ReleaseDir "G30-to-G60-Converter.exe"
 $StageDir = Join-Path $AioDir "dist"
@@ -75,6 +76,29 @@ if (Test-Path -LiteralPath $StageDir) {
     Remove-Item -LiteralPath $StageDir -Recurse -Force
 }
 
+function New-FirmwareBundle {
+    param([string]$SourceRoot, [string]$DestRoot)
+    if (Test-Path -LiteralPath $DestRoot) {
+        Remove-Item -LiteralPath $DestRoot -Recurse -Force
+    }
+    $csvCount = 0
+    foreach ($side in @("g30", "g60")) {
+        $srcSide = Join-Path $SourceRoot $side
+        if (-not (Test-Path -LiteralPath $srcSide)) { continue }
+        $destSide = Join-Path $DestRoot $side
+        New-Item -ItemType Directory -Force -Path $destSide | Out-Null
+        $csvs = Get-ChildItem -LiteralPath $srcSide -Filter "AnalogoperandTo61850_*.csv" -File -ErrorAction SilentlyContinue
+        foreach ($csv in $csvs) {
+            Copy-Item -LiteralPath $csv.FullName -Destination $destSide -Force
+            $csvCount++
+        }
+    }
+    if ($csvCount -eq 0) {
+        throw "No AnalogoperandTo61850_*.csv files under $SourceRoot/g30 or g60"
+    }
+    return $csvCount
+}
+
 $fletExe = Get-Command flet -ErrorAction SilentlyContinue
 if (-not $fletExe) {
     $fallbackFlet = Join-Path $env:LOCALAPPDATA "Python\pythoncore-3.14-64\Scripts\flet.exe"
@@ -91,6 +115,10 @@ Write-Host "Building version $AppDisplayVersion (file version $AppFileVersion)"
 
 Push-Location $AioDir
 try {
+    # flet pack deletes aio/build/ before PyInstaller runs — stage CSVs outside it.
+    $bundledCsvCount = New-FirmwareBundle -SourceRoot $FirmwareDir -DestRoot $FirmwareBundleDir
+    Write-Host "Bundling $bundledCsvCount Analogoperand CSV(s) (firmware binaries are excluded from the exe)"
+
     # Repo-root modules (convert_g30_to_g60, urs_io, etc.) live outside aio/.
     # PyInstaller only searches aio/ by default; PYTHONPATH makes them discoverable.
     $prevPythonPath = $env:PYTHONPATH
@@ -101,7 +129,7 @@ try {
         -n $ExeName `
         --distpath $StageDir `
         --add-data "$BasesDir;bases" `
-        --add-data "$FirmwareDir;firmware" `
+        --add-data "$FirmwareBundleDir;firmware" `
         --add-data "$AioDir\version.json;." `
         --file-description "GE Multilin UR G30 to G60 settings converter" `
         --product-name "G30 to G60 Converter" `

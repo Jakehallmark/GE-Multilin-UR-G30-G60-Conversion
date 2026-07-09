@@ -130,7 +130,7 @@ Pushing a version tag runs [`.github/workflows/release.yml`](.github/workflows/r
 .\aio\release.ps1
 ```
 
-This updates `aio/version.json`, commits, creates a tag like `v1.0.4`, pushes to GitHub (which triggers CI to attach the exe to the Release), and runs a local build to `release/G30-to-G60-Converter.exe`.
+This updates `aio/version.json`, **commits all pending changes** (not just the version file), creates a tag like `v1.0.4`, pushes to GitHub (which triggers CI to attach the exe to the Release), and runs a local build to `release/G30-to-G60-Converter.exe`.
 
 Options:
 

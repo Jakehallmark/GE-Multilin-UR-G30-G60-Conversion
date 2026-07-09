@@ -6,8 +6,8 @@
 |------|---------|
 | `g30/AnalogoperandTo61850_*.csv` | G30 FlexAnalog → IEC61850 map (from URPC `Devices/`) |
 | `g60/AnalogoperandTo61850_*.csv` | Matching G60 / FW 8.x map |
-| `g30/*.SFD`, `*.000` *(optional, local only)* | Relay firmware images — **not** parsed by the converter |
-| `g60/*.SFD` *(optional, local only)* | Same |
+| `g30/*.SFD`, `*.000` *(optional, local only)* | Relay firmware images — **not** parsed by the converter; **not** bundled into the GUI exe |
+| `g60/*.SFD` *(optional, local only)* | Same — used only by `verify_csv_pairing.py` on dev machines |
 
 Encrypted firmware binaries (`.SFD` / `.000`) do **not** contain a plaintext signal dictionary. User-display remapping on the URS path joins the Analogoperand CSVs on IEC61850 path stems, then resolves names through the G60 Base EnumType `10013` table.
 
